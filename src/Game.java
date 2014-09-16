@@ -362,10 +362,9 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	public Sprite getSprite(String path) {
-		path = /*"/Users/Alex/git/Dauprat-park/bin/assets/"*/"assets/" + path;
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		MediaTracker tracker = new MediaTracker(this);
-		Image image = toolkit.getImage(path);
+		Image image = toolkit.getImage("assets/" + path);
 		tracker.addImage(image, 0);
 		try {
 			tracker.waitForAll();
@@ -374,6 +373,7 @@ public class Game extends Canvas implements Runnable {
 		}
 
 		Sprite sprite = new Sprite(image);
+		sprite.name = path;
 
 		return sprite;
 	}
