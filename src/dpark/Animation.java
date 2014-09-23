@@ -1,3 +1,4 @@
+package dpark;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +13,7 @@ public class Animation {
 	private long lastTime = System.currentTimeMillis();
 	public long startStepTime = -1;
 	public int currentStep = -1;
-	public long defaultSpeed = 2 * 1000;
+	public long defaultSpeed = (long) (0.5 * 1000);
 	public Runnable runAfterEnd = null;
 
 	/**

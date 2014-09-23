@@ -1,3 +1,5 @@
+package dpark;
+
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -10,18 +12,21 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.swing.JFrame;
 
+import dpark.objects.Crate;
+import dpark.objects.Player;
+
 public class Game extends Canvas implements Runnable {
 	public boolean leftPressed = false;
 	public boolean rightPressed = false;
 	public boolean one_pressed = false;
 	public static Sprite main_img;
-	public static Sprite hero_img;
 	public BufferStrategy bss;
 	public Graphics gl;
 	public int gmlevel = 0; // 0 - Меню, 1 - начало игры
@@ -30,19 +35,23 @@ public class Game extends Canvas implements Runnable {
 	Boolean running;
 	public JFrame fr_level_1;
 	public int pi = 0;
-	public static int plx = 50;
-	public static int ply = 50;
 	public int is_st22 = 0;
 	public boolean gm_an_1 = false;
 	public Graphics gl_2;
+	public static Game instance;
 	Map<Integer, Integer> Wxx = new HashMap<Integer, Integer>();
 	Map<Integer, Integer> Wyy = new HashMap<Integer, Integer>();
 	int Wxx_now = 1;
 	int Wyy_now = 1;
 	private List<Animation> animations = new ArrayList<Animation>();
+	private Map<String, GameObject> objects = new HashMap<String, GameObject>();
 
 	public int pl_st = 0; // Сторона просмотра, 1 - up, 2 - right, 3 - down, 4 -
 							// left
+
+	public Game() {
+		instance = this;
+	}
 
 	public void clearImage(Graphics gtest) {
 
@@ -71,6 +80,9 @@ public class Game extends Canvas implements Runnable {
 				}
 			}
 			update(delta);
+			for (GameObject o : objects.values()) {
+				o.update(delta);
+			}
 			{
 				delta = System.currentTimeMillis() - lastTime;
 				lastTime = System.currentTimeMillis();
@@ -98,13 +110,11 @@ public class Game extends Canvas implements Runnable {
 
 	public void init() {
 		main_img = getSprite("logo.png");
-		hero_img = getSprite("hero.png");
 		addKeyListener(new Keyboard());
 		{
 			final Animation a = new Animation();
 			a.isPlaying = false;
 			a.addStep(getSprite("stop_22.png"));
-			a.addStep(getSprite("stop_dest.png"));
 			a.addStep(getSprite("video.png"));
 			a.addStep(getSprite("video_2.png"));
 			a.addStep(getSprite("video_3.png"));
@@ -115,7 +125,6 @@ public class Game extends Canvas implements Runnable {
 			a.addStep(getSprite("video_8.png"));
 			a.addStep(getSprite("video_9.png"));
 			a.addStep(getSprite("video_10.png"));
-			a.addStep(getSprite("stop_dest.png"));
 			a.runAfterEnd = new Runnable() {
 				@Override
 				public void run() {
@@ -123,6 +132,13 @@ public class Game extends Canvas implements Runnable {
 				}
 			};
 			animations.add(a);
+		}
+		{
+			Player p = new Player();
+			p.init();
+			p.x = 50;
+			p.y = 50;
+			objects.put("player", p);
 		}
 	}
 
@@ -141,25 +157,29 @@ public class Game extends Canvas implements Runnable {
 		} else {
 			main_img.draw(gl, 5, 5);
 		}
-		hero_img.draw(gl, plx, ply);
+		List<GameObject> objs = new ArrayList<GameObject>(objects.values());
+		Collections.sort(objs, GameObject.compareByDepth);
+		for (GameObject o : objs) {
+			o.render(gl);
+		}
 		bss.show();
 		gl.dispose();
-
 	}
 
 	public void update(long delta) {
+		final GameObject p = objects.get("player");
 		if (leftPressed == true) {
 			for (int i = 1; i < Wxx_now; i++) {
-				if (plx == Wxx.get(i)) {
-					plx--;
+				if (p.x == Wxx.get(i)) {
+					p.x--;
 				}
 			}
 
 		}
 		if (rightPressed == true) {
 			for (int i = 1; i < Wxx_now; i++) {
-				if (plx == Wxx.get(i)) {
-					plx++;
+				if (p.x == Wxx.get(i)) {
+					p.x++;
 				}
 			}
 
@@ -171,10 +191,10 @@ public class Game extends Canvas implements Runnable {
 
 		}
 		if (pl_st == 2) {
-			hero_img = getSprite("hero.png");
+			objects.get("player").sprite.currentStep = 0;
 		}
 		if (pl_st == 4) {
-			hero_img = getSprite("hero_left.png");
+			objects.get("player").sprite.currentStep = 1;
 		}
 
 	}
@@ -201,8 +221,6 @@ public class Game extends Canvas implements Runnable {
 	public void Get_Start() {
 		GRPHS_ins_2lvl();
 		gmlevel = 1;
-		hero_img = getSprite("hero.png");
-
 	}
 
 	public void GetLevel_2() {
@@ -212,7 +230,6 @@ public class Game extends Canvas implements Runnable {
 		final Animation acur = animations.get(0);
 		acur.reset();
 		acur.isPlaying = true;
-		// main_img = getSprite("stop_dest.png");
 
 		// one_pressed = false;
 
@@ -227,17 +244,29 @@ public class Game extends Canvas implements Runnable {
 		Crate_create(16, 16);
 		Crate_create(32, 32);
 		Crate_create(48, 48);
+		Crate_create(64, 64);
+		Crate_create(80, 80);
 		// gl_2.dispose();
 	}
 
 	public void Crate_create(int xa, int ya) {
-		Sprite tex;
-		tex = getSprite("Blockstone.png");
-		tex.draw(gl, xa, ya);
+		final Crate c = new Crate();
+		c.x = xa;
+		c.y = ya;
+		c.init();
+		objects.put(getFreeName("crate"), c);
 		Wxx.put(Wxx_now, xa);
 		Wyy.put(Wyy_now, ya);
 		Wxx_now++;
 		Wyy_now++;
+	}
+	
+	public String getFreeName(String prefix) {
+		int i = 0;
+		while (objects.containsKey(prefix + i)) {
+			i++;
+		}
+		return prefix + i;
 	}
 
 	private final Toolkit toolkit = Toolkit.getDefaultToolkit();
