@@ -6,11 +6,13 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.JFrame;
 
@@ -33,10 +35,11 @@ public class Game extends Canvas implements Runnable {
 	public int is_st22 = 0;
 	public boolean gm_an_1 = false;
 	public Graphics gl_2;
-	int[] Wxx = {};
-	int[] Wyy = {};
+	Map<Integer, Integer> Wxx = new HashMap<Integer, Integer>();
+	Map<Integer, Integer> Wyy = new HashMap<Integer, Integer>();
 	int Wxx_now = 1;
 	int Wyy_now = 1;
+	private List<Animation> animations = new ArrayList<Animation>();
 
 	public int pl_st = 0; // Сторона просмотра, 1 - up, 2 - right, 3 - down, 4 -
 							// left
@@ -60,10 +63,34 @@ public class Game extends Canvas implements Runnable {
 		init();
 
 		while (running) {
-			delta = System.currentTimeMillis() - lastTime;
-			lastTime = System.currentTimeMillis();
+			{
+				delta = System.currentTimeMillis() - lastTime;
+				lastTime = System.currentTimeMillis();
+				for (Animation a : animations) {
+					a.update(delta);
+				}
+			}
 			update(delta);
-			render();
+			{
+				delta = System.currentTimeMillis() - lastTime;
+				lastTime = System.currentTimeMillis();
+				for (Animation a : animations) {
+					a.update(delta);
+				}
+			}
+			Sprite cur = null;
+			for (Animation a : animations) {
+				if (a.isPlaying) {
+					final Animation.Step st = a.getStep();
+					if (st != null) {
+						final Sprite c = st.sprite;
+						if (c != null) {
+							cur = c;
+						}
+					}
+				}
+			}
+			render(cur);
 		}
 		// функция run появляется после того, как мы добавили
 		// "implements Runnable"
@@ -73,10 +100,33 @@ public class Game extends Canvas implements Runnable {
 		main_img = getSprite("logo.png");
 		hero_img = getSprite("hero.png");
 		addKeyListener(new Keyboard());
-
+		{
+			final Animation a = new Animation();
+			a.isPlaying = false;
+			a.addStep(getSprite("stop_22.png"));
+			a.addStep(getSprite("stop_dest.png"));
+			a.addStep(getSprite("video.png"));
+			a.addStep(getSprite("video_2.png"));
+			a.addStep(getSprite("video_3.png"));
+			a.addStep(getSprite("video_4.png"));
+			a.addStep(getSprite("video_5.png"));
+			a.addStep(getSprite("video_6.png"));
+			a.addStep(getSprite("video_7.png"));
+			a.addStep(getSprite("video_8.png"));
+			a.addStep(getSprite("video_9.png"));
+			a.addStep(getSprite("video_10.png"));
+			a.addStep(getSprite("stop_dest.png"));
+			a.runAfterEnd = new Runnable() {
+				@Override
+				public void run() {
+					Get_Start();
+				}
+			};
+			animations.add(a);
+		}
 	}
 
-	public void render() {
+	public void render(Sprite bg) {
 		bss = getBufferStrategy();
 		if (bss == null) {
 			createBufferStrategy(2);
@@ -86,7 +136,11 @@ public class Game extends Canvas implements Runnable {
 		gl = bss.getDrawGraphics();
 		gl.setColor(Color.black);
 		gl.fillRect(0, 0, getWidth(), getHeight());
-		main_img.draw(gl, 5, 5);
+		if (bg != null) {
+			bg.draw(gl, 5, 5);
+		} else {
+			main_img.draw(gl, 5, 5);
+		}
 		hero_img.draw(gl, plx, ply);
 		bss.show();
 		gl.dispose();
@@ -96,7 +150,7 @@ public class Game extends Canvas implements Runnable {
 	public void update(long delta) {
 		if (leftPressed == true) {
 			for (int i = 1; i < Wxx_now; i++) {
-				if (plx == Wxx[i]) {
+				if (plx == Wxx.get(i)) {
 					plx--;
 				}
 			}
@@ -104,7 +158,7 @@ public class Game extends Canvas implements Runnable {
 		}
 		if (rightPressed == true) {
 			for (int i = 1; i < Wxx_now; i++) {
-				if (plx == Wxx[i]) {
+				if (plx == Wxx.get(i)) {
 					plx++;
 				}
 			}
@@ -113,6 +167,7 @@ public class Game extends Canvas implements Runnable {
 		if (one_pressed == true) {
 
 			GetLevel_2();
+			one_pressed = false;
 
 		}
 		if (pl_st == 2) {
@@ -153,186 +208,10 @@ public class Game extends Canvas implements Runnable {
 	public void GetLevel_2() {
 
 		pi = 0;
-		javax.swing.Timer timer = new javax.swing.Timer(1000,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 0) {
-							main_img = getSprite("stop_22.png");
-							is_st22 = 1;
-						}
 
-					}
-				});
-		javax.swing.Timer timer_2 = new javax.swing.Timer(1500,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 1) {
-							main_img = getSprite("stop_dest.png");
-							is_st22 = 2;
-						}
-					}
-				});
-		javax.swing.Timer timer_3 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 2) {
-							main_img = getSprite("video.png");
-							is_st22 = 3;
-						}
-					}
-				});
-		javax.swing.Timer timer_4 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 3) {
-							main_img = getSprite("video_2.png");
-							is_st22 = 4;
-						}
-					}
-				});
-		javax.swing.Timer timer_5 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 4) {
-							main_img = getSprite("video_3.png");
-							is_st22 = 5;
-						}
-					}
-				});
-		javax.swing.Timer timer_6 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 5) {
-							main_img = getSprite("video_4.png");
-							is_st22 = 6;
-						}
-					}
-				});
-		javax.swing.Timer timer_7 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 6) {
-							main_img = getSprite("video_5.png");
-							is_st22 = 7;
-						}
-					}
-				});
-		javax.swing.Timer timer_8 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 7) {
-							main_img = getSprite("video_6.png");
-							is_st22 = 8;
-						}
-					}
-				});
-		javax.swing.Timer timer_9 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 8) {
-							main_img = getSprite("video_7.png");
-							is_st22 = 9;
-						}
-					}
-				});
-		javax.swing.Timer timer_10 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 9) {
-							main_img = getSprite("video_8.png");
-							is_st22 = 10;
-						}
-					}
-				});
-		javax.swing.Timer timer_11 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 10) {
-							main_img = getSprite("video_9.png");
-							is_st22 = 11;
-						}
-					}
-				});
-		javax.swing.Timer timer_12 = new javax.swing.Timer(400,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 11) {
-							main_img = getSprite("video_10.png");
-							is_st22 = 12;
-						}
-					}
-				});
-		javax.swing.Timer timer_13 = new javax.swing.Timer(1500,
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (is_st22 == 12) {
-							main_img = getSprite("stop_dest.png");
-							is_st22 = 13;
-						}
-					}
-				});
-		timer.start();
-		if (is_st22 == 1) {
-			timer.stop();
-			timer_2.start();
-		}
-
-		if (is_st22 == 2) {
-			timer_2.stop();
-			timer_3.start();
-		}
-
-		if (is_st22 == 3) {
-			timer_3.stop();
-			timer_4.start();
-		}
-		if (is_st22 == 4) {
-			timer_4.stop();
-			timer_5.start();
-		}
-		if (is_st22 == 5) {
-			timer_5.stop();
-			timer_6.start();
-		}
-		if (is_st22 == 6) {
-			timer_6.stop();
-			timer_7.start();
-		}
-		if (is_st22 == 7) {
-			timer_7.stop();
-			timer_8.start();
-
-		}
-		if (is_st22 == 8) {
-			timer_8.stop();
-			timer_9.start();
-
-		}
-		if (is_st22 == 9) {
-			timer_9.stop();
-			timer_10.start();
-
-		}
-		if (is_st22 == 10) {
-			timer_10.stop();
-			timer_11.start();
-
-		}
-		if (is_st22 == 11) {
-			timer_11.stop();
-			timer_12.start();
-
-		}
-		if (is_st22 == 12) {
-			timer_12.stop();
-			timer_13.start();
-
-		}
-		if (is_st22 == 13) {
-			timer_13.stop();
-			Get_Start();
-
-		}
+		final Animation acur = animations.get(0);
+		acur.reset();
+		acur.isPlaying = true;
 		// main_img = getSprite("stop_dest.png");
 
 		// one_pressed = false;
@@ -355,17 +234,28 @@ public class Game extends Canvas implements Runnable {
 		Sprite tex;
 		tex = getSprite("Blockstone.png");
 		tex.draw(gl, xa, ya);
-		Wxx[Wxx_now] = xa;
-		Wyy[Wyy_now] = ya;
+		Wxx.put(Wxx_now, xa);
+		Wyy.put(Wyy_now, ya);
 		Wxx_now++;
 		Wyy_now++;
 	}
 
+	private final Toolkit toolkit = Toolkit.getDefaultToolkit();
+	private final MediaTracker tracker = new MediaTracker(this);
+	private final Map<String, Integer> imgMap = new HashMap<String, Integer>();
+
 	public Sprite getSprite(String path) {
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		MediaTracker tracker = new MediaTracker(this);
 		Image image = toolkit.getImage("assets/" + path);
-		tracker.addImage(image, 0);
+		{
+			int id = 0;
+			if (imgMap.containsKey(path)) {
+				id = imgMap.get(path);
+			} else {
+				id = imgMap.size();
+				imgMap.put(path, id);
+			}
+			tracker.addImage(image, id);
+		}
 		try {
 			tracker.waitForAll();
 		} catch (InterruptedException e1) {
