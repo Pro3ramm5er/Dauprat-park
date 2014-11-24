@@ -15,12 +15,16 @@ public class AppleW extends GameObject {
     public int Timer = 50;
     public int Timer_2;
     public int Timer_set_del = 0;
+    public int Timer_sec = 0;
+    public int Atack = 0;
     int otchet = 0;
     int otchet2 = 0;
     int otchet3 = 0;
     int otchet4 = 0;
+    int otchet5 = 0;
+    int otchet6 = 0;
     int Col_del = 0;
-
+    public int Timer_3 = 50;
     public AppleW(String name)
     {
         super(name);
@@ -34,6 +38,30 @@ public class AppleW extends GameObject {
     @Override
     public void update()
     {
+          // STEPS
+
+
+           if (Atack == 1)
+           {
+               Timer_sec = 1;
+               Game.VisibleDieLogo = 1;
+
+
+               if (Timer_sec == 1)
+               {
+                      System.out.println(Timer_3);
+                      if (Timer_3 <= 0)
+                      {
+                          System.exit(0);
+                      } else {
+                          Timer_3 --;
+                      }
+               }
+           }
+
+
+
+          // STEPS END
           if (Timer <= 0) {
               MST = 0 + (int)(Math.random() * ((4 - 0) + 1));
               Timer_set_del = 0;
@@ -117,6 +145,10 @@ public class AppleW extends GameObject {
             otchet3 = 0;
             System.out.println("OP....");
         }
+        if (otchet5 == myx.length) {
+            otchet5 = 0;
+            System.out.println("OP....");
+        }
         if (otchet2 == myy.length) {
             otchet2 = 0;
             System.out.println("OP2....");
@@ -125,24 +157,19 @@ public class AppleW extends GameObject {
             otchet4 = 0;
             System.out.println("OP2....");
         }
+        if (otchet6 == myy.length) {
+            otchet6 = 0;
+            System.out.println("OP2....");
+        }
 
 
 
 
 
-        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
-            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply1 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4) {
-                if (Col_del == 0 & Timer_2 == 0) {
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
+        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
+                    Atack = 1;
 
-                    Col_del = 1;
-                    Timer_2 = 50;
-                    Player.Collision();
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
-
-
-
-                }
 
             } else {
                 //System.out.println("Yea.....");
