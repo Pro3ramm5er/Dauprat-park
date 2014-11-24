@@ -412,8 +412,8 @@ public class Game extends Canvas implements Runnable {
 
 			c.x = xa;
 			c.y = ya;
-			c.xa1 = xa;
-			c.ya1 = ya;
+			c.xt = xa;
+			c.yt = ya;
             //c.xa2 = xa;
             //c.ya2 = ya;
 

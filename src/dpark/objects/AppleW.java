@@ -24,7 +24,7 @@ public class AppleW extends GameObject {
     int otchet5 = 0;
     int otchet6 = 0;
     int Col_del = 0;
-    public int Timer_3 = 50;
+    public int Timer_3 = 10;
     public AppleW(String name)
     {
         super(name);
@@ -196,6 +196,16 @@ public class AppleW extends GameObject {
                 } else {
                     otchet4++;
                 }
+                if ( otchet6 == myy.length) {
+                    otchet6 = 0;
+                } else {
+                    otchet6++;
+                }
+                if ( otchet5 == myx.length) {
+                    otchet5 = 0;
+                } else {
+                    otchet5++;
+                }
             }
 
         } else {
@@ -213,7 +223,11 @@ public class AppleW extends GameObject {
                 otchet3++;
 
             }
-
+            if ( otchet5 == myx.length) {
+                otchet5 = 0;
+            } else {
+                otchet5++;
+            }
 
 
         }

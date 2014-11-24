@@ -179,6 +179,7 @@ public class DEC_Chest extends GameObject {
                 } else {
                     otchet4++;
                 }
+
             }
 
         } else {
