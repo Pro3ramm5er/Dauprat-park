@@ -50,59 +50,7 @@ public class DEC_Chest extends GameObject {
             otchet2 = 0;
             System.out.println("OP2....");
         }
-        /*
-        if (xt - myx[otchet] == plx | xt + myx[otchet] == plx) {
-            if (yt - myy[otchet2] == ply | yt + myy[otchet2] == ply | yt - myy[otchet2] == ply | yt + myy[otchet2] == ply) {
-                System.out.println(PlayerColSt + "::" + PlayerWalkst);
-                if (Col_del == 0 & Timer == 0) {
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
-                    System.out.println("Yea!");
-                    Col_del = 1;
-                    Timer = 5000;
-                    Player.Collision();
 
-
-
-                }
-
-            } else {
-                System.out.println("Yea....");
-
-                if (otchet != myx.length ) {
-
-
-                    otchet++;
-                    System.out.println("Otchet++" + otchet);
-
-                }
-                if (otchet2 == myy.length) {
-                    otchet2 = 0;
-                    System.out.println("OP2....");
-                } else {
-                    otchet2++;
-                    System.out.println("Otchet2++" + otchet2);
-                }
-            }
-
-        } else {
-
-
-            if (otchet == myx.length ) {
-                otchet = 0;
-                System.out.println("OP....");
-            } else {
-                otchet++;
-
-            }
-            if ( otchet2 == myy.length) {
-                otchet2 = 0;
-                System.out.println("OP2....");
-            }
-
-
-        }
-
-         */
 
 
         if (otchet == myx.length ) {
@@ -112,8 +60,8 @@ public class DEC_Chest extends GameObject {
             otchet2 = 0;
         }
 
-        if (xt - myx[otchet] == plx1 | xt + myx[otchet] == plx1 | xt - myx[otchet] == plx2 | xt + myx[otchet] == plx2 | xt - myx[otchet] == plx3 | xt + myx[otchet] == plx3 | xt - myx[otchet] == plx4 | xt + myx[otchet] == plx4) {
-            if (yt - myy[otchet2] == ply1 | yt + myy[otchet2] == ply1 | yt - myy[otchet2] == ply1 | yt + myy[otchet2] == ply1 | yt - myy[otchet2] == ply2 | yt + myy[otchet2] == ply2 | yt - myy[otchet2] == ply3 | yt + myy[otchet2] == ply3 | yt - myy[otchet2] == ply4 | yt + myy[otchet2] == ply4) {
+        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4) {
                 if (Col_del == 0 & Timer == 0) {
                     System.out.println(PlayerColSt + "::" + PlayerWalkst);
 
@@ -159,209 +107,13 @@ public class DEC_Chest extends GameObject {
         }
 
 
-        /*
-        if (otchet == myx.length ) {
-            otchet = 0;
-        }
-        if ( otchet2 == myy.length) {
-            otchet2 = 0;
-        }
-
-        if (xt - myx[otchet] == plx2 | xt + myx[otchet] == plx2) {
-            if (yt - myy[otchet2] == ply2 | yt + myy[otchet2] == ply2 | yt - myy[otchet2] == ply2 | yt + myy[otchet2] == ply2) {
-                if (Col_del == 0) {
-                    System.out.println("Yea!");
-                    Player.Collision();
-                    Col_del = 1;
-                }
-
-            } else {
-                System.out.println("Yea....");
-                Col_del = 0;
-                if (otchet == myx.length ) {
-                    otchet = 0;
-                } else {
-                    otchet++;
-
-                }
-                if ( otchet2 == myy.length) {
-                    otchet2 = 0;
-                } else {
-                    otchet2++;
-                }
-            }
-
-        } else {
-
-            Col_del = 0;
-            if (otchet == myx.length ) {
-                otchet = 0;
-            } else {
-                otchet++;
-
-            }
-            if ( otchet2 == myy.length) {
-                otchet2 = 0;
-            }
-
-
-        }
-
-
-
-
-
-        if (otchet == myx.length ) {
-            otchet = 0;
-        }
-        if ( otchet2 == myy.length) {
-            otchet2 = 0;
-        }
-
-        if (xt - myx[otchet] == plx3 | xt + myx[otchet] == plx3) {
-            if (yt - myy[otchet2] == ply3 | yt + myy[otchet2] == ply3 | yt - myy[otchet2] == ply3 | yt + myy[otchet2] == ply3) {
-                if (Col_del == 0) {
-                    System.out.println("Yea!");
-                    Player.Collision();
-                    Col_del = 1;
-                }
-
-            } else {
-                System.out.println("Yea.....");
-                Col_del = 0;
-                if (otchet == myx.length ) {
-                    otchet = 0;
-                } else {
-                    otchet++;
-
-                }
-                if ( otchet2 == myy.length) {
-                    otchet2 = 0;
-                } else {
-                    otchet2++;
-                }
-            }
-
-        } else {
-
-            Col_del = 0;
-            if (otchet == myx.length ) {
-                otchet = 0;
-            } else {
-                otchet++;
-
-            }
-            if ( otchet2 == myy.length) {
-                otchet2 = 0;
-            }
-
-
-        }
 
 
 
 
 
 
-        if (otchet == myx.length ) {
-            otchet = 0;
-        }
-        if ( otchet2 == myy.length) {
-            otchet2 = 0;
-        }
 
-        if (xt - myx[otchet] == plx4 | xt + myx[otchet] == plx4) {
-            if (yt - myy[otchet2] == ply4 | yt + myy[otchet2] == ply4 | yt - myy[otchet2] == ply4 | yt + myy[otchet2] == ply4) {
-                if (Col_del == 0) {
-                    System.out.println("Yea!");
-                    Player.Collision();
-                    Col_del = 1;
-                }
-
-            } else {
-                System.out.println("Yea...");
-                Col_del = 0;
-                if (otchet == myx.length ) {
-                    otchet = 0;
-                } else {
-                    otchet++;
-
-                }
-                if ( otchet2 == myy.length) {
-                    otchet2 = 0;
-                } else {
-                    otchet2++;
-                }
-            }
-
-        } else {
-
-            Col_del = 0;
-            if (otchet == myx.length ) {
-                otchet = 0;
-            } else {
-                otchet++;
-
-            }
-            if ( otchet2 == myy.length) {
-                otchet2 = 0;
-            }
-
-
-        }
-
-
-
-
-
-
-        if (otchet == myx.length ) {
-            otchet = 0;
-        }
-        if ( otchet2 == myy.length) {
-            otchet2 = 0;
-        }
-
-        if (xt - myx[otchet] == plx5 | xt + myx[otchet] == plx5) {
-            if (yt - myy[otchet2] == ply5 | yt + myy[otchet2] == ply5 | yt - myy[otchet2] == ply5 | yt + myy[otchet2] == ply5) {
-                if (Col_del == 0) {
-                    System.out.println("Yea!");
-                    Player.Collision();
-                    Col_del = 1;
-                }
-
-            } else {
-                System.out.println("Yea...");
-                Col_del = 0;
-                if (otchet == myx.length ) {
-                    otchet = 0;
-                } else {
-                    otchet++;
-
-                }
-                if ( otchet2 == myy.length) {
-                    otchet2 = 0;
-                } else {
-                    otchet2++;
-                }
-            }
-
-        } else {
-
-            Col_del = 0;
-            if (otchet == myx.length ) {
-                otchet = 0;
-            } else {
-                otchet++;
-
-            }
-            if ( otchet2 == myy.length) {
-                otchet2 = 0;
-            }
-
-
-        }
-        */
 
     }
 

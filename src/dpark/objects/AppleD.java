@@ -48,26 +48,26 @@ public class AppleD extends GameObject {
              super.update();
 
              if (dead == 0) {
-                 if (otchet == myx.length | otchet == myy.length) {
+                 if (otchet == myx.length || otchet == myy.length) {
                      otchet = 0;
                  }
-                 if (otchet2 == myx.length | otchet2 == myy.length) {
+                 if (otchet2 == myx.length || otchet2 == myy.length) {
                      otchet2 = 0;
                  }
 
-                 if (xt - myx[otchet] == plx | xt + myx[otchet] == plx) {
-                     if (yt - myy[otchet] == ply | yt + myy[otchet] == ply | yt - myy[otchet2] == ply | yt + myy[otchet2] == ply) {
+                 if (xt - myx[otchet] == plx || xt + myx[otchet] == plx) {
+                     if (yt - myy[otchet] == ply || yt + myy[otchet] == ply || yt - myy[otchet2] == ply || yt + myy[otchet2] == ply) {
                          sprite.currentStep = 1;
                          dead = 1;
 
                      } else {
-                         if (otchet == myx.length | otchet == myy.length) {
+                         if (otchet == myx.length || otchet == myy.length) {
                              otchet = 0;
                          } else {
                              otchet++;
 
                          }
-                         if (otchet2 == myx.length | otchet2 == myy.length) {
+                         if (otchet2 == myx.length || otchet2 == myy.length) {
                              otchet2 = 0;
                          } else {
                              otchet2++;
@@ -76,13 +76,13 @@ public class AppleD extends GameObject {
 
                  } else {
 
-                     if (otchet == myx.length | otchet == myy.length) {
+                     if (otchet == myx.length || otchet == myy.length) {
                          otchet = 0;
                      } else {
                          otchet++;
 
                      }
-                     if (otchet2 == myx.length | otchet2 == myy.length) {
+                     if (otchet2 == myx.length || otchet2 == myy.length) {
                          otchet2 = 0;
                      }
 
@@ -92,26 +92,26 @@ public class AppleD extends GameObject {
 
 
 
-                 if (otchet == myx.length | otchet == myy.length) {
+                 if (otchet == myx.length || otchet == myy.length) {
                      otchet = 0;
                  }
-                 if (otchet2 == myx.length | otchet2 == myy.length) {
+                 if (otchet2 == myx.length || otchet2 == myy.length) {
                      otchet2 = 0;
                  }
 
-                 if (xt - myx[otchet] == plx1 | xt + myx[otchet] == plx1) {
-                     if (yt - myy[otchet] == ply1 | yt + myy[otchet] == ply1 | yt - myy[otchet2] == ply1 | yt + myy[otchet2] == ply1) {
+                 if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1) {
+                     if (yt - myy[otchet] == ply1 || yt + myy[otchet] == ply1 || yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1) {
                          sprite.currentStep = 1;
                          dead = 1;
 
                      } else {
-                         if (otchet == myx.length | otchet == myy.length) {
+                         if (otchet == myx.length || otchet == myy.length) {
                              otchet = 0;
                          } else {
                              otchet++;
 
                          }
-                         if (otchet2 == myx.length | otchet2 == myy.length) {
+                         if (otchet2 == myx.length || otchet2 == myy.length) {
                              otchet2 = 0;
                          } else {
                              otchet2++;
@@ -120,13 +120,13 @@ public class AppleD extends GameObject {
 
                  } else {
 
-                     if (otchet == myx.length | otchet == myy.length) {
+                     if (otchet == myx.length || otchet == myy.length) {
                          otchet = 0;
                      } else {
                          otchet++;
 
                      }
-                     if (otchet2 == myx.length | otchet2 == myy.length) {
+                     if (otchet2 == myx.length || otchet2 == myy.length) {
                          otchet2 = 0;
                      }
 
@@ -138,30 +138,13 @@ public class AppleD extends GameObject {
 
 
              }
-             /*
-             if (myx[otchet] == plx)
-             {
-                 if (myy[otchet] == ply | myy[otchet2] == ply )
-                 {
-                     OnAI();
-                     System.out.println("Secound step");
-                 } else {
-                     otchet++;
-                     otchet2++;
-                 }
-                 System.out.println("First step");
-             } else {
-                 otchet++;
-             }
 
 
-             */
-
-             if (otchet == myx.length | otchet == myy.length)
+             if (otchet == myx.length || otchet == myy.length)
              {
                  otchet = 0;
              }
-             if (otchet2 == myx.length | otchet2 == myy.length)
+             if (otchet2 == myx.length || otchet2 == myy.length)
              {
                  otchet2 = 0;
              }

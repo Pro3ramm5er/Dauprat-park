@@ -20,7 +20,7 @@ public class AppleW extends GameObject {
     @Override
     public void update()
     {
-        if (ог)
+
     }
 
 
