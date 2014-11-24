@@ -32,108 +32,7 @@ public class Crate extends GameObject {
 		
 
 
-		    //System.out.println("//" + u[e] + "//");
-			
-		
-			//for (int y3 = 0;  y3 <= 32;)
-			//{
-			//	Coll_init(x+y3, y);
-			//	y3++;
-			//}
-			/*
-			for (int y1 = 0;  y1 <= 32;)
-			{
-				Coll_init(x, y+y1);
-				y1++;
-			}
-			for (int y2 = 0;  y2 <= 32;)
-			{
-				Coll_init(x+32, y+y2);
-				y2++;
-			}
-			for (int y2 = 0;  y2 <= 32;)
-			{
-				Coll_init(x+y2, y+32);
-				y2++;
-			}
-			/*
-			Coll_init(x+1 ,y, 1 ,1);
-			Coll_init(x+2 ,y, 1 ,1);   
-			Coll_init(x+3 ,y, 1 ,1);    
-			Coll_init(x+4 ,y, 1 ,1);
-			Coll_init(x+5 ,y, 1 ,1);   
-			Coll_init(x+6 ,y, 1 ,1);    
-			Coll_init(x+7 ,y, 1 ,1);
-			Coll_init(x+8 ,y, 1 ,1);   
-			Coll_init(x+9 ,y, 1 ,1);    
-			Coll_init(x+10 ,y, 1 ,1);
-			Coll_init(x+11 ,y, 1 ,1);   
-			Coll_init(x+12,y, 1 ,1);    
-			Coll_init(x+13 ,y, 1 ,1);    
-			Coll_init(x+14 ,y, 1 ,1);
-			Coll_init(x+15 ,y, 1 ,1);   
-			Coll_init(x+16,y, 1 ,1);  
-			Coll_init(x+17 ,y, 1 ,1);    
-			Coll_init(x+18 ,y, 1 ,1);
-			Coll_init(x+19 ,y, 1 ,1);   
-			Coll_init(x+20,y, 1 ,1);   
-			Coll_init(x+21 ,y, 1 ,1);
-			Coll_init(x+22 ,y, 1 ,1);   
-			Coll_init(x+23,y, 1 ,1);  
-			Coll_init(x+24 ,y, 1 ,1);    
-			Coll_init(x+25 ,y, 1 ,1);
-			Coll_init(x+26 ,y, 1 ,1);   
-			Coll_init(x+27,y, 1 ,1);
-			Coll_init(x+28,y, 1 ,1);  
-			Coll_init(x+29 ,y, 1 ,1);    
-			Coll_init(x+30 ,y, 1 ,1);
-			Coll_init(x+31 ,y, 1 ,1);   
-			Coll_init(x+32,y, 1 ,1);   
-			
-			Coll_init(x ,y+1, 1 ,1);
-			Coll_init(x ,y+2, 1 ,1);   
-			Coll_init(x ,y+3, 1 ,1);    
-			Coll_init(x ,y+4, 1 ,1);
-			Coll_init(x ,y+5, 1 ,1);   
-			Coll_init(x ,y+6, 1 ,1);    
-			Coll_init(x ,y+7, 1 ,1);
-			Coll_init(x ,y+8, 1 ,1);   
-			Coll_init(x ,y+9, 1 ,1);    
-			Coll_init(x ,y+10, 1 ,1);
-			Coll_init(x ,y+11, 1 ,1);   
-			Coll_init(x,y+12, 1 ,1);    
-			Coll_init(x ,y+13, 1 ,1);    
-			Coll_init(x ,y+14, 1 ,1);
-			Coll_init(x ,y+15, 1 ,1);   
-			Coll_init(x,y+16, 1 ,1);  
-			Coll_init(x ,y+17, 1 ,1);    
-			Coll_init(x ,y+18, 1 ,1);
-			Coll_init(x ,y+19, 1 ,1);   
-			Coll_init(x,y+20, 1 ,1);   
-			Coll_init(x ,y+21, 1 ,1);
-			Coll_init(x ,y+22, 1 ,1);   
-			Coll_init(x ,y+23, 1 ,1);  
-			Coll_init(x ,y+24, 1 ,1);    
-			Coll_init(x ,y+25, 1 ,1);
-			Coll_init(x ,y+26, 1 ,1);   
-			Coll_init(x,y+27, 1 ,1);
-			Coll_init(x ,y+28, 1 ,1);  
-			Coll_init(x ,y+29, 1 ,1);    
-			Coll_init(x ,y+30, 1 ,1);
-			Coll_init(x ,y+31, 1 ,1);   
-			Coll_init(x,y+32, 1 ,1);  
-			*/
-		
-		
-		//Coll_init(x+16, y+16);
-		//x_use++;
-		//y_use++;
-		//Coll_init(x+16, y-16);
-		//x_use++;
-		//y_use++;
-		//Coll_init(x-16, y+16);
-		//x_use++;
-		//y_use++;
+
 		
 		
 		
@@ -143,25 +42,7 @@ public class Crate extends GameObject {
 	@Override
 	public void update() {
 		super.update();
-        /*
-        if (Player.plxmas1[g] == myx1[g] && Player.plymas1[g] == myy1[g])
-        {
-            Player.Collision();
-            System.out.println("IOI");
-            System.out.println(Player.plxmas1[g] + "::" + Player.plymas1[g] + "::" + myx1[g] + "::" + myy1[g] + "::" + g);
 
-
-        } else {
-
-
-        g++;
-
-        }
-        if (g >= 21)
-        {
-            g = 0;
-        }
-        */
 
         if (xa1 == plx && ya1 == ply)
         {
@@ -2259,57 +2140,7 @@ public class Crate extends GameObject {
 
 
 
-             /*
-             CheckSuf(xa1+16, ya1+16, plx, ply, playeris);
-             CheckSuf(xa1+15, ya1+15, plx, ply, playeris);
-             CheckSuf(xa1+16, ya1+14, plx, ply, playeris);
 
-
-             CheckSuf(xa1-16, ya1-16, plx, ply, playeris);
-             CheckSuf(xa1-16, ya1+16, plx, ply, playeris);
-             CheckSuf(xa1+16, ya1-16, plx, ply, playeris);
-        CheckSuf(xa1-15, ya1-15, plx, ply, playeris);
-        CheckSuf(xa1-15, ya1+15, plx, ply, playeris);
-        CheckSuf(xa1+15, ya1-15, plx, ply, playeris);
-
-
-		     if (playeris == 1)
-             {
-                 Player.Collision();
-             }
-             */
-            /*if (plx == xa1+16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (ply == ya1+16)
-		    {
-		    	Player.Collision();
-		    }if (plx == xa1+16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (ply == ya1-16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (plx == xa1-16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (ply == ya1-16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (plx == xa1-16)
-		    {
-		    	Player.Collision();
-		    }
-		    if (ply == ya1+16)
-		    {
-		    	Player.Collision();
-		    }
-		    */
 		}
 	
 	

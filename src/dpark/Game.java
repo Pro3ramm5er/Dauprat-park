@@ -26,7 +26,7 @@ import dpark.GameObject;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import dpark.objects.DEC_Chest;
-
+import dpark.objects.AppleW;
 import dpark.objects.*;
 
 import static dpark.DB.db;
@@ -290,12 +290,35 @@ public class Game extends Canvas implements Runnable {
         DEC_chest_create();
         DEC_chest_create();
         DEC_chest_create();
+        NPC_AppleW_create();
+        NPC_AppleW_create();
+        NPC_AppleW_create();
+        NPC_AppleW_create();
+        NPC_AppleW_create();
+        NPC_AppleW_create();
 
 
 
 
 
 	}
+    public void NPC_AppleW_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
+        if (ui == 2) {
+            final AppleW chest = new AppleW(getFreeName("AppleWar"));
+            int wardenx = 150 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 150 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+
     public void DEC_chest_create()
     {
         final DEC_Chest chest = new DEC_Chest(getFreeName("chest"));
