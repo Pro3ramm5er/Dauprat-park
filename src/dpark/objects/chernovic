@@ -1,0 +1,322 @@
+ if (xa1 == plx5 && ya1 == ply5)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx5 && ya1 == ply5)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx5 && ya1 == ply5)
+        {
+            Player.Collision();
+        }
+
+
+        if (xa1 == plx6 && ya1-8 == ply6)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx6 && ya1 == ply6)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx6 && ya1 == ply6)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx6 && ya1 == ply6)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx6 && ya1 == ply6)
+        {
+            Player.Collision();
+        }
+
+
+
+
+        if (xa1 == plx7 && ya1 == ply7)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx7 && ya1 == ply7)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx7 && ya1 == ply7)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx7 && ya1 == ply7)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx7 && ya1 == ply7)
+        {
+            Player.Collision();
+        }
+
+
+
+
+
+        if (xa1 == plx8 && ya1 == ply8)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx8 && ya1 == ply8)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx8 && ya1 == ply8)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx8 && ya1 == ply8)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx8 && ya1 == ply8)
+        {
+            Player.Collision();
+        }
+
+
+
+        if (xa1 == plx9 && ya1 == ply9)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx9 && ya1 == ply9)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx9 && ya1 == ply9)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx9 && ya1 == ply9)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx9 && ya1 == ply9)
+        {
+            Player.Collision();
+        }
+
+
+
+        if (xa1 == plx10 && ya1 == ply10)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx10 && ya1 == ply10)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx10 && ya1 == ply10)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx10 && ya1 == ply10)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx10 && ya1 == ply10)
+        {
+            Player.Collision();
+        }
+
+
+
+
+        if (xa1 == plx11 && ya1 == ply11)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx11 && ya1 == ply11)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx11 && ya1 == ply11)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx11 && ya1 == ply11)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx11 && ya1 == ply11)
+        {
+            Player.Collision();
+        }
+
+
+
+
+        if (xa1 == plx12 && ya1 == ply12)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx12 && ya1 == ply12)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx12 && ya1 == ply12)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx12 && ya1 == ply12)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx12 && ya1 == ply12)
+        {
+            Player.Collision();
+        }
+
+
+
+
+
+
+        if (xa1 == plx13 && ya1 == ply13)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx13 && ya1 == ply13)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx13 && ya1 == ply13)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx13 && ya1 == ply13)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx13 && ya1 == ply13)
+        {
+            Player.Collision();
+        }
+
+
+
+        if (xa1 == plx14 && ya1 == ply14)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx14 && ya1 == ply14)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx14 && ya1 == ply14)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx14 && ya1 == ply14)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx14 && ya1 == ply14)
+        {
+            Player.Collision();
+        }
+
+
+
+        if (xa1 == plx15 && ya1 == ply15)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx15 && ya1 == ply15)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx15 && ya1 == ply15)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx15 && ya1 == ply15)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx15 && ya1 == ply15)
+        {
+            Player.Collision();
+        }
+
+
+
+
+
+        if (xa1 == plx16 && ya1 == ply16)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx16 && ya1 == ply16)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx16 && ya1 == ply16)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx16 && ya1 == ply16)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx16 && ya1 == ply16)
+        {
+            Player.Collision();
+        }
+
+
+
+        if (xa1 == plx17 && ya1 == ply17)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx17 && ya1 == ply17)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx17 && ya1 == ply17)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx17 && ya1 == ply17)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx17 && ya1 == ply17)
+        {
+            Player.Collision();
+        }
+
+
+
+
+
+        if (xa1 == plx18 && ya1 == ply18)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx18 && ya1 == ply18)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx18 && ya1 == ply18)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx18 && ya1 == ply18)
+        {
+            Player.Collision();
+        }
+        if (xa1 == plx18 && ya1 == ply18)
+        {
+            Player.Collision();
+        }
