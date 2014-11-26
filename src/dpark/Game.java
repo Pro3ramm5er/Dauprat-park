@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import dpark.GameObject;
+
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -153,6 +153,8 @@ public class Game extends Canvas implements Runnable {
 	}
     public static void Get_End()
     {
+        currentRoom.objectsIDs.clear();
+        db.objects.clear();
 
         currentRoom = db.rooms.get("main_menu_room");
 
@@ -296,19 +298,20 @@ public class Game extends Canvas implements Runnable {
         NPC_AppleW_create();
         NPC_AppleW_create();
         NPC_AppleW_create();
-
-
-
-
+        NPC_Deamon_create();
+        NPC_Deamon_create();
+        NPC_Deamon_create();
+        NPC_Deamon_create();
+        NPC_Deamon_create();
 
 	}
-    public void NPC_AppleW_create()
+    public void NPC_Deamon_create()
     {
         int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
         if (ui == 2) {
-            final AppleW chest = new AppleW(getFreeName("AppleWar"));
-            int wardenx = 150 + (int) (Math.random() * ((600 - 150) + 1));
-            int wardeny = 150 + (int) (Math.random() * ((600 - 150) + 1));
+            final Deamon chest = new Deamon(getFreeName("Deamon"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
             chest.x = wardenx;
             chest.y = wardeny;
             chest.xt = wardenx;
@@ -316,6 +319,23 @@ public class Game extends Canvas implements Runnable {
             chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+    public void NPC_AppleW_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
+        if (ui == 2) {
+            final AppleW chest = new AppleW(getFreeName("AppleWar"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
         }
     }
 
@@ -423,6 +443,7 @@ public class Game extends Canvas implements Runnable {
 			GameObject.y_use++;
 			*/
 			db.objects.put(c.name, c);
+
 			currentRoom.objectsIDs.add(c.name);
 		}
 		//Wxx.put(Wxx_now, xa);
