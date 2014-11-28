@@ -3,6 +3,7 @@ package dpark.objects;
 import dpark.Game;
 import dpark.GameObject;
 
+
 /**
  * Created by Nickita on 24.11.2014.
  */
@@ -29,7 +30,8 @@ public class AppleW extends GameObject {
     // FOR NPC_TYPE == 1
 
 
-      public int Type_st = 1;
+      public int Type_st = 0;
+      public int Type_st_Del = 0;
 
 
     //
@@ -47,7 +49,22 @@ public class AppleW extends GameObject {
     public void update()
     {
           // STEPS
-
+        if (xt >= 800 || x >= 800)
+        {
+            MST = 4;
+        }
+        if (xt <= 0 || x <= 0)
+        {
+            MST = 2;
+        }
+        if (yt >= 800 ||  y >= 800)
+        {
+            MST = 1;
+        }
+        if (yt <= 0 ||  y <= 0)
+        {
+            MST = 3;
+        }
 
            if (Atack == 1)
            {
@@ -57,10 +74,14 @@ public class AppleW extends GameObject {
 
                if (Timer_sec == 1)
                {
-                      System.out.println(Timer_3);
+
                       if (Timer_3 <= 0)
                       {
-                          System.exit(0);
+                          Atack = 0;
+                          Timer_sec = 0;
+                          Timer_3 = 5;
+                          Game.VisibleDieLogo = 0;
+                          Game.Get_Die();
                       } else {
                           Timer_3 --;
                       }
@@ -71,6 +92,7 @@ public class AppleW extends GameObject {
 
           // STEPS END
           if (Timer <= 0) {
+
               if (NPC_Type == 0) {
                   MST = 0 + (int) (Math.random() * ((4 - 0) + 1));
                   Timer_set_del = 0;
@@ -80,15 +102,54 @@ public class AppleW extends GameObject {
 
 
               if (NPC_Type == 1) {
+
+
                   if (Type_st == 1) {
                       MST = 1;
-                      if (Timer_set_del == 0)
-                      {
-                          Timer = 150;
-                          Timer_set_del = 1;
-                      }
+
+                          //System.out.println("YOY");
+                          //Timer = 50;
+                          Timer_set_del = 0;
+
 
                   }
+                  if (Type_st == 2) {
+                      MST = 2;
+
+                          //System.out.println("YOY");
+                          //Timer = 50;
+                          Timer_set_del = 0;
+
+
+                  }
+                  if (Type_st == 3) {
+                      MST = 3;
+
+                          //System.out.println("YOY");
+                          //Timer = 50;
+                          Timer_set_del = 0;
+
+
+                  }
+                  if (Type_st == 4) {
+                      MST = 4;
+
+                          //System.out.println("YOY");
+                          //Timer = 50;
+                          Timer_set_del = 0;
+
+
+                  }
+                  if (Type_st_Del == 0)
+                  {
+                      Type_st++;
+                      Type_st_Del = 1;
+                  }
+                  if (Type_st > 4)
+                  {
+                      Type_st = 1;
+                  }
+              }
 
 
 
@@ -105,67 +166,116 @@ public class AppleW extends GameObject {
                       Type_st++;
                   }
                   */
-              }
-          } else {
+              } else {
               Timer--;
           }
-        if (MST == 0)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 50+ (int) (Math.random() * ((1000 - 50) + 1));
-                Timer_set_del = 1;
-            }
-            //y--;
-            //yt--;
-            //sprite.currentStep = 3;
-        }
-          if (MST == 1)
-          {
-             if (Timer_set_del == 0)
-             {
-                 Timer = 50+ (int) (Math.random() * ((100 - 50) + 1));
-                 Timer_set_del = 1;
-             }
-             y--;
-              yt--;
-             sprite.currentStep = 3;
-          }
-        if (MST == 2)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 50+ (int) (Math.random() * ((100 - 50) + 1));
-                Timer_set_del = 1;
-            }
-            x++;
-            xt++;
-            sprite.currentStep = 1;
-        }
-        if (MST == 3)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 50+ (int) (Math.random() * ((100 - 50) + 1));
-                Timer_set_del = 1;
-            }
-            y++;
-            yt++;
-            sprite.currentStep = 0;
-        }
-        if (MST == 4)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 50+ (int) (Math.random() * ((100 - 50) + 1));
-                Timer_set_del = 1;
-            }
-            x--;
-            xt--;
-            sprite.currentStep = 2;
+
+
+                    if (NPC_Type == 0) {
+                if (MST == 0) {
+                    if (Timer_set_del == 0) {
+                        Timer = 50 + (int) (Math.random() * ((1000 - 50) + 1));
+                        Timer_set_del = 1;
+                    }
+                    //y--;
+                    //yt--;
+                    //sprite.currentStep = 3;
+                }
+                if (MST == 1) {
+                    if (Timer_set_del == 0) {
+                        Timer = 50 + (int) (Math.random() * ((100 - 50) + 1));
+                        Timer_set_del = 1;
+                    }
+                    y--;
+                    yt--;
+                    sprite.currentStep = 3;
+                }
+                if (MST == 2) {
+                    if (Timer_set_del == 0) {
+                        Timer = 50 + (int) (Math.random() * ((100 - 50) + 1));
+                        Timer_set_del = 1;
+                    }
+                    x++;
+                    xt++;
+                    sprite.currentStep = 1;
+                }
+                if (MST == 3) {
+                    if (Timer_set_del == 0) {
+                        Timer = 50 + (int) (Math.random() * ((100 - 50) + 1));
+                        Timer_set_del = 1;
+                    }
+                    y++;
+                    yt++;
+                    sprite.currentStep = 0;
+                }
+                if (MST == 4) {
+                    if (Timer_set_del == 0) {
+                        Timer = 50 + (int) (Math.random() * ((100 - 50) + 1));
+                        Timer_set_del = 1;
+                    }
+                    x--;
+                    xt--;
+                    sprite.currentStep = 2;
+                }
+
         }
 
 
+
+
+        if (NPC_Type == 1) {
+            if (MST == 0) {
+                if (Timer_set_del == 0) {
+                    Timer = 15;
+                    Timer_set_del = 1;
+                    Type_st_Del = 0;
+                }
+                //y--;
+                //yt--;
+                //sprite.currentStep = 3;
+            }
+            if (MST == 1) {
+                if (Timer_set_del == 0) {
+                    Timer = 15;
+                    Timer_set_del = 1;
+                    Type_st_Del = 0;
+                }
+                y--;
+                yt--;
+                sprite.currentStep = 3;
+            }
+            if (MST == 2) {
+                if (Timer_set_del == 0) {
+                    Timer = 15;
+                    Timer_set_del = 1;
+                    Type_st_Del = 0;
+                }
+                x++;
+                xt++;
+                sprite.currentStep = 1;
+            }
+            if (MST == 3) {
+                if (Timer_set_del == 0) {
+                    Timer = 15;
+                    Timer_set_del = 1;
+                    Type_st_Del = 0;
+                }
+                y++;
+                yt++;
+                sprite.currentStep = 0;
+            }
+            if (MST == 4) {
+                if (Timer_set_del == 0) {
+                    Timer = 15;
+                    Timer_set_del = 1;
+                    Type_st_Del = 0;
+                }
+                x--;
+                xt--;
+                sprite.currentStep = 2;
+            }
+
+        }
 
 
         // Collision :
@@ -180,27 +290,27 @@ public class AppleW extends GameObject {
         }
         if (otchet == myx.length) {
             otchet = 0;
-            System.out.println("OP....");
+
         }
         if (otchet3 == myx.length) {
             otchet3 = 0;
-            System.out.println("OP....");
+
         }
         if (otchet5 == myx.length) {
             otchet5 = 0;
-            System.out.println("OP....");
+
         }
         if (otchet2 == myy.length) {
             otchet2 = 0;
-            System.out.println("OP2....");
+
         }
         if (otchet4 == myy.length) {
             otchet4 = 0;
-            System.out.println("OP2....");
+
         }
         if (otchet6 == myy.length) {
             otchet6 = 0;
-            System.out.println("OP2....");
+
         }
 
 

@@ -3,6 +3,9 @@ import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 import dpark.GameObject;
 import dpark.Game;
 import dpark.DB;
+
+import static dpark.DB.db;
+
 /**
  * Created by Nickita on 08.11.2014.
  */
@@ -178,7 +181,11 @@ public class AppleD extends GameObject {
                  if (Timer <= 0)
                  {
                      //System.out.println("Suns ready2");
-                     System.exit(0);
+                     dead = 0;
+                     Timer_sec = 0;
+                     Timer = 5;
+                     Game.VisibleDieLogo = 0;
+                     Game.Get_Die();
 
 
                  } else {

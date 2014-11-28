@@ -43,28 +43,9 @@ public class main_door extends GameObject {
 
 
 
-                 /*
-                 if (KeyMessage.Created == 0) {
 
-                     KeyMessage kms1 = new KeyMessage("Message");
-
-                     kms1.x = 150;
-                     kms1.y = 150;
-                     kms1.z = 50;
-
-                     //db.objects.put(kms1.name, kms1);
-                     //Game.currentRoom.objectsIDs.add(kms1.name);
-                     Player.Collision();
-
-                 } else {
-                     KeyMessage.AnimStep = 0;
-
-                 }
-                 */
              } else {
-                 //db.objects.get("key_need").visible = true;
 
-                   // WIIIIIIN!//
 
              }
            }
@@ -339,132 +320,7 @@ public class main_door extends GameObject {
 
 
 
-               /*
-               if (xd == plx3 && yd-68 == ply3)
-               {
-                   if (Main_Key_is == 0)
-             {
 
-                 KeyMessage kms1 = new KeyMessage("Message");
-                 kms1.x = 150;
-                 kms1.y = 150;
-                 kms1.z = 5;
-                 System.out.println("EERT");
-                 db.objects.put(kms1.name, kms1);
-                 Game.currentRoom.objectsIDs.add(kms1.name);
-                 Player.Collision();
-
-             } else {
-                 //db.objects.get("key_need").visible = true;
-
-                   // WIIIIIIN!//
-
-             }
-               }
-               if (xd == plx3 && yd+68 == ply3)
-               {
-                   Checker_Opener();
-               }
-               if (xd == plx3 && yd-67 == ply3)
-               {
-                   Checker_Opener();
-               }
-               if (xd == plx3 && yd+67 == ply3)
-               {
-                   Checker_Opener();
-               }
-               if (xd == plx3 && yd-66 == ply3)
-               {
-                   Checker_Opener();
-               }
-               if (xd == plx3 && yd+66 == ply3)
-               {
-                   Checker_Opener();
-               }
-
-
-
-               if (xd == plx3 && yd-64 == ply3)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx3 && yd+64 == ply3)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx3 && yd-63 == ply3)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx3 && yd+63 == ply3)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx3 && yd-65 == ply3)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx3 && yd+65 == ply3)
-               {
-                   Player.Collision();
-               }
-               //next
-
-
-               if (xd == plx4 && yd-68 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+68 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd-67 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+67 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd-66 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+66 == ply4)
-               {
-                   Player.Collision();
-               }
-
-
-
-               if (xd == plx4 && yd-64 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+64 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd-63 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+63 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd-65 == ply4)
-               {
-                   Player.Collision();
-               }
-               if (xd == plx4 && yd+65 == ply4)
-               {
-                   Player.Collision();
-               }
-               //next
-
-               */
 
 
 

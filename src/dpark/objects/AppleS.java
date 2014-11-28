@@ -30,6 +30,7 @@ public class AppleS extends GameObject {
     @Override
     public void update()
     {
+
         //System.out.println("applees!");
         if (Game.Applecalipses == 1)
         {

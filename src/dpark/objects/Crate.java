@@ -51,27 +51,27 @@ public class Crate extends GameObject {
         }
         if (otchet == myx.length) {
             otchet = 0;
-            System.out.println("OP....");
+
         }
         if (otchet3 == myx.length) {
             otchet3 = 0;
-            System.out.println("OP....");
+
         }
         if (otchet5 == myx.length) {
             otchet5 = 0;
-            System.out.println("OP....");
+
         }
         if (otchet2 == myy.length) {
             otchet2 = 0;
-            System.out.println("OP2....");
+
         }
         if (otchet4 == myy.length) {
             otchet4 = 0;
-            System.out.println("OP2....");
+
         }
         if (otchet6 == myy.length) {
             otchet6 = 0;
-            System.out.println("OP2....");
+
         }
 
 
@@ -85,7 +85,7 @@ public class Crate extends GameObject {
                     Player.Collision();
                     Timer = 50;
                     Col_del = 1;
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
+
                 }
 
 

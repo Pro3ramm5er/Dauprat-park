@@ -47,6 +47,26 @@ public class Player extends GameObject {
 	public void update() {
 		
 		super.update();
+        if (plx>= 800 || x >= 800)
+        {
+            x = 150;
+            plx = 150;
+        }
+        if (plx <= 0 || x <= 0)
+        {
+            x = 150;
+            plx = 150;
+        }
+        if (ply >= 800 ||  y >= 800)
+        {
+            y = 150;
+            ply = 150;
+        }
+        if (ply <= 0 ||  y <= 0)
+        {
+            y = 150;
+            ply = 150;
+        }
         /*
         CheckPlayer(plx, ply);
         CheckPlayer(plx+5, ply);
@@ -307,7 +327,20 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_M) {
 
-            Player.Collision();
+
+
+            Game.StopUpdate = 1;
+
+            Game.instance.NPC_Deamon_create();
+
+        }
+        if (keycode == KeyEvent.VK_N) {
+
+
+
+            Game.StopUpdate = 0;
+
+
 
         }
 	

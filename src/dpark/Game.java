@@ -50,6 +50,8 @@ public class Game extends Canvas implements Runnable {
     public static int Applecalipses = 0;
 	public static Room currentRoom;
     public static int VisibleDieLogo = 0;
+    public static int AllDelete = 0; // If 1 - SelfRemove for all objects.
+    public static int StopUpdate = 0;
 
 
 	public Game() {
@@ -81,18 +83,52 @@ public class Game extends Canvas implements Runnable {
 			loops = 0;
 			while (System.currentTimeMillis() > nextFrameTime
 					&& loops < MaxFrameSkip) {
-				update();
-				currentRoom.update();
-				for (GameObject o : db.objects.values()) {
-					o.update();
-				}
-				for (Animation a : db.animations.values()) {
-					a.update();
-				}
 
-				nextFrameTime += FrameDuration;
+                    update();
 
-				loops++;
+                        currentRoom.update();
+
+                    if (AllDelete == 0 && StopUpdate == 0) {
+
+                        for (GameObject o : db.objects.values()) {
+                            if (AllDelete == 0 && StopUpdate == 0) {
+                                o.update();
+                            }
+                        }
+                    }
+                    /*
+                    if (AllDelete == 1 && db.objects.size() > 0) {
+                        for (GameObject o : db.objects.values()) {
+                            o.Remove(o.name);
+                        }
+                    }
+                    */
+                    if (AllDelete == 1) {
+
+                        //db.objects.remove("Dielogo");
+                        //currentRoom.objectsIDs.remove("Dielogo");
+                        currentRoom.objectsIDs.clear();
+
+                        db.objects.clear();
+
+
+                        System.out.println(db.objects.size() + "::" + currentRoom.objectsIDs.size() + "::" + db.objects.values());
+
+
+                        init();
+
+                        AllDelete = 0;
+                    }
+                    for (Animation a : db.animations.values()) {
+                        a.update();
+                    }
+                    //}
+
+
+                    nextFrameTime += FrameDuration;
+
+                    loops++;
+
 			}
 			render(currentRoom);
 		}
@@ -151,53 +187,26 @@ public class Game extends Canvas implements Runnable {
 		game.start();
 
 	}
-    public static void Get_End()
-    {
-        currentRoom.objectsIDs.clear();
-        db.objects.clear();
 
-        currentRoom = db.rooms.get("main_menu_room");
-
-    }
-    public void Get_Die()
+    public static void Get_Die()
     {
+      //StopUpdate = 1;
+      AllDelete = 1;
+        //AllDelete = 2;
+        //AllDelete = 3;
+        //AllDelete = 4;
+        //AllDelete = 5;
 
     }
 	public void Get_Start() {
+        AllDelete = 0;
+
         GameObject.PlayerCanMovie = 0;
         currentRoom = db.rooms.get("map1_room");
         db.objects.get("player").visible = true;
 
 
-        //db.objects.get("key_need").visible = true;
-        /*
-		Crate_create(0, 0);
-        Crate_create(0, 32);
-        Crate_create(0, 64);
-        Crate_create(0, 96);
-        Crate_create(0, 128);
-        Crate_create(0, 160);
-        Crate_create(0, 192);
-        Crate_create(0, 224);
-        Crate_create(0, 256);
-        Crate_create(0, 288);
-        Crate_create(0, 320);
-        Crate_create(0, 352);
-        Crate_create(0, 384);
-        Crate_create(0, 416);
-        Crate_create(0, 448);
-        Crate_create(0, 480);
-        Crate_create(0, 512);
-        Crate_create(0, 544);
-        Crate_create(0, 576);
-        Crate_create(0, 608);
-        Crate_create(0, 640);
-        Crate_create(0, 672);
-        Crate_create(0, 704);
-        Crate_create(0, 736);
-        Crate_create(0, 768);
-        Crate_create(0, 800);
-        */
+
         int xcr = 0;
         int icr = 0;
         int i = 0;
@@ -267,6 +276,9 @@ public class Game extends Canvas implements Runnable {
 
 
 
+        //OBJ_APL_Portal_create();
+        //OBJ_APL_Portal_create();
+        //OBJ_APL_Portal_create();
 
         AppleGet(1, 1, 65, 65);
         AppleGet(0, 1, 65, 65);
@@ -292,19 +304,36 @@ public class Game extends Canvas implements Runnable {
         DEC_chest_create();
         DEC_chest_create();
         DEC_chest_create();
-        NPC_AppleW_create();
-        NPC_AppleW_create();
-        NPC_AppleW_create();
-        NPC_AppleW_create();
-        NPC_AppleW_create();
-        NPC_AppleW_create();
-        NPC_Deamon_create();
-        NPC_Deamon_create();
+        NPC_AppleW_create(0);
+        NPC_AppleW_create(1);
+        NPC_AppleW_create(0);
+        NPC_AppleW_create(1);
+        NPC_AppleW_create(0);
+        NPC_AppleW_create(1);
+
         NPC_Deamon_create();
         NPC_Deamon_create();
         NPC_Deamon_create();
 
+        OBJ_APL_Portal_create();
+
+
 	}
+    public void OBJ_APL_Portal_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
+        //if (ui == 2) {
+            final Portal chest = new Portal(getFreeName("Portal"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+
+            chest.z = 15;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        //}
+    }
     public void NPC_Deamon_create()
     {
         int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
@@ -319,9 +348,10 @@ public class Game extends Canvas implements Runnable {
             chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
+            //StopUpdate = 0;
         }
     }
-    public void NPC_AppleW_create()
+    public void NPC_AppleW_create(int type)
     {
         int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
         if (ui == 2) {
@@ -333,8 +363,10 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
+            chest.NPC_Type = type;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
+            //StopUpdate = 0;
 
         }
     }

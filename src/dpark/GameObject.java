@@ -3,6 +3,7 @@ package dpark;
 import java.awt.Graphics;
 import java.util.Comparator;
 import static dpark.DB.db;
+import dpark.Game.*;
 import dpark.Game;
 
 public class GameObject {
@@ -205,12 +206,7 @@ public class GameObject {
 			}
 		}
 	}
-    public void Remove(String RMN)
-    {
-       db.objects.remove(RMN);
 
-
-    }
 
 
 	/**

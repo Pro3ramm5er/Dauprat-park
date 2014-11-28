@@ -37,6 +37,10 @@ public class DEC_Chest extends GameObject {
     @Override
     public void update()
     {
+        if (Game.AllDelete == 1)
+        {
+            Remove(name);
+        }
         /*
         if (Timer <= 0)
         {
@@ -78,7 +82,7 @@ public class DEC_Chest extends GameObject {
                 }
 
             } else {
-                //System.out.println("Yea.....");
+                //("Yea.....");
                 Col_del = 0;
                 if (otchet == myx.length ) {
                     otchet = 0;
@@ -121,19 +125,19 @@ public class DEC_Chest extends GameObject {
         }
         if (otchet == myx.length) {
             otchet = 0;
-            System.out.println("OP....");
+
         }
         if (otchet3 == myx.length) {
             otchet3 = 0;
-            System.out.println("OP....");
+
         }
         if (otchet2 == myy.length) {
             otchet2 = 0;
-            System.out.println("OP2....");
+
         }
         if (otchet4 == myy.length) {
             otchet4 = 0;
-            System.out.println("OP2....");
+
         }
 
 
@@ -143,12 +147,12 @@ public class DEC_Chest extends GameObject {
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply1 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4) {
                 if (Col_del == 0 & Timer == 0) {
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
+
 
                     Col_del = 1;
                     Timer = 50;
                     Player.Collision();
-                    System.out.println(PlayerColSt + "::" + PlayerWalkst);
+
 
 
 
