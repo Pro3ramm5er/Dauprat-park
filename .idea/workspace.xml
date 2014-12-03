@@ -6,124 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="Update project stuff.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Ant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Blueman.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Earth.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/DaupratApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Rat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/production.xml" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Apple.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleMutant.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleMutant_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleMutant_3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\ApplePortal_1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\ApplePortal_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\ApplePortal_3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleW_1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleW_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleW_3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\AppleW_4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Apple_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Apple_dead.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Blockstone.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Chest.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Chest2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Deamon_1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Deamon_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Deamon_3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Deamon_4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Gameover.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Maindoor.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Needakey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Needakey1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Needakey2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Needakey3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\Needakey4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Animation$Step.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Animation.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Background.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\DB$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\DB$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\DB.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Game$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Game$Keyboard.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Game.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\GameObject$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\GameObject.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Room.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\Sprite.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\AppleD.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\ApplePortal.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\AppleS.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\AppleW.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\Crate.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\DEC_Chest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\Deamon.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\DieLogo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\KeyMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\Player.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\Portal.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\objects\main_door.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\rooms\MainMenuRoom.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\rooms\Map1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\dpark\rooms\NewGameSplashScreenRoom.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\hero.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\hero_front.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\hero_left.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\hero_test.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\map1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\stop_22.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\stop_dest.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_10.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_4.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_5.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_6.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_7.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_8.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Dauprat park\bin\video_9.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Chest.png" afterPath="$PROJECT_DIR$/assets/Chest.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/logo.png" afterPath="$PROJECT_DIR$/assets/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/stop_22.png" afterPath="$PROJECT_DIR$/assets/stop_22.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video.png" afterPath="$PROJECT_DIR$/assets/video.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_10.png" afterPath="$PROJECT_DIR$/assets/video_10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_2.png" afterPath="$PROJECT_DIR$/assets/video_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_3.png" afterPath="$PROJECT_DIR$/assets/video_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_4.png" afterPath="$PROJECT_DIR$/assets/video_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_5.png" afterPath="$PROJECT_DIR$/assets/video_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_6.png" afterPath="$PROJECT_DIR$/assets/video_6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_7.png" afterPath="$PROJECT_DIR$/assets/video_7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_8.png" afterPath="$PROJECT_DIR$/assets/video_8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/video_9.png" afterPath="$PROJECT_DIR$/assets/video_9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/Animation.java" afterPath="$PROJECT_DIR$/src/dpark/Animation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/AppleD.java" afterPath="$PROJECT_DIR$/src/dpark/objects/AppleD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" afterPath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Controller.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Crate.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Crate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/DB.java" afterPath="$PROJECT_DIR$/src/dpark/DB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/DEC_Chest.java" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Chest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dauprat park.iml" afterPath="$PROJECT_DIR$/Dauprat park.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/Game.java" afterPath="$PROJECT_DIR$/src/dpark/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameObject.java" afterPath="$PROJECT_DIR$/src/dpark/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Player.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Portal.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Portal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/main_door.java" afterPath="$PROJECT_DIR$/src/dpark/objects/main_door.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Dauprat park.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,102 +32,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.2" vertical-offset="1750" max-vertical-offset="10612">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2465" max-vertical-offset="12886">
               <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animation.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Animation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dpark/Animation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13571429" vertical-offset="166" max-vertical-offset="1680">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.33256084" vertical-offset="682" max-vertical-offset="2040">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaupratApplication.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DaupratApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/DaupratApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="336">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
               <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2800" max-vertical-offset="2954">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3315" max-vertical-offset="3502">
               <caret line="200" column="25" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shlacoblock.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Shlacoblock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="966" max-vertical-offset="1988">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="2397">
               <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DEC_Chest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DEC_Chest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Chest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1526" max-vertical-offset="3178">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="3842">
               <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="110" selection-end-column="11" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deamon.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Deamon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3178" max-vertical-offset="4242">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3808" max-vertical-offset="5100">
               <caret line="227" column="17" selection-start-line="227" selection-start-column="17" selection-end-line="227" selection-end-column="17" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppleW.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AppleW.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/AppleW.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="5950">
+            <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="7208">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ant.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Ant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Ant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3178" max-vertical-offset="4228">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3842" max-vertical-offset="5117">
               <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blueman.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Blueman.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Blueman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="602" max-vertical-offset="4228">
+            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="5117">
               <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -252,41 +155,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="changedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/Point.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/chernovic" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/KeyMessage.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DieLogo.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/AppleS.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/ApplePortal.java" />
-        <option value="$PROJECT_DIR$/src/dpark/Lavaman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Portal.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/AppleD.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/main_door.java" />
-        <option value="$PROJECT_DIR$/src/dpark/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/dpark/DB.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Rat.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Crate.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Blueman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Earth.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Chest.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Ant.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java" />
-        <option value="$PROJECT_DIR$/src/dpark/DaupratApplication.java" />
-        <option value="$PROJECT_DIR$/src/dpark/Game.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/src/dpark/Animation.java" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -336,6 +204,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -388,7 +257,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -402,7 +270,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="preferences.lookFeel" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -414,33 +282,6 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/Dauprat park/src/dpark/objects/Deamon.java" />
   </component>
   <component name="RunManager" selected="Application.Dauprat Park">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -449,61 +290,8 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -543,7 +331,91 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="Dauprat Park" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="dpark.DaupratApplication" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -586,37 +458,46 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="" />
       <created>1413283119886</created>
+      <option name="number" value="Default" />
       <updated>1413283119886</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update project stuff.">
+      <created>1417610367517</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1417610367517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15263748" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46464646" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.031425364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46464646" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.023391813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.031425364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.023391813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15263748" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -641,6 +522,7 @@
     <breakpoint-manager>
       <option name="time" value="4" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <PATH>
@@ -896,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="2618">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="4256">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2403" max-vertical-offset="3360">
           <caret line="186" column="45" selection-start-line="186" selection-start-column="45" selection-end-line="186" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4228">
           <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,7 +813,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="3164">
           <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="110" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,7 +823,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2968" max-vertical-offset="4214">
           <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +833,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2993" max-vertical-offset="4200">
           <caret line="227" column="17" selection-start-line="227" selection-start-column="17" selection-end-line="227" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,7 +843,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="5936">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -967,7 +853,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2532" max-vertical-offset="2884">
           <caret line="200" column="25" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +863,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="4214">
           <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -990,7 +880,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="868" max-vertical-offset="1988">
           <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.96666664" vertical-offset="0" max-vertical-offset="1260">
           <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,13 +905,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032863848" vertical-offset="0" max-vertical-offset="426">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.2" vertical-offset="1750" max-vertical-offset="10612">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1750" max-vertical-offset="10612">
           <caret line="177" column="5" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
           <folding />
         </state>
@@ -1028,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13571429" vertical-offset="166" max-vertical-offset="1680">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.33256084" vertical-offset="682" max-vertical-offset="2040">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1139,4 +1029,3 @@
     </states>
   </component>
 </project>
-
