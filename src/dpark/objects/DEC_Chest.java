@@ -1,6 +1,6 @@
 package dpark.objects;
-import dpark.Game;
-import dpark.GameObject;
+        import dpark.Game;
+        import dpark.GameObject;
 /**
  * Created by Nickita on 18.11.2014.
  */
@@ -25,7 +25,7 @@ public class DEC_Chest extends GameObject {
         sprite.addStep(Game.instance.getSprite("Chest2.png"));
         if (Texture_number == 1)
         {
-           sprite.currentStep = 0;
+            sprite.currentStep = 0;
 
         }
 
@@ -37,10 +37,7 @@ public class DEC_Chest extends GameObject {
     @Override
     public void update()
     {
-        if (Game.AllDelete == 1)
-        {
-            Remove(name);
-        }
+
         /*
         if (Timer <= 0)
         {
@@ -146,12 +143,12 @@ public class DEC_Chest extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply1 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply1 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4) {
-                if (Col_del == 0 & Timer == 0) {
+                if (Col_del == 0 & Timer <= 0) {
 
-
-                    Col_del = 1;
-                    Timer = 50;
                     Player.Collision();
+                    Col_del = 1;
+                    Timer = 5;
+
 
 
 
@@ -218,7 +215,7 @@ public class DEC_Chest extends GameObject {
 
 
 
-    }
+}
 
 
 

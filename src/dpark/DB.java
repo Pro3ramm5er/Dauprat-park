@@ -28,9 +28,15 @@ public class DB {
 			final Background b = new Background("main_menu_bg", game.getSprite("logo.png"));
 			backgrounds.put(b.name, b);
 		}
+
+        {
+            final Background b = new Background("main_menu_bg2", game.getSprite("logo2.png"));
+            backgrounds.put(b.name, b);
+        }
 		{
 			final Animation a = new Animation("new_game_splash_screen_anm");
 			a.isPlaying = false;
+
 			a.addStep(game.getSprite("stop_22.png"));
 			a.addStep(game.getSprite("video.png"));
 			a.addStep(game.getSprite("video_2.png"));
@@ -42,10 +48,13 @@ public class DB {
 			a.addStep(game.getSprite("video_8.png"));
 			a.addStep(game.getSprite("video_9.png"));
 			a.addStep(game.getSprite("video_10.png"));
+            //Game.BeforeMain = 1;
 			a.runAfterEnd = new Runnable() {
 				@Override
 				public void run() {
 					game.Get_Start();
+                    Game.BeforeMain = 1;
+
 				}
 			};
 			animations.put(a.name, a);

@@ -15,8 +15,8 @@ public class AppleD extends GameObject {
          public int[] myx = {0, 1 ,2 ,3 ,4 ,5, 6, 7, 8, 9, 10, 11 ,12, 13, 14, 15,16, 17, 18, 19, 20};
          public int[] myy = {0, 1 ,2 ,3 ,4, 5, 6, 7, 8, 9, 10, 11 ,12, 13, 14, 15,16, 17, 18, 19, 20};
 
-         public static int xt;
-         public static int yt;
+         public  int xt;
+         public  int yt;
          int otchet = 0;
          int otchet2 = 0;
          public int dead = 0;

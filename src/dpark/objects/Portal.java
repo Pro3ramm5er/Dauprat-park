@@ -9,7 +9,7 @@ import dpark.GameObject;
 public class Portal extends GameObject {
 
 
-    public int Timer = 100;
+    public int Timer = 700;
     public int Shans_sozdania = 0;
     public int Type = 1; //+ (int)(Math.random() * ((2 - 1) + 1));
     public int TimeChangeTExture = 5;
@@ -25,32 +25,11 @@ public class Portal extends GameObject {
     }
     public void DO()
     {
-        Shans_sozdania = 1 + (int) (Math.random() * ((2 - 1) + 1));
-        if (Shans_sozdania == 2) {
-            Game.StopUpdate = 1;
-
-            Game.instance.NPC_AppleW_create(0);
-
-            Game.StopUpdate = 1;
-            System.out.println("2");
-            Game.StopUpdate = 0;
-            //Timer = 50;
-        }
+        Game.AppleCreate = 0;
+        Timer = 700;
     }
 
-    public void DO_2()
-    {
-        Shans_sozdania = 1 + (int) (Math.random() * ((2 - 1) + 1));
-        if (Shans_sozdania == 2) {
-            Game.StopUpdate = 1;
 
-            Game.instance.NPC_Deamon_create();
-
-
-            Timer = 50;
-            Game.StopUpdate = 0;
-        }
-    }
     @Override
     public void update()
     {
@@ -60,6 +39,7 @@ public class Portal extends GameObject {
             {
                 sprite.currentStep = Texture_number;
                 TimeChangeTExture = 5;
+                Texture_number++;
             } else {
                 Texture_number = 0;
             }
@@ -74,13 +54,7 @@ public class Portal extends GameObject {
                 Timer--;
             }
         }
-        if (Type == 2) {
-            if (Timer <= 0) {
-                DO_2();
-            } else {
-                Timer--;
-            }
-        }
+
     }
 
 

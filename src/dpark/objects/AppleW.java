@@ -18,14 +18,16 @@ public class AppleW extends GameObject {
     public int Timer_set_del = 0;
     public int Timer_sec = 0;
     public int Atack = 0;
-    int otchet = 0;
-    int otchet2 = 0;
-    int otchet3 = 0;
-    int otchet4 = 0;
-    int otchet5 = 0;
-    int otchet6 = 0;
+    public int otchet = 0;
+    public int otchet2 = 0;
+    public int otchet3 = 0;
+    public int otchet4 = 0;
+    public int otchet5 = 0;
+    public int otchet6 = 0;
+    public int otchet7 = 0; // x
+    public int otchet8 = 0;  // y
     int Col_del = 0;
-    public int Timer_3 = 5;
+    public int Timer_3 = 15;
     public int NPC_Type = 0; // 0 - easy, 1 - Patrul
     // FOR NPC_TYPE == 1
 
@@ -57,7 +59,7 @@ public class AppleW extends GameObject {
         {
             MST = 2;
         }
-        if (yt >= 800 ||  y >= 800)
+        if (yt >= 600 ||  y >= 600)
         {
             MST = 1;
         }
@@ -312,15 +314,27 @@ public class AppleW extends GameObject {
             otchet6 = 0;
 
         }
+        if (otchet7 == myx.length) {
+            otchet7 = 0;
+
+        }
+        if (otchet8 == myy.length) {
+            otchet8 = 0;
+
+        }
 
 
 
 
 
-        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
-            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
+        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1  ||  xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 ||  xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 ||  xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 ||  xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet7] == ply2 ||  yt + myy[otchet7] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 ||  yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3  || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 ||  yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
+
+                    //System.out.println("KOL");
                     Atack = 1;
 
+
+                //System.out.println("nowfaleKOL");
 
             } else {
                 //System.out.println("Yea.....");
@@ -357,6 +371,14 @@ public class AppleW extends GameObject {
                 } else {
                     otchet5++;
                 }
+                if (otchet7 == myx.length) {
+                    otchet7 = 0;
+
+                }
+                if (otchet8 == myy.length) {
+                    otchet8 = 0;
+
+                }
             }
 
         } else {
@@ -379,6 +401,11 @@ public class AppleW extends GameObject {
             } else {
                 otchet5++;
             }
+            if (otchet7 == myx.length) {
+                otchet7 = 0;
+
+            }
+
 
 
         }

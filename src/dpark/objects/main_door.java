@@ -58,65 +58,64 @@ public class main_door extends GameObject {
                if (xd == plx && yd-64 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+64 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd-63 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+63 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd-65 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+65 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
-               }
 
+               }
 
 
                if (xd == plx && yd-68 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+68 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd-67 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+67 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd-66 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx && yd+66 == ply)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
 
 
@@ -127,54 +126,54 @@ public class main_door extends GameObject {
                if (xd == plx1 && yd-64 == ply1)
            {
                Checker_Opener();
-               System.out.println("WHAT A FUCK?????");;
+
            }
                if (xd == plx1 && yd+64 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-63 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+63 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-65 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+65 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
 
 
                if (xd == plx1 && yd-68 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+68 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-67 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+67 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-66 == ply1)
                {
@@ -183,7 +182,7 @@ public class main_door extends GameObject {
                if (xd == plx1 && yd+66 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
 
 
@@ -191,64 +190,64 @@ public class main_door extends GameObject {
                if (xd == plx1 && yd-71 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+71 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-70 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+70 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd-69 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx1 && yd+69 == ply1)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                //next
 
                if (xd == plx2 && yd-64 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+64 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-63 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+63 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-65 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+65 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
 
 
@@ -256,32 +255,32 @@ public class main_door extends GameObject {
                if (xd == plx2 && yd-68 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+68 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-67 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+67 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-66 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+66 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
 
 
@@ -289,32 +288,32 @@ public class main_door extends GameObject {
                if (xd == plx2 && yd-71 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+71 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-70 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+70 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd-69 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                if (xd == plx2 && yd+69 == ply2)
                {
                    Checker_Opener();
-                   System.out.println("WHAT A FUCK?????");
+
                }
                //next
 

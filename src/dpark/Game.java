@@ -23,10 +23,11 @@ import java.util.List;
 import java.util.Map;
 
 
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+
 import dpark.objects.DEC_Chest;
 import dpark.objects.AppleW;
+import dpark.objects.Lavaman;
 import dpark.objects.*;
 
 import static dpark.DB.db;
@@ -44,25 +45,28 @@ public class Game extends Canvas implements Runnable {
 	public static Game instance;
 	public Map<Integer, Integer> Wxx = new HashMap<Integer, Integer>();
 	public Map<Integer, Integer> Wyy = new HashMap<Integer, Integer>();
-	public int Wxx_now = 1;
-	public int Wyy_now = 1;
-    public int ismescrt = 0;
+
     public static int Applecalipses = 0;
 	public static Room currentRoom;
     public static int VisibleDieLogo = 0;
     public static int AllDelete = 0; // If 1 - SelfRemove for all objects.
     public static int StopUpdate = 0;
+    public static int IsCreated = 0;
+    public static int AppleCreate = 1;
+    public static int BeforeMain = 0;
+    public static int BluemanCreated = 0;
+    public static int RatCreated = 0;
+    public static int xo;
+    public static int yo;
+    public static int Shlakoblock_magic = 0;
+
 
 
 	public Game() {
 		instance = this;
 	}
 
-	public void clearImage(Graphics gtest) {
-		gtest.setColor(Color.BLACK);
-		gtest.fillRect(0, 0, getWidth(), getHeight());
-		gtest.setColor(Color.BLACK);
-	}
+
 
 	public void start() {
 		running = true;
@@ -72,7 +76,7 @@ public class Game extends Canvas implements Runnable {
 
 	public static final int FPS = 25;
 	private static final int FrameDuration = 1000 / FPS;
-	private static final int MaxFrameSkip = 10;
+	private static final int MaxFrameSkip = 10 ;
 	private long nextFrameTime = System.currentTimeMillis();
 
 	public void run() {
@@ -85,7 +89,9 @@ public class Game extends Canvas implements Runnable {
 					&& loops < MaxFrameSkip) {
 
                     update();
-
+                if (BeforeMain == 1) {
+                    Get_Start();
+                }
                         currentRoom.update();
 
                     if (AllDelete == 0 && StopUpdate == 0) {
@@ -96,33 +102,36 @@ public class Game extends Canvas implements Runnable {
                             }
                         }
                     }
-                    /*
-                    if (AllDelete == 1 && db.objects.size() > 0) {
-                        for (GameObject o : db.objects.values()) {
-                            o.Remove(o.name);
-                        }
-                    }
-                    */
+
                     if (AllDelete == 1) {
 
-                        //db.objects.remove("Dielogo");
-                        //currentRoom.objectsIDs.remove("Dielogo");
+
                         currentRoom.objectsIDs.clear();
 
                         db.objects.clear();
 
 
-                        System.out.println(db.objects.size() + "::" + currentRoom.objectsIDs.size() + "::" + db.objects.values());
+                        VisibleDieLogo = 0;
+                        AllDelete = 0; // If 1 - SelfRemove for all objects.
+                        StopUpdate = 0;
+                        IsCreated = 0;
+                        AppleCreate = 1;
 
-
+                        BluemanCreated = 0;
+                        RatCreated = 0;
+                        xo = 0;
+                        yo = 0;
+                        Shlakoblock_magic = 0;
+                        BeforeMain = 0;
                         init();
-
+                        IsCreated = 0;
                         AllDelete = 0;
+
                     }
                     for (Animation a : db.animations.values()) {
                         a.update();
                     }
-                    //}
+
 
 
                     nextFrameTime += FrameDuration;
@@ -172,98 +181,93 @@ public class Game extends Canvas implements Runnable {
 	public static int HEIGHT = 600;
 	public static String NAME = "Dauprat park";
 
-	public static void main(String[] args) {
-
-		Game game = new Game();
+	public static Game launch(final Game game) {
 		game.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		JFrame frame = new JFrame(Game.NAME);
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
 		frame.add(game, BorderLayout.CENTER);
+        frame.setResizable(false);
 		frame.pack();
-		frame.setResizable(false);
 		frame.setVisible(true);
 		game.start();
 
+        return game;
 	}
 
     public static void Get_Die()
     {
-      //StopUpdate = 1;
+
       AllDelete = 1;
-        //AllDelete = 2;
-        //AllDelete = 3;
-        //AllDelete = 4;
-        //AllDelete = 5;
+      VisibleDieLogo = 0;
+
 
     }
+
 	public void Get_Start() {
-        AllDelete = 0;
 
-        GameObject.PlayerCanMovie = 0;
-        currentRoom = db.rooms.get("map1_room");
-        db.objects.get("player").visible = true;
+        if (IsCreated == 0) {
+            AllDelete = 0;
 
-
-
-        int xcr = 0;
-        int icr = 0;
-        int i = 0;
-        for (i = 0; i < 25; i++) {
-            Crate_create(xcr, icr);
-            xcr += 32;
-        }
-
-
-        i = 0;
-        xcr = 0;
-        icr = 0;
-        for (i = 0; i <= 10; i++) {
-
-            icr += 32;
-            Crate_create(xcr, icr);
-        }
+            GameObject.PlayerCanMovie = 0;
+            currentRoom = db.rooms.get("map1_room");
+            db.objects.get("player").visible = true;
+            IsCreated = 1;
+            int xcr = 0;
+            int icr = 0;
+            int i = 0;
+            for (i = 0; i < 25; i++) {
+                Crate_create(xcr, icr);
+                xcr += 32;
+            }
 
 
-        i = 0;
-        xcr = 0;
-        icr = icr + 128;
-        for (i = 0; i <= 2; i++) {
+            i = 0;
+            xcr = 0;
+            icr = 0;
+            for (i = 0; i <= 10; i++) {
 
-            icr += 32;
-            Crate_create(xcr, icr);
-        }
-
-        i = 0;
-        xcr = 0;
-        //icr = icr+760;
-        for (i = 0; i <= 23; i++) {
-
-            xcr += 32;
-            Crate_create(xcr, icr);
-        }
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
 
 
-        i = 0;
-        xcr = 768;
-        icr = 0;
-        for (i = 0; i <= 22; i++) {
+            i = 0;
+            xcr = 0;
+            icr = icr + 128;
+            for (i = 0; i <= 2; i++) {
 
-            icr += 32;
-            Crate_create(xcr, icr);
-        }
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
 
-        Mdoor_create(0, 384);
-        if (KeyMessage.Created == 0) {
-            KeyMessage.AnimStep = 0;
-            MessageAkey_create();
-            KeyMessage.Created = 1;
+            i = 0;
+            xcr = 0;
 
-        }
+            for (i = 0; i <= 23; i++) {
+
+                xcr += 32;
+                Crate_create(xcr, icr);
+            }
 
 
+            i = 0;
+            xcr = 768;
+            icr = 0;
+            for (i = 0; i <= 22; i++) {
 
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
+
+            Mdoor_create(0, 384);
+            if (KeyMessage.Created == 0) {
+                KeyMessage.AnimStep = 0;
+                MessageAkey_create();
+                KeyMessage.Created = 1;
+
+            }
 
 
             AppleCreate(50, 50);
@@ -271,58 +275,240 @@ public class Game extends Canvas implements Runnable {
 
 
 
+            AppleGet(1, 1, 65, 65);
+            AppleGet(0, 1, 65, 65);
+            AppleGet(1, 0, 65, 65);
+            AppleGet(0, 0, 65, 65);
 
+            AppleGet(1, 1, 95, 95);
+            AppleGet(0, 1, 95, 95);
+            AppleGet(1, 0, 95, 95);
+            AppleGet(0, 0, 95, 95);
 
+            AppleGet(1, 1, 143, 145);
+            AppleGet(0, 1, 123, 23);
+            AppleGet(1, 0, 345, 124);
+            AppleGet(1, 1, 213, 53);
 
+            DieLogoCreate();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+            NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+            NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
 
+            NPC_Deamon_create();
+            NPC_Deamon_create();
+            NPC_Deamon_create();
 
-        //OBJ_APL_Portal_create();
-        //OBJ_APL_Portal_create();
-        //OBJ_APL_Portal_create();
+            NPC_Lavaman_create();
+            OBJ_APL_Portal_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Blueman_create();
+            NPC_Rat_create(0, 0, 0);
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            DEC_EarthCreate();
+            NPC_Shlakoblock_create();
 
-        AppleGet(1, 1, 65, 65);
-        AppleGet(0, 1, 65, 65);
-        AppleGet(1, 0, 65, 65);
-        AppleGet(0, 0, 65, 65);
-
-        AppleGet(1, 1, 95, 95);
-        AppleGet(0, 1, 95, 95);
-        AppleGet(1, 0, 95, 95);
-        AppleGet(0, 0, 95, 95);
-
-        AppleGet(1, 1, 143, 145);
-        AppleGet(0, 1, 123, 23);
-        AppleGet(1, 0, 345, 124);
-        AppleGet(1, 1, 213, 53);
-
-        DieLogoCreate();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        DEC_chest_create();
-        NPC_AppleW_create(0);
-        NPC_AppleW_create(1);
-        NPC_AppleW_create(0);
-        NPC_AppleW_create(1);
-        NPC_AppleW_create(0);
-        NPC_AppleW_create(1);
-
-        NPC_Deamon_create();
-        NPC_Deamon_create();
-        NPC_Deamon_create();
-
-        OBJ_APL_Portal_create();
-
+        }
+        if(AppleCreate == 0)
+        {
+            NPC_Deamon_create();
+            AppleCreate = 1;
+        }
+        if (BluemanCreated == 0)
+        {
+            NPC_Blueman_create();
+            BluemanCreated = 1;
+        }
+        if (RatCreated == 0)
+        {
+            NPC_Rat_create(1 ,xo, yo);
+            RatCreated = 1;
+        }
 
 	}
+    public void NPC_Shlakoblock_create()
+    {
+
+            int ui = 1 + (int) +(Math.random() * ((10 - 1) + 1));
+            if (ui == 1) {
+                final Rat chest = new Rat("Shlakoblock");
+                int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+
+                chest.z = -5;
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+            }
+        }
+    public void DEC_EarthCreate()
+    {
+
+            final DEC_Earth chest = new DEC_Earth(getFreeName("Blueman"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+
+
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+    }
+    public void NPC_Rat_create(int type, int xf, int yf)
+    {
+        if (type == 0) {
+            int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            if (ui == 1) {
+                final Rat chest = new Rat(getFreeName("Rat"));
+                int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+
+                chest.z = -5;
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+            }
+        }
+        if (type == 1) {
+            //int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            //if (ui == 1) {
+                final Rat chest = new Rat(getFreeName("Rat"));
+                //int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                //int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+                chest.x = xf;
+                chest.y = yf;
+                chest.xt = xf;
+                chest.yt = yf;
+
+                chest.z = -5;
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+            //}
+        }
+    }
+    public void NPC_Blueman_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Blueman chest = new Blueman(getFreeName("Blueman"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+
+            chest.z = 0;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+    public void NPC_Ant_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Ant chest = new Ant(getFreeName("Ant"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 0;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+    public void NPC_Lavaman_create()
+    {
+        int ui = 1 + (int) + (Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+        final Lavaman chest = new Lavaman(getFreeName("Lavaman"));
+        int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+        int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+        chest.x = wardenx;
+        chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+
+        chest.z = 0;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+        }
+    }
     public void OBJ_APL_Portal_create()
     {
         int ui = 1 + (int) + (Math.random() * ((2 - 1) + 1));
-        //if (ui == 2) {
+        if (ui == 2) {
             final Portal chest = new Portal(getFreeName("Portal"));
             int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
             int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
@@ -332,7 +518,7 @@ public class Game extends Canvas implements Runnable {
             chest.z = 15;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
-        //}
+        }
     }
     public void NPC_Deamon_create()
     {
@@ -348,7 +534,7 @@ public class Game extends Canvas implements Runnable {
             chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
-            //StopUpdate = 0;
+
         }
     }
     public void NPC_AppleW_create(int type)
@@ -366,7 +552,7 @@ public class Game extends Canvas implements Runnable {
             chest.NPC_Type = type;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
-            //StopUpdate = 0;
+
 
         }
     }
@@ -401,7 +587,7 @@ public class Game extends Canvas implements Runnable {
 
 
         Applecalipses = 1;
-        //System.out.println("Game/Applecalipses = 1");
+
 
 
 
@@ -409,7 +595,7 @@ public class Game extends Canvas implements Runnable {
     public void AppleGet(int xp, int yp, int rep, int rey)
     {
         final AppleS aplk = new AppleS(getFreeName("appleDEC"));
-        //System.out.println("Ready.");
+
         aplk.xplus = xp;
         aplk.yplus = yp;
         aplk.retplx = rep;
@@ -425,14 +611,7 @@ public class Game extends Canvas implements Runnable {
 		acur.isPlaying = true;
 	}
 
-	public void GRPHS_ins_2lvl() {
 
-
-		
-		
-		
-		// gl_2.dispose();
-	}
     public  void Mdoor_create(int xau, int yau)
     {
         final main_door md = new main_door(getFreeName("Main_Door"));
@@ -466,22 +645,12 @@ public class Game extends Canvas implements Runnable {
 			c.y = ya;
 			c.xt = xa;
 			c.yt = ya;
-            //c.xa2 = xa;
-            //c.ya2 = ya;
 
-			/*
-			GameObject.Coll_init(xa-16, ya-16);
-			GameObject.x_use++;
-			GameObject.y_use++;
-			*/
 			db.objects.put(c.name, c);
 
 			currentRoom.objectsIDs.add(c.name);
 		}
-		//Wxx.put(Wxx_now, xa);
-		//Wyy.put(Wyy_now, ya);
-		//Wxx_now++;
-		//Wyy_now++;
+
 		
 	}
 
@@ -491,55 +660,19 @@ public class Game extends Canvas implements Runnable {
             final AppleD fr = new AppleD(getFreeName("apple"));
             int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
             int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
-            /*
-            if (wardenx == 1)
-            {
-                fr.x = 250;
-                fr.y = 200;
-                fr.xt = 250;
-                fr.yt = 200;
 
-            }
-            if (wardenx == 2)
-            {
-                fr.x = 50;
-                fr.y = 0;
-                fr.xt = 50;
-                fr.yt = 0;
-
-            }
-            if (wardenx == 3)
-            {
-                fr.x = 350;
-                fr.y = 30;
-                fr.xt = 350;
-                fr.yt = 30;
-
-            }
-            if (wardenx == 4)
-            {
-                fr.x = 150;
-                fr.y = 100;
-                fr.xt = 150;
-                fr.yt = 100;
-
-            }
-            */
             fr.x = wardenx;
             fr.y = wardeny;
             fr.xt = wardenx;
             fr.yt = wardeny;
             fr.z = -5;
 
-            //System.out.println("Game/Objects/AppleD created" + ":" + rt + ":" + rt1);
+
 
             db.objects.put(fr.name, fr);
             currentRoom.objectsIDs.add(fr.name);
         }
-        //Wxx.put(Wxx_now, xa);
-        //Wyy.put(Wyy_now, ya);
-        //Wxx_now++;
-        //Wyy_now++;
+
 
     }
 
@@ -550,15 +683,9 @@ public class Game extends Canvas implements Runnable {
             fr.y = rt1;
             fr.z = -5;
 
-            //System.out.println("Game/Objects/AppleD dublicated" + ":" + rt + ":" + rt1);
 
-            //db.objects.put(fr.name, fr);
-            //currentRoom.objectsIDs.add(fr.name);
         }
-        //Wxx.put(Wxx_now, xa);
-        //Wyy.put(Wyy_now, ya);
-        //Wxx_now++;
-        //Wyy_now++;
+
 
     }
 

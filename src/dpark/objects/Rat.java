@@ -2,15 +2,16 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
-
-import static dpark.DB.db;
-
 /**
- * Created by Nickita on 25.11.2014.
+ * Created by Nickita on 29.11.2014.
  */
-public class Deamon extends GameObject {
-    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+public class Rat extends GameObject {
+
+
+
+
+    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 ,24, 25 ,26 ,27, 28, 29 ,30, 31 ,32};
+    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 ,24, 25 ,26 ,27, 28, 29 ,30, 31 ,32};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -26,16 +27,16 @@ public class Deamon extends GameObject {
     int otchet5 = 0;
     int otchet6 = 0;
     int Col_del = 0;
-    public int Timer_3 = 15;
+    public int Timer_3 = 5;
 
 
-    public Deamon(String name)
+    public Rat(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Deamon_1.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_2.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_3.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_4.png"));
+        sprite.addStep(Game.instance.getSprite("Rabbit_left.png"));
+        sprite.addStep(Game.instance.getSprite("Rabbit_up.png"));
+        sprite.addStep(Game.instance.getSprite("Rabbit_right.png"));
+        sprite.addStep(Game.instance.getSprite("Rabbit_down.png"));
 
     }
 
@@ -85,11 +86,14 @@ public class Deamon extends GameObject {
 
         }
 
+
         if (Atack == 1)
         {
-
             Timer_sec = 1;
-            Game.VisibleDieLogo = 1;
+            Game.xo = x;
+            Game.yo = y;
+            Game.RatCreated = 0;
+
 
 
             if (Timer_sec == 1)
@@ -100,8 +104,7 @@ public class Deamon extends GameObject {
                     Atack = 0;
                     Timer_sec = 0;
                     Timer_3 = 5;
-                    Game.VisibleDieLogo = 0;
-                    Game.Get_Die();
+
 
 
                 } else {
@@ -138,7 +141,7 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //yt-=3;
+            //yt-=1;
             y-=3;
             sprite.currentStep = 1;
         }
@@ -150,7 +153,7 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt+=3;
+            //xt+=1;
             x+=3;
             sprite.currentStep = 2;
         }
@@ -162,7 +165,7 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-           // yt+=3;
+            //yt+=1;
             y+=3;
             sprite.currentStep = 3;
         }
@@ -174,7 +177,7 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt-=3;
+            //xt-=1;
             x-=3;
             sprite.currentStep = 0;
         }
@@ -211,7 +214,7 @@ public class Deamon extends GameObject {
         if (otchet4 == myy.length) {
             otchet4 = 0;
 
-            }
+        }
         if (otchet6 == myy.length) {
             otchet6 = 0;
 
@@ -223,10 +226,7 @@ public class Deamon extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
-                if (Game.Shlakoblock_magic == 0) {
-                    Atack = 1;
-                }
-                //System.out.println("KOL");
+                Atack = 1;
 
 
             } else {
@@ -292,6 +292,8 @@ public class Deamon extends GameObject {
 
 
     }
+
+
 
 
 }

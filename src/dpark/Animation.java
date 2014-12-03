@@ -22,9 +22,6 @@ public class Animation {
 
 	/**
 	 * Update current step number
-	 * 
-	 * @param delta
-	 *            delta time from last call
 	 */
 	public void update() {
 		if (isPlaying) {
@@ -105,7 +102,7 @@ public class Animation {
 	public class Step {
 		public Sprite sprite = null;
 		public int id = -1;
-		public long nextSpeed = (long) (0.5 * Game.FPS);
+		public long nextSpeed = (long) (0.05 * Game.FPS);
 		public Runnable onChangeTo = null;
 		public Runnable onGet = null;
 

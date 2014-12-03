@@ -2,15 +2,16 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
-
-import static dpark.DB.db;
-
 /**
- * Created by Nickita on 25.11.2014.
+ * Created by Nickita on 29.11.2014.
  */
-public class Deamon extends GameObject {
-    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+public class Ant extends GameObject {
+
+
+
+
+    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32};
+    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29, 30, 31, 32};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -29,13 +30,13 @@ public class Deamon extends GameObject {
     public int Timer_3 = 15;
 
 
-    public Deamon(String name)
+    public Ant(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Deamon_1.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_2.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_3.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_4.png"));
+        sprite.addStep(Game.instance.getSprite("Ant_left.png"));
+        sprite.addStep(Game.instance.getSprite("Ant_up.png"));
+        sprite.addStep(Game.instance.getSprite("Ant_right.png"));
+        sprite.addStep(Game.instance.getSprite("Ant_down.png"));
 
     }
 
@@ -44,8 +45,7 @@ public class Deamon extends GameObject {
     public void update()
     {
         // STEPS
-        xt = x;
-        yt = y;
+
         if (xt >= 800 || x >= 800)
         {
             MST = 4;
@@ -87,7 +87,6 @@ public class Deamon extends GameObject {
 
         if (Atack == 1)
         {
-
             Timer_sec = 1;
             Game.VisibleDieLogo = 1;
 
@@ -138,8 +137,8 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //yt-=3;
-            y-=3;
+            yt-=4;
+            y-=4;
             sprite.currentStep = 1;
         }
         if (MST == 2)
@@ -150,8 +149,8 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt+=3;
-            x+=3;
+            xt+=4;
+            x+=4;
             sprite.currentStep = 2;
         }
         if (MST == 3)
@@ -162,8 +161,8 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-           // yt+=3;
-            y+=3;
+            yt+=4;
+            y+=4;
             sprite.currentStep = 3;
         }
         if (MST == 4)
@@ -174,8 +173,8 @@ public class Deamon extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt-=3;
-            x-=3;
+            xt-=4;
+            x-=4;
             sprite.currentStep = 0;
         }
 
@@ -211,7 +210,7 @@ public class Deamon extends GameObject {
         if (otchet4 == myy.length) {
             otchet4 = 0;
 
-            }
+        }
         if (otchet6 == myy.length) {
             otchet6 = 0;
 
@@ -226,7 +225,6 @@ public class Deamon extends GameObject {
                 if (Game.Shlakoblock_magic == 0) {
                     Atack = 1;
                 }
-                //System.out.println("KOL");
 
 
             } else {
@@ -292,6 +290,8 @@ public class Deamon extends GameObject {
 
 
     }
+
+
 
 
 }
