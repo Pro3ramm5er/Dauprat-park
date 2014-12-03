@@ -16,27 +16,23 @@ public class Portal extends GameObject {
     public int Texture_number = 0;
 
 
-    public Portal(String name)
-    {
+    public Portal(String name) {
         super(name);
         sprite.addStep(Game.instance.getSprite("ApplePortal_1.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_2.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_3.png"));
     }
-    public void DO()
-    {
+
+    public void DO() {
         Game.AppleCreate = 0;
         Timer = 700;
     }
 
 
     @Override
-    public void update()
-    {
-        if (TimeChangeTExture <= 0)
-        {
-            if (Texture_number < 2)
-            {
+    public void update() {
+        if (TimeChangeTExture <= 0) {
+            if (Texture_number < 2) {
                 sprite.currentStep = Texture_number;
                 TimeChangeTExture = 5;
                 Texture_number++;

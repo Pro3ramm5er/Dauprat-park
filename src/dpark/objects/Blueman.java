@@ -2,16 +2,15 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+
 /**
  * Created by Nickita on 29.11.2014.
  */
 public class Blueman extends GameObject {
 
 
-
-
-    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28, 29};
-    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25, 26, 27, 28};
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -30,8 +29,7 @@ public class Blueman extends GameObject {
     public int Timer_3 = 5;
 
 
-    public Blueman(String name)
-    {
+    public Blueman(String name) {
         super(name);
         sprite.addStep(Game.instance.getSprite("Blueman_left.png"));
         sprite.addStep(Game.instance.getSprite("Blueman_up.png"));
@@ -42,42 +40,34 @@ public class Blueman extends GameObject {
 
 
     @Override
-    public void update()
-    {
+    public void update() {
         // STEPS
         xt = x;
         yt = y;
-        if (xt >= 800 || x >= 800)
-        {
+        if (xt >= 800 || x >= 800) {
             MST = 4;
         }
-        if (xt <= 0 || x <= 0)
-        {
+        if (xt <= 0 || x <= 0) {
             MST = 2;
         }
-        if (yt >= 600 ||  y >= 600)
-        {
+        if (yt >= 600 || y >= 600) {
             MST = 1;
         }
-        if (yt <= 0 ||  y <= 0)
-        {
+        if (yt <= 0 || y <= 0) {
             MST = 3;
         }
 
-        for( int i = 0; i < 80; i++) {
-            if (plx == xt && ply == yt-i) {
+        for (int i = 0; i < 80; i++) {
+            if (plx == xt && ply == yt - i) {
                 MST = 1;
             } else {
-                if (plx == xt && ply == yt+i)
-                {
+                if (plx == xt && ply == yt + i) {
                     MST = 3;
                 } else {
-                    if (ply == yt && plx == xt-i)
-                    {
+                    if (ply == yt && plx == xt - i) {
                         MST = 4;
                     } else {
-                        if (ply == yt && plx == xt+i)
-                        {
+                        if (ply == yt && plx == xt + i) {
                             MST = 2;
                         }
                     }
@@ -87,106 +77,88 @@ public class Blueman extends GameObject {
         }
 
 
-        if (Atack == 1)
-        {
+        if (Atack == 1) {
             Timer_sec = 1;
             Game.BluemanCreated = 0;
 
 
-            if (Timer_sec == 1)
-            {
+            if (Timer_sec == 1) {
 
-                if (Timer_3 <= 0)
-                {
+                if (Timer_3 <= 0) {
                     Atack = 0;
                     Timer_sec = 0;
                     Timer_3 = 5;
 
 
-
                 } else {
-                    Timer_3 --;
+                    Timer_3--;
                 }
             }
         }
 
 
-
         // STEPS END
         if (Timer <= 0) {
-            MST = 0 + (int)(Math.random() * ((4 - 0) + 1));
+            MST = 0 + (int) (Math.random() * ((4 - 0) + 1));
             Timer_set_del = 0;
         } else {
             Timer--;
         }
-        if (MST == 0)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 20+ (int) (Math.random() * ((80 - 20) + 1));
+        if (MST == 0) {
+            if (Timer_set_del == 0) {
+                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
                 Timer_set_del = 1;
             }
             //y-=3;
             //yt-=3;
             //sprite.currentStep = 0;
         }
-        if (MST == 1)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 20+ (int) (Math.random() * ((80 - 20) + 1));
+        if (MST == 1) {
+            if (Timer_set_del == 0) {
+                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
                 Timer_set_del = 1;
             }
 
             //yt-=1;
-            y-=1;
+            y -= 1;
             sprite.currentStep = 1;
         }
-        if (MST == 2)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 20+ (int) (Math.random() * ((80 - 20) + 1));
+        if (MST == 2) {
+            if (Timer_set_del == 0) {
+                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
                 Timer_set_del = 1;
             }
 
             //xt+=1;
-            x+=1;
+            x += 1;
             sprite.currentStep = 2;
         }
-        if (MST == 3)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 20+ (int) (Math.random() * ((80 - 20) + 1));
+        if (MST == 3) {
+            if (Timer_set_del == 0) {
+                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
                 Timer_set_del = 1;
             }
 
             //yt+=1;
-            y+=1;
+            y += 1;
             sprite.currentStep = 3;
         }
-        if (MST == 4)
-        {
-            if (Timer_set_del == 0)
-            {
-                Timer = 20+ (int) (Math.random() * ((80 - 20) + 1));
+        if (MST == 4) {
+            if (Timer_set_del == 0) {
+                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
                 Timer_set_del = 1;
             }
 
             //xt-=1;
-            x-=1;
+            x -= 1;
             sprite.currentStep = 0;
         }
-
-
 
 
         // Collision :
 
 
-        if (Timer_2 <= 0)
-        {
+        if (Timer_2 <= 0) {
             Col_del = 0;
             Timer_2 = 0;
         } else {
@@ -218,45 +190,42 @@ public class Blueman extends GameObject {
         }
 
 
-
-
-
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
-            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
                 Atack = 1;
 
 
             } else {
                 //System.out.println("Yea.....");
                 Col_del = 0;
-                if (otchet == myx.length ) {
+                if (otchet == myx.length) {
                     otchet = 0;
                 } else {
                     otchet++;
 
                 }
-                if (otchet3 == myx.length ) {
+                if (otchet3 == myx.length) {
                     otchet3 = 0;
                 } else {
                     otchet3++;
 
                 }
-                if ( otchet2 == myy.length) {
+                if (otchet2 == myy.length) {
                     otchet2 = 0;
                 } else {
                     otchet2++;
                 }
-                if ( otchet4 == myy.length) {
+                if (otchet4 == myy.length) {
                     otchet4 = 0;
                 } else {
                     otchet4++;
                 }
-                if ( otchet6 == myy.length) {
+                if (otchet6 == myy.length) {
                     otchet6 = 0;
                 } else {
                     otchet6++;
                 }
-                if ( otchet5 == myx.length) {
+                if (otchet5 == myx.length) {
                     otchet5 = 0;
                 } else {
                     otchet5++;
@@ -266,19 +235,19 @@ public class Blueman extends GameObject {
         } else {
 
             Col_del = 0;
-            if (otchet == myx.length ) {
+            if (otchet == myx.length) {
                 otchet = 0;
             } else {
                 otchet++;
 
             }
-            if (otchet3 == myx.length ) {
+            if (otchet3 == myx.length) {
                 otchet3 = 0;
             } else {
                 otchet3++;
 
             }
-            if ( otchet5 == myx.length) {
+            if (otchet5 == myx.length) {
                 otchet5 = 0;
             } else {
                 otchet5++;
@@ -289,8 +258,6 @@ public class Blueman extends GameObject {
 
 
     }
-
-
 
 
 }

@@ -5,11 +5,11 @@ import dpark.GameObject;
 
 public class Crate extends GameObject {
 
-	public  int xt;
-	public  int yt;
+    public int xt;
+    public int yt;
 
-    public int[] myx = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25 , 26,27, 28, 29, 30, 31,32};
-    public int[] myy = {1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,25 , 26,27, 28, 29, 30, 31,32};
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -23,28 +23,22 @@ public class Crate extends GameObject {
     public int Col_del = 0;
 
 
-	public Crate(String name) {
-		super(name);
-		z = 0;
-		
+    public Crate(String name) {
+        super(name);
+        z = 0;
 
 
+        sprite.addStep(Game.instance.getSprite("Blockstone.png"));
 
-		
-		
-		
-		sprite.addStep(Game.instance.getSprite("Blockstone.png"));
-	    
-	}
-	@Override
-	public void update() {
-		super.update();
+    }
 
+    @Override
+    public void update() {
+        super.update();
 
 
         //Collisions:
-        if (Timer <= 0)
-        {
+        if (Timer <= 0) {
             Col_del = 0;
             Timer = 0;
         } else {
@@ -84,13 +78,9 @@ public class Crate extends GameObject {
         }
 
 
-
-
-
-        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1  ||  xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 ||  xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 ||  xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 ||  xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
-            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 ||  yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1|| yt - myy[otchet7] == ply2 ||  yt + myy[otchet7] == ply1|| yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 ||  yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2|| yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 ||  yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3  || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 ||  yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
-                if (Col_del == 0 && Timer <= 0)
-                {
+        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
+                if (Col_del == 0 && Timer <= 0) {
                     //System.out.println("KOL");
                     Player.Collision();
                     Timer = 15;
@@ -102,34 +92,34 @@ public class Crate extends GameObject {
             } else {
                 //System.out.println("Yea.....");
                 Col_del = 0;
-                if (otchet == myx.length ) {
+                if (otchet == myx.length) {
                     otchet = 0;
                 } else {
                     otchet++;
 
                 }
-                if (otchet3 == myx.length ) {
+                if (otchet3 == myx.length) {
                     otchet3 = 0;
                 } else {
                     otchet3++;
 
                 }
-                if ( otchet2 == myy.length) {
+                if (otchet2 == myy.length) {
                     otchet2 = 0;
                 } else {
                     otchet2++;
                 }
-                if ( otchet4 == myy.length) {
+                if (otchet4 == myy.length) {
                     otchet4 = 0;
                 } else {
                     otchet4++;
                 }
-                if ( otchet6 == myy.length) {
+                if (otchet6 == myy.length) {
                     otchet6 = 0;
                 } else {
                     otchet6++;
                 }
-                if ( otchet5 == myx.length) {
+                if (otchet5 == myx.length) {
                     otchet5 = 0;
                 } else {
                     otchet5++;
@@ -147,19 +137,19 @@ public class Crate extends GameObject {
         } else {
 
             Col_del = 0;
-            if (otchet == myx.length ) {
+            if (otchet == myx.length) {
                 otchet = 0;
             } else {
                 otchet++;
 
             }
-            if (otchet3 == myx.length ) {
+            if (otchet3 == myx.length) {
                 otchet3 = 0;
             } else {
                 otchet3++;
 
             }
-            if ( otchet5 == myx.length) {
+            if (otchet5 == myx.length) {
                 otchet5 = 0;
             } else {
                 otchet5++;
@@ -170,13 +160,10 @@ public class Crate extends GameObject {
             }
 
 
-
         }
 
 
+    }
 
-		}
-	
-	
-	
+
 }
