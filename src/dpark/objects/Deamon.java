@@ -17,13 +17,15 @@ public class Deamon extends GameObject {
     public int Timer_set_del = 0;
     public int Timer_sec = 0;
     public int Atack = 0;
-    int otchet = 0;
-    int otchet2 = 0;
-    int otchet3 = 0;
-    int otchet4 = 0;
-    int otchet5 = 0;
-    int otchet6 = 0;
-    int Col_del = 0;
+
+    public int otchet = 0;
+    public int otchet2 = 0;
+    public int otchet3 = 0;
+    public int otchet4 = 0;
+    public int otchet5 = 0;
+    public int otchet6 = 0;
+    public int otchet7 = 0; // x
+    public int otchet8 = 0;  // y
     public int Timer_3 = 15;
 
 
@@ -42,16 +44,16 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        if (xt >= 800 || x >= 800) {
+        if (xt >= 500 || x >= 500) {
             MST = 4;
         }
-        if (xt <= 0 || x <= 0) {
+        if (xt <= 90 || x <= 90) {
             MST = 2;
         }
-        if (yt >= 600 || y >= 600) {
+        if (yt >= 500 || y >= 500) {
             MST = 1;
         }
-        if (yt <= 0 || y <= 0) {
+        if (yt <= 90 || y <= 90) {
             MST = 3;
         }
 
@@ -98,6 +100,7 @@ public class Deamon extends GameObject {
 
 
         // STEPS END
+
         if (Timer <= 0) {
             MST = 0 + (int) (Math.random() * ((4 - 0) + 1));
             Timer_set_del = 0;
@@ -156,7 +159,7 @@ public class Deamon extends GameObject {
 
 
         // Collision :
-
+        /*
 
         if (Timer_2 <= 0) {
             Col_del = 0;
@@ -254,6 +257,130 @@ public class Deamon extends GameObject {
                 otchet5 = 0;
             } else {
                 otchet5++;
+            }
+
+
+
+        }
+        */
+        if (Timer_2 <= 0) {
+
+            Timer_2 = 0;
+        } else {
+            Timer_2--;
+        }
+        if (otchet == myx.length) {
+            otchet = 0;
+
+        }
+        if (otchet3 == myx.length) {
+            otchet3 = 0;
+
+        }
+        if (otchet5 == myx.length) {
+            otchet5 = 0;
+
+        }
+        if (otchet2 == myy.length) {
+            otchet2 = 0;
+
+        }
+        if (otchet4 == myy.length) {
+            otchet4 = 0;
+
+        }
+        if (otchet6 == myy.length) {
+            otchet6 = 0;
+
+        }
+        if (otchet7 == myx.length) {
+            otchet7 = 0;
+
+        }
+        if (otchet8 == myy.length) {
+            otchet8 = 0;
+
+        }
+
+
+        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
+            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
+
+                    //System.out.println("KOL");
+                    Atack = 1;
+
+
+
+                //System.out.println("nowfaleKOL");
+
+            } else {
+                //System.out.println("Yea.....");
+
+                if (otchet == myx.length) {
+                    otchet = 0;
+                } else {
+                    otchet++;
+
+                }
+                if (otchet3 == myx.length) {
+                    otchet3 = 0;
+                } else {
+                    otchet3++;
+
+                }
+                if (otchet2 == myy.length) {
+                    otchet2 = 0;
+                } else {
+                    otchet2++;
+                }
+                if (otchet4 == myy.length) {
+                    otchet4 = 0;
+                } else {
+                    otchet4++;
+                }
+                if (otchet6 == myy.length) {
+                    otchet6 = 0;
+                } else {
+                    otchet6++;
+                }
+                if (otchet5 == myx.length) {
+                    otchet5 = 0;
+                } else {
+                    otchet5++;
+                }
+                if (otchet7 == myx.length) {
+                    otchet7 = 0;
+
+                }
+                if (otchet8 == myy.length) {
+                    otchet8 = 0;
+
+                }
+            }
+
+        } else {
+
+
+            if (otchet == myx.length) {
+                otchet = 0;
+            } else {
+                otchet++;
+
+            }
+            if (otchet3 == myx.length) {
+                otchet3 = 0;
+            } else {
+                otchet3++;
+
+            }
+            if (otchet5 == myx.length) {
+                otchet5 = 0;
+            } else {
+                otchet5++;
+            }
+            if (otchet7 == myx.length) {
+                otchet7 = 0;
+
             }
 
 

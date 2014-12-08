@@ -43,16 +43,16 @@ public class Ant extends GameObject {
     public void update() {
         // STEPS
 
-        if (xt >= 800 || x >= 800) {
+        if (xt >= 500 || x >= 500) {
             MST = 4;
         }
-        if (xt <= 0 || x <= 0) {
+        if (xt <= 90 || x <= 90) {
             MST = 2;
         }
-        if (yt >= 600 || y >= 600) {
+        if (yt >= 500 || y >= 500) {
             MST = 1;
         }
-        if (yt <= 0 || y <= 0) {
+        if (yt <= 90 || y <= 90) {
             MST = 3;
         }
 

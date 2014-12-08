@@ -4,13 +4,11 @@ import dpark.Game;
 import dpark.GameObject;
 
 /**
- * Created by Nickita on 29.11.2014.
+ * @author Nickita
  */
-public class Lavaman extends GameObject {
-
-
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+public class NWY_DedMoroz extends GameObject {
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35/*, 36, 37, 38, 39,40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60*/};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35/*, 36, 37, 38, 39,40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60*/};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -27,14 +25,15 @@ public class Lavaman extends GameObject {
     int otchet6 = 0;
     int Col_del = 0;
     public int Timer_3 = 15;
+    public int Santa_Timer = 25;
+    //НЕ КОПИРУЙ КОД ОТСУДА! ЭТО ИНДИВИДУАЛЬНЫЙ НПС!!!!!
 
-
-    public Lavaman(String name) {
+    public NWY_DedMoroz(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Lavaman_left.png"));
-        sprite.addStep(Game.instance.getSprite("Lavaman_up.png"));
-        sprite.addStep(Game.instance.getSprite("Lavaman_right.png"));
-        sprite.addStep(Game.instance.getSprite("Lavaman_down.png"));
+        sprite.addStep(Game.instance.getSprite("DedMoroz_left.png"));
+        sprite.addStep(Game.instance.getSprite("DedMoroz_up.png"));
+        sprite.addStep(Game.instance.getSprite("DedMoroz_right.png"));
+        sprite.addStep(Game.instance.getSprite("DedMoroz_down.png"));
 
     }
 
@@ -42,20 +41,24 @@ public class Lavaman extends GameObject {
     @Override
     public void update() {
         // STEPS
+        Game.SantaX = xt;
+        Game.SantaY = yt;
         xt = x;
         yt = y;
-        if (xt >= 500 || x >= 500) {
+
+        if (xt >= 1200 || x >= 1200) {
             MST = 4;
         }
-        if (xt <= 90 || x <= 90) {
+        if (xt <= -100 || x <= -100) {
             MST = 2;
         }
-        if (yt >= 500 || y >= 500) {
+        if (yt >= 1200 || y >= 1200) {
             MST = 1;
         }
-        if (yt <= 90 || y <= 90) {
+        if (yt <= -100 || y <= -100) {
             MST = 3;
         }
+
 
         for (int i = 0; i < 80; i++) {
             if (plx == xt && ply == yt - i) {
@@ -76,8 +79,8 @@ public class Lavaman extends GameObject {
 
         }
 
-
         if (Atack == 1) {
+
             Timer_sec = 1;
             Game.VisibleDieLogo = 1;
 
@@ -96,6 +99,13 @@ public class Lavaman extends GameObject {
                     Timer_3--;
                 }
             }
+        }
+        if (Santa_Timer <= 0)
+        {
+            Game.NWY_Present_create = 0;
+            Santa_Timer = 25;
+        } else {
+            Santa_Timer--;
         }
 
 
@@ -121,8 +131,8 @@ public class Lavaman extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //yt-=1;
-            y -= 1;
+            //yt-=3;
+            y -= 10;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -131,8 +141,8 @@ public class Lavaman extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt+=1;
-            x += 1;
+            //xt+=3;
+            x += 10;
             sprite.currentStep = 2;
         }
         if (MST == 3) {
@@ -141,8 +151,8 @@ public class Lavaman extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //yt+=1;
-            y += 1;
+            // yt+=3;
+            y += 10;
             sprite.currentStep = 3;
         }
         if (MST == 4) {
@@ -151,8 +161,8 @@ public class Lavaman extends GameObject {
                 Timer_set_del = 1;
             }
 
-            //xt-=1;
-            x -= 1;
+            //xt-=3;
+            x -= 10;
             sprite.currentStep = 0;
         }
 
@@ -194,7 +204,12 @@ public class Lavaman extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
-                Atack = 1;
+                if (Game.Shlakoblock_magic == 0) {
+                    Atack = 1;
+                } else {
+                      Game.NWY_Present_create = 0;
+                }
+                //System.out.println("KOL");
 
 
             } else {
@@ -260,6 +275,4 @@ public class Lavaman extends GameObject {
 
 
     }
-
-
 }

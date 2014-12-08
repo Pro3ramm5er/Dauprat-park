@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import static dpark.DB.db;
 
 import java.awt.event.KeyEvent;
 //import dpark.objects.Coll.Phisyc;
@@ -13,6 +14,8 @@ public class Player extends GameObject {
     public int direction = 0;
     public static int x1;
     public static int y1;
+    public static int Key_P = 0;
+    public static int Key_K= 0;
 
 
     public Player(String name) {
@@ -179,7 +182,48 @@ public class Player extends GameObject {
             }
 
         }
+        if (keycode == KeyEvent.VK_K) {
 
+
+            Key_K = 1;
+
+        } else {
+            if  (! (keycode == KeyEvent.VK_O)) {
+                Key_K = 0;
+            }
+        }
+        if (keycode == KeyEvent.VK_P) {
+
+
+            Key_P = 1;
+
+
+        } else {
+            if  (! (keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_L)) {
+                Key_P = 0;
+            }
+        }
+        if (keycode == KeyEvent.VK_O && Key_P == 1)
+        {
+            Game.Shlakoblock_create = 0;
+            Game.Shlakoblock_create = 0;
+            Game.Shlakoblock_create = 0;
+            Game.Shlakoblock_create = 0;
+            Game.Shlakoblock_create = 0;
+        }
+        if (keycode == KeyEvent.VK_L && Key_P == 1)
+        {
+              Game.Get_win_1();
+        }
+        if (keycode == KeyEvent.VK_O && Key_K == 1)
+        {
+            Game.DedMoroz_create = 0;
+            Game.DedMoroz_create = 0;
+            Game.DedMoroz_create = 0;
+            Game.DedMoroz_create = 0;
+            Game.DedMoroz_create = 0;
+            Game.DedMoroz_create = 0;
+        }
 
         if (inertion > 3) {
             inertion = 3;

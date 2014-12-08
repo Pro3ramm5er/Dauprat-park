@@ -2,19 +2,17 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
-
 /**
- * Created by Nickita on 28.10.2014.
+ * @author Nickita
  */
-public class main_door extends GameObject {
-    public static int Main_Key_is = 0;
-    public int xd;
-    public int yd;
+public class Present extends GameObject {
+
+
     public int xt;
     public int yt;
 
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,54, 55, 56, 57, 58, 59, 60, 61,62, 63,64};
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -26,29 +24,17 @@ public class main_door extends GameObject {
     public int otchet7 = 0; // x
     public int otchet8 = 0;  // y
     public int Col_del = 0;
+    public int Open = 0;
+    public int MainKeyIn = 1 + (int) (Math.random() * ((4 - 1) + 1));
 
-    public main_door(String name) {
 
+    public Present(String name) {
         super(name);
+        z = 0;
 
-        sprite.addStep(Game.instance.getSprite("Maindoor.png"));
 
-
-    }
-
-    public void Checker_Opener() {
-
-        if (Game.MainKey == 0) {
-
-            KeyMessage.GetReset = 100;
-            Player.Collision();
-
-        }
-        if (Game.MainKey == 1) {
-
-            Game.Get_win_1();
-
-        }
+        sprite.addStep(Game.instance.getSprite("Present.png"));
+        sprite.addStep(Game.instance.getSprite("Present_open.png"));
     }
 
     @Override
@@ -56,6 +42,7 @@ public class main_door extends GameObject {
         super.update();
 
 
+        //Collisions:
         if (Timer <= 0) {
             Col_del = 0;
             Timer = 0;
@@ -98,11 +85,12 @@ public class main_door extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
-                if (Col_del == 0 && Timer <= 0) {
+                if (/*Col_del == 0 && Timer <= 0 && */MainKeyIn == 1 && Open == 0) {
                     //System.out.println("KOL");
-                    Checker_Opener();
-                    Timer = 5;
-                    Col_del = 1;
+                    Game.MainKey = 1;
+                    sprite.currentStep = 1;
+                    Open = 1;
+
 
                 }
                 //System.out.println("nowfaleKOL");
@@ -179,10 +167,10 @@ public class main_door extends GameObject {
 
 
         }
-        //next
 
 
     }
+
 
 
 }

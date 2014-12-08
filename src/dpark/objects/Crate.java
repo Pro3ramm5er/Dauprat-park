@@ -83,7 +83,7 @@ public class Crate extends GameObject {
                 if (Col_del == 0 && Timer <= 0) {
                     //System.out.println("KOL");
                     Player.Collision();
-                    Timer = 15;
+                    Timer = 5;
                     Col_del = 1;
 
                 }

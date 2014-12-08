@@ -23,14 +23,59 @@ public class DB {
     }
 
     public void onGameLoaded(final Game game) {
-        {
-            final Background b = new Background("main_menu_bg", game.getSprite("logo.png"));
-            backgrounds.put(b.name, b);
-        }
+        if (Game.GameUpdateType == 0) {
+            {
+                final Background b = new Background("main_menu_bg", game.getSprite("logo.png"));
+                backgrounds.put(b.name, b);
+            }
 
-        {
-            final Background b = new Background("main_menu_bg2", game.getSprite("logo2.png"));
-            backgrounds.put(b.name, b);
+            {
+                final Background b = new Background("main_menu_bg2", game.getSprite("logo2.png"));
+                backgrounds.put(b.name, b);
+            }
+        }
+        if (Game.GameUpdateType == 1) {
+            {
+                final Background b = new Background("main_menu_bg", game.getSprite("Newyaer_logo.png"));
+                backgrounds.put(b.name, b);
+            }
+
+            {
+                final Background b = new Background("main_menu_bg2", game.getSprite("Newyaer_logo_1.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg3", game.getSprite("Newyaer_logo_2.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg4", game.getSprite("Newyaer_logo_3.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg5", game.getSprite("Newyaer_logo_4.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg6", game.getSprite("Newyaer_logo_5.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg7", game.getSprite("Newyaer_logo_6.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg8", game.getSprite("Newyaer_logo_7.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg9", game.getSprite("Newyaer_logo_8.png"));
+                backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg10", game.getSprite("Newyaer_logo_9.png"));
+                backgrounds.put(b.name, b);
+            }
         }
         {
             final Animation a = new Animation("new_game_splash_screen_anm");
@@ -53,6 +98,42 @@ public class DB {
                 public void run() {
                     game.Get_Start();
                     Game.BeforeMain = 1;
+
+                }
+            };
+            animations.put(a.name, a);
+        }
+        {
+            final Animation a = new Animation("win_anm");
+            a.isPlaying = false;
+
+            a.addStep(game.getSprite("stop_22.png"));
+            a.addStep(game.getSprite("Victory_1.png"));
+            a.addStep(game.getSprite("Victory_2.png"));
+            a.addStep(game.getSprite("Victory_3.png"));
+            a.addStep(game.getSprite("Victory_4.png"));
+            a.addStep(game.getSprite("Victory_5.png"));
+            a.addStep(game.getSprite("Victory_6.png"));
+            a.addStep(game.getSprite("Victory_7.png"));
+            a.addStep(game.getSprite("Victory_8.png"));
+            a.addStep(game.getSprite("Victory_9.png"));
+            a.addStep(game.getSprite("Victory_10.png"));
+            a.addStep(game.getSprite("Victory_11.png"));
+            a.addStep(game.getSprite("Victory_12.png"));
+            a.addStep(game.getSprite("Victory_13.png"));
+            a.addStep(game.getSprite("Victory_14.png"));
+            a.addStep(game.getSprite("Victory_15.png"));
+            a.addStep(game.getSprite("Victory_16.png"));
+            a.addStep(game.getSprite("Victory_17.png"));
+            a.addStep(game.getSprite("Victory_18.png"));
+            a.addStep(game.getSprite("Victory_19.png"));
+            a.addStep(game.getSprite("Victory_20.png"));
+            a.addStep(game.getSprite("Victory_21.png"));
+            //Game.BeforeMain = 1;
+            a.runAfterEnd = new Runnable() {
+                @Override
+                public void run() {
+                    Game.Get_win_2();
 
                 }
             };
@@ -90,8 +171,14 @@ public class DB {
             backgrounds.put(b.name, b);
         }
         {
-            final Background b = new Background("map1_bg", game.getSprite("map1.png"));
-            backgrounds.put(b.name, b);
+            if (Game.GameUpdateType == 0) {
+                final Background b = new Background("map1_bg", game.getSprite("map1.png"));
+                backgrounds.put(b.name, b);
+            }
+            if (Game.GameUpdateType == 1) {
+                final Background b = new Background("map1_bg", game.getSprite("Newyaermap1.png"));
+                backgrounds.put(b.name, b);
+            }
         }
         {
             final Controller c = new Controller("controller");

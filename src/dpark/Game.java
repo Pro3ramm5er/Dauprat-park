@@ -34,11 +34,20 @@ public class Game extends Canvas implements Runnable {
     public static int IsCreated = 0;
     public static int AppleCreate = 1;
     public static int BeforeMain = 0;
-    public static int BluemanCreated = 0;
+    public static int BluemanCreated = 1;
     public static int RatCreated = 0;
     public static int xo;
     public static int yo;
     public static int Shlakoblock_magic = 0;
+    public static int GameUpdateType = 1; // 0 - normal, 1 - New Year Update;
+    public static int SantaX;
+    public static int SantaY;
+    public static int NWY_Present_create = 1;
+    public static int Shlakoblock_create = 1;
+    public static int DedMoroz_create = 0;
+    public static int MainKey = 0;
+    public static int WinVisible = 0;
+    public static int WinTimer = 50;
 
 
     public Game() {
@@ -88,7 +97,7 @@ public class Game extends Canvas implements Runnable {
 
                     db.objects.clear();
 
-
+                    WinVisible = 0;
                     VisibleDieLogo = 0;
                     AllDelete = 0; // If 1 - SelfRemove for all objects.
                     StopUpdate = 0;
@@ -172,7 +181,16 @@ public class Game extends Canvas implements Runnable {
 
         return game;
     }
+    public static void Get_win_1()
+    {
+        WinVisible = 1;
 
+    }
+    public static void Get_win_2()
+    {
+        AllDelete = 1;
+        VisibleDieLogo = 0;
+    }
     public static void Get_Die() {
 
         AllDelete = 1;
@@ -265,6 +283,7 @@ public class Game extends Canvas implements Runnable {
             AppleGet(1, 1, 213, 53);
 
             DieLogoCreate();
+            WinLogoCreate();
             DEC_chest_create();
             DEC_chest_create();
             DEC_chest_create();
@@ -272,9 +291,9 @@ public class Game extends Canvas implements Runnable {
             DEC_chest_create();
             DEC_chest_create();
             DEC_chest_create();
-            NPC_AppleW_create(0);
-            NPC_AppleW_create(1);
-            NPC_AppleW_create(0);
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
             NPC_AppleW_create(1);
             NPC_AppleW_create(0);
             NPC_AppleW_create(1);
@@ -285,64 +304,106 @@ public class Game extends Canvas implements Runnable {
 
             NPC_Lavaman_create();
             OBJ_APL_Portal_create();
-            NPC_Ant_create();
-            NPC_Ant_create();
+            //NPC_Ant_create();
+            //NPC_Ant_create();
             NPC_Ant_create();
             NPC_Ant_create();
             NPC_Blueman_create();
             NPC_Rat_create(0, 0, 0);
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            DEC_EarthCreate();
-            NPC_Shlakoblock_create();
 
+            if (GameUpdateType == 0) {
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+            } else {
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                NPC_Present_create();
+                NPC_Present_create();
+                //NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                NPC_NWY_Ded_Moroz_create();
+            }
+            NPC_Shlakoblock_create();
+            
+            //if (GameUpdateType == 1) {
+
+            //}
+        }
+        if (WinVisible == 1) {
+            if (WinTimer <= 0) {
+                AllDelete = 1;
+                WinTimer = 15;
+            } else {
+                WinTimer--;
+            }
         }
         if (AppleCreate == 0) {
             NPC_Deamon_create();
@@ -356,14 +417,131 @@ public class Game extends Canvas implements Runnable {
             NPC_Rat_create(1, xo, yo);
             RatCreated = 1;
         }
+        if (NWY_Present_create == 0)
+        {
+            NPC_Present_create(SantaX, SantaY);
+            NWY_Present_create = 1;
+        }
+        if (Shlakoblock_create  == 0)
+        {
+            NPC_Shlakoblock_create();
+            Shlakoblock_create = 1;
+        }
+        if (DedMoroz_create  == 0)
+        {
+            NPC_NWY_Ded_Moroz_create();
+            DedMoroz_create = 1;
+        }
 
     }
+    public void DEC_spruce_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            dlg.x = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.y = 70 + (int) (Math.random() * ((600 - 150) + 1));
+
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+    }
+    public void DEC_sock_create() {
+
+        final Sock dlg = new Sock(getFreeName("Sock"));
+        dlg.x =  70 + (int) (Math.random() * ((600 - 150) + 1));
+        dlg.y = 70 + (int) (Math.random() * ((600 - 150) + 1));
+
+        db.objects.put(dlg.name, dlg);
+        currentRoom.objectsIDs.add(dlg.name);
+    }
+    public void WinLogoCreate() {
+
+        final WinLogo dlg = new WinLogo(getFreeName("WinLogo"));
+        dlg.x = 0;
+        dlg.y = 0;
+
+        db.objects.put(dlg.name, dlg);
+        currentRoom.objectsIDs.add(dlg.name);
+    }
+    public void NPC_NWY_Ded_Moroz_create() {
+        int ui = 1 + (int) +(Math.random() * ((10 - 1) + 1));
+        if (ui == 1) {
+            final NWY_DedMoroz chest = new NWY_DedMoroz(getFreeName("NWY_DEDMOROZ"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 15;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_NWY_Deer_create(int type) {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 2) {
+            final NWY_Deer chest = new NWY_Deer(getFreeName("NWY_DEER"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_Present_create(int xi,int yi) {
+
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Present chest = new Present(getFreeName("Present"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            wardenx = xi;
+            wardeny = yi;
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+
+            chest.z = -5;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+    public void NPC_Present_create() {
+
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Present chest = new Present(getFreeName("Present"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+
+            chest.z = -5;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+        }
+    }
+
 
     public void NPC_Shlakoblock_create() {
 
         int ui = 1 + (int) +(Math.random() * ((10 - 1) + 1));
         if (ui == 1) {
-            final Rat chest = new Rat("Shlakoblock");
+            final Shlacoblock chest = new Shlacoblock(getFreeName("Shlakoblock"));
             int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
             int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
             chest.x = wardenx;
@@ -437,7 +615,7 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
 
-            chest.z = 0;
+            chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -453,7 +631,7 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-            chest.z = 0;
+            chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -470,7 +648,7 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
 
-            chest.z = 0;
+            chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -582,8 +760,8 @@ public class Game extends Canvas implements Runnable {
         final main_door md = new main_door(getFreeName("Main_Door"));
         md.x = xau;
         md.y = yau;
-        md.xd = xau;
-        md.yd = yau;
+        md.xt = xau;
+        md.yt = yau;
 
         db.objects.put(md.name, md);
         currentRoom.objectsIDs.add(md.name);
