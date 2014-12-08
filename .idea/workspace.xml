@@ -546,14 +546,20 @@
       <option name="project" value="LOCAL" />
       <updated>1418050220732</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix: New Year Update!">
+      <created>1418050404298</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1418050404298</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="600" width="1296" height="400" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9402985" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46313363" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -598,7 +604,8 @@
     <MESSAGE value="Test new Intellij IDEA" />
     <MESSAGE value="Reformat code" />
     <MESSAGE value="New Year Update! :D" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Year Update! :D" />
+    <MESSAGE value="Fix: New Year Update!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: New Year Update!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
