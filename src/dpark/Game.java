@@ -108,6 +108,7 @@ public class Game extends Canvas implements Runnable {
                     RatCreated = 0;
                     xo = 0;
                     yo = 0;
+                    MainKey = 0;
                     Shlakoblock_magic = 0;
                     BeforeMain = 0;
                     init();
@@ -390,6 +391,18 @@ public class Game extends Canvas implements Runnable {
                 NPC_NWY_Deer_create(0);
                 NPC_NWY_Deer_create(0);
                 NPC_NWY_Ded_Moroz_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_GoblinMaster_create();
+                NPC_GoblinMaster_create();
             }
             NPC_Shlakoblock_create();
             
@@ -434,6 +447,42 @@ public class Game extends Canvas implements Runnable {
         }
 
     }
+    public void NPC_GoblinMaster_create() {
+        int ui = 1 + (int) +(Math.random() * ((6 - 1) + 1));
+        if (ui == 1) {
+            final Master_Goblin chest = new Master_Goblin(getFreeName("Goblin"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_Goblin_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Goblin chest = new Goblin(getFreeName("Goblin"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
     public void DEC_spruce_create() {
         int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
         if (ui == 1) {
@@ -473,7 +522,7 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-            chest.z = 15;
+            chest.z = 30;
 
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);

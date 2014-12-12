@@ -55,7 +55,7 @@ public class NWY_Deer extends GameObject {
             MST = 3;
         }
 
-        for (int i = 0; i < 80; i++) {
+        for (int i = 0; i < 120; i++) {
             if (plx == xt && ply == yt - i) {
                 MST = 1;
             } else {
