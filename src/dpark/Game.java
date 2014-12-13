@@ -48,6 +48,7 @@ public class Game extends Canvas implements Runnable {
     public static int MainKey = 0;
     public static int WinVisible = 0;
     public static int WinTimer = 50;
+    public static int Maslo_Create = 1;
 
 
     public Game() {
@@ -311,7 +312,9 @@ public class Game extends Canvas implements Runnable {
             NPC_Ant_create();
             NPC_Blueman_create();
             NPC_Rat_create(0, 0, 0);
-
+            Maslo_create();
+            Maslo_create();
+            Maslo_create();
             if (GameUpdateType == 0) {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -445,7 +448,30 @@ public class Game extends Canvas implements Runnable {
             NPC_NWY_Ded_Moroz_create();
             DedMoroz_create = 1;
         }
+        if (Maslo_Create  == 0)
+        {
 
+            Maslo_Create = 0;
+        }
+
+    }
+    public void Maslo_create() {
+        int ui = 1 + (int) +(Math.random() * ((15 - 1) + 1));
+        if (ui == 1) {
+            final Maslo chest = new Maslo(getFreeName("MASLO"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
     }
     public void NPC_GoblinMaster_create() {
         int ui = 1 + (int) +(Math.random() * ((6 - 1) + 1));
