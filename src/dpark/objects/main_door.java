@@ -48,7 +48,8 @@ public class main_door extends GameObject {
         }
         if (Game.MainKey == 1) {
 
-            Game.Get_win_1();
+            Game.Restart_type = 2;
+            Game.AllDelete = 1;
 
         }
     }

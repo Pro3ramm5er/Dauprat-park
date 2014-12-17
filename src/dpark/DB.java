@@ -6,6 +6,7 @@ import dpark.objects.Player;
 import dpark.objects.main_door;
 import dpark.rooms.MainMenuRoom;
 import dpark.rooms.Map1;
+import dpark.rooms.Map2;
 import dpark.rooms.NewGameSplashScreenRoom;
 
 import java.util.HashMap;
@@ -221,6 +222,14 @@ public class DB {
         }
         {
             final Map1 r = new Map1("map1_room");
+            r.background = "map1_bg";
+            r.objectsIDs.add("controller");
+            r.objectsIDs.add("player");
+            rooms.put(r.name, r);
+
+        }
+        {
+            final Map2 r = new Map2("map2_room");
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
             r.objectsIDs.add("player");

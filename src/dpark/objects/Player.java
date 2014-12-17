@@ -59,7 +59,18 @@ public class Player extends GameObject {
         plx4 = x + 2;
 
         super.update();
-
+        if (x >= 800 || x >= 800) {
+            Collision();
+        }
+        if (x <= 0 || x <= 0) {
+            Collision();
+        }
+        if (y >= 800 || y >= 800) {
+            Collision();
+        }
+        if (y <= 0 || y <= 0) {
+            Collision();
+        }
 
         inertion--;
         if (inertion < 0)
@@ -188,7 +199,7 @@ public class Player extends GameObject {
             Key_K = 1;
 
         } else {
-            if  (! (keycode == KeyEvent.VK_O)) {
+            if  (! (keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_U)) {
                 Key_K = 0;
             }
         }
@@ -223,6 +234,10 @@ public class Player extends GameObject {
             Game.DedMoroz_create = 0;
             Game.DedMoroz_create = 0;
             Game.DedMoroz_create = 0;
+        }
+        if (keycode == KeyEvent.VK_U && Key_K == 1)
+        {
+            Game.MainKey = 1;
         }
 
         if (inertion > 3) {

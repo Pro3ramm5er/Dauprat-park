@@ -153,7 +153,10 @@ public class Controller extends GameObject {
     public void onKey(int keycode) {
         super.onKey(keycode);
         if (keycode == KeyEvent.VK_1) {
-            Game.instance.GetLevel_2();
+            if (Game.Reload_on == 1) {
+                Game.instance.GetLevel_2();
+                Game.Reload_on = 0;
+            }
         }
         if (keycode == KeyEvent.VK_2) {
             System.exit(0);

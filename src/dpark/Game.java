@@ -49,7 +49,8 @@ public class Game extends Canvas implements Runnable {
     public static int WinVisible = 0;
     public static int WinTimer = 50;
     public static int Maslo_Create = 1;
-
+    public static int Restart_type = 1; // 1 - to main. 2 - easy delete.
+    public static int Reload_on = 1;
 
     public Game() {
         instance = this;
@@ -62,7 +63,7 @@ public class Game extends Canvas implements Runnable {
         new Thread(this).start();
     }
 
-    public static final int FPS = 25;
+    public static final int FPS = 30;
     private static final int FrameDuration = 1000 / FPS;
     private static final int MaxFrameSkip = 10;
     private long nextFrameTime = System.currentTimeMillis();
@@ -112,7 +113,13 @@ public class Game extends Canvas implements Runnable {
                     MainKey = 0;
                     Shlakoblock_magic = 0;
                     BeforeMain = 0;
-                    init();
+                    Reload_on = 1;
+                    if (Restart_type == 1) {
+                        init();
+                    }
+                    if (Restart_type == 2) {
+                        init_location_2();
+                    }
                     IsCreated = 0;
                     AllDelete = 0;
 
@@ -136,6 +143,15 @@ public class Game extends Canvas implements Runnable {
         addMouseListener(mouseListener);
         db.onGameLoaded(this);
         currentRoom = db.rooms.get("main_menu_room");
+    }
+    public void init_location_2() {
+        addKeyListener(new Keyboard());
+        addMouseListener(mouseListener);
+        db.onGameLoaded(this);
+        currentRoom = db.rooms.get("map2_room");
+        Restart_type = 1;
+        Get_start_location_2();
+
     }
 
     public void render(Room room) {
@@ -183,6 +199,7 @@ public class Game extends Canvas implements Runnable {
 
         return game;
     }
+
     public static void Get_win_1()
     {
         WinVisible = 1;
@@ -200,7 +217,300 @@ public class Game extends Canvas implements Runnable {
 
 
     }
+    public void Get_start_location_2() {
 
+        if (IsCreated == 0) {
+            AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            currentRoom = db.rooms.get("map1_room");
+            db.objects.get("player").visible = true;
+            IsCreated = 1;
+            int xcr = 0;
+            int icr = 0;
+            int i = 0;
+            for (i = 0; i < 25; i++) {
+                Crate_create(xcr, icr);
+                xcr += 32;
+            }
+
+
+            i = 0;
+            xcr = 0;
+            icr = 0;
+            for (i = 0; i <= 10; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
+
+
+            i = 0;
+            xcr = 0;
+            //icr = icr + 128;
+            for (i = 0; i <= 6; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
+
+            i = 0;
+            xcr = 0;
+
+            for (i = 0; i <= 23; i++) {
+
+                xcr += 32;
+                Crate_create(xcr, icr);
+            }
+
+
+            i = 0;
+            xcr = 768;
+            icr = 0;
+            for (i = 0; i <= 22; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr);
+            }
+
+            Mdoor_create(0, 384);
+            if (KeyMessage.Created == 0) {
+                KeyMessage.AnimStep = 0;
+                MessageAkey_create();
+                KeyMessage.Created = 1;
+
+            }
+
+
+            AppleCreate(50, 50);
+
+
+            AppleGet(1, 1, 65, 65);
+            AppleGet(0, 1, 65, 65);
+            AppleGet(1, 0, 65, 65);
+            AppleGet(0, 0, 65, 65);
+
+            AppleGet(1, 1, 95, 95);
+            AppleGet(0, 1, 95, 95);
+            AppleGet(1, 0, 95, 95);
+            AppleGet(0, 0, 95, 95);
+
+            AppleGet(1, 1, 143, 145);
+            AppleGet(0, 1, 123, 23);
+            AppleGet(1, 0, 345, 124);
+            AppleGet(1, 1, 213, 53);
+
+            DieLogoCreate();
+            WinLogoCreate();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+            NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+
+            //NPC_Deamon_create();
+            //NPC_Deamon_create();
+            //NPC_Deamon_create();
+
+            //NPC_Lavaman_create();
+            //OBJ_APL_Portal_create();
+            //NPC_Ant_create();
+            //NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            //NPC_Blueman_create();
+            //NPC_Rat_create(0, 0, 0);
+            Maslo_create();
+            Maslo_create();
+            Maslo_create();
+            if (GameUpdateType == 0) {
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+            } else {
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                NPC_NWY_Deer_create(0);
+                //NPC_NWY_Ded_Moroz_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+               // NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                NPC_GoblinMaster_create();
+                NPC_GoblinMaster_create();
+                NPC_HoMonster_create();
+            }
+            NPC_Shlakoblock_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_HoMonster_create();
+            //if (GameUpdateType == 1) {
+
+            //}
+        }
+        if (WinVisible == 1) {
+            if (WinTimer <= 0) {
+                AllDelete = 1;
+                WinTimer = 15;
+            } else {
+                WinTimer--;
+            }
+        }
+        if (AppleCreate == 0) {
+            NPC_Deamon_create();
+            AppleCreate = 1;
+        }
+        if (BluemanCreated == 0) {
+            NPC_Blueman_create();
+            BluemanCreated = 1;
+        }
+        if (RatCreated == 0) {
+            NPC_Rat_create(1, xo, yo);
+            RatCreated = 1;
+        }
+        if (NWY_Present_create == 0)
+        {
+            NPC_Present_create(SantaX, SantaY);
+            NWY_Present_create = 1;
+        }
+        if (Shlakoblock_create  == 0)
+        {
+            NPC_Shlakoblock_create();
+            Shlakoblock_create = 1;
+        }
+        if (DedMoroz_create  == 0)
+        {
+            NPC_NWY_Ded_Moroz_create();
+            DedMoroz_create = 1;
+        }
+        if (Maslo_Create  == 0)
+        {
+
+            Maslo_Create = 0;
+        }
+
+    }
+    public void NPC_EvilWorm_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final EvilWorm chest = new EvilWorm(getFreeName("Worm"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_HoMonster_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final HoMonster chest = new HoMonster(getFreeName("HoMonster"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
     public void Get_Start() {
 
         if (IsCreated == 0) {
@@ -408,7 +718,9 @@ public class Game extends Canvas implements Runnable {
                 NPC_GoblinMaster_create();
             }
             NPC_Shlakoblock_create();
-            
+            //NPC_EvilWorm_create();
+            //NPC_EvilWorm_create();
+            //NPC_EvilWorm_create();
             //if (GameUpdateType == 1) {
 
             //}
