@@ -51,6 +51,7 @@ public class Game extends Canvas implements Runnable {
     public static int Maslo_Create = 1;
     public static int Restart_type = 1; // 1 - to main. 2 - easy delete.
     public static int Reload_on = 1;
+    public static int InitOn = 0;
 
     public Game() {
         instance = this;
@@ -139,8 +140,11 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void init() {
-        addKeyListener(new Keyboard());
-        addMouseListener(mouseListener);
+        //if (InitOn == 0) {
+            addKeyListener(new Keyboard());
+            addMouseListener(mouseListener);
+         //   InitOn = 1;
+        //}
         db.onGameLoaded(this);
         currentRoom = db.rooms.get("main_menu_room");
     }
@@ -312,9 +316,9 @@ public class Game extends Canvas implements Runnable {
             //NPC_AppleW_create(0);
             //NPC_AppleW_create(1);
             //NPC_AppleW_create(0);
-            NPC_AppleW_create(1);
-            NPC_AppleW_create(0);
-            NPC_AppleW_create(1);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
 
             //NPC_Deamon_create();
             //NPC_Deamon_create();
@@ -429,6 +433,8 @@ public class Game extends Canvas implements Runnable {
             NPC_EvilWorm_create();
             NPC_EvilWorm_create();
             NPC_HoMonster_create();
+            NPC_IRT_create();
+            NPC_IRT_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -474,6 +480,24 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void NPC_IRT_create() {
+        int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+        if (ui == 1) {
+            final IRT chest = new IRT(getFreeName("IRT"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
     }
     public void NPC_EvilWorm_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));

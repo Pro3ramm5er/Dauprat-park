@@ -59,16 +59,16 @@ public class Player extends GameObject {
         plx4 = x + 2;
 
         super.update();
-        if (x >= 800 || x >= 800) {
+        if (x >= 900 || x >= 900) {
             Collision();
         }
-        if (x <= 0 || x <= 0) {
+        if (x <= -10 || x <= -10) {
             Collision();
         }
-        if (y >= 800 || y >= 800) {
+        if (y >= 900 || y >= 900) {
             Collision();
         }
-        if (y <= 0 || y <= 0) {
+        if (y <= -10 || y <= -10) {
             Collision();
         }
 
