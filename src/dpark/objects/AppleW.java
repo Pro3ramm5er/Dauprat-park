@@ -50,8 +50,9 @@ public class AppleW extends GameObject {
     @Override
     public void update() {
         // STEPS
-        xt =x;
+        xt = x;
         yt = y;
+        z = y;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

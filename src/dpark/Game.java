@@ -966,7 +966,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1;
+            dlg.z = g1+65;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);

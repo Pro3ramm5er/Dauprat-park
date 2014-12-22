@@ -42,7 +42,9 @@ public class Ant extends GameObject {
     @Override
     public void update() {
         // STEPS
-
+        xt = x;
+        yt = y;
+        z = y;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -119,9 +121,10 @@ public class Ant extends GameObject {
                 Timer_set_del = 1;
             }
 
-            yt -= 4;
-            y -= 4;
-            sprite.currentStep = 1;
+            //yt-=3;
+            y -= 1;
+            z += 1;
+            sprite.currentStep = 3;
         }
         if (MST == 2) {
             if (Timer_set_del == 0) {
@@ -129,9 +132,9 @@ public class Ant extends GameObject {
                 Timer_set_del = 1;
             }
 
-            xt += 4;
-            x += 4;
-            sprite.currentStep = 2;
+            //xt+=3;
+            x += 1;
+            sprite.currentStep = 1;
         }
         if (MST == 3) {
             if (Timer_set_del == 0) {
@@ -139,9 +142,10 @@ public class Ant extends GameObject {
                 Timer_set_del = 1;
             }
 
-            yt += 4;
-            y += 4;
-            sprite.currentStep = 3;
+            // yt+=3;
+            y +=1;
+            z -= 1;
+            sprite.currentStep = 0;
         }
         if (MST == 4) {
             if (Timer_set_del == 0) {
@@ -149,9 +153,9 @@ public class Ant extends GameObject {
                 Timer_set_del = 1;
             }
 
-            xt -= 4;
-            x -= 4;
-            sprite.currentStep = 0;
+            //xt-=3;
+            x -= 1;
+            sprite.currentStep = 2;
         }
 
 
