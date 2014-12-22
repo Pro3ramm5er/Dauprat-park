@@ -44,6 +44,7 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
+        z = y;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -124,6 +125,7 @@ public class Deamon extends GameObject {
 
             //yt-=3;
             y -= 3;
+            z += 3;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -144,6 +146,7 @@ public class Deamon extends GameObject {
 
             // yt+=3;
             y += 3;
+            z -= 3;
             sprite.currentStep = 3;
         }
         if (MST == 4) {

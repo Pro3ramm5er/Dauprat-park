@@ -14,7 +14,7 @@ public class DieLogo extends GameObject {
         super(name);
         sprite.addStep(Game.instance.getSprite("Gameover.png"));
         sprite.addStep(Game.instance.getSprite("Needakey4.png"));
-        z = 500;
+        z = 1900;
     }
 
     @Override

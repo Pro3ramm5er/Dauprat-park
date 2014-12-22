@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.objects.Player;
 /**
  * @author Nickita
  */
@@ -11,8 +12,8 @@ public class Present extends GameObject {
     public int xt;
     public int yt;
 
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -25,6 +26,7 @@ public class Present extends GameObject {
     public int otchet8 = 0;  // y
     public int Col_del = 0;
     public int Open = 0;
+    public int PlusOnce = 0;
     public int MainKeyIn = 1 + (int) (Math.random() * ((4 - 1) + 1));
 
 
@@ -87,11 +89,21 @@ public class Present extends GameObject {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
                 if (/*Col_del == 0 && Timer <= 0 && */MainKeyIn == 1 && Open == 0) {
                     //System.out.println("KOL");
-                    Game.MainKey = 1;
-                    sprite.currentStep = 1;
-                    Open = 1;
+                    if (PlayerZ == z || z < PlayerZ) {
+                        Game.MainKey = 1;
+                        sprite.currentStep = 1;
+                        Open = 1;
+                        if (PlusOnce == 0) {
+                            PlayerZ++;
+                            PlusOnce = 1;
+                        }
+                        Player.Collision();
 
+                    }
 
+                }
+                if (! (PlayerZ == z)) {
+                    Player.Collision();
                 }
                 //System.out.println("nowfaleKOL");
 
@@ -141,7 +153,7 @@ public class Present extends GameObject {
             }
 
         } else {
-
+            PlusOnce = 0;
             Col_del = 0;
             if (otchet == myx.length) {
                 otchet = 0;

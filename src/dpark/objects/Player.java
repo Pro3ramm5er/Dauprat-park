@@ -21,15 +21,16 @@ public class Player extends GameObject {
     public Player(String name) {
 
         super(name);
-
+        z = y;
+        PlayerZ = z;
 
         sprite.addStep(Game.instance.getSprite("hero.png"));
 
 
-        sprite.addStep(Game.instance.getSprite("hero_front.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right.png"));
 
-        sprite.addStep(Game.instance.getSprite("hero_front_sh_magic.png"));
-        sprite.addStep(Game.instance.getSprite("hero_sh_magic.png"));
+        sprite.addStep(Game.instance.getSprite("hero_up.png"));
+        sprite.addStep(Game.instance.getSprite("hero_down.png"));
 
 
         plx = x;
@@ -47,6 +48,9 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
+        z = ply;
+        PlayerZ = ply;
+
         plx = x;
         ply = y;
         ply1 = y - 1;
@@ -77,10 +81,14 @@ public class Player extends GameObject {
             inertion = 0;
         if (direction == 0) {
             y -= inertion;
+            PlayerZ += inertion;
+            z += inertion;
         } else if (direction == 90) {
             x += inertion;
         } else if (direction == 180) {
             y += inertion;
+            PlayerZ -= inertion;
+            z -= inertion;
         } else if (direction == 270) {
             x -= inertion;
         }
@@ -112,12 +120,14 @@ public class Player extends GameObject {
         if (keycode == KeyEvent.VK_A) {
 
             if (PlayerColSt != 4) {
+                inertion += 1;
+                direction = 270;
                 Checkr = 0;
                 PlayerWalkst = 4;
                 PlayerColSt = 0;
 
                 if (Game.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 3;
+                    sprite.currentStep = 0;
                 } else {
 
                     sprite.currentStep = 0;
@@ -125,39 +135,21 @@ public class Player extends GameObject {
                 }
 
 
-                inertion += 1;
-                direction = 270;
+
 
             }
 
         }
         if (keycode == KeyEvent.VK_D) {
             if (PlayerColSt != 2) {
+                inertion += 1;
+                direction = 90;
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 2;
 
                 if (Game.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 3;
-                } else {
-
-                    sprite.currentStep = 0;
-
-                }
-
-                inertion += 1;
-                direction = 90;
-
-            }
-
-        }
-        if (keycode == KeyEvent.VK_W) {
-            if (PlayerColSt != 1) {
-                Checkr = 0;
-                PlayerColSt = 0;
-                PlayerWalkst = 1;
-                if (Game.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 2;
+                    sprite.currentStep = 1;
                 } else {
 
                     sprite.currentStep = 1;
@@ -165,8 +157,28 @@ public class Player extends GameObject {
                 }
 
 
+
+            }
+
+        }
+        if (keycode == KeyEvent.VK_W) {
+            if (PlayerColSt != 1) {
                 inertion += 1;
                 direction = 0;
+                //z--;
+                Checkr = 0;
+                PlayerColSt = 0;
+                PlayerWalkst = 1;
+                if (Game.Shlakoblock_magic == 1) {
+                    sprite.currentStep = 2;
+                } else {
+
+                    sprite.currentStep = 2;
+
+                }
+
+
+
 
             }
 
@@ -175,20 +187,23 @@ public class Player extends GameObject {
 
 
             if (PlayerColSt != 3) {
+
+                inertion += 1;
+                direction = 180;
+                //z++;
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 3;
                 if (Game.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 2;
+                    sprite.currentStep = 3;
                 } else {
 
-                    sprite.currentStep = 1;
+                    sprite.currentStep = 3;
 
                 }
 
 
-                inertion += 1;
-                direction = 180;
+
 
             }
 

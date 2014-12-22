@@ -3,6 +3,7 @@ package dpark.objects;
 import dpark.Game;
 import dpark.GameObject;
 
+
 import java.awt.event.KeyEvent;
 
 import static dpark.DB.db;
@@ -154,6 +155,7 @@ public class Controller extends GameObject {
         super.onKey(keycode);
         if (keycode == KeyEvent.VK_1) {
             if (Game.Reload_on == 1) {
+                //Sound.playSound("Deep_Purple-Burn.wav").stop();
                 Game.instance.GetLevel_2();
                 Game.Reload_on = 0;
             }

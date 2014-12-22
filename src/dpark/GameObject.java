@@ -2,6 +2,7 @@ package dpark;
 
 import java.awt.*;
 import java.util.Comparator;
+import dpark.objects.Player;
 
 public class GameObject {
 
@@ -15,6 +16,7 @@ public class GameObject {
     public static int ply3;
     public static int plx4;
     public static int ply4;
+    public static int PlayerZ;
 
 
     public static int PlayerColSt = 0; // 1 - up; 2 - right; 3 - down; 4 - left
