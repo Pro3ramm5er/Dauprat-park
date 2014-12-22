@@ -124,7 +124,7 @@ public class Ant extends GameObject {
             //yt-=3;
             y -= 1;
             z += 1;
-            sprite.currentStep = 3;
+            sprite.currentStep = 1;
         }
         if (MST == 2) {
             if (Timer_set_del == 0) {
@@ -134,7 +134,7 @@ public class Ant extends GameObject {
 
             //xt+=3;
             x += 1;
-            sprite.currentStep = 1;
+            sprite.currentStep = 2;
         }
         if (MST == 3) {
             if (Timer_set_del == 0) {
@@ -145,7 +145,7 @@ public class Ant extends GameObject {
             // yt+=3;
             y +=1;
             z -= 1;
-            sprite.currentStep = 0;
+            sprite.currentStep = 3;
         }
         if (MST == 4) {
             if (Timer_set_del == 0) {
@@ -155,7 +155,7 @@ public class Ant extends GameObject {
 
             //xt-=3;
             x -= 1;
-            sprite.currentStep = 2;
+            sprite.currentStep = 0;
         }
 
 
