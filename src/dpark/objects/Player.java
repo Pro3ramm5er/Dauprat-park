@@ -51,6 +51,8 @@ public class Player extends GameObject {
         z = ply;
         PlayerZ = ply;
 
+
+        
         plx = x;
         ply = y;
         ply1 = y - 1;

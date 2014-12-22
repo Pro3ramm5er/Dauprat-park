@@ -36,15 +36,19 @@ public class EvilWorm extends GameObject {
 
     public EvilWorm(String name) {
         super(name);
+        xt = x;
+        yt = y;
+        z = y;
+        sprite.addStep(Game.instance.getSprite("Worm_1_left.png"));
+        sprite.addStep(Game.instance.getSprite("Worm_1_up.png"));
+        sprite.addStep(Game.instance.getSprite("Worm_1_right.png"));
+        sprite.addStep(Game.instance.getSprite("Worm_1_down.png"));
+
 
         sprite.addStep(Game.instance.getSprite("Worm_1_left.png"));
         sprite.addStep(Game.instance.getSprite("Worm_1_up.png"));
         sprite.addStep(Game.instance.getSprite("Worm_1_right.png"));
         sprite.addStep(Game.instance.getSprite("Worm_1_down.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_2_left.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_2_up.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_2_right.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_2_down.png"));
     }
 
 
@@ -199,7 +203,6 @@ public class EvilWorm extends GameObject {
             //y-=3;
             //yt-=3;
             //sprite.currentStep = 0;
-            //CurrentTex = 0;
         }
         if (MST == 1) {
             if (Timer_set_del == 0) {
@@ -208,13 +211,9 @@ public class EvilWorm extends GameObject {
             }
 
             //yt-=3;
-            y -= 5;
-            //TexType1 = 1;
-            //if (ChangeTexture == 0) {
-            //    sprite.currentStep = 1;
-            //    ChangeTexture = 1;
-            //}
-            CurrentTex = 1;
+            y -= 3;
+            z += 3;
+            sprite.currentStep = 1;
         }
         if (MST == 2) {
             if (Timer_set_del == 0) {
@@ -223,12 +222,8 @@ public class EvilWorm extends GameObject {
             }
 
             //xt+=3;
-            x += 5;
-            //TexType1 = 1;
-            //if (ChangeTexture == 0) {
-            //    sprite.currentStep = 2;
-            //}
-            CurrentTex = 2;
+            x += 3;
+            sprite.currentStep = 2;
         }
         if (MST == 3) {
             if (Timer_set_del == 0) {
@@ -237,12 +232,9 @@ public class EvilWorm extends GameObject {
             }
 
             // yt+=3;
-            y += 5;
-            //TexType1 = 1;
-            //if (ChangeTexture == 0) {
-            //    sprite.currentStep = 3;
-            //}
-            CurrentTex = 3;
+            y += 3;
+            z -= 3;
+            sprite.currentStep = 3;
         }
         if (MST == 4) {
             if (Timer_set_del == 0) {
@@ -251,12 +243,8 @@ public class EvilWorm extends GameObject {
             }
 
             //xt-=3;
-            x -= 5;
-            //TexType1 = 1;
-            //if (ChangeTexture == 0) {
-             //   sprite.currentStep = 0;
-            //}
-            CurrentTex = 0;
+            x -= 3;
+            sprite.currentStep = 0;
         }
 
 

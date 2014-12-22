@@ -44,6 +44,7 @@ public class HoMonster extends GameObject {
         // STEPS
         xt = x;
         yt = y;
+        z = y;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -123,7 +124,8 @@ public class HoMonster extends GameObject {
             }
 
             //yt-=3;
-            y -= 5;
+            y -= 3;
+            z += 3;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -133,7 +135,7 @@ public class HoMonster extends GameObject {
             }
 
             //xt+=3;
-            x += 5;
+            x += 3;
             sprite.currentStep = 2;
         }
         if (MST == 3) {
@@ -143,7 +145,8 @@ public class HoMonster extends GameObject {
             }
 
             // yt+=3;
-            y += 5;
+            y += 3;
+            z -= 3;
             sprite.currentStep = 3;
         }
         if (MST == 4) {
@@ -153,7 +156,7 @@ public class HoMonster extends GameObject {
             }
 
             //xt-=3;
-            x -= 5;
+            x -= 3;
             sprite.currentStep = 0;
         }
 

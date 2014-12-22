@@ -6,8 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/IRT.java" afterPath="$PROJECT_DIR$/src/dpark/objects/IRT.java" />
+    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="Dauprat park in 3d! Part &#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" afterPath="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" afterPath="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Player.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Dauprat park.iws" />
@@ -33,19 +35,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12197" max-vertical-offset="24837">
-              <caret line="969" column="23" selection-start-line="969" selection-start-column="23" selection-end-line="969" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#42351#42368#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Present.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Present.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3737373" vertical-offset="1224" max-vertical-offset="4505">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4539">
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -88,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_door.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dpark/objects/main_door.java">
+      <file leaf-file-name="HoMonster.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/HoMonster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5695">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1229" max-vertical-offset="6800">
+              <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -101,8 +90,18 @@
       <file leaf-file-name="IRT.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/IRT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2269" max-vertical-offset="6800">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6800">
               <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EvilWorm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/EvilWorm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="14.725352" vertical-offset="0" max-vertical-offset="8262">
+              <caret line="247" column="9" selection-start-line="247" selection-start-column="9" selection-end-line="247" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -131,8 +130,8 @@
       <file leaf-file-name="Deamon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2422" max-vertical-offset="6817">
-              <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1810" max-vertical-offset="6817">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,8 +170,6 @@
         <option value="$PROJECT_DIR$/src/dpark/DB.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/main_door.java" />
         <option value="$PROJECT_DIR$/src/dpark/HoMonster.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Snow.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Sound.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Cloud.java" />
@@ -181,8 +178,6 @@
         <option value="$PROJECT_DIR$/src/dpark/objects/DieLogo.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Goblin.java" />
         <option value="$PROJECT_DIR$/src/dpark/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Present.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Spruce.java" />
         <option value="$PROJECT_DIR$/src/dpark/Game.java" />
@@ -191,6 +186,10 @@
         <option value="$PROJECT_DIR$/src/dpark/objects/Blueman.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/IRT.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Player.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
       </list>
     </option>
   </component>
@@ -619,7 +618,13 @@
       <option name="project" value="LOCAL" />
       <updated>1419252431144</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Dauprat park in 3d! Part 2&#10;">
+      <created>1419254535577</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1419254535577</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -681,7 +686,8 @@
     <MESSAGE value="New NPC." />
     <MESSAGE value="Почти 3d.&#10;" />
     <MESSAGE value="Dauprat park in 3d! &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dauprat park in 3d! &#10;" />
+    <MESSAGE value="Dauprat park in 3d! Part 2&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dauprat park in 3d! Part 2&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -928,22 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/HoMonster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6749">
-          <caret line="390" column="0" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/EvilWorm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="8466">
-          <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/javax/sound/sampled/AudioSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12856" max-vertical-offset="27013">
@@ -1090,26 +1080,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4539">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2422" max-vertical-offset="6817">
-          <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1810" max-vertical-offset="6817">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/IRT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2269" max-vertical-offset="6800">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6800">
           <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/HoMonster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3737373" vertical-offset="1224" max-vertical-offset="4505">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="923" max-vertical-offset="6800">
+          <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/EvilWorm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.725352" vertical-offset="0" max-vertical-offset="8262">
+          <caret line="247" column="9" selection-start-line="247" selection-start-column="9" selection-end-line="247" selection-end-column="9" />
           <folding />
         </state>
       </provider>
