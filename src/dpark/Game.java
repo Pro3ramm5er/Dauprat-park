@@ -683,6 +683,8 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             Maslo_create();
             Maslo_create();
+            NPC_MegaBear_create();
+            NPC_ChinaMAN_create();
             if (GameUpdateType == 0) {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -825,6 +827,42 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void NPC_ChinaMAN_create() {
+        int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
+        if (ui == 1) {
+            final ChinaMan chest = new ChinaMan(getFreeName("ChinaMan"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_MegaBear_create() {
+        int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+        if (ui == 1) {
+            final MegaBear chest = new MegaBear(getFreeName("MegaBear"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+           // chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
     }
     public void NPC_Oblako() {
         int ui = 1 + (int) +(Math.random() * ((30 - 1) + 1));

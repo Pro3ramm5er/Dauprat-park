@@ -34,7 +34,7 @@ public class AppleW extends GameObject {
 
     public int Type_st = 0;
     public int Type_st_Del = 0;
-
+    public int PlusOnce = 0;
 
     //
     public AppleW(String name) {
@@ -324,7 +324,10 @@ public class AppleW extends GameObject {
 
                 //System.out.println("KOL");
                 Atack = 1;
-
+                if (PlusOnce == 0) {
+                    PlayerZ++;
+                    PlusOnce = 1;
+                }
 
                 //System.out.println("nowfaleKOL");
 

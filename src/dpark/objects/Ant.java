@@ -27,7 +27,7 @@ public class Ant extends GameObject {
     int otchet6 = 0;
     int Col_del = 0;
     public int Timer_3 = 15;
-
+    public int PlusOnce = 0;
 
     public Ant(String name) {
         super(name);
@@ -199,7 +199,10 @@ public class Ant extends GameObject {
                 if (Game.Shlakoblock_magic == 0) {
                     Atack = 1;
                 }
-
+                if (PlusOnce == 0) {
+                    PlayerZ++;
+                    PlusOnce = 1;
+                }
 
             } else {
                 //System.out.println("Yea.....");

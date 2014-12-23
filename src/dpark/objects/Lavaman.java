@@ -27,7 +27,7 @@ public class Lavaman extends GameObject {
     int otchet6 = 0;
     int Col_del = 0;
     public int Timer_3 = 15;
-
+    public int PlusOnce = 0;
 
     public Lavaman(String name) {
         super(name);
@@ -126,7 +126,7 @@ public class Lavaman extends GameObject {
             //yt-=3;
             y -= 1;
             z += 1;
-            sprite.currentStep = 3;
+            sprite.currentStep = 1;
         }
         if (MST == 2) {
             if (Timer_set_del == 0) {
@@ -136,7 +136,7 @@ public class Lavaman extends GameObject {
 
             //xt+=3;
             x += 1;
-            sprite.currentStep = 1;
+            sprite.currentStep = 2;
         }
         if (MST == 3) {
             if (Timer_set_del == 0) {
@@ -147,7 +147,7 @@ public class Lavaman extends GameObject {
             // yt+=3;
             y +=1;
             z -= 1;
-            sprite.currentStep = 0;
+            sprite.currentStep = 3;
         }
         if (MST == 4) {
             if (Timer_set_del == 0) {
@@ -157,7 +157,7 @@ public class Lavaman extends GameObject {
 
             //xt-=3;
             x -= 1;
-            sprite.currentStep = 2;
+            sprite.currentStep = 0;
         }
 
 
@@ -199,7 +199,10 @@ public class Lavaman extends GameObject {
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
                 Atack = 1;
-
+                if (PlusOnce == 0) {
+                    PlayerZ++;
+                    PlusOnce = 1;
+                }
 
             } else {
                 //System.out.println("Yea.....");

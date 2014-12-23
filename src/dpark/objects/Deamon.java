@@ -27,7 +27,7 @@ public class Deamon extends GameObject {
     public int otchet7 = 0; // x
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
-
+    public int PlusOnce = 0;
 
     public Deamon(String name) {
         super(name);
@@ -44,7 +44,7 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = y;
+        z = yt;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -311,7 +311,10 @@ public class Deamon extends GameObject {
 
                     //System.out.println("KOL");
                     Atack = 1;
-
+                if (PlusOnce == 0) {
+                    PlayerZ++;
+                    PlusOnce = 1;
+                }
 
 
                 //System.out.println("nowfaleKOL");
