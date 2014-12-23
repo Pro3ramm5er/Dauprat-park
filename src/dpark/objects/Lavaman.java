@@ -45,7 +45,7 @@ public class Lavaman extends GameObject {
 
         xt = x;
         yt = y;
-        z = y;
+        z = yt+15;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

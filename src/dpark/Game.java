@@ -58,6 +58,7 @@ public class Game extends Canvas implements Runnable {
     public static int Reload_on = 1;
     public static int InitOn = 0;
 
+
     public Game() {
         instance = this;
     }
@@ -230,6 +231,284 @@ public class Game extends Canvas implements Runnable {
 
 
     }
+    public void Get_start_location_3() {
+
+        if (IsCreated == 0) {
+            AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            currentRoom = db.rooms.get("map1_room");
+            db.objects.get("player").visible = true;
+            IsCreated = 1;
+            int xcr = 0;
+            int icr = 0;
+            int i = 0;
+            int zex = 0;
+            for (i = 0; i < 25; i++) {
+                Crate_create(xcr, icr, zex);
+                xcr += 32;
+                zex += 32;
+            }
+
+
+            i = 0;
+            xcr = 0;
+            icr = 0;
+
+            for (i = 0; i <= 10; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr, zex);
+            }
+
+
+            i = 0;
+            xcr = 0;
+            icr = icr + 128;
+            for (i = 0; i <= 2; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr, zex);
+            }
+
+            i = 0;
+            xcr = 0;
+
+            for (i = 0; i <= 23; i++) {
+
+                xcr += 32;
+                Crate_create(xcr, icr, zex);
+                zex += 32;
+            }
+
+
+            i = 0;
+            xcr = 768;
+            icr = 0;
+            for (i = 0; i <= 22; i++) {
+
+                icr += 32;
+                Crate_create(xcr, icr, zex);
+            }
+
+            Mdoor_create(0, 384);
+            if (KeyMessage.Created == 0) {
+                KeyMessage.AnimStep = 0;
+                MessageAkey_create();
+                KeyMessage.Created = 1;
+
+            }
+
+
+            AppleCreate(50, 50);
+
+
+            AppleGet(1, 1, 65, 65);
+            AppleGet(0, 1, 65, 65);
+            AppleGet(1, 0, 65, 65);
+            AppleGet(0, 0, 65, 65);
+
+            AppleGet(1, 1, 95, 95);
+            AppleGet(0, 1, 95, 95);
+            AppleGet(1, 0, 95, 95);
+            AppleGet(0, 0, 95, 95);
+
+            AppleGet(1, 1, 143, 145);
+            AppleGet(0, 1, 123, 23);
+            AppleGet(1, 0, 345, 124);
+            AppleGet(1, 1, 213, 53);
+
+            DieLogoCreate();
+            WinLogoCreate();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            DEC_chest_create();
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+
+            //NPC_Deamon_create();
+            //NPC_Deamon_create();
+            //NPC_Deamon_create();
+
+            //NPC_Lavaman_create();
+            //OBJ_APL_Portal_create();
+            //NPC_Ant_create();
+            //NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            //NPC_Blueman_create();
+            //NPC_Rat_create(0, 0, 0);
+            Maslo_create();
+            Maslo_create();
+            Maslo_create();
+            if (GameUpdateType == 0) {
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+            } else {
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                DEC_spruce_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_NWY_Deer_create(0);
+                //NPC_NWY_Deer_create(0);
+                //NPC_NWY_Deer_create(0);
+                //NPC_NWY_Deer_create(0);
+                //NPC_NWY_Ded_Moroz_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                // NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                //NPC_Goblin_create();
+                NPC_GoblinMaster_create();
+                NPC_GoblinMaster_create();
+                NPC_HoMonster_create();
+            }
+            NPC_Shlakoblock_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_HoMonster_create();
+            NPC_IRT_create();
+            NPC_IRT_create();
+            OBJ_APL_Snow_create();
+
+
+            //if (GameUpdateType == 1) {
+
+            //}
+        }
+        if (WinVisible == 1) {
+            if (WinTimer <= 0) {
+                AllDelete = 1;
+                WinTimer = 15;
+            } else {
+                WinTimer--;
+            }
+        }
+        if (AppleCreate == 0) {
+            NPC_Deamon_create();
+            AppleCreate = 1;
+        }
+        if (BluemanCreated == 0) {
+            NPC_Blueman_create();
+            BluemanCreated = 1;
+        }
+        if (RatCreated == 0) {
+            NPC_Rat_create(1, xo, yo);
+            RatCreated = 1;
+        }
+        if (NWY_Present_create == 0)
+        {
+            NPC_Present_create(SantaX, SantaY);
+            NWY_Present_create = 1;
+        }
+        if (Shlakoblock_create  == 0)
+        {
+            NPC_Shlakoblock_create();
+            Shlakoblock_create = 1;
+        }
+        if (DedMoroz_create  == 0)
+        {
+            NPC_NWY_Ded_Moroz_create();
+            DedMoroz_create = 1;
+        }
+        if (Maslo_Create  == 0)
+        {
+
+            Maslo_Create = 0;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
     public void Get_start_location_2() {
 
         if (IsCreated == 0) {

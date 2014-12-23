@@ -14,8 +14,14 @@ public class AppleD extends GameObject {
 
     public int xt;
     public int yt;
-    int otchet = 0;
-    int otchet2 = 0;
+    public int otchet = 0;
+    public int otchet2 = 0;
+    public int otchet3 = 0;
+    public int otchet4 = 0;
+    public int otchet5 = 0;
+    public int otchet6 = 0;
+    public int otchet7 = 0; // x
+    public int otchet8 = 0;  // y
     public int dead = 0;
     int Timer = 100;
     int OneDo = 0;
@@ -36,6 +42,7 @@ public class AppleD extends GameObject {
         }
         sprite.addStep(Game.instance.getSprite("Apple_dead.png"));
         sprite.currentStep = 0;
+        z = yt+5;
     }
 
     @Override
@@ -43,42 +50,109 @@ public class AppleD extends GameObject {
         super.update();
 
         if (dead == 0) {
-            if (otchet == myx.length || otchet == myy.length) {
+            if (otchet == myx.length) {
                 otchet = 0;
+
             }
-            if (otchet2 == myx.length || otchet2 == myy.length) {
+            if (otchet3 == myx.length) {
+                otchet3 = 0;
+
+            }
+            if (otchet5 == myx.length) {
+                otchet5 = 0;
+
+            }
+            if (otchet2 == myy.length) {
                 otchet2 = 0;
+
+            }
+            if (otchet4 == myy.length) {
+                otchet4 = 0;
+
+            }
+            if (otchet6 == myy.length) {
+                otchet6 = 0;
+
+            }
+            if (otchet7 == myx.length) {
+                otchet7 = 0;
+
+            }
+            if (otchet8 == myy.length) {
+                otchet8 = 0;
+
             }
 
-            if (xt - myx[otchet] == plx || xt + myx[otchet] == plx) {
-                if (yt - myy[otchet] == ply || yt + myy[otchet] == ply || yt - myy[otchet2] == ply || yt + myy[otchet2] == ply) {
+            if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
+                if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
                     sprite.currentStep = 1;
                     dead = 1;
 
                 } else {
-                    if (otchet == myx.length || otchet == myy.length) {
+                    if (otchet == myx.length) {
                         otchet = 0;
                     } else {
                         otchet++;
 
                     }
-                    if (otchet2 == myx.length || otchet2 == myy.length) {
+                    if (otchet3 == myx.length) {
+                        otchet3 = 0;
+                    } else {
+                        otchet3++;
+
+                    }
+                    if (otchet2 == myy.length) {
                         otchet2 = 0;
                     } else {
                         otchet2++;
+                    }
+                    if (otchet4 == myy.length) {
+                        otchet4 = 0;
+                    } else {
+                        otchet4++;
+                    }
+                    if (otchet6 == myy.length) {
+                        otchet6 = 0;
+                    } else {
+                        otchet6++;
+                    }
+                    if (otchet5 == myx.length) {
+                        otchet5 = 0;
+                    } else {
+                        otchet5++;
+                    }
+                    if (otchet7 == myx.length) {
+                        otchet7 = 0;
+
+                    }
+                    if (otchet8 == myy.length) {
+                        otchet8 = 0;
+
                     }
                 }
 
             } else {
 
-                if (otchet == myx.length || otchet == myy.length) {
+                if (otchet == myx.length) {
                     otchet = 0;
                 } else {
                     otchet++;
 
                 }
-                if (otchet2 == myx.length || otchet2 == myy.length) {
-                    otchet2 = 0;
+                if (otchet3 == myx.length) {
+                    otchet3 = 0;
+                } else {
+                    otchet3++;
+
+                }
+                if (otchet5 == myx.length) {
+                    otchet5 = 0;
+                } else {
+                    otchet5++;
+                }
+                if (otchet7 == myx.length) {
+                    otchet7 = 0;
+
                 }
 
 

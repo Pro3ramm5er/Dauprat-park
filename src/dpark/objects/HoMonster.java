@@ -44,7 +44,7 @@ public class HoMonster extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = y;
+        z = yt+5;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

@@ -44,7 +44,7 @@ public class IRT extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = y;
+        z = yt+20;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

@@ -44,7 +44,7 @@ public class MegaBear extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt;
+        z = yt+32;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

@@ -44,7 +44,7 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt;
+        z = yt+15;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

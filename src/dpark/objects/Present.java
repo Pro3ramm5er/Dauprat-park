@@ -43,7 +43,7 @@ public class Present extends GameObject {
     public void update() {
         super.update();
 
-
+        z = yt+10;
         //Collisions:
         if (Timer <= 0) {
             Col_del = 0;
