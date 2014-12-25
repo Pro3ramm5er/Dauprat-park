@@ -89,22 +89,28 @@ public class Present extends GameObject {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
                 if (/*Col_del == 0 && Timer <= 0 && */MainKeyIn == 1 && Open == 0) {
                     //System.out.println("KOL");
-                    if (PlayerZ == z || z < PlayerZ) {
+                    if (PlayerZ < z) {
+
+
+                        Player.Collision();
+
+                    } else {
                         Game.MainKey = 1;
                         sprite.currentStep = 1;
                         Open = 1;
+                    }
+                    if (PlayerZ == z)
+                    {
                         if (PlusOnce == 0) {
                             PlayerZ++;
                             PlusOnce = 1;
                         }
-                        Player.Collision();
-
                     }
 
                 }
-                if (! (PlayerZ == z)) {
-                    Player.Collision();
-                }
+                //if (! (PlayerZ == z)) {
+                 //   Player.Collision();
+                //}
                 //System.out.println("nowfaleKOL");
 
             } else {

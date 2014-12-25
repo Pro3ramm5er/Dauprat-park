@@ -1,6 +1,7 @@
 package dpark.objects;
 
 import dpark.Game;
+import dpark.Game;
 import dpark.GameObject;
 import static dpark.DB.db;
 
@@ -23,7 +24,7 @@ public class Player extends GameObject {
         super(name);
         z = y;
         PlayerZ = z;
-
+        PlayerSpeedBonus = 3;
         sprite.addStep(Game.instance.getSprite("hero.png"));
 
 
@@ -31,6 +32,8 @@ public class Player extends GameObject {
 
         sprite.addStep(Game.instance.getSprite("hero_up.png"));
         sprite.addStep(Game.instance.getSprite("hero_down.png"));
+        sprite.addStep(Game.instance.getSprite("hero_down_sp_card_used.png"));
+        //PlayerSpeedBonus = 0;
 
 
         plx = x;
@@ -48,8 +51,8 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
-        z = ply;
-        PlayerZ = ply;
+        z = ply+15;
+        PlayerZ = ply+15;
 
 
         
@@ -86,13 +89,13 @@ public class Player extends GameObject {
             PlayerZ += inertion;
             z += inertion;
         } else if (direction == 90) {
-            x += inertion;
+            x += inertion ;
         } else if (direction == 180) {
-            y += inertion;
-            PlayerZ -= inertion;
-            z -= inertion;
+            y += inertion ;
+            PlayerZ -= inertion ;
+            z -= inertion ;
         } else if (direction == 270) {
-            x -= inertion;
+            x -= inertion ;
         }
         x1 = x;
         y1 = y;
@@ -122,7 +125,11 @@ public class Player extends GameObject {
         if (keycode == KeyEvent.VK_A) {
 
             if (PlayerColSt != 4) {
+                //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
+                //} else {
+                //    inertion += PlayerSpeedBonus;
+                //}
                 direction = 270;
                 Checkr = 0;
                 PlayerWalkst = 4;
@@ -144,7 +151,11 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_D) {
             if (PlayerColSt != 2) {
+                //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
+                //} else {
+                //    inertion += PlayerSpeedBonus+1;
+                //}
                 direction = 90;
                 Checkr = 0;
                 PlayerColSt = 0;
@@ -165,7 +176,11 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_W) {
             if (PlayerColSt != 1) {
+                //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
+                //} else {
+                 //   inertion += PlayerSpeedBonus+1;
+                //}
                 direction = 0;
                 //z--;
                 Checkr = 0;
@@ -190,17 +205,21 @@ public class Player extends GameObject {
 
             if (PlayerColSt != 3) {
 
+                //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
+                //} else {
+                 //   inertion += PlayerSpeedBonus+1;
+                //}
                 direction = 180;
                 //z++;
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 3;
-                if (Game.Shlakoblock_magic == 1) {
+                if (Game.Shlakoblock_magic == 0 && PlayerSpeedBonus == 3) {
                     sprite.currentStep = 3;
                 } else {
 
-                    sprite.currentStep = 3;
+                    sprite.currentStep = 4;
 
                 }
 
@@ -256,10 +275,16 @@ public class Player extends GameObject {
         {
             Game.MainKey = 1;
         }
-
-        if (inertion > 3) {
-            inertion = 3;
-        }
+        //if (PlayerSpeedBonus == 0) {
+       //     if (inertion > 3) {
+        //        inertion = 3;
+        //    }
+       // } else {
+            if (inertion > PlayerSpeedBonus)
+            {
+                inertion = PlayerSpeedBonus;
+            }
+        //}
 
     }
 }

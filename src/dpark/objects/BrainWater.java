@@ -6,9 +6,9 @@ import dpark.GameObject;
 /**
  * Created by Nickita on 25.11.2014.
  */
-public class EvilWorm extends GameObject {
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+public class BrainWater extends GameObject {
+    public int[] myx = {1, 2 /*3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18*/, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48};
+    public int[] myy = {1, 2 /*3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18*/, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -17,7 +17,6 @@ public class EvilWorm extends GameObject {
     public int Timer_set_del = 0;
     public int Timer_sec = 0;
     public int Atack = 0;
-    public  String ST = "";
 
     public int otchet = 0;
     public int otchet2 = 0;
@@ -28,110 +27,24 @@ public class EvilWorm extends GameObject {
     public int otchet7 = 0; // x
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
-    public int CurrentTex;
-    public int animationTimer = 3;
-    public int TexType1 = 1;
-    public int ChangeTexture = 0;
+    public int PlusOnce = 0;
 
-
-    public EvilWorm(String name) {
+    public BrainWater(String name) {
         super(name);
-        xt = x;
-        yt = y;
-        z = yt;
-        sprite.addStep(Game.instance.getSprite("Worm_1_left.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_up.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_right.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_down.png"));
+        sprite.addStep(Game.instance.getSprite("BrainWater.png"));
+        sprite.addStep(Game.instance.getSprite("BrainWater.png"));
+        sprite.addStep(Game.instance.getSprite("BrainWater.png"));
+        sprite.addStep(Game.instance.getSprite("BrainWater.png"));
 
-
-        sprite.addStep(Game.instance.getSprite("Worm_1_left.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_up.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_right.png"));
-        sprite.addStep(Game.instance.getSprite("Worm_1_down.png"));
     }
 
 
     @Override
     public void update() {
-        //CurrentTex = sprite.currentStep;
-        z = yt+5;
-            //System.out.println("WICTORYYY!");
-            //System.out.println(TexType1);
-
-            if (TexType1 == 1) {
-                //System.out.println("WICTORYYY2!");
-                if (CurrentTex == 0) {
-
-                    sprite.currentStep = 4;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-
-                }
-                if (CurrentTex == 1) {
-
-                    sprite.currentStep = 5;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                if (CurrentTex == 2) {
-
-                    sprite.currentStep = 6;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                if (CurrentTex == 3) {
-
-                    sprite.currentStep = 7;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                TexType1 = 2;
-                //animationTimer = 3;
-            }
-            if (TexType1 == 2) {
-
-                //System.out.println("WICTORYYY3!");
-                if (CurrentTex == 4) {
-
-                    sprite.currentStep = 0;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                if (CurrentTex == 5) {
-
-                    sprite.currentStep = 1;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                if (CurrentTex == 6) {
-
-                    sprite.currentStep = 2;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                if (CurrentTex == 7) {
-
-                    sprite.currentStep = 3;
-                    //animationTimer = 1;
-                    ChangeTexture = 0;
-                }
-                TexType1 = 1;
-                //animationTimer = 3;
-            }
-
-        if (animationTimer <= 0)
-        {
-            TexType1 = 1;
-            animationTimer = 1;
-        } else {
-
-            animationTimer --;
-        }
-
         // STEPS
         xt = x;
         yt = y;
+        z = yt+48;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -398,6 +311,10 @@ public class EvilWorm extends GameObject {
 
                 //System.out.println("KOL");
                 Atack = 1;
+                if (PlusOnce == 0) {
+                    PlayerZ++;
+                    PlusOnce = 1;
+                }
 
 
                 //System.out.println("nowfaleKOL");

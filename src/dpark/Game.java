@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 import java.util.*;
 import java.util.List;
-
+import dpark.GameObject.*;
 import static dpark.DB.db;
 import java.io.*;
 import java.net.URL;
@@ -56,6 +56,7 @@ public class Game extends Canvas implements Runnable {
     public static int Maslo_Create = 1;
     public static int Restart_type = 1; // 1 - to main. 2 - easy delete.
     public static int Reload_on = 1;
+
     public static int InitOn = 0;
 
 
@@ -728,6 +729,7 @@ public class Game extends Canvas implements Runnable {
             NPC_IRT_create();
             NPC_IRT_create();
             OBJ_APL_Snow_create();
+            NPC_BrainWater_create();
 
 
             //if (GameUpdateType == 1) {
@@ -775,6 +777,78 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void NPC_BrainWater_create() {
+        int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
+        if (ui == 1) {
+            final BrainWater chest = new BrainWater(getFreeName("BrainWater"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final BrainWater chest = new BrainWater(getFreeName("BrainWater"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final BrainWater chest = new BrainWater(getFreeName("BrainWater"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final BrainWater chest = new BrainWater(getFreeName("BrainWater"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
     }
     public void OBJ_APL_Snow_create() {
         //int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
@@ -964,6 +1038,9 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             NPC_MegaBear_create();
             NPC_ChinaMAN_create();
+            NPC_Bandit_create();
+            NPC_MoMo_create();
+            NPC_Bananar_create();
             if (GameUpdateType == 0) {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -1057,6 +1134,9 @@ public class Game extends Canvas implements Runnable {
                 NPC_GoblinMaster_create();
             }
             NPC_Shlakoblock_create();
+            Card_create();
+            Card_create();
+            Card_create();
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
@@ -1106,6 +1186,222 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void Card_create() {
+        int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
+        if (ui == 1) {
+            final Card chest = new Card(getFreeName("Card"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+    }
+    public void NPC_Bananar_create() {
+        int ui = 1 + (int) +(Math.random() * ((7 - 1) + 1));
+        if (ui == 1) {
+            final Bananar chest = new Bananar(getFreeName("Bananar"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            if (ui == 1) {
+                final Bananar chest = new Bananar(getFreeName("Bananar"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            if (ui == 1) {
+                final Bananar chest = new Bananar(getFreeName("Bananar"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+    }
+    public void NPC_MoMo_create() {
+        int ui = 1 + (int) +(Math.random() * ((6 - 1) + 1));
+        if (ui == 1) {
+            final MoMo chest = new MoMo(getFreeName("MoMo"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            if (ui == 1) {
+                final MoMo chest = new MoMo(getFreeName("MoMo"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+            if (ui == 1) {
+                final MoMo chest = new MoMo(getFreeName("MoMo"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+    }
+    public void NPC_Bandit_create() {
+        int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
+        if (ui == 1) {
+            final Bandit chest = new Bandit(getFreeName("Bandit"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final Bandit chest = new Bandit(getFreeName("Bandit"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final Bandit chest = new Bandit(getFreeName("Bandit"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final Bandit chest = new Bandit(getFreeName("Bandit"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
+        if (ui == 1) {
+            ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+            if (ui == 1) {
+                final Bandit chest = new Bandit(getFreeName("Bandit"));
+                int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+                chest.x = wardenx;
+                chest.y = wardeny;
+                chest.xt = wardenx;
+                chest.yt = wardeny;
+                //chest.z = 5;
+
+                db.objects.put(chest.name, chest);
+                currentRoom.objectsIDs.add(chest.name);
+
+
+            }
+        }
     }
     public void NPC_ChinaMAN_create() {
         int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
@@ -1283,12 +1579,94 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
+            dlg.z = g1+140;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
             dlg.z = g1+100;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
             currentRoom.objectsIDs.add(dlg.name);
         }
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
+            dlg.z = g1+100;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
+            dlg.z = g1+100;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
+            dlg.z = g1+100;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        /*
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
+            dlg.z = g1+100;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        */
+        /*
+        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Spruce dlg = new Spruce(getFreeName("Spruce"));
+            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            dlg.x = g;
+            dlg.y = g1;
+            dlg.z = g1+100;
+            dlg.xt = g;
+            dlg.yt = g1;
+            db.objects.put(dlg.name, dlg);
+            currentRoom.objectsIDs.add(dlg.name);
+        }
+        */
     }
     public void DEC_sock_create() {
 
