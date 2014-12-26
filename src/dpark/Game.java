@@ -56,7 +56,8 @@ public class Game extends Canvas implements Runnable {
     public static int Maslo_Create = 1;
     public static int Restart_type = 1; // 1 - to main. 2 - easy delete.
     public static int Reload_on = 1;
-
+    public static int Bananar_bad = 0;
+    public static int Fullimmortality = 0;
     public static int InitOn = 0;
 
 
@@ -1185,6 +1186,11 @@ public class Game extends Canvas implements Runnable {
 
             Maslo_Create = 0;
         }
+        if (Bananar_bad > 0)
+        {
+            Bananar_bad--;
+            NPC_Bananar_create();
+        }
 
     }
     public void Card_create() {
@@ -1579,7 +1585,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1+140;
+            dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
@@ -1592,7 +1598,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1+100;
+            dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
@@ -1605,7 +1611,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1+100;
+            dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
@@ -1618,7 +1624,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1+100;
+            dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
@@ -1631,7 +1637,7 @@ public class Game extends Canvas implements Runnable {
             int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
             dlg.x = g;
             dlg.y = g1;
-            dlg.z = g1+100;
+            dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);

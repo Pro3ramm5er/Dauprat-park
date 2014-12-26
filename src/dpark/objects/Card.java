@@ -27,16 +27,22 @@ public class Card extends GameObject {
     public int Col_del = 0;
     public int Open = 0;
     public int PlusOnce = 0;
-    public int CardType = 1  /*(int) (Math.random() * ((4 - 1) + 1))*/;
+    public int immortality_time = 4000;
+    public int immortality_on = 0;
+    public int CardType = 1  + (int) (Math.random() * ((4 - 1) + 1));
 
 
     public Card(String name) {
         super(name);
-        z = 0;
+        z = yt;
 
 
         sprite.addStep(Game.instance.getSprite("Card.png"));
         sprite.addStep(Game.instance.getSprite("Speed_card.png"));
+        sprite.addStep(Game.instance.getSprite("SupSpeed_card.png"));
+        sprite.addStep(Game.instance.getSprite("BadCard.png"));
+        sprite.addStep(Game.instance.getSprite("immortality_card.png"));
+        sprite.addStep(Game.instance.getSprite("immortality_card_off.png"));
 
     }
 
@@ -51,6 +57,14 @@ public class Card extends GameObject {
             Timer = 0;
         } else {
             Timer--;
+        }
+        if (immortality_time < 0)
+        {
+            Game.Fullimmortality = 0;
+            immortality_on = 0;
+            sprite.currentStep = 5;
+        } else {
+            immortality_time--;
         }
         if (otchet == myx.length) {
             otchet = 0;
@@ -104,7 +118,31 @@ public class Card extends GameObject {
                                 Open = 1;
                             }
                         }
-
+                    if (CardType == 2) {
+                        if (Open == 0) {
+                            sprite.currentStep = 2;
+                            PlayerSpeedBonus += 4;
+                            Open = 1;
+                        }
+                    }
+                    if (CardType == 3) {
+                        if (Open == 0) {
+                            sprite.currentStep = 3;
+                            Game.Bananar_bad = 100;
+                            //PlayerSpeedBonus += 4;
+                            Open = 1;
+                        }
+                    }
+                    if (CardType == 4) {
+                        if (Open == 0) {
+                            sprite.currentStep = 4;
+                            //Game.Bananar_bad = 100;
+                            //PlayerSpeedBonus += 4;
+                            immortality_on = 1;
+                            Game.Fullimmortality = 1;
+                            Open = 1;
+                        }
+                    }
                     //}
                     if (PlayerZ == z)
                     {
