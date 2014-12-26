@@ -49,6 +49,7 @@ public class Game extends Canvas implements Runnable {
     public static int SantaY;
     public static int NWY_Present_create = 1;
     public static int Shlakoblock_create = 1;
+    public static int CardCreate = 1;
     public static int DedMoroz_create = 0;
     public static int MainKey = 0;
     public static int WinVisible = 0;
@@ -59,6 +60,7 @@ public class Game extends Canvas implements Runnable {
     public static int Bananar_bad = 0;
     public static int Fullimmortality = 0;
     public static int InitOn = 0;
+    public static int blindness_on = 0;
 
 
     public Game() {
@@ -498,6 +500,11 @@ public class Game extends Canvas implements Runnable {
 
             Maslo_Create = 0;
         }
+        if (CardCreate  == 0)
+        {
+            Card_create();
+            CardCreate = 1;
+        }
 
     }
 
@@ -731,8 +738,10 @@ public class Game extends Canvas implements Runnable {
             NPC_IRT_create();
             OBJ_APL_Snow_create();
             NPC_BrainWater_create();
-
-
+            Card_create();
+            Card_create();
+            Card_create();
+            eff_bil_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -1138,6 +1147,7 @@ public class Game extends Canvas implements Runnable {
             Card_create();
             Card_create();
             Card_create();
+            eff_bil_create();
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
@@ -1186,11 +1196,32 @@ public class Game extends Canvas implements Runnable {
 
             Maslo_Create = 0;
         }
+        if (CardCreate  == 0)
+        {
+            Card_create();
+            CardCreate = 1;
+        }
         if (Bananar_bad > 0)
         {
             Bananar_bad--;
             NPC_Bananar_create();
         }
+
+    }
+    public void eff_bil_create() {
+
+            final blindness chest = new blindness(getFreeName("blindness"));
+            int wardenx =0;
+            int wardeny =0;
+            chest.x = 0;
+            chest.y = 0;
+
+            chest.z = 15000000;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
 
     }
     public void Card_create() {
