@@ -17,10 +17,12 @@ public class Portal extends GameObject {
 
 
     public Portal(String name) {
+
         super(name);
         sprite.addStep(Game.instance.getSprite("ApplePortal_1.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_2.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_3.png"));
+        z = x+15;
     }
 
     public void DO() {

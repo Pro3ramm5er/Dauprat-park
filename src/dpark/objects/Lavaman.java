@@ -28,6 +28,8 @@ public class Lavaman extends GameObject {
     int Col_del = 0;
     public int Timer_3 = 15;
     public int PlusOnce = 0;
+    public int MinusTimer = 40;
+    public int Minus = 0;
 
     public Lavaman(String name) {
         super(name);
@@ -46,6 +48,20 @@ public class Lavaman extends GameObject {
         xt = x;
         yt = y;
         z = yt+15;
+        if (MinusTimer <= 0 && Minus == 1)
+        {
+            if (Game.Health == 1)
+            {
+                Atack = 1;
+            } else {
+                Game.Health --;
+                MinusTimer = 40;
+                Minus = 0;
+            }
+
+        } else {
+            MinusTimer --;
+        }
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -198,7 +214,7 @@ public class Lavaman extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4) {
-                Atack = 1;
+                Minus = 1;
                 if (PlusOnce == 0) {
                     PlayerZ++;
                     PlusOnce = 1;

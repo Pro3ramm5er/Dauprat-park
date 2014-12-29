@@ -66,6 +66,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_x;
     public static int Snow_y;
     public static int Snow_create = 1;
+    public static int Health = 2;
 
 
     public Game() {
@@ -400,13 +401,9 @@ public class Game extends Canvas implements Runnable {
 
             DieLogoCreate();
             WinLogoCreate();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
+            //DEC_chest_create();
+            //DEC_chest_create();
+
             //NPC_AppleW_create(0);
             //NPC_AppleW_create(1);
             //NPC_AppleW_create(0);
@@ -529,10 +526,11 @@ public class Game extends Canvas implements Runnable {
             NPC_HoMonster_create();
             NPC_IRT_create();
             NPC_IRT_create();
-            OBJ_APL_Snow_create();
+            //OBJ_APL_Snow_create();
             NPC_Slim_create();
             NPC_Alpinos_create();
             NPC_Tres_create();
+            NPC_Healthbar_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -588,6 +586,23 @@ public class Game extends Canvas implements Runnable {
             NPC_Snow_create();
             Snow_create = 1;
         }
+    }
+    public void NPC_Healthbar_create() {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+        final Healthbar chest = new Healthbar(getFreeName("Healthbar"));
+        //int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+        //int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+        chest.x = 32;
+        chest.y = 32;
+
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+        //NPC_Tres_create();
+
+        //}
     }
     public void NPC_Snow_create() {
         //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
@@ -761,13 +776,7 @@ public class Game extends Canvas implements Runnable {
 
             DieLogoCreate();
             WinLogoCreate();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
+
             //NPC_AppleW_create(0);
             //NPC_AppleW_create(1);
             //NPC_AppleW_create(0);
@@ -890,13 +899,14 @@ public class Game extends Canvas implements Runnable {
             NPC_HoMonster_create();
             NPC_IRT_create();
             NPC_IRT_create();
-            OBJ_APL_Snow_create();
+            //OBJ_APL_Snow_create();
             NPC_BrainWater_create();
             Card_create();
             Card_create();
             Card_create();
             eff_bil_create();
             NPC_TNT_create();
+            NPC_Healthbar_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -1194,13 +1204,7 @@ public class Game extends Canvas implements Runnable {
 
             DieLogoCreate();
             WinLogoCreate();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
-            DEC_chest_create();
+
             //NPC_AppleW_create(0);
             //NPC_AppleW_create(1);
             //NPC_AppleW_create(0);
@@ -1218,8 +1222,9 @@ public class Game extends Canvas implements Runnable {
             //NPC_Ant_create();
             NPC_Ant_create();
             NPC_Ant_create();
+            NPC_Healthbar_create();
             NPC_Blueman_create();
-            NPC_Rat_create(0, 0, 0);
+            //NPC_Rat_create(0, 0, 0);
             Maslo_create();
             Maslo_create();
             Maslo_create();

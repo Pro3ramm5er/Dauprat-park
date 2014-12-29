@@ -27,7 +27,7 @@ public class Crate extends GameObject {
 
     public Crate(String name) {
         super(name);
-        z = 0;
+        z = yt+30;
 
 
         sprite.addStep(Game.instance.getSprite("Blockstone.png"));

@@ -29,6 +29,8 @@ public class Goblin extends GameObject {
     public int Timer_3 = 15;
     public int PlusOnce = 0;
     public int SnowTimer = 0;
+    public int MinusTimer = 45;
+    public int Minus = 0;
     public Goblin(String name) {
         super(name);
         sprite.addStep(Game.instance.getSprite("Goblin_left.png"));
@@ -45,6 +47,20 @@ public class Goblin extends GameObject {
         xt = x;
         yt = y;
         z = yt+16;
+        if (MinusTimer <= 0 && Minus == 1)
+        {
+            if (Game.Health == 1)
+            {
+                Atack = 1;
+            } else {
+                Game.Health --;
+                MinusTimer = 40;
+                Minus = 0;
+            }
+
+        } else {
+            MinusTimer --;
+        }
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -208,7 +224,7 @@ public class Goblin extends GameObject {
 
                 //System.out.println("KOL");
                 if (Game.Fullimmortality == 0) {
-                    Atack = 1;
+                    Minus = 1;
                 }
 
                 if (PlusOnce == 0) {

@@ -28,6 +28,8 @@ public class Deamon extends GameObject {
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
     public int PlusOnce = 0;
+    public int MinusTimer = 40;
+    public int Minus = 0;
 
     public Deamon(String name) {
         super(name);
@@ -45,6 +47,20 @@ public class Deamon extends GameObject {
         xt = x;
         yt = y;
         z = yt+15;
+        if (MinusTimer <= 0 && Minus == 1)
+        {
+            if (Game.Health == 1)
+            {
+                Atack = 1;
+            } else {
+                Game.Health --;
+                MinusTimer = 40;
+                Minus = 0;
+            }
+
+        } else {
+            MinusTimer --;
+        }
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -311,7 +327,7 @@ public class Deamon extends GameObject {
 
                     //System.out.println("KOL");
                 if (Game.Fullimmortality == 0) {
-                    Atack = 1;
+                   Minus = 1;
                 }
                 if (PlusOnce == 0) {
                     PlayerZ++;

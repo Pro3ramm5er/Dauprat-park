@@ -48,10 +48,13 @@ public class Tres extends GameObject {
         z = yt+16;
         Game.Snow_MST = MST;
         Game.Snow_x = x;
-        Game.Snow_y = y;
+        Game.Snow_y = y + 15;
         if (SnowTimer <= 0)
         {
-            Game.Snow_create = 0;
+            int a =  1 + (int) (Math.random() * ((3 - 1) + 1));
+            if (a == 1) {
+                Game.Snow_create = 0;
+            }
             SnowTimer = 10;
         } else {
             SnowTimer--;
