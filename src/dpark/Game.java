@@ -40,7 +40,7 @@ public class Game extends Canvas implements Runnable {
     public static int AppleCreate = 1;
     public static int BeforeMain = 0;
     public static int BluemanCreated = 1;
-    public static int RatCreated = 0;
+    public static int RatCreated = 1;
     public static int xo;
     public static int yo;
     public static int Shlakoblock_magic = 0;
@@ -143,6 +143,7 @@ public class Game extends Canvas implements Runnable {
                     Shlakoblock_magic = 0;
                     BeforeMain = 0;
                     Reload_on = 1;
+                    Health = 2;
                     if (Restart_type == 1) {
                         init();
                     }
@@ -553,9 +554,10 @@ public class Game extends Canvas implements Runnable {
             BluemanCreated = 1;
         }
         if (RatCreated == 0) {
-            NPC_Rat_create(1, xo, yo);
+            //sNPC_Rat_create(1, xo, yo);
             RatCreated = 1;
         }
+
         if (NWY_Present_create == 0)
         {
             NPC_Present_create(SantaX, SantaY);
@@ -929,14 +931,16 @@ public class Game extends Canvas implements Runnable {
             BluemanCreated = 1;
         }
         if (RatCreated == 0) {
-            NPC_Rat_create(1, xo, yo);
+            //NPC_Rat_create(1, xo, yo);
             RatCreated = 1;
         }
+        /*
         if (NWY_Present_create == 0)
         {
             NPC_Present_create(SantaX, SantaY);
             NWY_Present_create = 1;
         }
+        */
         if (Shlakoblock_create  == 0)
         {
             NPC_Shlakoblock_create();
@@ -1356,7 +1360,7 @@ public class Game extends Canvas implements Runnable {
             BluemanCreated = 1;
         }
         if (RatCreated == 0) {
-            NPC_Rat_create(1, xo, yo);
+            //NPC_Rat_create(1, xo, yo);
             RatCreated = 1;
         }
         if (NWY_Present_create == 0)
@@ -2020,7 +2024,7 @@ public class Game extends Canvas implements Runnable {
         currentRoom.objectsIDs.add(chest.name);
 
     }
-
+    /*
     public void NPC_Rat_create(int type, int xf, int yf) {
         if (type == 0) {
             int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
@@ -2055,6 +2059,7 @@ public class Game extends Canvas implements Runnable {
             //}
         }
     }
+    */
 
     public void NPC_Blueman_create() {
         int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));

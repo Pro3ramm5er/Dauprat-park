@@ -55,7 +55,7 @@ public class Lavaman extends GameObject {
                 Atack = 1;
             } else {
                 Game.Health --;
-                MinusTimer = 40;
+                MinusTimer = 30;
                 Minus = 0;
             }
 

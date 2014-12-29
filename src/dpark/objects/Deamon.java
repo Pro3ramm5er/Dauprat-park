@@ -28,7 +28,7 @@ public class Deamon extends GameObject {
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
     public int PlusOnce = 0;
-    public int MinusTimer = 40;
+    public int MinusTimer = 15;
     public int Minus = 0;
 
     public Deamon(String name) {
@@ -54,7 +54,7 @@ public class Deamon extends GameObject {
                 Atack = 1;
             } else {
                 Game.Health --;
-                MinusTimer = 40;
+                MinusTimer = 30;
                 Minus = 0;
             }
 

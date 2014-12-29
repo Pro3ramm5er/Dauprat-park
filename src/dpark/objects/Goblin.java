@@ -29,7 +29,7 @@ public class Goblin extends GameObject {
     public int Timer_3 = 15;
     public int PlusOnce = 0;
     public int SnowTimer = 0;
-    public int MinusTimer = 45;
+    public int MinusTimer = 15;
     public int Minus = 0;
     public Goblin(String name) {
         super(name);
@@ -54,7 +54,7 @@ public class Goblin extends GameObject {
                 Atack = 1;
             } else {
                 Game.Health --;
-                MinusTimer = 40;
+                MinusTimer = 30;
                 Minus = 0;
             }
 
