@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * Created by Nickita on 25.11.2014.
  */
-public class Goblin extends GameObject {
+public class Gun extends GameObject {
     public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int xt;
@@ -28,13 +28,13 @@ public class Goblin extends GameObject {
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
     public int PlusOnce = 0;
-    public int SnowTimer = 0;
-    public Goblin(String name) {
+
+    public Gun(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Goblin_left.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_up.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_right.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_down.png"));
+        sprite.addStep(Game.instance.getSprite("Sneshok.png"));
+        sprite.addStep(Game.instance.getSprite("Sneshok.png"));
+        sprite.addStep(Game.instance.getSprite("Sneshok.png"));
+        sprite.addStep(Game.instance.getSprite("Sneshok.png"));
 
     }
 
@@ -44,7 +44,8 @@ public class Goblin extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+16;
+        z = yt+8;
+        /*
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -57,7 +58,8 @@ public class Goblin extends GameObject {
         if (yt <= 90 || y <= 90) {
             MST = 3;
         }
-
+        */
+        /*
         for (int i = 0; i < 120; i++) {
             if (plx == xt && ply == yt - i) {
                 MST = 1;
@@ -76,6 +78,7 @@ public class Goblin extends GameObject {
             }
 
         }
+        */
 
         if (Atack == 1) {
 
@@ -101,13 +104,14 @@ public class Goblin extends GameObject {
 
 
         // STEPS END
-
+        /*
         if (Timer <= 0) {
             MST = 0 + (int) (Math.random() * ((4 - 0) + 1));
             Timer_set_del = 0;
         } else {
             Timer--;
         }
+        */
         if (MST == 0) {
             if (Timer_set_del == 0) {
                 Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
@@ -124,8 +128,8 @@ public class Goblin extends GameObject {
             }
 
             //yt-=3;
-            y -= 1;
-            z += 1;
+            y -= 6;
+            z += 6;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -135,7 +139,7 @@ public class Goblin extends GameObject {
             }
 
             //xt+=3;
-            x += 1;
+            x += 6;
             sprite.currentStep = 2;
         }
         if (MST == 3) {
@@ -145,8 +149,8 @@ public class Goblin extends GameObject {
             }
 
             // yt+=3;
-            y +=1;
-            z -= 1;
+            y +=6;
+            z -= 6;
             sprite.currentStep = 3;
         }
         if (MST == 4) {
@@ -156,7 +160,7 @@ public class Goblin extends GameObject {
             }
 
             //xt-=3;
-            x -= 1;
+            x -= 6;
             sprite.currentStep = 0;
         }
 

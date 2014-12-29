@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * Created by Nickita on 25.11.2014.
  */
-public class Goblin extends GameObject {
+public class Slim extends GameObject {
     public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int xt;
@@ -28,13 +28,13 @@ public class Goblin extends GameObject {
     public int otchet8 = 0;  // y
     public int Timer_3 = 15;
     public int PlusOnce = 0;
-    public int SnowTimer = 0;
-    public Goblin(String name) {
+
+    public Slim(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Goblin_left.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_up.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_right.png"));
-        sprite.addStep(Game.instance.getSprite("Goblin_down.png"));
+        sprite.addStep(Game.instance.getSprite("Slim.png"));
+        sprite.addStep(Game.instance.getSprite("Slim.png"));
+        sprite.addStep(Game.instance.getSprite("Slim.png"));
+        sprite.addStep(Game.instance.getSprite("Slim.png"));
 
     }
 
@@ -124,8 +124,8 @@ public class Goblin extends GameObject {
             }
 
             //yt-=3;
-            y -= 1;
-            z += 1;
+            y -= 3;
+            z += 3;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -135,7 +135,7 @@ public class Goblin extends GameObject {
             }
 
             //xt+=3;
-            x += 1;
+            x += 3;
             sprite.currentStep = 2;
         }
         if (MST == 3) {
@@ -145,8 +145,8 @@ public class Goblin extends GameObject {
             }
 
             // yt+=3;
-            y +=1;
-            z -= 1;
+            y +=3;
+            z -= 3;
             sprite.currentStep = 3;
         }
         if (MST == 4) {
@@ -156,7 +156,7 @@ public class Goblin extends GameObject {
             }
 
             //xt-=3;
-            x -= 1;
+            x -= 3;
             sprite.currentStep = 0;
         }
 

@@ -55,12 +55,17 @@ public class Game extends Canvas implements Runnable {
     public static int WinVisible = 0;
     public static int WinTimer = 50;
     public static int Maslo_Create = 1;
-    public static int Restart_type = 1; // 1 - to main. 2 - easy delete.
+    public static int Restart_type = 1; // 1 - to main. 2 - easy delete. 3 - 3 location
     public static int Reload_on = 1;
     public static int Bananar_bad = 0;
     public static int Fullimmortality = 0;
     public static int InitOn = 0;
     public static int blindness_on = 0;
+    public static int Level = 1;
+    public static int Snow_MST = 0;
+    public static int Snow_x;
+    public static int Snow_y;
+    public static int Snow_create = 1;
 
 
     public Game() {
@@ -89,8 +94,20 @@ public class Game extends Canvas implements Runnable {
                     && loops < MaxFrameSkip) {
 
                 update();
+
                 if (BeforeMain == 1) {
-                    Get_Start();
+                    if (Level == 1) {
+                        Get_Start();
+
+                    }
+                    if (Level == 2) {
+                        Get_start_location_2();
+
+                    }
+                    if (Level == 3) {
+                        Get_start_location_3();
+
+                    }
                 }
                 currentRoom.update();
 
@@ -131,6 +148,9 @@ public class Game extends Canvas implements Runnable {
                     if (Restart_type == 2) {
                         init_location_2();
                     }
+                    if (Restart_type == 3) {
+                        init_location_3();
+                    }
                     IsCreated = 0;
                     AllDelete = 0;
 
@@ -160,6 +180,7 @@ public class Game extends Canvas implements Runnable {
         //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
 
 
+
         currentRoom = db.rooms.get("main_menu_room");
     }
     public void init_location_2() {
@@ -169,6 +190,15 @@ public class Game extends Canvas implements Runnable {
         currentRoom = db.rooms.get("map2_room");
         Restart_type = 1;
         Get_start_location_2();
+
+    }
+    public void init_location_3() {
+        addKeyListener(new Keyboard());
+        addMouseListener(mouseListener);
+        db.onGameLoaded(this);
+        currentRoom = db.rooms.get("map3_room");
+        Restart_type = 2;
+        Get_start_location_3();
 
     }
 
@@ -236,44 +266,63 @@ public class Game extends Canvas implements Runnable {
 
     }
     public void Get_start_location_3() {
-
+        Level = 3;
         if (IsCreated == 0) {
             AllDelete = 0;
+            BeforeMain = 1;
 
             GameObject.PlayerCanMovie = 0;
-            currentRoom = db.rooms.get("map1_room");
+            currentRoom = db.rooms.get("map3_room");
             db.objects.get("player").visible = true;
             IsCreated = 1;
             int xcr = 0;
             int icr = 0;
             int i = 0;
             int zex = 0;
-            for (i = 0; i < 25; i++) {
+            for (i = 0; i < 5; i++) {
                 Crate_create(xcr, icr, zex);
                 xcr += 32;
-                zex += 32;
+                //zex += 32;
             }
-
-
+            Mdoor_create(160,icr, 2);
+            xcr = xcr + 128;
+            icr = 0;
+            i = 0;
+            zex = 0;
+            for (i = 0; i < 20; i++) {
+                Crate_create(xcr, icr, zex);
+                xcr += 32;
+                //zex += 32;
+            }
             i = 0;
             xcr = 0;
             icr = 0;
 
-            for (i = 0; i <= 10; i++) {
+            for (i = 0; i <= 25; i++) {
 
                 icr += 32;
+                zex+= 32;
                 Crate_create(xcr, icr, zex);
             }
-
-
             i = 0;
-            xcr = 0;
-            icr = icr + 128;
-            for (i = 0; i <= 2; i++) {
+            xcr = 32;
+            icr = 580;
+            zex = 0;
+            for ( i = 0; i <= 25; i++) {
 
-                icr += 32;
+                //icr += 32;
+                xcr+=32;
+                //zex+= 32;
                 Crate_create(xcr, icr, zex);
             }
+            //i = 0;
+            //xcr = 0;
+            //icr = icr + 128;
+            //for (i = 0; i <= 2; i++) {
+//
+            //    icr += 32;
+             //   Crate_create(xcr, icr, zex);
+            //}
 
             i = 0;
             xcr = 0;
@@ -289,13 +338,40 @@ public class Game extends Canvas implements Runnable {
             i = 0;
             xcr = 768;
             icr = 0;
-            for (i = 0; i <= 22; i++) {
 
+            for (i = 0; i <= 25; i++) {
+//
+
+               Crate_create(xcr, icr, zex);
                 icr += 32;
+                zex += 32;
+            }
+
+
+
+
+            i = 0;
+            xcr = 0;
+            //icr = 0;
+            for (i = 0; i <= 25; i++) {
+//
+                xcr += 32;
                 Crate_create(xcr, icr, zex);
             }
 
-            Mdoor_create(0, 384);
+
+            i = 0;
+            xcr = 32;
+            icr = 768;
+            for (i = 0; i <= 24; i++) {
+//
+
+                Crate_create(xcr, icr, zex);
+                xcr += 32;
+            }
+
+
+            //Mdoor_create(0, 384);
             if (KeyMessage.Created == 0) {
                 KeyMessage.AnimStep = 0;
                 MessageAkey_create();
@@ -454,12 +530,14 @@ public class Game extends Canvas implements Runnable {
             NPC_IRT_create();
             NPC_IRT_create();
             OBJ_APL_Snow_create();
-
-
+            NPC_Slim_create();
+            NPC_Alpinos_create();
+            NPC_Tres_create();
             //if (GameUpdateType == 1) {
 
             //}
         }
+
         if (WinVisible == 1) {
             if (WinTimer <= 0) {
                 AllDelete = 1;
@@ -505,7 +583,84 @@ public class Game extends Canvas implements Runnable {
             Card_create();
             CardCreate = 1;
         }
+        if (Snow_create  == 0)
+        {
+            NPC_Snow_create();
+            Snow_create = 1;
+        }
+    }
+    public void NPC_Snow_create() {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+            final Gun chest = new Gun(getFreeName("Gun"));
+            //int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            //int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = Snow_x;
+            chest.y = Snow_y;
+            chest.xt = Snow_x;
+            chest.yt = Snow_y;
+            chest.MST = Snow_MST;
+            //chest.z = 5;
 
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            //NPC_Tres_create();
+
+        //}
+    }
+    public void NPC_Tres_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Tres chest = new Tres(getFreeName("Tres"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            NPC_Tres_create();
+
+        }
+    }
+    public void NPC_Alpinos_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Alpinos chest = new Alpinos(getFreeName("Alpinos"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            NPC_Alpinos_create();
+
+        }
+    }
+    public void NPC_Slim_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Slim chest = new Slim(getFreeName("Slim"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            NPC_Slim_create();
+
+        }
     }
 
 
@@ -516,15 +671,14 @@ public class Game extends Canvas implements Runnable {
 
 
 
-
-
     public void Get_start_location_2() {
-
+        Level = 2;
         if (IsCreated == 0) {
             AllDelete = 0;
+            BeforeMain = 1;
 
             GameObject.PlayerCanMovie = 0;
-            currentRoom = db.rooms.get("map1_room");
+            currentRoom = db.rooms.get("map2_room");
             db.objects.get("player").visible = true;
             IsCreated = 1;
             int xcr = 0;
@@ -534,7 +688,7 @@ public class Game extends Canvas implements Runnable {
             for (i = 0; i < 25; i++) {
                 Crate_create(xcr, icr, zex);
                 xcr += 32;
-                zex += 32;
+                //zex += 32;
             }
 
 
@@ -578,7 +732,7 @@ public class Game extends Canvas implements Runnable {
                 Crate_create(xcr, icr, zex);
             }
 
-            Mdoor_create(0, 384);
+            Mdoor_create(0, 384, 1);
             if (KeyMessage.Created == 0) {
                 KeyMessage.AnimStep = 0;
                 MessageAkey_create();
@@ -742,10 +896,12 @@ public class Game extends Canvas implements Runnable {
             Card_create();
             Card_create();
             eff_bil_create();
+            NPC_TNT_create();
             //if (GameUpdateType == 1) {
 
             //}
         }
+
         if (WinVisible == 1) {
             if (WinTimer <= 0) {
                 AllDelete = 1;
@@ -787,6 +943,25 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void NPC_TNT_create() {
+
+        //int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        //if (ui == 1) {
+            final TNT chest = new TNT(getFreeName("TNT"));
+            int wardenx = 50 + (int) (Math.random() * ((600 - 50) + 1));
+            int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
+
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+
+
+            //chest.z = -5;
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+       // }
     }
     public void NPC_BrainWater_create() {
         int ui = 1 + (int) +(Math.random() * ((5 - 1) + 1));
@@ -930,6 +1105,8 @@ public class Game extends Canvas implements Runnable {
     }
     public void Get_Start() {
 
+        Level = 1;
+
         if (IsCreated == 0) {
             AllDelete = 0;
 
@@ -988,7 +1165,7 @@ public class Game extends Canvas implements Runnable {
                 Crate_create(xcr, icr, zex);
             }
 
-            Mdoor_create(0, 384);
+            Mdoor_create(0, 384, 1);
             if (KeyMessage.Created == 0) {
                 KeyMessage.AnimStep = 0;
                 MessageAkey_create();
@@ -1156,6 +1333,7 @@ public class Game extends Canvas implements Runnable {
 
             //}
         }
+
         if (WinVisible == 1) {
             if (WinTimer <= 0) {
                 AllDelete = 1;
@@ -2025,12 +2203,13 @@ public class Game extends Canvas implements Runnable {
     }
 
 
-    public void Mdoor_create(int xau, int yau) {
+    public void Mdoor_create(int xau, int yau, int type) {
         final main_door md = new main_door(getFreeName("Main_Door"));
         md.x = xau;
         md.y = yau;
         md.xt = xau;
         md.yt = yau;
+        md.Door_type = type;
 
         db.objects.put(md.name, md);
         currentRoom.objectsIDs.add(md.name);

@@ -235,7 +235,7 @@ public class Player extends GameObject {
             Key_K = 1;
 
         } else {
-            if  (! (keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_U || keycode == KeyEvent.VK_Y || keycode == KeyEvent.VK_T)) {
+            if  (! (keycode == KeyEvent.VK_O ||  keycode == KeyEvent.VK_R || keycode == KeyEvent.VK_U || keycode == KeyEvent.VK_Y || keycode == KeyEvent.VK_T)  ) {
                 Key_K = 0;
             }
         }
@@ -293,6 +293,12 @@ public class Player extends GameObject {
         if (keycode == KeyEvent.VK_T && Key_K == 1)
         {
             Game.Fullimmortality = 1;
+        }
+
+        if (keycode == KeyEvent.VK_R && Key_K == 1)
+        {
+            Game.Restart_type = 3;
+            Game.AllDelete = 1;
         }
         //if (PlayerSpeedBonus == 0) {
        //     if (inertion > 3) {

@@ -43,7 +43,7 @@ public class Master_Goblin extends GameObject {
     public void update() {
         // STEPS
         xt = x;
-        yt = y;
+        yt = y;z = yt+15;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -124,6 +124,7 @@ public class Master_Goblin extends GameObject {
 
             //yt-=3;
             y -= 2;
+            z += 2;
             sprite.currentStep = 1;
         }
         if (MST == 2) {
@@ -143,7 +144,8 @@ public class Master_Goblin extends GameObject {
             }
 
             // yt+=3;
-            y += 2;
+            y +=2;
+            z -= 2;
             sprite.currentStep = 3;
         }
         if (MST == 4) {
