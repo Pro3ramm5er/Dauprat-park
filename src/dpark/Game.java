@@ -67,7 +67,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_y;
     public static int Snow_create = 1;
     public static int Health = 2;
-    public static int Biome_type = 1 + (int) (Math.random() * ((2 - 1) + 1));
+    public static int Biome_type = 1 + (int) (Math.random() * ((3 - 1) + 1));
 
 
     public Game() {
@@ -145,7 +145,7 @@ public class Game extends Canvas implements Runnable {
                     BeforeMain = 0;
                     Reload_on = 1;
                     Health = 2;
-                    Biome_type = 1 + (int) (Math.random() * ((2 - 1) + 1));
+                    Biome_type =  1 + (int) (Math.random() * ((3 - 1) + 1));
                     if (Restart_type == 1) {
                         init();
                     }
@@ -211,9 +211,11 @@ public class Game extends Canvas implements Runnable {
         if (bss == null) {
             createBufferStrategy(2);
             requestFocus();
+
             return;
         }
         gl = bss.getDrawGraphics();
+
         gl.setColor(Color.black);
         gl.fillRect(0, 0, getWidth(), getHeight());
         db.backgrounds.get(room.background).sprite.getStep().sprite.draw(gl, 5,
@@ -247,6 +249,7 @@ public class Game extends Canvas implements Runnable {
         frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
+
         game.start();
 
         return game;
@@ -481,7 +484,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } else {
+            } if (Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -521,6 +524,12 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
 
             }
+            if (Biome_type == 3)
+            {
+                Cactus_create();
+                Rock_create();
+
+            }
             NPC_GoblinMaster_create();
             NPC_GoblinMaster_create();
             NPC_HoMonster_create();
@@ -537,6 +546,8 @@ public class Game extends Canvas implements Runnable {
             NPC_Tres_create();
             NPC_Healthbar_create();
             NPC_SantaDemon_create();
+            //NPC_Present_create();
+            //NPC_Present_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -876,7 +887,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } else {
+            } if (Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -916,6 +927,12 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
 
             }
+            if (Biome_type == 3)
+            {
+                Cactus_create();
+                Rock_create();
+
+            }
             NPC_GoblinMaster_create();
             NPC_GoblinMaster_create();
             NPC_HoMonster_create();
@@ -935,6 +952,8 @@ public class Game extends Canvas implements Runnable {
             NPC_TNT_create();
             NPC_Healthbar_create();
             NPC_InfectGoblin_create();
+           // NPC_Present_create();
+            //NPC_Present_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -1333,7 +1352,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } else {
+            } if (Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -1374,6 +1393,12 @@ public class Game extends Canvas implements Runnable {
                 NPC_GoblinMaster_create();
                 NPC_GoblinMaster_create();
             }
+            if (Biome_type == 3)
+            {
+                Cactus_create();
+                Rock_create();
+
+            }
             NPC_Shlakoblock_create();
             Card_create();
             Card_create();
@@ -1386,6 +1411,8 @@ public class Game extends Canvas implements Runnable {
             //if (GameUpdateType == 1) {
 
             //}
+            NPC_Present_create();
+            NPC_Present_create();
         }
 
         if (WinVisible == 1) {
@@ -1439,6 +1466,42 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Rock_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Rock chest = new Rock(getFreeName("Rock"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt-2;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Rock_create();
+
+        }
+    }
+    public void Cactus_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Cactus chest = new Cactus(getFreeName("Cactus"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+30;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Cactus_create();
+
+        }
     }
     public void Tree_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
