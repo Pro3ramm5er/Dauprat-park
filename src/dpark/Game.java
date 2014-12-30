@@ -546,6 +546,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Tres_create();
             NPC_Healthbar_create();
             NPC_SantaDemon_create();
+            NPC_Bananas_create();
             //NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -952,6 +953,7 @@ public class Game extends Canvas implements Runnable {
             NPC_TNT_create();
             NPC_Healthbar_create();
             NPC_InfectGoblin_create();
+            NPC_Bananas_create();
            // NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1404,6 +1406,8 @@ public class Game extends Canvas implements Runnable {
             Card_create();
             Card_create();
             eff_bil_create();
+            NPC_Bananas_create();
+
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
             //NPC_EvilWorm_create();
@@ -1466,6 +1470,44 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void NPC_Bananas_create_nrdm() {
+        //int ui = 1 + (int) +(Math.random() * ((15 - 1) + 1));
+        //if (ui == 1) {
+            final Bananas chest = new Bananas(getFreeName("Bananas"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        //}
+    }
+    public void NPC_Bananas_create() {
+        int ui = 1 + (int) +(Math.random() * ((15 - 1) + 1));
+        if (ui == 1) {
+            final Bananas chest = new Bananas(getFreeName("Bananas"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+            NPC_Bananas_create_nrdm();
+            NPC_Bananas_create_nrdm();
+            NPC_Bananas_create();
+        }
     }
     public void Rock_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
