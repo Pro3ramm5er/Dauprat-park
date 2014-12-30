@@ -48,7 +48,7 @@ public class AppleD extends GameObject {
     @Override
     public void update() {
         super.update();
-        z = xt+10;
+        //z = xt+10;
         if (dead == 0) {
             if (otchet == myx.length) {
                 otchet = 0;

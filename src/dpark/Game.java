@@ -67,6 +67,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_y;
     public static int Snow_create = 1;
     public static int Health = 2;
+    public static int Biome_type = 1 + (int) (Math.random() * ((2 - 1) + 1));
 
 
     public Game() {
@@ -144,6 +145,7 @@ public class Game extends Canvas implements Runnable {
                     BeforeMain = 0;
                     Reload_on = 1;
                     Health = 2;
+                    Biome_type = 1 + (int) (Math.random() * ((2 - 1) + 1));
                     if (Restart_type == 1) {
                         init();
                     }
@@ -175,7 +177,7 @@ public class Game extends Canvas implements Runnable {
         //if (InitOn == 0) {
             addKeyListener(new Keyboard());
             addMouseListener(mouseListener);
-         //   InitOn = 1;
+         //  InitOn = 1;
         //}
         db.onGameLoaded(this);
 
@@ -186,8 +188,8 @@ public class Game extends Canvas implements Runnable {
         currentRoom = db.rooms.get("main_menu_room");
     }
     public void init_location_2() {
-        addKeyListener(new Keyboard());
-        addMouseListener(mouseListener);
+        //addKeyListener(new Keyboard());
+        //addMouseListener(mouseListener);
         db.onGameLoaded(this);
         currentRoom = db.rooms.get("map2_room");
         Restart_type = 1;
@@ -195,8 +197,8 @@ public class Game extends Canvas implements Runnable {
 
     }
     public void init_location_3() {
-        addKeyListener(new Keyboard());
-        addMouseListener(mouseListener);
+        //addKeyListener(new Keyboard());
+        //addMouseListener(mouseListener);
         db.onGameLoaded(this);
         currentRoom = db.rooms.get("map3_room");
         Restart_type = 2;
@@ -427,7 +429,8 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             Maslo_create();
             Maslo_create();
-            if (GameUpdateType == 0) {
+            if (Biome_type == 1) {
+                Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -516,10 +519,11 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
-                NPC_GoblinMaster_create();
-                NPC_GoblinMaster_create();
-                NPC_HoMonster_create();
+
             }
+            NPC_GoblinMaster_create();
+            NPC_GoblinMaster_create();
+            NPC_HoMonster_create();
             NPC_Shlakoblock_create();
             NPC_EvilWorm_create();
             NPC_EvilWorm_create();
@@ -532,6 +536,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Alpinos_create();
             NPC_Tres_create();
             NPC_Healthbar_create();
+            NPC_SantaDemon_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -587,6 +592,24 @@ public class Game extends Canvas implements Runnable {
         {
             NPC_Snow_create();
             Snow_create = 1;
+        }
+    }
+    public void NPC_SantaDemon_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final SantaDemon chest = new SantaDemon(getFreeName("SantaDemon"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            NPC_SantaDemon_create();
+
         }
     }
     public void NPC_Healthbar_create() {
@@ -801,7 +824,8 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             Maslo_create();
             Maslo_create();
-            if (GameUpdateType == 0) {
+            if (Biome_type == 1) {
+                Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -890,10 +914,11 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
-                NPC_GoblinMaster_create();
-                NPC_GoblinMaster_create();
-                NPC_HoMonster_create();
+
             }
+            NPC_GoblinMaster_create();
+            NPC_GoblinMaster_create();
+            NPC_HoMonster_create();
             NPC_Shlakoblock_create();
             NPC_EvilWorm_create();
             NPC_EvilWorm_create();
@@ -909,6 +934,7 @@ public class Game extends Canvas implements Runnable {
             eff_bil_create();
             NPC_TNT_create();
             NPC_Healthbar_create();
+            NPC_InfectGoblin_create();
             //if (GameUpdateType == 1) {
 
             //}
@@ -957,6 +983,24 @@ public class Game extends Canvas implements Runnable {
             Maslo_Create = 0;
         }
 
+    }
+    public void NPC_InfectGoblin_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final InfectGoblin chest = new InfectGoblin(getFreeName("InfectGoblin"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            NPC_InfectGoblin_create();
+
+        }
     }
     public void NPC_TNT_create() {
 
@@ -1237,7 +1281,8 @@ public class Game extends Canvas implements Runnable {
             NPC_Bandit_create();
             NPC_MoMo_create();
             NPC_Bananar_create();
-            if (GameUpdateType == 0) {
+            if (Biome_type == 1) {
+                Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -1394,6 +1439,24 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Tree_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Tree chest = new Tree(getFreeName("Tree"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+105;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Tree_create();
+
+        }
     }
     public void eff_bil_create() {
 

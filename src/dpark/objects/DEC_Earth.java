@@ -14,7 +14,7 @@ public class DEC_Earth extends GameObject {
         sprite.addStep(Game.instance.getSprite("trava.png"));
         sprite.addStep(Game.instance.getSprite("trava1.png"));
         sprite.addStep(Game.instance.getSprite("trava2.png"));
-        z = -10;
+        z = y;
         sprite.currentStep = 0 + (int) +(Math.random() * ((2 - 0) + 1));
     }
 

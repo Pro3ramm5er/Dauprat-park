@@ -173,11 +173,11 @@ public class DB {
             backgrounds.put(b.name, b);
         }
         {
-            if (Game.GameUpdateType == 0) {
+            if (Game.Biome_type == 1) {
                 final Background b = new Background("map1_bg", game.getSprite("map1.png"));
                 backgrounds.put(b.name, b);
             }
-            if (Game.GameUpdateType == 1) {
+            if (Game.Biome_type == 2) {
                 final Background b = new Background("map1_bg", game.getSprite("Newyaermap1.png"));
                 backgrounds.put(b.name, b);
             }
