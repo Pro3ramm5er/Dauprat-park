@@ -1,13 +1,11 @@
 package dpark.objects;
-import dpark.GameObject;
+
 import dpark.Game;
-
-import javax.jws.soap.SOAPBinding;
-
+import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class SpaceShip extends GameObject {
+public class Snowbug extends GameObject {
     public int xt;
     public int yt;
 
@@ -28,11 +26,11 @@ public class SpaceShip extends GameObject {
     public int Col_del = 0;
     public int PlusOnce = 0;
 
-    public SpaceShip(String name)
+    public Snowbug(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("SpaceShip.png"));
-        sprite.addStep(Game.instance.getSprite("SpaceShip_2.png"));
+        sprite.addStep(Game.instance.getSprite("Snowbug.png"));
+        sprite.addStep(Game.instance.getSprite("Snowbug_2.png"));
         sprite.currentStep = 0 + (int) (Math.random() * ((1 - 0) + 1));
 
 
@@ -189,7 +187,4 @@ public class SpaceShip extends GameObject {
 
         }
     }
-
-
-
 }

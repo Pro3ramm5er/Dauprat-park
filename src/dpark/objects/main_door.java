@@ -60,6 +60,11 @@ public class main_door extends GameObject {
                 Game.Restart_type = 3;
                 Game.AllDelete = 1;
             }
+            if (Game.Level == 3) {
+                Game.Restart_type = 4;
+                Game.AllDelete = 1;
+            }
+
         }
     }
 

@@ -17,6 +17,7 @@ import java.io.*;
 import java.net.URL;
 import javax.sound.sampled.*;
 import javax.swing.*;
+import dpark.GameObject.*;
 
 
 /**
@@ -67,7 +68,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_y;
     public static int Snow_create = 1;
     public static int Health = 2;
-    public static int Biome_type = 1 + (int) (Math.random() * ((4 - 1) + 1));
+    public static int Biome_type = 1 + (int) (Math.random() * ((5 - 1) + 1));
 
 
     public Game() {
@@ -111,6 +112,11 @@ public class Game extends Canvas implements Runnable {
                         Get_start_location_3();
 
                     }
+                    if (Level == 4) {
+                        Get_4_level();
+
+                    }
+
                 }
                 currentRoom.update();
 
@@ -146,7 +152,7 @@ public class Game extends Canvas implements Runnable {
                     BeforeMain = 0;
                     Reload_on = 1;
                     Health = 2;
-                    Biome_type =  1 + (int) (Math.random() * ((3 - 1) + 1));
+                    Biome_type = 1 + (int) (Math.random() * ((5 - 1) + 1));
                     if (Restart_type == 1) {
                         init();
                     }
@@ -155,6 +161,9 @@ public class Game extends Canvas implements Runnable {
                     }
                     if (Restart_type == 3) {
                         init_location_3();
+                    }
+                    if (Restart_type == 4) {
+                        init_location_4();
                     }
                     IsCreated = 0;
                     AllDelete = 0;
@@ -204,6 +213,15 @@ public class Game extends Canvas implements Runnable {
         currentRoom = db.rooms.get("map3_room");
         Restart_type = 2;
         Get_start_location_3();
+
+    }
+    public void init_location_4() {
+        //addKeyListener(new Keyboard());
+        //addMouseListener(mouseListener);
+        db.onGameLoaded(this);
+        currentRoom = db.rooms.get("map4_room");
+        Restart_type = 2;
+        Get_4_level();
 
     }
 
@@ -271,6 +289,301 @@ public class Game extends Canvas implements Runnable {
         AllDelete = 1;
         VisibleDieLogo = 0;
 
+
+    }
+    public void Get_4_level() {
+
+        Level = 4;
+        if (GameObject.plx >= 900 || GameObject.plx >= 900) {
+            Restart_type = 4;
+            AllDelete  =1;
+        }
+        if (GameObject.plx <= -10 || GameObject.plx <= -10) {
+            Restart_type = 4;
+            AllDelete  =1;
+        }
+        if (GameObject.ply >= 900 || GameObject.ply >= 900) {
+            Restart_type = 4;
+            AllDelete  =1;
+        }
+        if (GameObject.ply <= -10 || GameObject.ply <= -10) {
+            Restart_type = 4;
+            AllDelete  =1;
+        }
+        if (IsCreated == 0) {
+            AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            currentRoom = db.rooms.get("map1_room");
+            db.objects.get("player").visible = true;
+            IsCreated = 1;
+
+
+
+            //Mdoor_create(0, 384, 1);
+            if (KeyMessage.Created == 0) {
+                KeyMessage.AnimStep = 0;
+                MessageAkey_create();
+                KeyMessage.Created = 1;
+
+            }
+
+
+            AppleCreate(50, 50);
+
+
+            AppleGet(1, 1, 65, 65);
+            AppleGet(0, 1, 65, 65);
+            AppleGet(1, 0, 65, 65);
+            AppleGet(0, 0, 65, 65);
+
+            AppleGet(1, 1, 95, 95);
+            AppleGet(0, 1, 95, 95);
+            AppleGet(1, 0, 95, 95);
+            AppleGet(0, 0, 95, 95);
+
+            AppleGet(1, 1, 143, 145);
+            AppleGet(0, 1, 123, 23);
+            AppleGet(1, 0, 345, 124);
+            AppleGet(1, 1, 213, 53);
+
+            DieLogoCreate();
+            WinLogoCreate();
+
+            //NPC_AppleW_create(0);
+            //NPC_AppleW_create(1);
+            //NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+            NPC_AppleW_create(0);
+            NPC_AppleW_create(1);
+
+            NPC_Deamon_create();
+            NPC_Deamon_create();
+            NPC_Deamon_create();
+
+            NPC_Lavaman_create();
+            OBJ_APL_Portal_create();
+            //NPC_Ant_create();
+            //NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Ant_create();
+            NPC_Healthbar_create();
+            NPC_Blueman_create();
+            //NPC_Rat_create(0, 0, 0);
+            Maslo_create();
+            Maslo_create();
+            Maslo_create();
+            NPC_MegaBear_create();
+            NPC_ChinaMAN_create();
+            NPC_Bandit_create();
+            NPC_MoMo_create();
+            NPC_Bananar_create();
+            if (Biome_type == 1) {
+                Tree_create();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+                DEC_EarthCreate();
+            } if (Biome_type == 2) {
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                DEC_sock_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                // DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                DEC_spruce_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                //NPC_Present_create();
+                NPC_Present_create();
+                NPC_Present_create();
+                //NPC_NWY_Deer_create(0);
+                // NPC_NWY_Deer_create(0);
+                // NPC_NWY_Deer_create(0);
+                // NPC_NWY_Deer_create(0);
+                //NPC_NWY_Ded_Moroz_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_Goblin_create();
+                NPC_GoblinMaster_create();
+                NPC_GoblinMaster_create();
+                Snowbug_create();
+                Snowbug_create();
+                Snowbug_create();
+            }
+            if (Biome_type == 3)
+            {
+                Cactus_create();
+                Rock_create();
+                Pesokman_create();
+                MonsterCactus_create();
+
+            }
+            if (Biome_type == 4)
+            {
+                Ship_create();
+                //Rock_create();
+                Inoplanetanin_create();
+                Tarakan_create();
+
+            }
+            if (Biome_type == 5)
+            {
+                rad_dec_create();
+                Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
+
+            }
+
+
+            NPC_Shlakoblock_create();
+            Card_create();
+            Card_create();
+            Card_create();
+            eff_bil_create();
+            NPC_Bananas_create();
+            NPC_HoMonster_create();
+            NPC_Shlakoblock_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_EvilWorm_create();
+            NPC_HoMonster_create();
+            NPC_IRT_create();
+            NPC_IRT_create();
+            //OBJ_APL_Snow_create();
+            NPC_Slim_create();
+            NPC_Alpinos_create();
+            NPC_Tres_create();
+            NPC_Healthbar_create();
+            NPC_SantaDemon_create();
+            NPC_Bananas_create();
+            NPC_BrainWater_create();
+
+            //NPC_EvilWorm_create();
+            //NPC_EvilWorm_create();
+            //NPC_EvilWorm_create();
+            //NPC_Oblako();
+            //if (GameUpdateType == 1) {
+
+            //}
+            NPC_Present_create();
+            NPC_Present_create();
+        }
+
+        if (WinVisible == 1) {
+            if (WinTimer <= 0) {
+                AllDelete = 1;
+                WinTimer = 15;
+            } else {
+                WinTimer--;
+            }
+        }
+        if (AppleCreate == 0) {
+            NPC_Deamon_create();
+            AppleCreate = 1;
+        }
+        if (BluemanCreated == 0) {
+            NPC_Blueman_create();
+            BluemanCreated = 1;
+        }
+        if (RatCreated == 0) {
+            //NPC_Rat_create(1, xo, yo);
+            RatCreated = 1;
+        }
+        if (NWY_Present_create == 0)
+        {
+            NPC_Present_create(SantaX, SantaY);
+            NWY_Present_create = 1;
+        }
+        if (Shlakoblock_create  == 0)
+        {
+            NPC_Shlakoblock_create();
+            Shlakoblock_create = 1;
+        }
+        if (DedMoroz_create  == 0)
+        {
+            NPC_NWY_Ded_Moroz_create();
+            DedMoroz_create = 1;
+        }
+        if (Maslo_Create  == 0)
+        {
+
+            Maslo_Create = 0;
+        }
+        if (CardCreate  == 0)
+        {
+            Card_create();
+            CardCreate = 1;
+        }
+        if (Bananar_bad > 0)
+        {
+            Bananar_bad--;
+            NPC_Bananar_create();
+        }
 
     }
     public void Get_start_location_3() {
@@ -523,6 +836,9 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
+                Snowbug_create();
+                Snowbug_create();
+                Snowbug_create();
 
             }
             if (Biome_type == 3)
@@ -538,6 +854,14 @@ public class Game extends Canvas implements Runnable {
                 Ship_create();
                 Inoplanetanin_create();
                 //Rock_create();
+
+            }
+            if (Biome_type == 5)
+            {
+                rad_dec_create();
+                Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
 
             }
             NPC_GoblinMaster_create();
@@ -936,6 +1260,9 @@ public class Game extends Canvas implements Runnable {
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
                 //NPC_Goblin_create();
+                Snowbug_create();
+                Snowbug_create();
+                Snowbug_create();
 
             }
             if (Biome_type == 3)
@@ -951,6 +1278,14 @@ public class Game extends Canvas implements Runnable {
                 Ship_create();
                 Inoplanetanin_create();
                 //Rock_create();
+
+            }
+            if (Biome_type == 5)
+            {
+                rad_dec_create();
+                Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
 
             }
             NPC_GoblinMaster_create();
@@ -1413,6 +1748,9 @@ public class Game extends Canvas implements Runnable {
                 NPC_Goblin_create();
                 NPC_GoblinMaster_create();
                 NPC_GoblinMaster_create();
+                Snowbug_create();
+                Snowbug_create();
+                Snowbug_create();
             }
             if (Biome_type == 3)
             {
@@ -1427,6 +1765,15 @@ public class Game extends Canvas implements Runnable {
                 Ship_create();
                 //Rock_create();
                 Inoplanetanin_create();
+                Tarakan_create();
+
+            }
+            if (Biome_type == 5)
+            {
+                rad_dec_create();
+                Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
 
             }
 
@@ -1500,6 +1847,80 @@ public class Game extends Canvas implements Runnable {
         }
 
     }
+    public void Snowbug_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Snowbug chest = new Snowbug(getFreeName("Snowbug"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Snowbug_create();
+
+        }
+    }
+    public void Zombie_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Radiation_zombie chest = new Radiation_zombie(getFreeName("Radiation_zombie"));
+
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+60;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Zombie_create();
+
+        }
+    }
+    public void Tarakan_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Tarakan chest = new Tarakan(getFreeName("Tarakan"));
+
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+60;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Tarakan_create();
+
+        }
+    }
+    public void rad_dec_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Radiation chest = new Radiation(getFreeName("Radiation"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+15;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            rad_dec_create();
+
+        }
+    }
     public void MonsterCactus_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
         if (ui == 1) {
@@ -1567,11 +1988,11 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-            chest.z = chest.yt+40;
+            chest.z = chest.yt+26;
 
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
-            Rock_create();
+            Ship_create();
 
         }
     }

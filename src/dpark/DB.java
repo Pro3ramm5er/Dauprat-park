@@ -8,6 +8,7 @@ import dpark.rooms.MainMenuRoom;
 import dpark.rooms.Map1;
 import dpark.rooms.Map2;
 import dpark.rooms.Map3;
+import dpark.rooms.Map4;
 import dpark.rooms.NewGameSplashScreenRoom;
 
 import java.util.HashMap;
@@ -189,6 +190,10 @@ public class DB {
                 final Background b = new Background("map1_bg", game.getSprite("map3.png"));
                 backgrounds.put(b.name, b);
             }
+            if (Game.Biome_type == 5) {
+                final Background b = new Background("map1_bg", game.getSprite("map4.png"));
+                backgrounds.put(b.name, b);
+            }
         }
         {
             final Controller c = new Controller("controller");
@@ -254,5 +259,14 @@ public class DB {
             rooms.put(r.name, r);
 
         }
+        {
+            final Map4 r = new Map4("map4_room");
+            r.background = "map1_bg";
+            r.objectsIDs.add("controller");
+            r.objectsIDs.add("player");
+            rooms.put(r.name, r);
+
+        }
+
     }
 }
