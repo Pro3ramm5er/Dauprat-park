@@ -497,10 +497,10 @@ public class Game extends Canvas implements Runnable {
                 //DEC_spruce_create();
                 //DEC_spruce_create();
                 //DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
                 DEC_spruce_create();
                 //NPC_Present_create();
                 //NPC_Present_create();
@@ -901,10 +901,10 @@ public class Game extends Canvas implements Runnable {
                 //DEC_spruce_create();
                 //DEC_spruce_create();
                 //DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
+               // DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
                 DEC_spruce_create();
                 //NPC_Present_create();
                 //NPC_Present_create();
@@ -1367,10 +1367,10 @@ public class Game extends Canvas implements Runnable {
                 //DEC_spruce_create();
                 //DEC_spruce_create();
                 //DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
-                DEC_spruce_create();
+               // DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
+                //DEC_spruce_create();
                 DEC_spruce_create();
                 //NPC_Present_create();
                 //NPC_Present_create();
@@ -1977,59 +1977,9 @@ public class Game extends Canvas implements Runnable {
             dlg.yt = g1;
             db.objects.put(dlg.name, dlg);
             currentRoom.objectsIDs.add(dlg.name);
+            DEC_spruce_create();
         }
-        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
-        if (ui == 1) {
-            final Spruce dlg = new Spruce(getFreeName("Spruce"));
-            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            dlg.x = g;
-            dlg.y = g1;
-            dlg.z = g1+105;
-            dlg.xt = g;
-            dlg.yt = g1;
-            db.objects.put(dlg.name, dlg);
-            currentRoom.objectsIDs.add(dlg.name);
-        }
-        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
-        if (ui == 1) {
-            final Spruce dlg = new Spruce(getFreeName("Spruce"));
-            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            dlg.x = g;
-            dlg.y = g1;
-            dlg.z = g1+105;
-            dlg.xt = g;
-            dlg.yt = g1;
-            db.objects.put(dlg.name, dlg);
-            currentRoom.objectsIDs.add(dlg.name);
-        }
-        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
-        if (ui == 1) {
-            final Spruce dlg = new Spruce(getFreeName("Spruce"));
-            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            dlg.x = g;
-            dlg.y = g1;
-            dlg.z = g1+105;
-            dlg.xt = g;
-            dlg.yt = g1;
-            db.objects.put(dlg.name, dlg);
-            currentRoom.objectsIDs.add(dlg.name);
-        }
-        ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
-        if (ui == 1) {
-            final Spruce dlg = new Spruce(getFreeName("Spruce"));
-            int g = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            int g1 = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            dlg.x = g;
-            dlg.y = g1;
-            dlg.z = g1+105;
-            dlg.xt = g;
-            dlg.yt = g1;
-            db.objects.put(dlg.name, dlg);
-            currentRoom.objectsIDs.add(dlg.name);
-        }
+
         /*
         ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
         if (ui == 1) {
