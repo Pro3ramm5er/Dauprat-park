@@ -89,7 +89,8 @@ public class Game extends Canvas implements Runnable {
     public void run() {
         int loops;
         init();
-
+        addKeyListener(new Keyboard());
+        addMouseListener(mouseListener);
         while (running) {
             loops = 0;
             while (System.currentTimeMillis() > nextFrameTime
