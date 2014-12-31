@@ -50,7 +50,7 @@ public class Game extends Canvas implements Runnable {
     public static int NWY_Present_create = 1;
     public static int Shlakoblock_create = 1;
     public static int CardCreate = 1;
-    public static int DedMoroz_create = 0;
+    public static int DedMoroz_create = 1;
     public static int MainKey = 0;
     public static int WinVisible = 0;
     public static int WinTimer = 50;
@@ -67,7 +67,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_y;
     public static int Snow_create = 1;
     public static int Health = 2;
-    public static int Biome_type = 1 + (int) (Math.random() * ((3 - 1) + 1));
+    public static int Biome_type = 1 + (int) (Math.random() * ((4 - 1) + 1));
 
 
     public Game() {
@@ -529,6 +529,15 @@ public class Game extends Canvas implements Runnable {
             {
                 Cactus_create();
                 Rock_create();
+                Pesokman_create();
+                MonsterCactus_create();
+
+            }
+            if (Biome_type == 4)
+            {
+                Ship_create();
+                Inoplanetanin_create();
+                //Rock_create();
 
             }
             NPC_GoblinMaster_create();
@@ -933,6 +942,15 @@ public class Game extends Canvas implements Runnable {
             {
                 Cactus_create();
                 Rock_create();
+                Pesokman_create();
+                MonsterCactus_create();
+
+            }
+            if (Biome_type == 4)
+            {
+                Ship_create();
+                Inoplanetanin_create();
+                //Rock_create();
 
             }
             NPC_GoblinMaster_create();
@@ -1400,8 +1418,18 @@ public class Game extends Canvas implements Runnable {
             {
                 Cactus_create();
                 Rock_create();
+                Pesokman_create();
+                MonsterCactus_create();
 
             }
+            if (Biome_type == 4)
+            {
+                Ship_create();
+                //Rock_create();
+                Inoplanetanin_create();
+
+            }
+
             NPC_Shlakoblock_create();
             Card_create();
             Card_create();
@@ -1471,6 +1499,81 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void MonsterCactus_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final MonsterCactus chest = new MonsterCactus(getFreeName("MonsterCactus"));
+
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+60;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            MonsterCactus_create();
+
+        }
+    }
+    public void Pesokman_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Pesokman chest = new Pesokman(getFreeName("Pesokman"));
+
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+60;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Pesokman_create();
+
+        }
+    }
+    public void Inoplanetanin_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Inoplanetanin chest = new Inoplanetanin(getFreeName("Inoplanetanin"));
+
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+60;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Inoplanetanin_create();
+
+        }
+    }
+    public void Ship_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final SpaceShip chest = new SpaceShip(getFreeName("Ship"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+40;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Rock_create();
+
+        }
     }
     public void NPC_Bananas_create_nrdm() {
         //int ui = 1 + (int) +(Math.random() * ((15 - 1) + 1));
