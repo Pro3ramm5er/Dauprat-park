@@ -194,6 +194,10 @@ public class DB {
                 final Background b = new Background("map1_bg", game.getSprite("map4.png"));
                 backgrounds.put(b.name, b);
             }
+            if (Game.Biome_type == 6) {
+                final Background b = new Background("map1_bg", game.getSprite("map5.png"));
+                backgrounds.put(b.name, b);
+            }
         }
         {
             final Controller c = new Controller("controller");

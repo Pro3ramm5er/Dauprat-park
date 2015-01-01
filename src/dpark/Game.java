@@ -68,7 +68,7 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_y;
     public static int Snow_create = 1;
     public static int Health = 2;
-    public static int Biome_type = 1 + (int) (Math.random() * ((5 - 1) + 1));
+    public static int Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
 
 
     public Game() {
@@ -152,7 +152,7 @@ public class Game extends Canvas implements Runnable {
                     BeforeMain = 0;
                     Reload_on = 1;
                     Health = 2;
-                    Biome_type = 1 + (int) (Math.random() * ((5 - 1) + 1));
+                    Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
                     if (Restart_type == 1) {
                         init();
                     }
@@ -494,6 +494,13 @@ public class Game extends Canvas implements Runnable {
             {
                 rad_dec_create();
                 Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
+
+            }
+            if (Biome_type == 6)
+            {
+                Soul_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -860,6 +867,13 @@ public class Game extends Canvas implements Runnable {
             {
                 rad_dec_create();
                 Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
+
+            }
+            if (Biome_type == 6)
+            {
+                Soul_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -1284,6 +1298,13 @@ public class Game extends Canvas implements Runnable {
             {
                 rad_dec_create();
                 Zombie_create();
+                //Rock_create();
+                //Inoplanetanin_create();
+
+            }
+            if (Biome_type == 6)
+            {
+                Soul_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -1776,6 +1797,13 @@ public class Game extends Canvas implements Runnable {
                 //Inoplanetanin_create();
 
             }
+            if (Biome_type == 6)
+            {
+                Soul_create();
+                //Rock_create();
+                //Inoplanetanin_create();
+
+            }
 
             NPC_Shlakoblock_create();
             Card_create();
@@ -1846,6 +1874,24 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Soul_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Soul chest = new Soul(getFreeName("Soul"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+17;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Soul_create();
+
+        }
     }
     public void Snowbug_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
