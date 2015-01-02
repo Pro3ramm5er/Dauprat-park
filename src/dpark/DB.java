@@ -14,6 +14,7 @@ import dpark.rooms.NewGameSplashScreenRoom;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class DB {
     public Map<String, Animation> animations = new HashMap<String, Animation>();
     public Map<String, GameObject> objects = new HashMap<String, GameObject>();
@@ -205,6 +206,7 @@ public class DB {
             c.y = 0;
             objects.put(c.name, c);
         }
+
         {
             final Player p = new Player("player");
             GameObject.PlayerCanMovie = 0;
@@ -230,12 +232,14 @@ public class DB {
             final MainMenuRoom r = new MainMenuRoom("main_menu_room");
             r.background = "main_menu_bg";
             r.objectsIDs.add("controller");
+
             rooms.put(r.name, r);
         }
         {
             final NewGameSplashScreenRoom r = new NewGameSplashScreenRoom("new_game_splash_screen_room");
             r.background = "new_game_splash_screen_bg";
             r.objectsIDs.add("controller");
+
             rooms.put(r.name, r);
         }
         {
@@ -243,6 +247,7 @@ public class DB {
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
             r.objectsIDs.add("player");
+
             rooms.put(r.name, r);
 
         }
@@ -250,7 +255,7 @@ public class DB {
             final Map2 r = new Map2("map2_room");
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
-            r.objectsIDs.add("player");
+            r.objectsIDs.add("player"); r.objectsIDs.add("camera");
             rooms.put(r.name, r);
 
         }
@@ -260,6 +265,7 @@ public class DB {
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
             r.objectsIDs.add("player");
+
             rooms.put(r.name, r);
 
         }
@@ -268,6 +274,7 @@ public class DB {
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
             r.objectsIDs.add("player");
+
             rooms.put(r.name, r);
 
         }

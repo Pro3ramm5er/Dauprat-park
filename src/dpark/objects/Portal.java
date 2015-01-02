@@ -22,7 +22,7 @@ public class Portal extends GameObject {
         sprite.addStep(Game.instance.getSprite("ApplePortal_1.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_2.png"));
         sprite.addStep(Game.instance.getSprite("ApplePortal_3.png"));
-        z = x+15;
+        //z = x+10;
     }
 
     public void DO() {
@@ -33,6 +33,7 @@ public class Portal extends GameObject {
 
     @Override
     public void update() {
+        //z = x+5;
         if (TimeChangeTExture <= 0) {
             if (Texture_number < 2) {
                 sprite.currentStep = Texture_number;

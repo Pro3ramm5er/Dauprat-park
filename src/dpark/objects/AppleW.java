@@ -52,7 +52,7 @@ public class AppleW extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+32;
+        z = yt+50;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

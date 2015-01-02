@@ -17,6 +17,8 @@ public class Player extends GameObject {
     public static int y1;
     public static int Key_P = 0;
     public static int Key_K= 0;
+    public static int ByhTimer = 80;
+    public int reseter = 0;
 
 
     public Player(String name) {
@@ -33,6 +35,16 @@ public class Player extends GameObject {
         sprite.addStep(Game.instance.getSprite("hero_up.png"));
         sprite.addStep(Game.instance.getSprite("hero_down.png"));
         sprite.addStep(Game.instance.getSprite("hero_down_sp_card_used.png"));
+
+
+        sprite.addStep(Game.instance.getSprite("hero_bottle.png"));
+        sprite.addStep(Game.instance.getSprite("hero_down_bottle.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_bottle.png"));
+
+
+        sprite.addStep(Game.instance.getSprite("hero_down_byhaet.png"));
+        sprite.addStep(Game.instance.getSprite("hero_down_unef.png"));
+
         //PlayerSpeedBonus = 0;
 
 
@@ -134,13 +146,15 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerWalkst = 4;
                 PlayerColSt = 0;
-
+                if (Game.Player_bottle == 1)
+                {
+                    sprite.currentStep = 5;
+                }
                 if (Game.Shlakoblock_magic == 1) {
                     sprite.currentStep = 0;
-                } else {
-
+                }
+                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
                     sprite.currentStep = 0;
-
                 }
 
 
@@ -160,14 +174,18 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 2;
-
+                if (Game.Player_bottle == 1)
+                {
+                    sprite.currentStep = 7;
+                }
                 if (Game.Shlakoblock_magic == 1) {
                     sprite.currentStep = 1;
-                } else {
-
-                    sprite.currentStep = 1;
-
                 }
+                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
+                    sprite.currentStep = 1;
+                }
+
+
 
 
 
@@ -186,12 +204,15 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 1;
+                if (Game.Player_bottle == 1)
+                {
+                    sprite.currentStep = 2;
+                }
                 if (Game.Shlakoblock_magic == 1) {
                     sprite.currentStep = 2;
-                } else {
-
+                }
+                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
                     sprite.currentStep = 2;
-
                 }
 
 
@@ -215,16 +236,43 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 3;
-                if (Game.Shlakoblock_magic == 0 && PlayerSpeedBonus == 3) {
-                    sprite.currentStep = 3;
-                } else {
-
+                if (Game.UnderEffecr == 1)
+                {
+                    sprite.currentStep = 9;
+                }
+                if (Game.Player_bottle == 1)
+                {
+                    sprite.currentStep = 6;
+                }
+                if (Game.Shlakoblock_magic == 1) {
                     sprite.currentStep = 4;
-
+                }
+                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0 && Game.UnderEffecr == 0) {
+                    sprite.currentStep = 3;
                 }
 
 
 
+
+            }
+
+        }
+        if (keycode == KeyEvent.VK_SPACE) {
+
+            if (Game.Player_bottle == 1) {
+                sprite.currentStep = 8;
+                reseter = 0;
+                if (ByhTimer <= 0) {
+
+                    Game.Player_bottle = 0;
+                    Game.UnderEffecr = 1;
+                    sprite.currentStep = 9;
+                    Game.Health ++;
+                } else {
+
+                        ByhTimer--;
+
+                }
 
             }
 

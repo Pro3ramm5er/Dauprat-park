@@ -46,7 +46,7 @@ public class Bandit extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+24;
+        z = yt+35;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }

@@ -20,6 +20,7 @@ import javax.swing.*;
 import dpark.GameObject.*;
 
 
+
 /**
  * @author Pro3ramm5er, STALKER_2010
  */
@@ -69,6 +70,8 @@ public class Game extends Canvas implements Runnable {
     public static int Snow_create = 1;
     public static int Health = 2;
     public static int Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
+    public static int Player_bottle = 0;
+    public static int UnderEffecr = 0;
 
 
     public Game() {
@@ -153,6 +156,8 @@ public class Game extends Canvas implements Runnable {
                     Reload_on = 1;
                     Health = 2;
                     Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
+                    Player_bottle = 0;
+                    UnderEffecr = 0;
                     if (Restart_type == 1) {
                         init();
                     }
@@ -233,12 +238,16 @@ public class Game extends Canvas implements Runnable {
 
             return;
         }
-        gl = bss.getDrawGraphics();
+        gl =  bss.getDrawGraphics();
 
         gl.setColor(Color.black);
-        gl.fillRect(0, 0, getWidth(), getHeight());
-        db.backgrounds.get(room.background).sprite.getStep().sprite.draw(gl, 5,
-                5);
+        gl.fillRect(0, 0 , 5000, 5000);
+        gl.setClip(0, 0, 800, 600);
+
+
+
+        db.backgrounds.get(room.background).sprite.getStep().sprite.draw(gl, 0,
+                0);
         List<GameObject> objs = new ArrayList<GameObject>(db.objects.values());
         Collections.sort(objs, GameObject.compareByDepth);
         for (GameObject o : objs) {
@@ -539,6 +548,7 @@ public class Game extends Canvas implements Runnable {
             //}
             NPC_Present_create();
             NPC_Present_create();
+            Bottle_create();
         }
 
         if (WinVisible == 1) {
@@ -895,6 +905,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Healthbar_create();
             NPC_SantaDemon_create();
             NPC_Bananas_create();
+            Bottle_create();
             //NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1329,6 +1340,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Healthbar_create();
             NPC_InfectGoblin_create();
             NPC_Bananas_create();
+            Bottle_create();
            // NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1821,6 +1833,7 @@ public class Game extends Canvas implements Runnable {
             //}
             NPC_Present_create();
             NPC_Present_create();
+            Bottle_create();
         }
 
         if (WinVisible == 1) {
@@ -1874,6 +1887,24 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Bottle_create() {
+        int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
+        if (ui == 1) {
+            final Bottle chest = new Bottle(getFreeName("Bottle"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+12;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Bottle_create();
+
+        }
     }
     public void Soul_create() {
         int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
@@ -2809,7 +2840,7 @@ public class Game extends Canvas implements Runnable {
             chest.x = wardenx;
             chest.y = wardeny;
 
-            chest.z = 15;
+            chest.z = wardeny+4;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
