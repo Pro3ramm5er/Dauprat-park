@@ -4,9 +4,9 @@ import dpark.Game;
 import dpark.GameObject;
 
 /**
- * Created by Nickita on 25.11.2014.
+ * @author Nickita
  */
-public class Bandit extends GameObject {
+public class Hacker extends GameObject {
     public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public int xt;
@@ -30,13 +30,15 @@ public class Bandit extends GameObject {
     public int PlusOnce = 0;
     public int MinusTimer = 15;
     public int Minus = 0;
+    public int ChangeTimer = 1;
+    public int CHtex = 0;
 
-    public Bandit(String name) {
+    public Hacker(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Bandit_left.png"));
-        sprite.addStep(Game.instance.getSprite("Bandit_up.png"));
-        sprite.addStep(Game.instance.getSprite("Bandit_right.png"));
-        sprite.addStep(Game.instance.getSprite("Bandit_down.png"));
+        sprite.addStep(Game.instance.getSprite("Hacker_1.png"));
+        sprite.addStep(Game.instance.getSprite("Hacker_2.png"));
+        sprite.addStep(Game.instance.getSprite("Hacker_3.png"));
+        sprite.addStep(Game.instance.getSprite("Hacker_4.png"));
 
     }
 
@@ -46,7 +48,31 @@ public class Bandit extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+43;
+        z = yt + 22;
+        sprite.currentStep = CHtex;
+        if (ChangeTimer <= 0)
+        {
+            if (CHtex < 3) {
+                CHtex++;
+            } else {
+                CHtex = 0;
+            }
+            ChangeTimer = 1;
+        } else {
+            ChangeTimer --;
+        }
+        if (MinusTimer <= 0 && Minus == 1) {
+            if (Game.Health == 1) {
+                Atack = 1;
+            } else {
+                Game.Health--;
+                MinusTimer = 30;
+                Minus = 0;
+            }
+
+        } else {
+            MinusTimer--;
+        }
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -126,9 +152,9 @@ public class Bandit extends GameObject {
             }
 
             //yt-=3;
-            y -= 3;
-            z += 3;
-            sprite.currentStep = 1;
+            y -= 5;
+            z += 5;
+            //sprite.currentStep = 1;
         }
         if (MST == 2) {
             if (Timer_set_del == 0) {
@@ -137,8 +163,8 @@ public class Bandit extends GameObject {
             }
 
             //xt+=3;
-            x += 3;
-            sprite.currentStep = 2;
+            x += 5;
+            //sprite.currentStep = 2;
         }
         if (MST == 3) {
             if (Timer_set_del == 0) {
@@ -147,9 +173,9 @@ public class Bandit extends GameObject {
             }
 
             // yt+=3;
-            y += 3;
-            z -= 3;
-            sprite.currentStep = 3;
+            y += 5;
+            z -= 5;
+            //sprite.currentStep = 3;
         }
         if (MST == 4) {
             if (Timer_set_del == 0) {
@@ -158,8 +184,8 @@ public class Bandit extends GameObject {
             }
 
             //xt-=3;
-            x -= 3;
-            sprite.currentStep = 0;
+            x -= 5;
+            //sprite.currentStep = 0;
         }
 
 
@@ -312,7 +338,9 @@ public class Bandit extends GameObject {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
 
                 //System.out.println("KOL");
-               Minus = 1;
+                if (Game.Fullimmortality == 0) {
+                    Minus = 1;
+                }
                 if (PlusOnce == 0) {
                     PlayerZ++;
                     PlusOnce = 1;
@@ -396,6 +424,4 @@ public class Bandit extends GameObject {
 
 
     }
-
-
 }

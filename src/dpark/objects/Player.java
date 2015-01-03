@@ -17,7 +17,7 @@ public class Player extends GameObject {
     public static int y1;
     public static int Key_P = 0;
     public static int Key_K= 0;
-    public static int ByhTimer = 80;
+    public static int ByhTimer = 180;
     public int reseter = 0;
 
 
@@ -267,6 +267,7 @@ public class Player extends GameObject {
                     Game.Player_bottle = 0;
                     Game.UnderEffecr = 1;
                     sprite.currentStep = 9;
+                    ByhTimer = 180;
                     Game.Health ++;
                 } else {
 

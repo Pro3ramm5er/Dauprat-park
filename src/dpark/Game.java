@@ -497,6 +497,7 @@ public class Game extends Canvas implements Runnable {
                 //Rock_create();
                 Inoplanetanin_create();
                 Tarakan_create();
+                Sphuyna_create();
 
             }
             if (Biome_type == 5)
@@ -549,6 +550,8 @@ public class Game extends Canvas implements Runnable {
             NPC_Present_create();
             NPC_Present_create();
             Bottle_create();
+            Hacker_create();
+            Mandarinka_create();
         }
 
         if (WinVisible == 1) {
@@ -870,6 +873,8 @@ public class Game extends Canvas implements Runnable {
             {
                 Ship_create();
                 Inoplanetanin_create();
+                Tarakan_create();
+                Sphuyna_create();
                 //Rock_create();
 
             }
@@ -906,6 +911,8 @@ public class Game extends Canvas implements Runnable {
             NPC_SantaDemon_create();
             NPC_Bananas_create();
             Bottle_create();
+            Hacker_create();
+            Mandarinka_create();
             //NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1288,6 +1295,7 @@ public class Game extends Canvas implements Runnable {
                 Snowbug_create();
                 Snowbug_create();
                 Snowbug_create();
+                Hacker_create();
 
             }
             if (Biome_type == 3)
@@ -1302,6 +1310,8 @@ public class Game extends Canvas implements Runnable {
             {
                 Ship_create();
                 Inoplanetanin_create();
+                Sphuyna_create();
+                Tarakan_create();
                 //Rock_create();
 
             }
@@ -1341,6 +1351,7 @@ public class Game extends Canvas implements Runnable {
             NPC_InfectGoblin_create();
             NPC_Bananas_create();
             Bottle_create();
+            Mandarinka_create();
            // NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1799,6 +1810,7 @@ public class Game extends Canvas implements Runnable {
                 //Rock_create();
                 Inoplanetanin_create();
                 Tarakan_create();
+                Sphuyna_create();
 
             }
             if (Biome_type == 5)
@@ -1834,6 +1846,8 @@ public class Game extends Canvas implements Runnable {
             NPC_Present_create();
             NPC_Present_create();
             Bottle_create();
+            Hacker_create();
+            Mandarinka_create();
         }
 
         if (WinVisible == 1) {
@@ -1887,6 +1901,42 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Mandarinka_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Mandarinka chest = new Mandarinka(getFreeName("Mandarinka"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+12;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Mandarinka_create();
+
+        }
+    }
+    public void Hacker_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Hacker chest = new Hacker(getFreeName("Hacker"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = chest.yt+12;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Hacker_create();
+
+        }
     }
     public void Bottle_create() {
         int ui = 1 + (int) +(Math.random() * ((4 - 1) + 1));
@@ -2109,6 +2159,24 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananas_create_nrdm();
             NPC_Bananas_create_nrdm();
             NPC_Bananas_create();
+        }
+    }
+    public void Sphuyna_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Sphuyna chest = new Sphuyna(getFreeName("Sphuyna"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+107;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Sphuyna_create();
+
         }
     }
     public void Rock_create() {
