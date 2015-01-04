@@ -48,7 +48,7 @@ public class Mandarinka extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt + 20;
+        z = yt + 23;
         sprite.currentStep = CHtex;
         if (MinusTimer <= 0 && Minus == 1)
         {

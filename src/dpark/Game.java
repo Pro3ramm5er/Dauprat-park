@@ -1948,7 +1948,7 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-            chest.z = chest.yt+12;
+            chest.z = chest.yt+1;
 
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
@@ -2171,7 +2171,7 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-            chest.z = chest.yt+107;
+            chest.z = chest.yt+110;
 
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);

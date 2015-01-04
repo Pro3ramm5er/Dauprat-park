@@ -46,7 +46,7 @@ public class MonsterCactus extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+16;
+        z = yt+28;
         if (MinusTimer <= 0 && Minus == 1)
         {
             if (Game.Health == 1)
