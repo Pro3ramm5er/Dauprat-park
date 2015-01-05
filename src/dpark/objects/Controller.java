@@ -1,7 +1,24 @@
 package dpark.objects;
 
+import dpark.Background;
 import dpark.Game;
 import dpark.GameObject;
+import static dpark.DB.db;
+import  dpark.DB.*;
+import dpark.objects.Controller;
+import dpark.objects.KeyMessage;
+import dpark.objects.Player;
+import dpark.objects.main_door;
+import dpark.rooms.MainMenuRoom;
+import dpark.rooms.Map1;
+import dpark.rooms.Map2;
+import dpark.rooms.Map3;
+import dpark.rooms.Map4;
+import dpark.rooms.Storymap1;
+import dpark.rooms.NewGameSplashScreenRoom;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 import java.awt.event.KeyEvent;
@@ -164,7 +181,19 @@ public class Controller extends GameObject {
             System.exit(0);
         }
         if (keycode == KeyEvent.VK_3) {
+            //if (Game.Story == 0) {
+
+            Game.Restart_type = 1;
             Game.AllDelete = 1;
+
+
+            //}
+        } if (keycode == KeyEvent.VK_4) {
+            if (Game.Reload_on == 1) {
+
+                Game.Restart_type = 5;
+                Game.AllDelete = 1;
+            }
         }
     }
 }

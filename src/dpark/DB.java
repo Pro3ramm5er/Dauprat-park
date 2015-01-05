@@ -9,6 +9,7 @@ import dpark.rooms.Map1;
 import dpark.rooms.Map2;
 import dpark.rooms.Map3;
 import dpark.rooms.Map4;
+import dpark.rooms.Storymap1;
 import dpark.rooms.NewGameSplashScreenRoom;
 
 import java.util.HashMap;
@@ -175,30 +176,39 @@ public class DB {
             backgrounds.put(b.name, b);
         }
         {
-            if (Game.Biome_type == 1) {
-                final Background b = new Background("map1_bg", game.getSprite("map1.png"));
-                backgrounds.put(b.name, b);
-            }
-            if (Game.Biome_type == 2) {
-                final Background b = new Background("map1_bg", game.getSprite("Newyaermap1.png"));
-                backgrounds.put(b.name, b);
-            }
-            if (Game.Biome_type == 3) {
-                final Background b = new Background("map1_bg", game.getSprite("map2.png"));
-                backgrounds.put(b.name, b);
-            }
-            if (Game.Biome_type == 4) {
-                final Background b = new Background("map1_bg", game.getSprite("map3.png"));
-                backgrounds.put(b.name, b);
-            }
-            if (Game.Biome_type == 5) {
-                final Background b = new Background("map1_bg", game.getSprite("map4.png"));
-                backgrounds.put(b.name, b);
-            }
-            if (Game.Biome_type == 6) {
-                final Background b = new Background("map1_bg", game.getSprite("map5.png"));
-                backgrounds.put(b.name, b);
-            }
+
+                if (Game.Biome_type == 1) {
+                    final Background b = new Background("map1_bg", game.getSprite("map1.png"));
+                    backgrounds.put(b.name, b);
+                }
+                if (Game.Biome_type == 2) {
+                    final Background b = new Background("map1_bg", game.getSprite("Newyaermap1.png"));
+                    backgrounds.put(b.name, b);
+                }
+                if (Game.Biome_type == 3) {
+                    final Background b = new Background("map1_bg", game.getSprite("map2.png"));
+                    backgrounds.put(b.name, b);
+                }
+                if (Game.Biome_type == 4) {
+                    final Background b = new Background("map1_bg", game.getSprite("map3.png"));
+                    backgrounds.put(b.name, b);
+                }
+                if (Game.Biome_type == 5) {
+                    final Background b = new Background("map1_bg", game.getSprite("map4.png"));
+                    backgrounds.put(b.name, b);
+                }
+                if (Game.Biome_type == 6) {
+                    final Background b = new Background("map1_bg", game.getSprite("map5.png"));
+                    backgrounds.put(b.name, b);
+                }
+
+
+
+
+        }
+        {
+            final Background b = new Background("mapstory_bg", game.getSprite("map5.png"));
+            backgrounds.put(b.name, b);
         }
         {
             final Controller c = new Controller("controller");
@@ -210,9 +220,13 @@ public class DB {
         {
             final Player p = new Player("player");
             GameObject.PlayerCanMovie = 0;
-            p.x = 250;
-            p.y = 250;
-            p.z = 5;
+
+                p.x = 250;
+                p.y = 250;
+
+
+
+            //p.z = 5;
             p.visible = false;
             objects.put(p.name, p);
         }
@@ -272,6 +286,15 @@ public class DB {
         {
             final Map4 r = new Map4("map4_room");
             r.background = "map1_bg";
+            r.objectsIDs.add("controller");
+            r.objectsIDs.add("player");
+
+            rooms.put(r.name, r);
+
+        }
+        {
+            final Storymap1 r = new Storymap1("Storymap1");
+            r.background = "mapstory_bg";
             r.objectsIDs.add("controller");
             r.objectsIDs.add("player");
 

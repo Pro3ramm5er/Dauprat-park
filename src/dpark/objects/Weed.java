@@ -2,8 +2,10 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
-
-public class Crate extends GameObject {
+/**
+ * @author Nickita
+ */
+public class Weed extends GameObject {
 
     public int xt;
     public int yt;
@@ -23,21 +25,17 @@ public class Crate extends GameObject {
     public int otchet9 = 0; // x
     public int otchet10 = 0; // y
     public int Col_del = 0;
-
-
-    public Crate(String name) {
+    public int Get = 0;
+    public Weed(String name)
+    {
         super(name);
-        z = yt+28;
-
-
-        sprite.addStep(Game.instance.getSprite("Blockstone.png"));
-
+        sprite.addStep(Game.instance.getSprite("Weeeeeeed.png"));
+        sprite.addStep(Game.instance.getSprite("TNT_none.png"));
     }
-
     @Override
     public void update() {
         super.update();
-        z = yt+25;
+
 
         //Collisions:
         if (Timer <= 0) {
@@ -90,11 +88,11 @@ public class Crate extends GameObject {
 
         if (x - myx[otchet] == plx1 || x + myx[otchet] == plx1 || x - myx[otchet9] == plx1 || x + myx[otchet9] == plx1 || x - myx[otchet5] == plx1 || x + myx[otchet5] == plx1 || x - myx[otchet3] == plx1 || x + myx[otchet7] == plx1 || x - myx[otchet7] == plx1 || x + myx[otchet3] == plx1 || x - myx[otchet] == plx2 || x + myx[otchet] == plx2 || x - myx[otchet9] == plx2 || x + myx[otchet9] == plx2 || x - myx[otchet7] == plx2 || x + myx[otchet7] == plx2 || x - myx[otchet5] == plx2 || x + myx[otchet5] == plx2 || x - myx[otchet3] == plx2 || x + myx[otchet3] == plx2 || x - myx[otchet] == plx3 || x + myx[otchet] == plx3 || x - myx[otchet9] == plx3 || x + myx[otchet9] == plx3 || x - myx[otchet] == plx3 || x + myx[otchet] == plx3 || x - myx[otchet7] == plx3 || x + myx[otchet7] == plx3 || x - myx[otchet5] == plx3 || x + myx[otchet5] == plx3 || x - myx[otchet3] == plx3 || x + myx[otchet3] == plx3 || x - myx[otchet] == plx4 || x + myx[otchet] == plx4 || x - myx[otchet9] == plx4 || x + myx[otchet9] == plx4 || x - myx[otchet7] == plx4 || x + myx[otchet7] == plx4 || x - myx[otchet5] == plx4 || x + myx[otchet5] == plx4 || x - myx[otchet3] == plx4 || x + myx[otchet3] == plx4) {
             if (y - myy[otchet2] == ply1 || y + myy[otchet2] == ply1 || y - myy[otchet10] == ply1 || y + myy[otchet10] == ply1 || y - myy[otchet7] == ply1 || y + myy[otchet7] == ply1 || y - myy[otchet6] == ply1 || y + myy[otchet6] == ply1 || y - myy[otchet4] == ply1 || y + myy[otchet4] == ply1 || y - myy[otchet6] == ply1 || y + myy[otchet6] == ply1 || y - myy[otchet7] == ply2 || y + myy[otchet7] == ply2 ||  y - myy[otchet10] == ply2 || y + myy[otchet10] == ply2  || y - myy[otchet2] == ply2 || y + myy[otchet2] == ply2 || y - myy[otchet6] == ply2 || y + myy[otchet6] == ply2 || y - myy[otchet4] == ply2 || y + myy[otchet4] == ply2 || y - myy[otchet2] == ply2 || y + myy[otchet2] == ply2 || y - myy[otchet4] == ply2 || y + myy[otchet4] == ply2 || y - myy[otchet2] == ply3 || y + myy[otchet2] == ply3 || y - myy[otchet7] == ply3 || y + myy[otchet7] == ply3 || y - myy[otchet10] == ply3 || y + myy[otchet10] == ply3 || y - myy[otchet6] == ply3 || y + myy[otchet6] == ply3 || y - myy[otchet4] == ply3 || y + myy[otchet4] == ply3 || y - myy[otchet2] == ply4 || y + myy[otchet2] == ply4 || y - myy[otchet4] == ply4 || y + myy[otchet4] == ply4 || y - myy[otchet6] == ply4 || y + myy[otchet6] == ply4 || y - myy[otchet7] == ply4 || y + myy[otchet7] == ply4 || y - myy[otchet10] == ply4 || y + myy[otchet10] == ply4) {
-                if (Col_del == 0 && Timer <= 0) {
+                if (Get == 0) {
                     //System.out.println("KOL");
-                    Player.Collision();
-                    Timer = 3;
-                    Col_del = 1;
+                    Game.Player_weed = 1;
+                    sprite.currentStep = 1;
+                    Get = 1;
 
                 }
                 //System.out.println("nowfaleKOL");
@@ -182,6 +180,5 @@ public class Crate extends GameObject {
 
 
     }
-
 
 }

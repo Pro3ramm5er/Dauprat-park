@@ -17,7 +17,8 @@ public class Player extends GameObject {
     public static int y1;
     public static int Key_P = 0;
     public static int Key_K= 0;
-    public static int ByhTimer = 180;
+    public static int ByhTimer = 40;
+    public static int weedTimer = 40;
     public int reseter = 0;
 
 
@@ -43,7 +44,10 @@ public class Player extends GameObject {
 
 
         sprite.addStep(Game.instance.getSprite("hero_down_byhaet.png"));
-        sprite.addStep(Game.instance.getSprite("hero_down_unef.png"));
+        sprite.addStep(Game.instance.getSprite("hero_down_unef.png")); // 9
+
+        sprite.addStep(Game.instance.getSprite("hero_down_weed.png")); //10
+        sprite.addStep(Game.instance.getSprite("hero_down_weed_use.png")); //11
 
         //PlayerSpeedBonus = 0;
 
@@ -240,6 +244,10 @@ public class Player extends GameObject {
                 {
                     sprite.currentStep = 9;
                 }
+                if (Game.Player_weed == 1)
+                {
+                    sprite.currentStep = 10;
+                }
                 if (Game.Player_bottle == 1)
                 {
                     sprite.currentStep = 6;
@@ -247,7 +255,7 @@ public class Player extends GameObject {
                 if (Game.Shlakoblock_magic == 1) {
                     sprite.currentStep = 4;
                 }
-                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0 && Game.UnderEffecr == 0) {
+                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0 && Game.UnderEffecr == 0 && Game.Player_weed == 0) {
                     sprite.currentStep = 3;
                 }
 
@@ -257,7 +265,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_SPACE) {
+        if (keycode == KeyEvent.VK_E) {
 
             if (Game.Player_bottle == 1) {
                 sprite.currentStep = 8;
@@ -271,7 +279,24 @@ public class Player extends GameObject {
                     Game.Health ++;
                 } else {
 
-                        ByhTimer--;
+                    ByhTimer--;
+
+                }
+
+            }
+            if (Game.Player_weed == 1) {
+                sprite.currentStep = 11;
+                reseter = 0;
+                if (weedTimer <= 0) {
+
+                    Game.Player_weed = 0;
+                    Game.UnderEffecr = 1;
+                    sprite.currentStep = 9;
+                    weedTimer = 180;
+                    Game.Health += 2;
+                } else {
+
+                    weedTimer--;
 
                 }
 

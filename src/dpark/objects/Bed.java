@@ -3,13 +3,17 @@ package dpark.objects;
 import dpark.Game;
 import dpark.GameObject;
 
-public class Crate extends GameObject {
-
+/**
+ * @author Nickita
+ */
+public class Bed extends GameObject {
     public int xt;
     public int yt;
 
+    int UseRandom = 0;
+    int UseTimer = 1;
     public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -23,23 +27,40 @@ public class Crate extends GameObject {
     public int otchet9 = 0; // x
     public int otchet10 = 0; // y
     public int Col_del = 0;
+    public int PlusOnce = 0;
 
-
-    public Crate(String name) {
+    public Bed(String name)
+    {
         super(name);
-        z = yt+28;
+        sprite.addStep(Game.instance.getSprite("bed.png"));
 
 
-        sprite.addStep(Game.instance.getSprite("Blockstone.png"));
 
+        //z = y;
     }
-
     @Override
-    public void update() {
-        super.update();
-        z = yt+25;
+    public void update()
+    {
+        /*
+        if (Timer <= 0 && UseTimer == 1)
+        {
+            UseRandom = 1 + (int) (Math.random() * ((4 - 1) + 1));
+            if (UseRandom == 1)
+            {
+                Game.SantaX = x;
+                Game.SantaY = y;
+                Game.NWY_Present_create = 0;
+                UseTimer = 0;
+                //Timer = 40;
+            }
 
-        //Collisions:
+        } else {
+            Timer--;
+        }
+        */
+
+
+
         if (Timer <= 0) {
             Col_del = 0;
             Timer = 0;
@@ -97,6 +118,16 @@ public class Crate extends GameObject {
                     Col_del = 1;
 
                 }
+                if (PlayerZ == z || z < PlayerZ) {
+
+
+
+                    if (PlusOnce == 0) {
+                        PlayerZ++;
+                        PlusOnce = 1;
+                    }
+                    //Player.Collision();
+                }
                 //System.out.println("nowfaleKOL");
 
             } else {
@@ -149,7 +180,7 @@ public class Crate extends GameObject {
             }
 
         } else {
-
+            PlusOnce = 0;
             Col_del = 0;
             if (otchet == myx.length) {
                 otchet = 0;
@@ -179,9 +210,8 @@ public class Crate extends GameObject {
 
 
         }
-
-
     }
+
 
 
 }

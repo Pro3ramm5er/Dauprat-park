@@ -71,7 +71,9 @@ public class Game extends Canvas implements Runnable {
     public static int Health = 2;
     public static int Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
     public static int Player_bottle = 0;
+    public static int Player_weed = 0;
     public static int UnderEffecr = 0;
+    public static int Story = 0;
 
 
     public Game() {
@@ -119,6 +121,10 @@ public class Game extends Canvas implements Runnable {
                         Get_4_level();
 
                     }
+                    if (Level == 5) {
+                        GetStartStory();
+
+                    }
 
                 }
                 currentRoom.update();
@@ -158,6 +164,7 @@ public class Game extends Canvas implements Runnable {
                     Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
                     Player_bottle = 0;
                     UnderEffecr = 0;
+
                     if (Restart_type == 1) {
                         init();
                     }
@@ -169,6 +176,9 @@ public class Game extends Canvas implements Runnable {
                     }
                     if (Restart_type == 4) {
                         init_location_4();
+                    }
+                    if (Restart_type == 5) {
+                        init_story();
                     }
                     IsCreated = 0;
                     AllDelete = 0;
@@ -189,9 +199,11 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void init() {
+
         //if (InitOn == 0) {
             addKeyListener(new Keyboard());
             addMouseListener(mouseListener);
+
          //  InitOn = 1;
         //}
         db.onGameLoaded(this);
@@ -228,6 +240,23 @@ public class Game extends Canvas implements Runnable {
         Restart_type = 2;
         Get_4_level();
 
+    }
+    public void init_story() {
+        //if (InitOn == 0) {
+        //addKeyListener(new Keyboard());
+        //addMouseListener(mouseListener);
+        //  InitOn = 1;
+        //}
+
+        db.onGameLoaded(this);
+
+
+        //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
+
+        //currentRoom = db.rooms.get("map1_room");
+
+        currentRoom = db.rooms.get("Storymap1");
+        GetStartStory();
     }
 
     public void render(Room room) {
@@ -300,6 +329,112 @@ public class Game extends Canvas implements Runnable {
 
 
     }
+    public void GetStartStory() {
+        Level = 5;
+        Story = 1;
+
+        if (IsCreated == 0) {
+            db.objects.get("player").visible = true;
+            AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+
+            int xcr = 0;
+            int icr = 0;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                Crate_create(xcr, icr, zex);
+                icr += 32;
+            }
+
+
+
+            i = 0;
+            xcr = 0;
+            icr = 768;
+            for (i = 0; i <= 25; i++) {
+
+
+                Crate_create(xcr, icr, zex);
+                xcr += 32;
+
+            }
+
+
+            i = 0;
+            xcr = 0;
+            icr = 128;
+            for (i = 0; i <= 25; i++) {
+
+
+                Crate_create(xcr, icr, zex);
+                xcr += 32;
+
+            }
+
+
+            i = 0;
+            xcr = 768;
+            icr = 0;
+            for (i = 0; i <= 25; i++) {
+
+
+                Crate_create(xcr, icr, zex);
+                icr += 32;
+            }
+            DEC_bed_create(774, 190);
+            DEC_unviswall_create(742, 332, 0);
+            DEC_unviswall_create(712, 332, 0);
+            DEC_unviswall_create(680, 332, 0);
+            IsCreated = 1;
+        }
+
+        //Mdoor_create(0, 384, 1);
+    }
+    public void DEC_unviswall_create(int w, int e, int t) {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+            final UnVisWall chest = new UnVisWall(getFreeName("UnVisWall"));
+            int wardenx = w;
+            int wardeny = e;
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.Type = t;
+            //chest.z = 5;
+            //743, 332
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        //}
+    }
+    public void DEC_bed_create(int w, int e) {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+            final Bed chest = new Bed(getFreeName("Bed"));
+            int wardenx = w;
+            int wardeny = e;
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            //chest.z = 5;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+
+
+        //}
+    }
+
+
+
     public void Get_4_level() {
 
         Level = 4;
@@ -323,7 +458,7 @@ public class Game extends Canvas implements Runnable {
             AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
-            currentRoom = db.rooms.get("map1_room");
+           // currentRoom = db.rooms.get("map1_room");
             db.objects.get("player").visible = true;
             IsCreated = 1;
 
@@ -511,6 +646,7 @@ public class Game extends Canvas implements Runnable {
             if (Biome_type == 6)
             {
                 Soul_create();
+                Mag_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -552,6 +688,7 @@ public class Game extends Canvas implements Runnable {
             Bottle_create();
             Hacker_create();
             Mandarinka_create();
+            Weed_create();
         }
 
         if (WinVisible == 1) {
@@ -889,6 +1026,7 @@ public class Game extends Canvas implements Runnable {
             if (Biome_type == 6)
             {
                 Soul_create();
+                Mag_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -913,6 +1051,7 @@ public class Game extends Canvas implements Runnable {
             Bottle_create();
             Hacker_create();
             Mandarinka_create();
+            Weed_create();
             //NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -961,8 +1100,7 @@ public class Game extends Canvas implements Runnable {
 
             Maslo_Create = 0;
         }
-        if (CardCreate  == 0)
-        {
+        if (CardCreate  == 0) {
             Card_create();
             CardCreate = 1;
         }
@@ -1326,6 +1464,7 @@ public class Game extends Canvas implements Runnable {
             if (Biome_type == 6)
             {
                 Soul_create();
+                Mag_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -1352,6 +1491,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananas_create();
             Bottle_create();
             Mandarinka_create();
+            Weed_create();
            // NPC_Present_create();
             //NPC_Present_create();
             //if (GameUpdateType == 1) {
@@ -1824,6 +1964,7 @@ public class Game extends Canvas implements Runnable {
             if (Biome_type == 6)
             {
                 Soul_create();
+                Mag_create();
                 //Rock_create();
                 //Inoplanetanin_create();
 
@@ -1848,6 +1989,7 @@ public class Game extends Canvas implements Runnable {
             Bottle_create();
             Hacker_create();
             Mandarinka_create();
+            Weed_create();
         }
 
         if (WinVisible == 1) {
@@ -1901,6 +2043,24 @@ public class Game extends Canvas implements Runnable {
             NPC_Bananar_create();
         }
 
+    }
+    public void Weed_create() {
+        int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        if (ui == 1) {
+            final Weed chest = new Weed(getFreeName("Weed"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+18;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Weed_create();
+
+        }
     }
     public void Mandarinka_create() {
         int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
@@ -2176,6 +2336,24 @@ public class Game extends Canvas implements Runnable {
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Sphuyna_create();
+
+        }
+    }
+    public void Mag_create() {
+        int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
+        if (ui == 1) {
+            final Magilla chest = new Magilla(getFreeName("Magilla"));
+            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+            chest.x = wardenx;
+            chest.y = wardeny;
+            chest.xt = wardenx;
+            chest.yt = wardeny;
+            chest.z = chest.yt+15;
+
+            db.objects.put(chest.name, chest);
+            currentRoom.objectsIDs.add(chest.name);
+            Mag_create();
 
         }
     }

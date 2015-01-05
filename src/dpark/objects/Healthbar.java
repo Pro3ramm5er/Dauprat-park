@@ -14,11 +14,16 @@ public class Healthbar extends GameObject {
         sprite.addStep(Game.instance.getSprite("Health_50.png"));
         sprite.addStep(Game.instance.getSprite("Health_0.png"));
         sprite.addStep(Game.instance.getSprite("Health_150.png"));
+        sprite.addStep(Game.instance.getSprite("Health_200.png"));
         z = 1500;
     }
     @Override
     public void update()
     {
+        if (Game.Health == 4)
+        {
+            sprite.currentStep = 4;
+        }
         if (Game.Health == 3)
         {
             sprite.currentStep = 3;
