@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class Door extends GameObject {
+public class Door_prop extends GameObject {
     public int xt;
     public int yt;
 
@@ -27,10 +27,10 @@ public class Door extends GameObject {
     public int Col_del = 0;
     public int PlusOnce = 0;
 
-    public Door(String name)
+    public Door_prop(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("door_unvisible.png"));
+
         sprite.addStep(Game.instance.getSprite("door_visible.png"));
         //sprite.currentStep = 0 + (int) (Math.random() * ((1 - 0) + 1));
 
@@ -41,12 +41,7 @@ public class Door extends GameObject {
     public void update()
     {
         z = yt+45;
-        if (Game.S_door == 1)
-        {
-            sprite.currentStep = 1;
-        } else {
-            sprite.currentStep = 0;
-        }
+
         /*
         if (Timer <= 0 && UseTimer == 1)
         {
@@ -103,17 +98,7 @@ public class Door extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
-                if (!(Game.S_door == 0))
-                {
-                   Player.Collision();
-                }
-                if (Game.S_door == 1)
-                {
-                    Game.S_moment = 4;
-                    Game.Restart_type = 6;
-                    Game.AllDelete = 1;
-
-                }
+                /*
                 if (Col_del == 0 && Timer <= 0) {
                     //System.out.println("KOL");
                     if (PlayerZ == z || z < PlayerZ) {
@@ -131,6 +116,7 @@ public class Door extends GameObject {
                 if (! (PlayerZ == z)) {
                     //Player.Collision();
                 }
+                */
                 //System.out.println("nowfaleKOL");
 
             } else {
@@ -210,3 +196,4 @@ public class Door extends GameObject {
 
 
 }
+

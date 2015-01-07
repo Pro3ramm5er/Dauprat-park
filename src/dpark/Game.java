@@ -75,6 +75,7 @@ public class Game extends Canvas implements Runnable {
     public static int S_table = 0;
     public static int S_phone = 0;
     public static int S_moment = 0;
+    public static int S_door = 0;
     public SoundEngine soundengine;
 
 
@@ -125,6 +126,10 @@ public class Game extends Canvas implements Runnable {
                     }
                     if (Level == 5) {
                         GetStartStory();
+
+                    }
+                    if (Level == 6) {
+                        GetStartS2();
 
                     }
 
@@ -181,6 +186,9 @@ public class Game extends Canvas implements Runnable {
                     }
                     if (Restart_type == 5) {
                         init_story();
+                    }
+                    if (Restart_type == 6) {
+                        init_s2();
                     }
                     IsCreated = 0;
                     AllDelete = 0;
@@ -262,6 +270,23 @@ public class Game extends Canvas implements Runnable {
         currentRoom = db.rooms.get("Storymap1");
         GetStartStory();
     }
+    public void init_s2() {
+        //if (InitOn == 0) {
+        //addKeyListener(new Keyboard());
+        //addMouseListener(mouseListener);
+        //  InitOn = 1;
+        //}
+
+        db.onGameLoaded(this);
+
+
+        //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
+
+        //currentRoom = db.rooms.get("map1_room");
+
+        currentRoom = db.rooms.get("Storymap2");
+        GetStartS2();
+    }
 
     public void render(Room room) {
         bss = getBufferStrategy();
@@ -337,6 +362,211 @@ public class Game extends Canvas implements Runnable {
         VisibleDieLogo = 0;
 
 
+    }
+    public void GetStartS2() {
+        Level = 6;
+        Story = 1;
+
+        if (IsCreated == 0) {
+            db.objects.get("player").visible = true;
+            AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 269;
+            int icr = 0;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr += 32;
+            }
+            xcr = 501;
+            icr = 0;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr += 32;
+            }
+            xcr = 272;
+            icr = 596;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 5; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 0);
+                xcr += 32;
+            }
+            DEC_unviswall_create(464, 596, 0);
+            DEC_unviswall_create(469, 596, 0);
+            DEC_roomback6_create(271, 0);
+            DEC_door_prop_create(382, 563);
+            /*
+            int xcr = 32;
+            int icr = 0;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 12; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr += 32;
+            }
+            DEC_unviswall_create(32, 386, 1);
+
+
+            i = 0;
+            xcr = 32;
+            icr = 768;
+            for (i = 0; i <= 24; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 0);
+                xcr += 32;
+
+            }
+
+
+            i = 0;
+            xcr = 32;
+            icr = 128;
+            for (i = 0; i <= 22; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 0);
+                xcr += 32;
+
+            }
+
+
+            i = 0;
+            xcr = 768;
+            icr = 0;
+            for (i = 0; i <= 12; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr += 32;
+            }
+            DEC_unviswall_create(768, 386, 1);
+            DEC_bed_create(742, 190);
+            DEC_cupboard_create(724, 75); //433, 131
+            DEC_unviswall_create(739, 332, 0);
+            DEC_unviswall_create(712, 332, 0);
+            DEC_unviswall_create(680, 332, 0);
+            DEC_unviswall_create(648, 332, 0);
+            DEC_unviswall_create(616, 332, 0);
+            DEC_unviswall_create(614, 300, 1);
+
+            DEC_unviswall_create(614, 268, 1);
+            DEC_unviswall_create(614, 130, 1);
+            //DEC_unviswall_create(614, 204, 1);
+            //DEC_unviswall_create(614, 172, 1);
+            DEC_unviswall_create(614, 140, 1);
+            //DEC_unviswall_create(614, 108, 1);
+            //DEC_unviswall_create(614, 76, 1);
+
+
+            DEC_window_create(465, 61);
+            DEC_window_create(570, 61);
+            DEC_unviswall_create(433, 131, 1);
+            DEC_unviswall_create(433, 163, 1);
+            DEC_unviswall_create(433, 195, 1);
+            DEC_unviswall_create(433, 227, 1);
+            DEC_unviswall_create(433, 259, 1);
+            DEC_unviswall_create(433, 387, 1);
+            //DEC_unviswall_create(433, 419, 1);
+
+
+
+            DEC_unviswall_create(433, 419, 0);
+            DEC_unviswall_create(465, 419, 0);
+            DEC_unviswall_create(497, 419, 0);
+            DEC_unviswall_create(529, 419, 0);
+            DEC_unviswall_create(561, 419, 0);
+            DEC_window_create(67, 61);
+            DEC_window_create(167, 61);
+            DEC_window_create(267, 61);
+            DEC_window_create(367, 61);
+
+            int xpp = 32;
+            for (int u = 0; u<=4; u++)
+            {
+                DEC_unviswall_create(561+xpp, 419, 0);
+                xpp+=32;
+            }
+            DEC_unviswall_create(739, 419, 0);
+
+
+
+            DEC_carpet_create(631, 227);
+            DEC_roomback_create(617, 131);
+            DEC_roomback_2_create(436, 131);
+            DEC_roomback_3_create(616, 335);
+            DEC_computer_create(617, 289);
+            DEC_board_create(436, 131);
+            DEC_dirt_create(629, 79);
+            DEC_roomback_4_create(35, 131);
+            DEC_roomback_5_create(35, 0);
+            DEC_table_create(35, 131);
+            DEC_s_task_create(75, 238);
+            DEC_door_create(479, 387);
+            //DEC_unviswall_create(400, 414, 0);
+            xpp = 32;
+            for (int u = 0; u<=15; u++)
+            {
+                DEC_unviswall_create(561-xpp, 419, 0);
+                xpp+=32;
+            }
+            DEC_unviswall_create(29, 419, 0);
+            */
+            IsCreated = 1;
+        }
+
+        //Mdoor_create(0, 384, 1);
+    }
+    public void DEC_door_prop_create(int w, int e) {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+        final Door_prop chest = new Door_prop(getFreeName("Door_prop"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+        //}
+    }
+    public void DEC_roomback6_create(int w, int e) {
+        //int ui = 1 + (int) +(Math.random() * ((3 - 1) + 1));
+        //if (ui == 1) {
+        final Roomback_6 chest = new Roomback_6(getFreeName("Roomback_6"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+        //}
     }
     public void GetStartStory() {
         Level = 5;
@@ -457,7 +687,7 @@ public class Game extends Canvas implements Runnable {
             DEC_roomback_5_create(35, 0);
             DEC_table_create(35, 131);
             DEC_s_task_create(75, 238);
-            DEC_door_create(480, 387);
+            DEC_door_create(479, 387);
             //DEC_unviswall_create(400, 414, 0);
             xpp = 32;
             for (int u = 0; u<=15; u++)

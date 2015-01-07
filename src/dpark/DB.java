@@ -10,6 +10,7 @@ import dpark.rooms.Map2;
 import dpark.rooms.Map3;
 import dpark.rooms.Map4;
 import dpark.rooms.Storymap1;
+import dpark.rooms.Storymap2;
 import dpark.rooms.NewGameSplashScreenRoom;
 
 import java.util.HashMap;
@@ -221,8 +222,8 @@ public class DB {
             final Player p = new Player("player");
             GameObject.PlayerCanMovie = 0;
 
-                p.x = 250;
-                p.y = 250;
+                //p.x = 250;
+                //p.y = 250;
 
 
 
@@ -292,10 +293,22 @@ public class DB {
             rooms.put(r.name, r);
 
         }
+
         {
             final Storymap1 r = new Storymap1("Storymap1");
             r.background = "mapstory_bg";
             r.objectsIDs.add("controller");
+            r.objectsIDs.add("player");
+
+            rooms.put(r.name, r);
+
+        }
+        {
+            final Storymap2 r = new Storymap2("Storymap2");
+            r.background = "mapstory_bg";
+            r.objectsIDs.add("controller");
+
+
             r.objectsIDs.add("player");
 
             rooms.put(r.name, r);

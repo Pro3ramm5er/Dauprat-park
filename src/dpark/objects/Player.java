@@ -95,6 +95,9 @@ public class Player extends GameObject {
 
 
         
+
+        x = plx;
+        y = ply;
         plx = x;
         ply = y;
         ply1 = y - 1;
@@ -136,6 +139,7 @@ public class Player extends GameObject {
             {
                 Game.S_phone = 0;
                 Game.S_moment = 3;
+                Game.S_door = 1;
             }
         }
         if (Game.S_task == 1)

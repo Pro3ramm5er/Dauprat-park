@@ -28,6 +28,7 @@ import static dpark.DB.db;
 public class Controller extends GameObject {
     public int Timer_to_change = 5;
     public int Texture_number = 0;
+    public int GEtdel = 0;
 
     public Controller(String name) {
         super(name);
@@ -39,6 +40,21 @@ public class Controller extends GameObject {
 
     @Override
     public void update() {
+        if (Game.Level == 6 )
+        {
+            if (GEtdel == 0) {
+                GameObject.plx = 373;
+                GameObject.ply = 526;
+                GEtdel = 1;
+            }
+        } else {
+            if (GEtdel == 0) {
+                GameObject.plx = 250;
+                GameObject.ply = 250;
+                GEtdel = 1;
+            }
+
+        }
         if (Game.currentRoom == db.rooms.get("main_menu_room")) {
 
               if (Game.GameUpdateType == 0) {
@@ -194,6 +210,10 @@ public class Controller extends GameObject {
                 Game.Restart_type = 5;
                 Game.AllDelete = 1;
             }
+        }
+        if (keycode == KeyEvent.VK_9) {
+           Game.Restart_type = 6;
+            Game.AllDelete = 1;
         }
     }
 }
