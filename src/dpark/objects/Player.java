@@ -20,6 +20,11 @@ public class Player extends GameObject {
     public static int ByhTimer = 40;
     public static int weedTimer = 40;
     public int reseter = 0;
+    public int Tasktimer = 25;
+    public int Tasknow = 12;
+    public int Tabledel = 0;
+    public int Phonetimer = 70;
+    public int phonenow = 19;
 
 
     public Player(String name) {
@@ -47,8 +52,26 @@ public class Player extends GameObject {
         sprite.addStep(Game.instance.getSprite("hero_down_unef.png")); // 9
 
         sprite.addStep(Game.instance.getSprite("hero_down_weed.png")); //10
+
         sprite.addStep(Game.instance.getSprite("hero_down_weed_use.png")); //11
 
+
+        // FOR ANIMATION
+        // LIST
+        sprite.addStep(Game.instance.getSprite("hero_right_task.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_task2.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_task3.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_task4.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_task5.png"));
+        sprite.addStep(Game.instance.getSprite("hero_task6.png"));//17
+        sprite.addStep(Game.instance.getSprite("hero_opa.png"));//18
+        //PHONE
+        sprite.addStep(Game.instance.getSprite("hero_right_ph1.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_ph2.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_ph3.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_ph4.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_ph5.png"));
+        sprite.addStep(Game.instance.getSprite("hero_right_ph6.png"));//24
         //PlayerSpeedBonus = 0;
 
 
@@ -97,6 +120,48 @@ public class Player extends GameObject {
             Collision();
         }
 
+        if (Game.S_phone == 1)
+        {
+            sprite.currentStep = phonenow;
+            if (Phonetimer <= 0 && phonenow < 25)
+            {
+                phonenow++;
+                Phonetimer = 15;
+            }
+            if (!(Phonetimer <= 0))
+            {
+                Phonetimer--;
+            }
+            if (phonenow >= 25)
+            {
+                Game.S_phone = 0;
+                Game.S_moment = 3;
+            }
+        }
+        if (Game.S_task == 1)
+        {
+            sprite.currentStep = Tasknow;
+            if (Tasktimer <= 0 && Tasknow < 17)
+            {
+                Tasknow++;
+                Tasktimer = 15;
+            }
+            if (!(Tasktimer <= 0))
+            {
+                Tasktimer--;
+            }
+            if (!(Tasknow < 16))
+            {
+                Game.S_task = 0;
+                Game.S_moment = 1;
+            }
+        }
+        if (Game.S_table == 1 && Tabledel == 0)
+        {
+            sprite.currentStep = 18;
+            Tabledel = 1;
+        }
+
         inertion--;
         if (inertion < 0)
             inertion = 0;
@@ -138,7 +203,7 @@ public class Player extends GameObject {
         super.onKeyPress(keycode);
 
 
-        if (keycode == KeyEvent.VK_A) {
+        if (keycode == KeyEvent.VK_A && Game.S_task == 0) {
 
             if (PlayerColSt != 4) {
                 //if (PlayerSpeedBonus == 0) {
@@ -168,7 +233,7 @@ public class Player extends GameObject {
 
         }
         if (keycode == KeyEvent.VK_D) {
-            if (PlayerColSt != 2) {
+            if (PlayerColSt != 2 && Game.S_task == 0) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
                 //} else {
@@ -196,7 +261,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_W) {
+        if (keycode == KeyEvent.VK_W && Game.S_task == 0) {
             if (PlayerColSt != 1) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
@@ -225,7 +290,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_S) {
+        if (keycode == KeyEvent.VK_S && Game.S_task == 0) {
 
 
             if (PlayerColSt != 3) {

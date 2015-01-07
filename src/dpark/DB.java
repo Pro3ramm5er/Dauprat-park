@@ -207,7 +207,7 @@ public class DB {
 
         }
         {
-            final Background b = new Background("mapstory_bg", game.getSprite("map5.png"));
+            final Background b = new Background("mapstory_bg", game.getSprite("map6.png"));
             backgrounds.put(b.name, b);
         }
         {

@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class UnVisWall extends GameObject  {
+public class Window  extends GameObject {
     public int xt;
     public int yt;
 
@@ -28,25 +28,22 @@ public class UnVisWall extends GameObject  {
     public int Type = 0;
 
 
-    public UnVisWall(String name) {
+    public Window(String name) {
         super(name);
         //z = yt+15;
 
 
-        sprite.addStep(Game.instance.getSprite("unviswall.png"));
-        sprite.addStep(Game.instance.getSprite("unviswall_1.png"));
-        sprite.currentStep = Type;
+        sprite.addStep(Game.instance.getSprite("Window_1.png"));
+        sprite.addStep(Game.instance.getSprite("Window_2.png"));
+        sprite.currentStep = 0 + (int) +(Math.random() * ((1 - 0) + 1));
+
     }
 
     @Override
     public void update() {
         super.update();
-        sprite.currentStep = Type;
-        if (Type == 0) {
-            z = yt - 20;
-        } else {
-            z = yt-5;
-        }
+
+        z = yt;
 
 
         //Collisions:
@@ -193,3 +190,4 @@ public class UnVisWall extends GameObject  {
 
     }
 }
+
