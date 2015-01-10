@@ -231,7 +231,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void init() {
-        db.onGameLoaded(this);
+
 
         if (InitOn == 0) {
             addKeyListener(new Keyboard());
@@ -242,7 +242,7 @@ public class Game extends Canvas implements Runnable {
 
             InitOn = 1;
         }
-
+        db.onGameLoaded(this);
         //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
 
 
@@ -334,8 +334,8 @@ public class Game extends Canvas implements Runnable {
             AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
-            int xcr = 269;
-            int icr = 0;
+            int xcr = 47;
+            int icr = 600;
             int i = 0;
             int zex = 0;
 
@@ -343,10 +343,11 @@ public class Game extends Canvas implements Runnable {
 
 
                 DEC_unviswall_create(xcr, icr, 1);
-                icr += 32;
+                icr -= 32;
             }
-            xcr = 501;
-            icr = 0;
+
+            xcr = 773;
+            icr = 600;
             i = 0;
             zex = 0;
 
@@ -354,30 +355,76 @@ public class Game extends Canvas implements Runnable {
 
 
                 DEC_unviswall_create(xcr, icr, 1);
-                icr += 32;
+                icr -= 32;
             }
-            xcr = 272;
-            icr = 596;
+            DEC_roomback11_create(50, 185);
+            xcr = 50;
+            icr = 182;
             i = 0;
             zex = 0;
 
-            for (i = 0; i <= 5; i++) {
+            for (i = 0; i <= 21; i++) {
 
 
                 DEC_unviswall_create(xcr, icr, 0);
                 xcr += 32;
             }
-
-
-
-
-            DEC_unviswall_create(464, 596, 0);
-            DEC_unviswall_create(469, 596, 0);
-            DEC_roomback6_create(271, 48);
+            DEC_unviswall_create(742, 182, 0);
+            //DEC_unviswall_create(678, 182, 0);
+            DEC_roomback12_create(50, 81);
+            DEC_roomback13_create(50, 0);
 
 
             IsCreated = 1;
         }
+
+
+    }
+    public void DEC_roomback13_create(int w, int e) {
+
+        final Roomback_13 chest = new Roomback_13(getFreeName("Roomback_13"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_roomback12_create(int w, int e) {
+
+        final Roomback_12 chest = new Roomback_12(getFreeName("Roomback_12"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_roomback11_create(int w, int e) {
+
+        final Roomback_11 chest = new Roomback_11(getFreeName("Roomback_11"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }

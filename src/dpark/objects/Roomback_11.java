@@ -6,14 +6,14 @@ import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class Door_forr2 extends GameObject {
+public class Roomback_11 extends GameObject {
     public int xt;
     public int yt;
 
     int UseRandom = 0;
     int UseTimer = 1;
-    public int[] myx = {1, 2 ,3 ,4 ,5 ,6 ,7 ,8 ,9, 10, 11 ,12 ,13 ,14 ,15};
-    public int[] myy = {1, 2 ,3 ,4 ,5 ,6 ,7 ,8 ,9, 10, 11 ,12 ,13 ,14 ,15};
+    public int[] myx = {/*1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,*/ 35, 36, 37, 38, 39, 40, 41 ,42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54 , 55};
+    public int[] myy = {/*1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, */27, 28, 29, 30, 31, 32, 33, 34, 35};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -27,12 +27,10 @@ public class Door_forr2 extends GameObject {
     public int Col_del = 0;
     public int PlusOnce = 0;
 
-    public Door_forr2(String name)
+    public Roomback_11(String name)
     {
         super(name);
-
-        sprite.addStep(Game.instance.getSprite("door_visible.png"));
-        //sprite.currentStep = 0 + (int) (Math.random() * ((1 - 0) + 1));
+        sprite.addStep(Game.instance.getSprite("Roomback11.png"));
 
 
         //z = y;
@@ -40,8 +38,7 @@ public class Door_forr2 extends GameObject {
     @Override
     public void update()
     {
-        z = yt;
-
+        z = -10;
         /*
         if (Timer <= 0 && UseTimer == 1)
         {
@@ -98,13 +95,6 @@ public class Door_forr2 extends GameObject {
 
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
-
-
-                    Game.S_moment = 5;
-                    Game.Restart_type = 8;
-                    Game.AllDelete = 1;
-
-
                 if (Col_del == 0 && Timer <= 0) {
                     //System.out.println("KOL");
                     if (PlayerZ == z || z < PlayerZ) {
@@ -197,8 +187,6 @@ public class Door_forr2 extends GameObject {
 
         }
     }
-
-
-
 }
+
 

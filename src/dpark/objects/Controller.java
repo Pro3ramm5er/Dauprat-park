@@ -40,7 +40,7 @@ public class Controller extends GameObject {
 
     @Override
     public void update() {
-        if (Game.Level == 6 || Game.Level == 7 || Game.Level == 8)
+        if (Game.Level == 6 || Game.Level == 7 || Game.Level == 8 || Game.Level == 9)
         {
             if (GEtdel == 0) {
 
@@ -213,7 +213,7 @@ public class Controller extends GameObject {
             }
         }
         if (keycode == KeyEvent.VK_9) {
-           Game.Restart_type = 8;
+           Game.Restart_type = 9;
             Game.AllDelete = 1;
         }
     }
