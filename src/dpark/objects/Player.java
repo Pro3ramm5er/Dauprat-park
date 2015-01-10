@@ -123,6 +123,18 @@ public class Player extends GameObject {
             Collision();
         }
 
+
+        if (y < 0 && Game.Level == 6)
+        {
+             Game.Restart_type = 7;
+             Game.AllDelete = 1;
+        }
+        if (y < 0 && Game.Level == 8)
+        {
+            Game.Restart_type = 9;
+            Game.AllDelete = 1;
+        }
+
         if (Game.S_phone == 1)
         {
             sprite.currentStep = phonenow;
