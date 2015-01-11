@@ -14,6 +14,8 @@ import dpark.rooms.Storymap2;
 import dpark.rooms.Storymap3;
 import dpark.rooms.Storyroom4;
 import dpark.rooms.Storyroom5;
+import dpark.rooms.Storyroom6;
+import dpark.rooms.Storyroom7;
 import dpark.rooms.NewGameSplashScreenRoom;
 
 import java.util.HashMap;
@@ -32,7 +34,7 @@ public class DB {
     }
 
     public void onGameLoaded(final Game game) {
-        if (Game.GameUpdateType == 0) {
+        if (GameOtherVars.GameUpdateType == 0) {
             {
                 final Background b = new Background("main_menu_bg", game.getSprite("logo.png"));
                 backgrounds.put(b.name, b);
@@ -43,7 +45,7 @@ public class DB {
                 backgrounds.put(b.name, b);
             }
         }
-        if (Game.GameUpdateType == 1) {
+        if (GameOtherVars.GameUpdateType == 1) {
             {
                 final Background b = new Background("main_menu_bg", game.getSprite("Newyaer_logo.png"));
                 backgrounds.put(b.name, b);
@@ -106,7 +108,7 @@ public class DB {
                 @Override
                 public void run() {
                     game.Get_Start();
-                    Game.BeforeMain = 1;
+                    GameOtherVars.BeforeMain = 1;
 
                 }
             };
@@ -181,27 +183,27 @@ public class DB {
         }
         {
 
-                if (Game.Biome_type == 1) {
+                if (GameOtherVars.Biome_type == 1) {
                     final Background b = new Background("map1_bg", game.getSprite("map1.png"));
                     backgrounds.put(b.name, b);
                 }
-                if (Game.Biome_type == 2) {
+                if (GameOtherVars.Biome_type == 2) {
                     final Background b = new Background("map1_bg", game.getSprite("Newyaermap1.png"));
                     backgrounds.put(b.name, b);
                 }
-                if (Game.Biome_type == 3) {
+                if (GameOtherVars.Biome_type == 3) {
                     final Background b = new Background("map1_bg", game.getSprite("map2.png"));
                     backgrounds.put(b.name, b);
                 }
-                if (Game.Biome_type == 4) {
+                if (GameOtherVars.Biome_type == 4) {
                     final Background b = new Background("map1_bg", game.getSprite("map3.png"));
                     backgrounds.put(b.name, b);
                 }
-                if (Game.Biome_type == 5) {
+                if (GameOtherVars.Biome_type == 5) {
                     final Background b = new Background("map1_bg", game.getSprite("map4.png"));
                     backgrounds.put(b.name, b);
                 }
-                if (Game.Biome_type == 6) {
+                if (GameOtherVars.Biome_type == 6) {
                     final Background b = new Background("map1_bg", game.getSprite("map5.png"));
                     backgrounds.put(b.name, b);
                 }
@@ -350,6 +352,27 @@ public class DB {
             rooms.put(r.name, r);
 
         }
+        {
+            final Storyroom6 r = new Storyroom6("Storyroom6");
+            r.background = "mapstory_bg";
+            r.objectsIDs.add("controller");
 
+
+            r.objectsIDs.add("player");
+
+            rooms.put(r.name, r);
+
+        }
+        {
+            final Storyroom7 r = new Storyroom7("Storyroom7");
+            r.background = "mapstory_bg";
+            r.objectsIDs.add("controller");
+
+
+            r.objectsIDs.add("player");
+
+            rooms.put(r.name, r);
+
+        }
     }
 }

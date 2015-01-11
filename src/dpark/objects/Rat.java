@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 29.11.2014.
@@ -79,9 +80,9 @@ public class Rat extends GameObject {
 
         if (Atack == 1) {
             Timer_sec = 1;
-            Game.xo = x;
-            Game.yo = y;
-            Game.RatCreated = 0;
+            GameOtherVars.xo = x;
+            GameOtherVars.yo = y;
+            GameOtherVars.RatCreated = 0;
 
 
             if (Timer_sec == 1) {

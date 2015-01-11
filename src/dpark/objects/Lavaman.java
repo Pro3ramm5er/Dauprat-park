@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 29.11.2014.
@@ -50,11 +51,11 @@ public class Lavaman extends GameObject {
         z = yt+15;
         if (MinusTimer <= 0 && Minus == 1)
         {
-            if (Game.Health == 1)
+            if (GameOtherVars.Health == 1)
             {
                 Atack = 1;
             } else {
-                Game.Health --;
+                GameOtherVars.Health --;
                 MinusTimer = 30;
                 Minus = 0;
             }
@@ -97,7 +98,7 @@ public class Lavaman extends GameObject {
 
         if (Atack == 1) {
             Timer_sec = 1;
-            Game.VisibleDieLogo = 1;
+            GameOtherVars.VisibleDieLogo = 1;
 
 
             if (Timer_sec == 1) {
@@ -106,7 +107,7 @@ public class Lavaman extends GameObject {
                     Atack = 0;
                     Timer_sec = 0;
                     Timer_3 = 5;
-                    Game.VisibleDieLogo = 0;
+                    GameOtherVars.VisibleDieLogo = 0;
                     Game.Get_Die();
 
 

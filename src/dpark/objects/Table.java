@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameStoryVars;
 
 /**
  * @author Nickita
@@ -64,21 +65,21 @@ public class Table extends GameObject {
 
         if (TAblenow == 1 && TableTimer <= 0)
         {
-            Game.S_phone = 1;
+            GameStoryVars.S_phone = 1;
             TAblenow = 0;
         } else {
             TableTimer--;
         }
-        if (Game.S_table == 1 && TAbleonce == 0)
+        if (GameStoryVars.S_table == 1 && TAbleonce == 0)
         {
             TAblenow = 1;
             TAbleonce = 1;
 
         }
-        if (Game.S_table == 1)
+        if (GameStoryVars.S_table == 1)
         {
             sprite.currentStep = 1;
-            Game.S_moment = 2;
+            GameStoryVars.S_moment = 2;
         }
         if (otchet == myx.length) {
             otchet = 0;

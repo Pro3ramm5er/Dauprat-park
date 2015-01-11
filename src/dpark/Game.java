@@ -32,50 +32,10 @@ public class Game extends Canvas implements Runnable {
 
     public static int Applecalipses = 0;
     public static Room currentRoom;
-    public static int VisibleDieLogo = 0;
-    public static int AllDelete = 0; // If 1 - SelfRemove for all objects.
-    public static int StopUpdate = 0;
-    public static int IsCreated = 0;
-    public static int AppleCreate = 1;
-    public static int BeforeMain = 0;
-    public static int BluemanCreated = 1;
-    public static int RatCreated = 1;
-    public static int xo;
-    public static int yo;
-    public static int Shlakoblock_magic = 0;
-    public static int GameUpdateType = 1; // 0 - normal, 1 - New Year Update;
-    public static int SantaX;
-    public static int SantaY;
-    public static int NWY_Present_create = 1;
-    public static int Shlakoblock_create = 1;
-    public static int CardCreate = 1;
-    public static int DedMoroz_create = 1;
-    public static int MainKey = 0;
-    public static int WinVisible = 0;
-    public static int WinTimer = 50;
-    public static int Maslo_Create = 1;
-    public static int Restart_type = 1; // 1 - to main. 2 - easy delete. 3 - 3 location
-    public static int Reload_on = 1;
-    public static int Bananar_bad = 0;
-    public static int Fullimmortality = 0;
-    public static int InitOn = 0;
-    public static int blindness_on = 0;
-    public static int Level = 1;
-    public static int Snow_MST = 0;
-    public static int Snow_x;
-    public static int Snow_y;
-    public static int Snow_create = 1;
-    public static int Health = 2;
-    public static int Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
-    public static int Player_bottle = 0;
-    public static int Player_weed = 0;
-    public static int UnderEffecr = 0;
-    public static int Story = 0;
-    public static int S_task = 0;
-    public static int S_table = 0;
-    public static int S_phone = 0;
-    public static int S_moment = 0;
-    public static int S_door = 0;
+
+
+
+
     public SoundEngine soundengine;
 
 
@@ -107,113 +67,128 @@ public class Game extends Canvas implements Runnable {
 
                 update();
 
-                if (BeforeMain == 1) {
-                    if (Level == 1) {
+                if (GameOtherVars.BeforeMain == 1) {
+                    if (GameOtherVars.Level == 1) {
                         Get_Start();
 
                     }
-                    if (Level == 2) {
+                    if (GameOtherVars.Level == 2) {
                         Get_start_location_2();
 
                     }
-                    if (Level == 3) {
+                    if (GameOtherVars.Level == 3) {
                         Get_start_location_3();
 
                     }
-                    if (Level == 4) {
+                    if (GameOtherVars.Level == 4) {
                         Get_4_level();
 
                     }
-                    if (Level == 5) {
+                    if (GameOtherVars.Level == 5) {
                         GetStartStory();
 
                     }
-                    if (Level == 6) {
+                    if (GameOtherVars.Level == 6) {
                         GetStartS2();
 
                     }
-                    if (Level == 7) {
+                    if (GameOtherVars.Level == 7) {
                         GetStartS3();
 
                     }
-                    if (Level == 8) {
+                    if (GameOtherVars.Level == 8) {
                         GetStartS4();
 
                     }
-                    if (Level == 9) {
+                    if (GameOtherVars.Level == 9) {
                         GetStartS5();
 
                     }
+                    if (GameOtherVars.Level == 10) {
+                        GetStartS6();
 
+                    }
+                    if (GameOtherVars.Level == 11) {
+                        GetStartS7();
+
+                    }
                 }
                 currentRoom.update();
 
-                if (AllDelete == 0 && StopUpdate == 0) {
+                if (GameOtherVars.AllDelete == 0 && GameOtherVars.StopUpdate == 0) {
 
                     for (GameObject o : db.objects.values()) {
-                        if (AllDelete == 0 && StopUpdate == 0) {
+                        if (GameOtherVars.AllDelete == 0 && GameOtherVars.StopUpdate == 0) {
                             o.update();
                         }
                     }
                 }
 
-                if (AllDelete == 1) {
+                if (GameOtherVars.AllDelete == 1) {
 
 
                     currentRoom.objectsIDs.clear();
 
                     db.objects.clear();
 
-                    WinVisible = 0;
-                    VisibleDieLogo = 0;
-                    AllDelete = 0; // If 1 - SelfRemove for all objects.
-                    StopUpdate = 0;
-                    IsCreated = 0;
-                    AppleCreate = 1;
+                    GameOtherVars.WinVisible = 0;
+                    GameOtherVars.VisibleDieLogo = 0;
+                    GameOtherVars.AllDelete = 0; // If 1 - SelfRemove for all objects.
+                    GameOtherVars.StopUpdate = 0;
+                    GameOtherVars.IsCreated = 0;
+                    GameOtherVars.AppleCreate = 1;
 
-                    BluemanCreated = 0;
-                    RatCreated = 0;
-                    xo = 0;
-                    yo = 0;
-                    MainKey = 0;
-                    Shlakoblock_magic = 0;
-                    BeforeMain = 0;
-                    Reload_on = 1;
-                    Health = 2;
-                    Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
-                    Player_bottle = 0;
-                    UnderEffecr = 0;
+                    GameOtherVars.BluemanCreated = 0;
+                    GameOtherVars.RatCreated = 0;
+                    GameOtherVars.xo = 0;
+                    GameOtherVars.yo = 0;
+                    GameOtherVars.MainKey = 0;
+                    GameOtherVars.Shlakoblock_magic = 0;
+                    GameOtherVars.BeforeMain = 0;
+                    GameOtherVars.Reload_on = 1;
+                    GameOtherVars.Health = 2;
+                    GameOtherVars.Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
+                    GameOtherVars.Player_bottle = 0;
+                    GameOtherVars.UnderEffecr = 0;
 
-                    if (Restart_type == 1) {
+                    if (GameOtherVars.Restart_type == 1) {
                         init();
                     }
-                    if (Restart_type == 2) {
+                    if (GameOtherVars.Restart_type == 2) {
                         //init_location_2();
                         Get_start_location_2();
                     }
-                    if (Restart_type == 3) {
+                    if (GameOtherVars.Restart_type == 3) {
                         Get_start_location_3();
                     }
-                    if (Restart_type == 4) {
+                    if (GameOtherVars.Restart_type == 4) {
                         Get_4_level();
                     }
-                    if (Restart_type == 5) {
+                    if (GameOtherVars.Restart_type == 5) {
                         GetStartStory();
                     }
-                    if (Restart_type == 6) {
+                    if (GameOtherVars.Restart_type == 6) {
                         GetStartS2();
                     }
-                    if (Restart_type == 7) {
+                    if (GameOtherVars.Restart_type == 7) {
                         GetStartS3();
                     }
-                    if (Restart_type == 8) {
+                    if (GameOtherVars.Restart_type == 8) {
                         GetStartS4();
                     }
-                    if (Restart_type == 9) {
+                    if (GameOtherVars.Restart_type == 9) {
                         GetStartS5();
                     }
-                    IsCreated = 0;
-                    AllDelete = 0;
+                    if (GameOtherVars.Restart_type == 10) {
+                        GetStartS6();
+
+                    }
+                    if (GameOtherVars.Restart_type == 11) {
+                        GetStartS7();
+
+                    }
+                    GameOtherVars.IsCreated = 0;
+                    GameOtherVars.AllDelete = 0;
 
                 }
                 for (Animation a : db.animations.values()) {
@@ -233,14 +208,14 @@ public class Game extends Canvas implements Runnable {
     public void init() {
 
 
-        if (InitOn == 0) {
+        if (GameOtherVars.InitOn == 0) {
             addKeyListener(new Keyboard());
             addMouseListener(mouseListener);
 
 
 
 
-            InitOn = 1;
+            GameOtherVars.InitOn = 1;
         }
         db.onGameLoaded(this);
         //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
@@ -304,34 +279,211 @@ public class Game extends Canvas implements Runnable {
         return game;
     }
 
+
+
+
+
     public static void Get_win_1()
     {
-        WinVisible = 1;
+        GameOtherVars.WinVisible = 1;
 
     }
     public static void Get_win_2()
     {
-        AllDelete = 1;
-        VisibleDieLogo = 0;
+        GameOtherVars.AllDelete = 1;
+        GameOtherVars.VisibleDieLogo = 0;
     }
     public static void Get_Die() {
 
-        AllDelete = 1;
-        VisibleDieLogo = 0;
+        GameOtherVars.AllDelete = 1;
+        GameOtherVars.VisibleDieLogo = 0;
+
+
+    }
+    public void GetStartS7() {
+
+
+        GameOtherVars.Level = 11;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            db.onGameLoaded(this);
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            DEC_roomback14_create(47, 0);
+
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void GetStartS6() {
+
+
+        GameOtherVars.Level = 10;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            db.onGameLoaded(this);
+            currentRoom = db.rooms.get("Storyroom6");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            DEC_roomback14_create(47, 0);
+            DEC_tree_create(544, 178);
+            DEC_rock_create(98, 349);
+            DEC_plate_create(405, 466);
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void DEC_plate_create(int w, int e) {
+
+        final Plate chest = new Plate(getFreeName("Plate"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_rock_create(int w, int e) {
+
+        final DEC_rock chest = new DEC_rock(getFreeName("DEC_rock"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_tree_create(int w, int e) {
+
+        final DEC_Tree chest = new DEC_Tree(getFreeName("DEC_Tree"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_cartina_create(int w, int e) {
+
+        final DEC_cartina chest = new DEC_cartina(getFreeName("DEC_cartina"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_roomback14_create(int w, int e) {
+
+        final Roomback_14 chest = new Roomback_14(getFreeName("Roomback_14"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }
     public void GetStartS5() {
 
 
-        Level = 9;
-        Story = 1;
+        GameOtherVars.Level = 9;
+        GameStoryVars.Story = 1;
 
-        if (IsCreated == 0) {
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storyroom5");
             db.objects.get("player").visible = true;
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
             int xcr = 47;
@@ -373,10 +525,26 @@ public class Game extends Canvas implements Runnable {
             //DEC_unviswall_create(678, 182, 0);
             DEC_roomback12_create(50, 81);
             DEC_roomback13_create(50, 0);
+            DEC_door_forr3_create(367, 120);
 
-
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
         }
+
+
+    }
+    public void DEC_door_forr3_create(int w, int e) {
+
+        final Door_forr3 chest = new Door_forr3(getFreeName("Door_forr3"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }
@@ -431,14 +599,14 @@ public class Game extends Canvas implements Runnable {
     public void GetStartS4() {
 
 
-        Level = 8;
-        Story = 1;
+        GameOtherVars.Level = 8;
+        GameStoryVars.Story = 1;
 
-        if (IsCreated == 0) {
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storyroom4");
             db.objects.get("player").visible = true;
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
             int xcr = 47;
@@ -469,7 +637,8 @@ public class Game extends Canvas implements Runnable {
             DEC_roomback9_create(50, 211);
             DEC_roomback10_create(50, 0);
 
-            IsCreated = 1;
+
+            GameOtherVars.IsCreated = 1;
         }
 
 
@@ -556,15 +725,15 @@ public class Game extends Canvas implements Runnable {
     }
     public void GetStartS3() {
 
-        Level = 7;
-        Story = 1;
-        
-        if (IsCreated == 0) {
+        GameOtherVars.Level = 7;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
 
             currentRoom = db.rooms.get("Storymap3");
             db.objects.get("player").visible = true;
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
             int xcr = 269;
@@ -624,21 +793,21 @@ public class Game extends Canvas implements Runnable {
             DEC_roomback7_create(272, 0);
 
 
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
         }
 
 
     }
     public void GetStartS2() {
 
-        Level = 6;
-        Story = 1;
+        GameOtherVars.Level = 6;
+        GameStoryVars.Story = 1;
 
-        if (IsCreated == 0) {
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storymap2");
             db.objects.get("player").visible = true;
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
             int xcr = 269;
@@ -678,8 +847,8 @@ public class Game extends Canvas implements Runnable {
             DEC_unviswall_create(469, 596, 0);
             DEC_roomback6_create(271, 0);
             DEC_door_prop_create(382, 563);
-
-            IsCreated = 1;
+            DEC_cartina_create(291, 287);
+            GameOtherVars.IsCreated = 1;
         }
 
 
@@ -718,14 +887,14 @@ public class Game extends Canvas implements Runnable {
     }
     public void GetStartStory() {
 
-        Level = 5;
-        Story = 1;
+        GameOtherVars.Level = 5;
+        GameStoryVars.Story = 1;
 
-        if (IsCreated == 0) {
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storymap1");
             db.objects.get("player").visible = true;
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
 
             GameObject.PlayerCanMovie = 0;
 
@@ -847,7 +1016,7 @@ public class Game extends Canvas implements Runnable {
                 xpp+=32;
             }
             DEC_unviswall_create(29, 419, 0);
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
         }
 
 
@@ -1075,35 +1244,35 @@ public class Game extends Canvas implements Runnable {
     }
     public void DEC_unviswall_create(int w, int e, int t) {
 
-            final UnVisWall chest = new UnVisWall(getFreeName("UnVisWall"));
-             chest.Type = t;
-            int wardenx = w;
-            int wardeny = e;
+        final UnVisWall chest = new UnVisWall(getFreeName("UnVisWall"));
+        chest.Type = t;
+        int wardenx = w;
+        int wardeny = e;
 
-            chest.x = wardenx;
-            chest.y = wardeny;
-            chest.xt = wardenx;
-            chest.yt = wardeny;
+        chest.x = wardenx;
+        chest.y = wardeny;
+        chest.xt = wardenx;
+        chest.yt = wardeny;
 
 
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
 
 
     }
     public void DEC_bed_create(int w, int e) {
 
-            final Bed chest = new Bed(getFreeName("Bed"));
+        final Bed chest = new Bed(getFreeName("Bed"));
 
-            chest.x = w ;
-            chest.y = e;
-            chest.xt = w;
-            chest.yt = e;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
 
 
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
 
 
@@ -1113,32 +1282,32 @@ public class Game extends Canvas implements Runnable {
 
     public void Get_4_level() {
 
-        Level = 4;
+        GameOtherVars.Level = 4;
         if (GameObject.plx >= 900 || GameObject.plx >= 900) {
-            Restart_type = 4;
-            AllDelete  =1;
+            GameOtherVars.Restart_type = 4;
+            GameOtherVars.AllDelete  =1;
         }
         if (GameObject.plx <= -10 || GameObject.plx <= -10) {
-            Restart_type = 4;
-            AllDelete  =1;
+            GameOtherVars.Restart_type = 4;
+            GameOtherVars.AllDelete  =1;
         }
         if (GameObject.ply >= 900 || GameObject.ply >= 900) {
-            Restart_type = 4;
-            AllDelete  =1;
+            GameOtherVars.Restart_type = 4;
+            GameOtherVars.AllDelete  =1;
         }
         if (GameObject.ply <= -10 || GameObject.ply <= -10) {
-            Restart_type = 4;
-            AllDelete  =1;
+            GameOtherVars.Restart_type = 4;
+            GameOtherVars.AllDelete  =1;
         }
-        if (IsCreated == 0) {
-            AllDelete = 0;
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.AllDelete = 0;
             db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
 
             currentRoom = db.rooms.get("map4_room");
             db.objects.get("player").visible = true;
 
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
 
 
 
@@ -1197,7 +1366,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Bandit_create();
             NPC_MoMo_create();
             NPC_Bananar_create();
-            if (Biome_type == 1) {
+            if (GameOtherVars.Biome_type == 1) {
                 Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -1249,7 +1418,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } if (Biome_type == 2) {
+            } if (GameOtherVars.Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -1280,7 +1449,7 @@ public class Game extends Canvas implements Runnable {
                 Snowbug_create();
                 Snowbug_create();
             }
-            if (Biome_type == 3)
+            if (GameOtherVars.Biome_type == 3)
             {
                 Cactus_create();
                 Rock_create();
@@ -1288,7 +1457,7 @@ public class Game extends Canvas implements Runnable {
                 MonsterCactus_create();
 
             }
-            if (Biome_type == 4)
+            if (GameOtherVars.Biome_type == 4)
             {
                 Ship_create();
 
@@ -1297,14 +1466,14 @@ public class Game extends Canvas implements Runnable {
                 Sphuyna_create();
 
             }
-            if (Biome_type == 5)
+            if (GameOtherVars.Biome_type == 5)
             {
                 rad_dec_create();
                 Zombie_create();
 
 
             }
-            if (Biome_type == 6)
+            if (GameOtherVars.Biome_type == 6)
             {
                 Soul_create();
                 Mag_create();
@@ -1346,70 +1515,70 @@ public class Game extends Canvas implements Runnable {
             Weed_create();
         }
 
-        if (WinVisible == 1) {
-            if (WinTimer <= 0) {
-                AllDelete = 1;
-                WinTimer = 15;
+        if (GameOtherVars.WinVisible == 1) {
+            if (GameOtherVars.WinTimer <= 0) {
+                GameOtherVars.AllDelete = 1;
+                GameOtherVars.WinTimer = 15;
             } else {
-                WinTimer--;
+                GameOtherVars.WinTimer--;
             }
         }
-        if (AppleCreate == 0) {
+        if (GameOtherVars.AppleCreate == 0) {
             NPC_Deamon_create();
-            AppleCreate = 1;
+            GameOtherVars.AppleCreate = 1;
         }
-        if (BluemanCreated == 0) {
+        if (GameOtherVars.BluemanCreated == 0) {
             NPC_Blueman_create();
-            BluemanCreated = 1;
+            GameOtherVars.BluemanCreated = 1;
         }
-        if (RatCreated == 0) {
+        if (GameOtherVars.RatCreated == 0) {
 
-            RatCreated = 1;
+            GameOtherVars.RatCreated = 1;
         }
-        if (NWY_Present_create == 0)
+        if (GameOtherVars.NWY_Present_create == 0)
         {
-            NPC_Present_create(SantaX, SantaY);
-            NWY_Present_create = 1;
+            NPC_Present_create(GameOtherVars.SantaX, GameOtherVars.SantaY);
+            GameOtherVars.NWY_Present_create = 1;
         }
-        if (Shlakoblock_create  == 0)
+        if (GameOtherVars.Shlakoblock_create  == 0)
         {
             NPC_Shlakoblock_create();
-            Shlakoblock_create = 1;
+            GameOtherVars.Shlakoblock_create = 1;
         }
-        if (DedMoroz_create  == 0)
+        if (GameOtherVars.DedMoroz_create  == 0)
         {
             NPC_NWY_Ded_Moroz_create();
-            DedMoroz_create = 1;
+            GameOtherVars.DedMoroz_create = 1;
         }
-        if (Maslo_Create  == 0)
+        if (GameOtherVars.Maslo_Create  == 0)
         {
 
-            Maslo_Create = 0;
+            GameOtherVars.Maslo_Create = 0;
         }
-        if (CardCreate  == 0)
+        if (GameOtherVars.CardCreate  == 0)
         {
             Card_create();
-            CardCreate = 1;
+            GameOtherVars.CardCreate = 1;
         }
-        if (Bananar_bad > 0)
+        if (GameOtherVars.Bananar_bad > 0)
         {
-            Bananar_bad--;
+            GameOtherVars.Bananar_bad--;
             NPC_Bananar_create();
         }
 
     }
     public void Get_start_location_3() {
-        Level = 3;
-        if (IsCreated == 0) {
+        GameOtherVars.Level = 3;
+        if (GameOtherVars.IsCreated == 0) {
             db.onGameLoaded(this);
-            AllDelete = 0;
-            BeforeMain = 1;
+            GameOtherVars.AllDelete = 0;
+            GameOtherVars.BeforeMain = 1;
 
             GameObject.PlayerCanMovie = 0;
 
             currentRoom = db.rooms.get("map3_room");
             db.objects.get("player").visible = true;
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
             int xcr = 0;
             int icr = 0;
             int i = 0;
@@ -1470,7 +1639,7 @@ public class Game extends Canvas implements Runnable {
             for (i = 0; i <= 25; i++) {
 
 
-               Crate_create(xcr, icr, zex);
+                Crate_create(xcr, icr, zex);
                 icr += 32;
                 zex += 32;
             }
@@ -1535,7 +1704,7 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             Maslo_create();
             Maslo_create();
-            if (Biome_type == 1) {
+            if (GameOtherVars.Biome_type == 1) {
                 Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -1587,7 +1756,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } if (Biome_type == 2) {
+            } if (GameOtherVars.Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -1604,7 +1773,7 @@ public class Game extends Canvas implements Runnable {
                 Snowbug_create();
 
             }
-            if (Biome_type == 3)
+            if (GameOtherVars.Biome_type == 3)
             {
                 Cactus_create();
                 Rock_create();
@@ -1612,7 +1781,7 @@ public class Game extends Canvas implements Runnable {
                 MonsterCactus_create();
 
             }
-            if (Biome_type == 4)
+            if (GameOtherVars.Biome_type == 4)
             {
                 Ship_create();
                 Inoplanetanin_create();
@@ -1621,7 +1790,7 @@ public class Game extends Canvas implements Runnable {
                 //Rock_create();
 
             }
-            if (Biome_type == 5)
+            if (GameOtherVars.Biome_type == 5)
             {
                 rad_dec_create();
                 Zombie_create();
@@ -1629,7 +1798,7 @@ public class Game extends Canvas implements Runnable {
                 //Inoplanetanin_create();
 
             }
-            if (Biome_type == 6)
+            if (GameOtherVars.Biome_type == 6)
             {
                 Soul_create();
                 Mag_create();
@@ -1660,55 +1829,55 @@ public class Game extends Canvas implements Runnable {
 
         }
 
-        if (WinVisible == 1) {
-            if (WinTimer <= 0) {
-                AllDelete = 1;
-                WinTimer = 15;
+        if (GameOtherVars.WinVisible == 1) {
+            if (GameOtherVars.WinTimer <= 0) {
+                GameOtherVars.AllDelete = 1;
+                GameOtherVars.WinTimer = 15;
             } else {
-                WinTimer--;
+                GameOtherVars.WinTimer--;
             }
         }
-        if (AppleCreate == 0) {
+        if (GameOtherVars.AppleCreate == 0) {
             NPC_Deamon_create();
-            AppleCreate = 1;
+            GameOtherVars.AppleCreate = 1;
         }
-        if (BluemanCreated == 0) {
+        if (GameOtherVars.BluemanCreated == 0) {
             NPC_Blueman_create();
-            BluemanCreated = 1;
+            GameOtherVars.BluemanCreated = 1;
         }
-        if (RatCreated == 0) {
+        if (GameOtherVars.RatCreated == 0) {
 
-            RatCreated = 1;
+            GameOtherVars.RatCreated = 1;
         }
 
-        if (NWY_Present_create == 0)
+        if (GameOtherVars.NWY_Present_create == 0)
         {
-            NPC_Present_create(SantaX, SantaY);
-            NWY_Present_create = 1;
+            NPC_Present_create(GameOtherVars.SantaX, GameOtherVars.SantaY);
+            GameOtherVars.NWY_Present_create = 1;
         }
-        if (Shlakoblock_create  == 0)
+        if (GameOtherVars.Shlakoblock_create  == 0)
         {
             NPC_Shlakoblock_create();
-            Shlakoblock_create = 1;
+            GameOtherVars.Shlakoblock_create = 1;
         }
-        if (DedMoroz_create  == 0)
+        if (GameOtherVars.DedMoroz_create  == 0)
         {
             NPC_NWY_Ded_Moroz_create();
-            DedMoroz_create = 1;
+            GameOtherVars.DedMoroz_create = 1;
         }
-        if (Maslo_Create  == 0)
+        if (GameOtherVars.Maslo_Create  == 0)
         {
 
-            Maslo_Create = 0;
+            GameOtherVars.Maslo_Create = 0;
         }
-        if (CardCreate  == 0) {
+        if (GameOtherVars.CardCreate  == 0) {
             Card_create();
-            CardCreate = 1;
+            GameOtherVars.CardCreate = 1;
         }
-        if (Snow_create  == 0)
+        if (GameOtherVars.Snow_create  == 0)
         {
             NPC_Snow_create();
-            Snow_create = 1;
+            GameOtherVars.Snow_create = 1;
         }
     }
     public void NPC_SantaDemon_create() {
@@ -1744,17 +1913,17 @@ public class Game extends Canvas implements Runnable {
     }
     public void NPC_Snow_create() {
 
-            final Gun chest = new Gun(getFreeName("Gun"));
+        final Gun chest = new Gun(getFreeName("Gun"));
 
-            chest.x = Snow_x;
-            chest.y = Snow_y;
-            chest.xt = Snow_x;
-            chest.yt = Snow_y;
-            chest.MST = Snow_MST;
+        chest.x = GameOtherVars.Snow_x;
+        chest.y = GameOtherVars.Snow_y;
+        chest.xt = GameOtherVars.Snow_x;
+        chest.yt = GameOtherVars.Snow_y;
+        chest.MST = GameOtherVars.Snow_MST;
 
 
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
 
 
@@ -1822,16 +1991,16 @@ public class Game extends Canvas implements Runnable {
 
 
     public void Get_start_location_2() {
-        Level = 2;
-        if (IsCreated == 0) {
+        GameOtherVars.Level = 2;
+        if (GameOtherVars.IsCreated == 0) {
 
-            AllDelete = 0;
-            BeforeMain = 1;
+            GameOtherVars.AllDelete = 0;
+            GameOtherVars.BeforeMain = 1;
             db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
             currentRoom = db.rooms.get("map2_room");
             db.objects.get("player").visible = true;
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
             int xcr = 0;
             int icr = 0;
             int i = 0;
@@ -1920,7 +2089,7 @@ public class Game extends Canvas implements Runnable {
             Maslo_create();
             Maslo_create();
             Maslo_create();
-            if (Biome_type == 1) {
+            if (GameOtherVars.Biome_type == 1) {
                 Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -1972,7 +2141,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } if (Biome_type == 2) {
+            } if (GameOtherVars.Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -1990,7 +2159,7 @@ public class Game extends Canvas implements Runnable {
                 Hacker_create();
 
             }
-            if (Biome_type == 3)
+            if (GameOtherVars.Biome_type == 3)
             {
                 Cactus_create();
                 Rock_create();
@@ -1998,7 +2167,7 @@ public class Game extends Canvas implements Runnable {
                 MonsterCactus_create();
 
             }
-            if (Biome_type == 4)
+            if (GameOtherVars.Biome_type == 4)
             {
                 Ship_create();
                 Inoplanetanin_create();
@@ -2007,14 +2176,14 @@ public class Game extends Canvas implements Runnable {
                 //Rock_create();
 
             }
-            if (Biome_type == 5)
+            if (GameOtherVars.Biome_type == 5)
             {
                 rad_dec_create();
                 Zombie_create();
 
 
             }
-            if (Biome_type == 6)
+            if (GameOtherVars.Biome_type == 6)
             {
                 Soul_create();
                 Mag_create();
@@ -2047,41 +2216,41 @@ public class Game extends Canvas implements Runnable {
 
         }
 
-        if (WinVisible == 1) {
-            if (WinTimer <= 0) {
-                AllDelete = 1;
-                WinTimer = 15;
+        if (GameOtherVars.WinVisible == 1) {
+            if (GameOtherVars.WinTimer <= 0) {
+                GameOtherVars.AllDelete = 1;
+                GameOtherVars.WinTimer = 15;
             } else {
-                WinTimer--;
+                GameOtherVars.WinTimer--;
             }
         }
-        if (AppleCreate == 0) {
+        if (GameOtherVars.AppleCreate == 0) {
             NPC_Deamon_create();
-            AppleCreate = 1;
+            GameOtherVars.AppleCreate = 1;
         }
-        if (BluemanCreated == 0) {
+        if (GameOtherVars.BluemanCreated == 0) {
             NPC_Blueman_create();
-            BluemanCreated = 1;
+            GameOtherVars.BluemanCreated = 1;
         }
-        if (RatCreated == 0) {
+        if (GameOtherVars.RatCreated == 0) {
 
-            RatCreated = 1;
+            GameOtherVars.RatCreated = 1;
         }
 
-        if (Shlakoblock_create  == 0)
+        if (GameOtherVars.Shlakoblock_create  == 0)
         {
             NPC_Shlakoblock_create();
-            Shlakoblock_create = 1;
+            GameOtherVars.Shlakoblock_create = 1;
         }
-        if (DedMoroz_create  == 0)
+        if (GameOtherVars.DedMoroz_create  == 0)
         {
             NPC_NWY_Ded_Moroz_create();
-            DedMoroz_create = 1;
+            GameOtherVars.DedMoroz_create = 1;
         }
-        if (Maslo_Create  == 0)
+        if (GameOtherVars.Maslo_Create  == 0)
         {
 
-            Maslo_Create = 0;
+            GameOtherVars.Maslo_Create = 0;
         }
 
     }
@@ -2195,15 +2364,15 @@ public class Game extends Canvas implements Runnable {
     public void OBJ_APL_Snow_create() {
         //int ui = 1 + (int) +(Math.random() * ((2 - 1) + 1));
         //if (ui == 2) {
-            final Snow chest = new Snow(getFreeName("Snow"));
-            int wardenx = 0;
-            int wardeny = 0;
-            chest.x = wardenx;
-            chest.y = wardeny;
+        final Snow chest = new Snow(getFreeName("Snow"));
+        int wardenx = 0;
+        int wardeny = 0;
+        chest.x = wardenx;
+        chest.y = wardeny;
 
-            chest.z = 400;
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        chest.z = 400;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
         //}
     }
     public void NPC_IRT_create() {
@@ -2262,16 +2431,16 @@ public class Game extends Canvas implements Runnable {
     }
     public void Get_Start() {
 
-        Level = 1;
+        GameOtherVars.Level = 1;
 
-        if (IsCreated == 0) {
+        if (GameOtherVars.IsCreated == 0) {
 
-            AllDelete = 0;
+            GameOtherVars.AllDelete = 0;
             db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
             currentRoom = db.rooms.get("map1_room");
             db.objects.get("player").visible = true;
-            IsCreated = 1;
+            GameOtherVars.IsCreated = 1;
             int xcr = 0;
             int icr = 0;
             int i = 0;
@@ -2378,7 +2547,7 @@ public class Game extends Canvas implements Runnable {
             NPC_Bandit_create();
             NPC_MoMo_create();
             NPC_Bananar_create();
-            if (Biome_type == 1) {
+            if (GameOtherVars.Biome_type == 1) {
                 Tree_create();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
@@ -2430,7 +2599,7 @@ public class Game extends Canvas implements Runnable {
                 DEC_EarthCreate();
                 DEC_EarthCreate();
                 DEC_EarthCreate();
-            } if (Biome_type == 2) {
+            } if (GameOtherVars.Biome_type == 2) {
                 DEC_sock_create();
                 DEC_sock_create();
                 DEC_sock_create();
@@ -2461,7 +2630,7 @@ public class Game extends Canvas implements Runnable {
                 Snowbug_create();
                 Snowbug_create();
             }
-            if (Biome_type == 3)
+            if (GameOtherVars.Biome_type == 3)
             {
                 Cactus_create();
                 Rock_create();
@@ -2469,7 +2638,7 @@ public class Game extends Canvas implements Runnable {
                 MonsterCactus_create();
 
             }
-            if (Biome_type == 4)
+            if (GameOtherVars.Biome_type == 4)
             {
                 Ship_create();
 
@@ -2478,14 +2647,14 @@ public class Game extends Canvas implements Runnable {
                 Sphuyna_create();
 
             }
-            if (Biome_type == 5)
+            if (GameOtherVars.Biome_type == 5)
             {
                 rad_dec_create();
                 Zombie_create();
 
 
             }
-            if (Biome_type == 6)
+            if (GameOtherVars.Biome_type == 6)
             {
                 Soul_create();
                 Mag_create();
@@ -2509,54 +2678,54 @@ public class Game extends Canvas implements Runnable {
             Weed_create();
         }
 
-        if (WinVisible == 1) {
-            if (WinTimer <= 0) {
-                AllDelete = 1;
-                WinTimer = 15;
+        if (GameOtherVars.WinVisible == 1) {
+            if (GameOtherVars.WinTimer <= 0) {
+                GameOtherVars.AllDelete = 1;
+                GameOtherVars.WinTimer = 15;
             } else {
-                WinTimer--;
+                GameOtherVars.WinTimer--;
             }
         }
-        if (AppleCreate == 0) {
+        if (GameOtherVars.AppleCreate == 0) {
             NPC_Deamon_create();
-            AppleCreate = 1;
+            GameOtherVars.AppleCreate = 1;
         }
-        if (BluemanCreated == 0) {
+        if (GameOtherVars.BluemanCreated == 0) {
             NPC_Blueman_create();
-            BluemanCreated = 1;
+            GameOtherVars.BluemanCreated = 1;
         }
-        if (RatCreated == 0) {
+        if (GameOtherVars.RatCreated == 0) {
 
-            RatCreated = 1;
+            GameOtherVars.RatCreated = 1;
         }
-        if (NWY_Present_create == 0)
+        if (GameOtherVars.NWY_Present_create == 0)
         {
-            NPC_Present_create(SantaX, SantaY);
-            NWY_Present_create = 1;
+            NPC_Present_create(GameOtherVars.SantaX, GameOtherVars.SantaY);
+            GameOtherVars.NWY_Present_create = 1;
         }
-        if (Shlakoblock_create  == 0)
+        if (GameOtherVars.Shlakoblock_create  == 0)
         {
             NPC_Shlakoblock_create();
-            Shlakoblock_create = 1;
+            GameOtherVars.Shlakoblock_create = 1;
         }
-        if (DedMoroz_create  == 0)
+        if (GameOtherVars.DedMoroz_create  == 0)
         {
             NPC_NWY_Ded_Moroz_create();
-            DedMoroz_create = 1;
+            GameOtherVars.DedMoroz_create = 1;
         }
-        if (Maslo_Create  == 0)
+        if (GameOtherVars.Maslo_Create  == 0)
         {
 
-            Maslo_Create = 0;
+            GameOtherVars.Maslo_Create = 0;
         }
-        if (CardCreate  == 0)
+        if (GameOtherVars.CardCreate  == 0)
         {
             Card_create();
-            CardCreate = 1;
+            GameOtherVars.CardCreate = 1;
         }
-        if (Bananar_bad > 0)
+        if (GameOtherVars.Bananar_bad > 0)
         {
-            Bananar_bad--;
+            GameOtherVars.Bananar_bad--;
             NPC_Bananar_create();
         }
 
@@ -2802,17 +2971,17 @@ public class Game extends Canvas implements Runnable {
     }
     public void NPC_Bananas_create_nrdm() {
 
-            final Bananas chest = new Bananas(getFreeName("Bananas"));
-            int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
-            chest.x = wardenx;
-            chest.y = wardeny;
-            chest.xt = wardenx;
-            chest.yt = wardeny;
+        final Bananas chest = new Bananas(getFreeName("Bananas"));
+        int wardenx = 70 + (int) (Math.random() * ((600 - 150) + 1));
+        int wardeny = 70 + (int) (Math.random() * ((600 - 150) + 1));
+        chest.x = wardenx;
+        chest.y = wardeny;
+        chest.xt = wardenx;
+        chest.yt = wardeny;
 
 
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
 
 
@@ -2929,16 +3098,16 @@ public class Game extends Canvas implements Runnable {
     }
     public void eff_bil_create() {
 
-            final blindness chest = new blindness(getFreeName("blindness"));
-            int wardenx =0;
-            int wardeny =0;
-            chest.x = 0;
-            chest.y = 0;
+        final blindness chest = new blindness(getFreeName("blindness"));
+        int wardenx =0;
+        int wardeny =0;
+        chest.x = 0;
+        chest.y = 0;
 
-            chest.z = 15000000;
+        chest.z = 15000000;
 
-            db.objects.put(chest.name, chest);
-            currentRoom.objectsIDs.add(chest.name);
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
 
 
@@ -3436,9 +3605,9 @@ public class Game extends Canvas implements Runnable {
             chest.yt = wardeny;
 
 
-                chest.z = chest.y;
+            chest.z = chest.y;
 
-                chest.z = chest.y-200;
+            chest.z = chest.y-200;
 
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
@@ -3706,6 +3875,13 @@ public class Game extends Canvas implements Runnable {
 
 
     }
+
+
+
+
+
+
+
 
 
     public String getFreeName(String prefix) {

@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * @author Nickita
@@ -20,23 +21,23 @@ public class Healthbar extends GameObject {
     @Override
     public void update()
     {
-        if (Game.Health == 4)
+        if (GameOtherVars.Health == 4)
         {
             sprite.currentStep = 4;
         }
-        if (Game.Health == 3)
+        if (GameOtherVars.Health == 3)
         {
             sprite.currentStep = 3;
         }
-        if (Game.Health == 2)
+        if (GameOtherVars.Health == 2)
         {
             sprite.currentStep = 0;
         }
-        if (Game.Health == 1)
+        if (GameOtherVars.Health == 1)
         {
             sprite.currentStep = 1;
         }
-        if (Game.Health == 0)
+        if (GameOtherVars.Health == 0)
         {
             sprite.currentStep = 2;
         }

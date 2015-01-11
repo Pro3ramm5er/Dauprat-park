@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 25.11.2014.
@@ -167,7 +168,7 @@ public class EvilWorm extends GameObject {
         if (Atack == 1) {
 
             Timer_sec = 1;
-            Game.VisibleDieLogo = 1;
+            GameOtherVars.VisibleDieLogo = 1;
 
 
             if (Timer_sec == 1) {
@@ -176,7 +177,7 @@ public class EvilWorm extends GameObject {
                     Atack = 0;
                     Timer_sec = 0;
                     Timer_3 = 5;
-                    Game.VisibleDieLogo = 0;
+                    GameOtherVars.VisibleDieLogo = 0;
                     Game.Get_Die();
 
 

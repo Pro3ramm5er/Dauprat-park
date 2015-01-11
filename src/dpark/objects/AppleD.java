@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 08.11.2014.
@@ -225,7 +226,7 @@ public class AppleD extends GameObject {
         if (Timer_sec == 1) {
             if (Timer <= 0) {
                 //System.out.println("Suns ready");
-                Game.VisibleDieLogo = 1;
+                GameOtherVars.VisibleDieLogo = 1;
                 Timer_sec = 2;
                 Timer = 100;
             } else {
@@ -238,7 +239,7 @@ public class AppleD extends GameObject {
                 dead = 0;
                 Timer_sec = 0;
                 Timer = 5;
-                Game.VisibleDieLogo = 0;
+                GameOtherVars.VisibleDieLogo = 0;
                 Game.Get_Die();
 
 

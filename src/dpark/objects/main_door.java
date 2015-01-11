@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 import java.util.logging.Level;
 
@@ -44,25 +45,25 @@ public class main_door extends GameObject {
 
     public void Checker_Opener() {
 
-        if (Game.MainKey == 0) {
+        if (GameOtherVars.MainKey == 0) {
 
             KeyMessage.GetReset = 100;
             Player.Collision();
 
         }
-        if (Game.MainKey == 1) {
-            System.out.println(Game.Level);
-            if (Game.Level == 1) {
-                Game.Restart_type = 2;
-                Game.AllDelete = 1;
+        if (GameOtherVars.MainKey == 1) {
+            System.out.println(GameOtherVars.Level);
+            if (GameOtherVars.Level == 1) {
+                GameOtherVars.Restart_type = 2;
+                GameOtherVars.AllDelete = 1;
             }
-            if (Game.Level == 2) {
-                Game.Restart_type = 3;
-                Game.AllDelete = 1;
+            if (GameOtherVars.Level == 2) {
+                GameOtherVars.Restart_type = 3;
+                GameOtherVars.AllDelete = 1;
             }
-            if (Game.Level == 3) {
-                Game.Restart_type = 4;
-                Game.AllDelete = 1;
+            if (GameOtherVars.Level == 3) {
+                GameOtherVars.Restart_type = 4;
+                GameOtherVars.AllDelete = 1;
             }
 
         }

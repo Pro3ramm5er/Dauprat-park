@@ -1,13 +1,12 @@
 package dpark.objects;
-import dpark.GameObject;
-import dpark.Game;
 
-import javax.jws.soap.SOAPBinding;
+import dpark.Game;
+import dpark.GameObject;
 
 /**
  * @author Nickita
  */
-public class Rock extends GameObject {
+public class DEC_Tree extends GameObject {
     public int xt;
     public int yt;
 
@@ -28,12 +27,11 @@ public class Rock extends GameObject {
     public int Col_del = 0;
     public int PlusOnce = 0;
 
-    public Rock(String name)
+    public DEC_Tree(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Rock.png"));
-        sprite.addStep(Game.instance.getSprite("Rock_2.png"));
-        sprite.currentStep = 0 + (int) (Math.random() * ((1 - 0) + 1));
+        sprite.addStep(Game.instance.getSprite("DEC_Tree.png"));
+
 
 
         //z = y;
@@ -41,7 +39,24 @@ public class Rock extends GameObject {
     @Override
     public void update()
     {
+        z = yt+15;
+        /*
+        if (Timer <= 0 && UseTimer == 1)
+        {
+            UseRandom = 1 + (int) (Math.random() * ((4 - 1) + 1));
+            if (UseRandom == 1)
+            {
+                Game.SantaX = x;
+                Game.SantaY = y;
+                Game.NWY_Present_create = 0;
+                UseTimer = 0;
+                //Timer = 40;
+            }
 
+        } else {
+            Timer--;
+        }
+        */
 
 
 

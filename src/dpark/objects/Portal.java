@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 28.11.2014.
@@ -26,7 +27,7 @@ public class Portal extends GameObject {
     }
 
     public void DO() {
-        Game.AppleCreate = 0;
+        GameOtherVars.AppleCreate = 0;
         Timer = 700;
     }
 

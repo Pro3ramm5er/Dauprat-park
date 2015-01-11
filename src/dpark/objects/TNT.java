@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 import dpark.objects.Player;
 /**
  * @author Nickita
@@ -95,7 +96,7 @@ public class TNT extends GameObject {
                         Player.Collision();
 
                     } else {
-                        Game.MainKey = 1;
+                        GameOtherVars.MainKey = 1;
                         sprite.currentStep = 1;
                         Get = 1;
                     }

@@ -1,6 +1,7 @@
 package dpark.objects;
 import dpark.GameObject;
 import dpark.Game;
+import dpark.GameOtherVars;
 
 import javax.jws.soap.SOAPBinding;
 
@@ -44,9 +45,9 @@ public class Spruce extends GameObject {
             UseRandom = 1 + (int) (Math.random() * ((4 - 1) + 1));
             if (UseRandom == 1)
             {
-                Game.SantaX = x;
-                Game.SantaY = y;
-                Game.NWY_Present_create = 0;
+                GameOtherVars.SantaX = x;
+                GameOtherVars.SantaY = y;
+                GameOtherVars.NWY_Present_create = 0;
                 UseTimer = 0;
                 //Timer = 40;
             }

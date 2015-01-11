@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 /**
  * @author Nickita
  */
@@ -90,7 +91,7 @@ public class Weed extends GameObject {
             if (y - myy[otchet2] == ply1 || y + myy[otchet2] == ply1 || y - myy[otchet10] == ply1 || y + myy[otchet10] == ply1 || y - myy[otchet7] == ply1 || y + myy[otchet7] == ply1 || y - myy[otchet6] == ply1 || y + myy[otchet6] == ply1 || y - myy[otchet4] == ply1 || y + myy[otchet4] == ply1 || y - myy[otchet6] == ply1 || y + myy[otchet6] == ply1 || y - myy[otchet7] == ply2 || y + myy[otchet7] == ply2 ||  y - myy[otchet10] == ply2 || y + myy[otchet10] == ply2  || y - myy[otchet2] == ply2 || y + myy[otchet2] == ply2 || y - myy[otchet6] == ply2 || y + myy[otchet6] == ply2 || y - myy[otchet4] == ply2 || y + myy[otchet4] == ply2 || y - myy[otchet2] == ply2 || y + myy[otchet2] == ply2 || y - myy[otchet4] == ply2 || y + myy[otchet4] == ply2 || y - myy[otchet2] == ply3 || y + myy[otchet2] == ply3 || y - myy[otchet7] == ply3 || y + myy[otchet7] == ply3 || y - myy[otchet10] == ply3 || y + myy[otchet10] == ply3 || y - myy[otchet6] == ply3 || y + myy[otchet6] == ply3 || y - myy[otchet4] == ply3 || y + myy[otchet4] == ply3 || y - myy[otchet2] == ply4 || y + myy[otchet2] == ply4 || y - myy[otchet4] == ply4 || y + myy[otchet4] == ply4 || y - myy[otchet6] == ply4 || y + myy[otchet6] == ply4 || y - myy[otchet7] == ply4 || y + myy[otchet7] == ply4 || y - myy[otchet10] == ply4 || y + myy[otchet10] == ply4) {
                 if (Get == 0) {
                     //System.out.println("KOL");
-                    Game.Player_weed = 1;
+                    GameOtherVars.Player_weed = 1;
                     sprite.currentStep = 1;
                     Get = 1;
 

@@ -1,6 +1,7 @@
 package dpark.objects;
 import dpark.GameObject;
 import dpark.Game;
+import dpark.GameOtherVars;
 
 import javax.jws.soap.SOAPBinding;
 
@@ -21,12 +22,12 @@ public class blindness extends GameObject {
     @Override
     public void update()
     {
-        if (Game.blindness_on == 1)
+        if (GameOtherVars.blindness_on == 1)
         {
             sprite.currentStep = 0;
             if (Timer <= 0)
             {
-                Game.blindness_on = 0;
+                GameOtherVars.blindness_on = 0;
                 Timer = 35;
             } else {
                 Timer--;

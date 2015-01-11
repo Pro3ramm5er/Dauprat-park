@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 import dpark.objects.Player;
 /**
  * @author Nickita
@@ -74,7 +75,7 @@ public class Card extends GameObject {
         }
         if (immortality_time < 0 && immortality_on == 1)
         {
-            Game.Fullimmortality = 0;
+            GameOtherVars.Fullimmortality = 0;
             immortality_on = 0;
             sprite.currentStep = 5;
         } else {
@@ -142,7 +143,7 @@ public class Card extends GameObject {
                     if (CardType == 3) {
                         if (Open == 0) {
                             sprite.currentStep = 3;
-                            Game.Bananar_bad = 100;
+                            GameOtherVars.Bananar_bad = 100;
                             //PlayerSpeedBonus += 4;
                             Open = 1;
                         }
@@ -153,14 +154,14 @@ public class Card extends GameObject {
                             //Game.Bananar_bad = 100;
                             //PlayerSpeedBonus += 4;
                             immortality_on = 1;
-                            Game.Fullimmortality = 1;
+                            GameOtherVars.Fullimmortality = 1;
                             Open = 1;
                         }
                     }
                     if (CardType == 5) {
                         if (Open == 0) {
                             sprite.currentStep = 6;
-                            Game.blindness_on = 1;
+                            GameOtherVars.blindness_on = 1;
                             //Game.Bananar_bad = 100;
                             //PlayerSpeedBonus += 4;
                             //immortality_on = 1;

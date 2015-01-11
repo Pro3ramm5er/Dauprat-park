@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 25.11.2014.
@@ -46,14 +47,14 @@ public class Tres extends GameObject {
         xt = x;
         yt = y;
         z = yt+16;
-        Game.Snow_MST = MST;
-        Game.Snow_x = x;
-        Game.Snow_y = y + 15;
+        GameOtherVars.Snow_MST = MST;
+        GameOtherVars.Snow_x = x;
+        GameOtherVars.Snow_y = y + 15;
         if (SnowTimer <= 0)
         {
             int a =  1 + (int) (Math.random() * ((3 - 1) + 1));
             if (a == 1) {
-                Game.Snow_create = 0;
+                GameOtherVars.Snow_create = 0;
             }
             SnowTimer = 10;
         } else {
@@ -94,7 +95,7 @@ public class Tres extends GameObject {
         if (Atack == 1) {
 
             Timer_sec = 1;
-            Game.VisibleDieLogo = 1;
+            GameOtherVars.VisibleDieLogo = 1;
 
 
             if (Timer_sec == 1) {
@@ -103,7 +104,7 @@ public class Tres extends GameObject {
                     Atack = 0;
                     Timer_sec = 0;
                     Timer_3 = 5;
-                    Game.VisibleDieLogo = 0;
+                    GameOtherVars.VisibleDieLogo = 0;
                     Game.Get_Die();
 
 
@@ -221,7 +222,7 @@ public class Tres extends GameObject {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
 
                 //System.out.println("KOL");
-                if (Game.Fullimmortality == 0) {
+                if (GameOtherVars.Fullimmortality == 0) {
                     Atack = 1;
                 }
 

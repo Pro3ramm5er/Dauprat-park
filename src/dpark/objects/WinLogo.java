@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 17.11.2014.
@@ -28,11 +29,11 @@ public class WinLogo extends GameObject {
 
     @Override
     public void update() {
-        if (Game.WinVisible == 0) {
+        if (GameOtherVars.WinVisible == 0) {
 
             sprite.currentStep = 1;
         }
-        if (Game.WinVisible == 1) {
+        if (GameOtherVars.WinVisible == 1) {
             if (Timer <= 0 && Timer_sec <= 6)
             {
                 Timer_sec++;

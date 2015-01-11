@@ -5,6 +5,7 @@ import dpark.Game;
 import dpark.GameObject;
 import static dpark.DB.db;
 import  dpark.DB.*;
+import dpark.GameOtherVars;
 import dpark.objects.Controller;
 import dpark.objects.KeyMessage;
 import dpark.objects.Player;
@@ -40,7 +41,7 @@ public class Controller extends GameObject {
 
     @Override
     public void update() {
-        if (Game.Level == 6 || Game.Level == 7 || Game.Level == 8 || Game.Level == 9)
+        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10)
         {
             if (GEtdel == 0) {
 
@@ -58,7 +59,7 @@ public class Controller extends GameObject {
         }
         if (Game.currentRoom == db.rooms.get("main_menu_room")) {
 
-              if (Game.GameUpdateType == 0) {
+              if (GameOtherVars.GameUpdateType == 0) {
                   if (Texture_number == 0 && Timer_to_change <= 0) {
                       //System.out.println("Ready1");
                       db.rooms.get("main_menu_room").background = "main_menu_bg";
@@ -80,7 +81,7 @@ public class Controller extends GameObject {
                       Timer_to_change--;
                   }
               }
-            if (Game.GameUpdateType == 1) {
+            if (GameOtherVars.GameUpdateType == 1) {
                 if (Texture_number == 0 && Timer_to_change <= 0) {
                     //System.out.println("Ready1");
                     db.rooms.get("main_menu_room").background = "main_menu_bg";
@@ -188,10 +189,10 @@ public class Controller extends GameObject {
     public void onKey(int keycode) {
         super.onKey(keycode);
         if (keycode == KeyEvent.VK_1) {
-            if (Game.Reload_on == 1) {
+            if (GameOtherVars.Reload_on == 1) {
                 //Sound.playSound("Deep_Purple-Burn.wav").stop();
                 Game.instance.GetLevel_2();
-                Game.Reload_on = 0;
+                GameOtherVars.Reload_on = 0;
             }
         }
         if (keycode == KeyEvent.VK_2) {
@@ -200,21 +201,21 @@ public class Controller extends GameObject {
         if (keycode == KeyEvent.VK_3) {
             //if (Game.Story == 0) {
 
-            Game.Restart_type = 1;
-            Game.AllDelete = 1;
+            GameOtherVars.Restart_type = 1;
+            GameOtherVars.AllDelete = 1;
 
 
             //}
         } if (keycode == KeyEvent.VK_4) {
-            if (Game.Reload_on == 1) {
+            if (GameOtherVars.Reload_on == 1) {
 
-                Game.Restart_type = 5;
-                Game.AllDelete = 1;
+                GameOtherVars.Restart_type = 5;
+                GameOtherVars.AllDelete = 1;
             }
         }
         if (keycode == KeyEvent.VK_9) {
-           Game.Restart_type = 9;
-            Game.AllDelete = 1;
+            GameOtherVars.Restart_type = 9;
+            GameOtherVars.AllDelete = 1;
         }
     }
 }

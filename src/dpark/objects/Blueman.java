@@ -2,6 +2,7 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
 
 /**
  * Created by Nickita on 29.11.2014.
@@ -80,7 +81,7 @@ public class Blueman extends GameObject {
 
         if (Atack == 1) {
             Timer_sec = 1;
-            Game.BluemanCreated = 0;
+            GameOtherVars.BluemanCreated = 0;
 
 
             if (Timer_sec == 1) {

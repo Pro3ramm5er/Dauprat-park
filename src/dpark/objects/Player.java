@@ -1,8 +1,10 @@
 package dpark.objects;
 
 import dpark.Game;
-import dpark.Game;
+import dpark.GameOtherVars;
 import dpark.GameObject;
+import dpark.GameStoryVars;
+
 import static dpark.DB.db;
 
 import java.awt.event.KeyEvent;
@@ -124,18 +126,22 @@ public class Player extends GameObject {
         }
 
 
-        if (y < 0 && Game.Level == 6)
+        if (y < 0 && GameOtherVars.Level == 6)
         {
-             Game.Restart_type = 7;
-             Game.AllDelete = 1;
+            GameOtherVars.Restart_type = 7;
+            GameOtherVars.AllDelete = 1;
         }
-        if (y < 0 && Game.Level == 8)
+        if (y < 0 && GameOtherVars.Level == 8)
         {
-            Game.Restart_type = 9;
-            Game.AllDelete = 1;
+            GameOtherVars.Restart_type = 9;
+            GameOtherVars.AllDelete = 1;
         }
-
-        if (Game.S_phone == 1)
+        if (y < 0 && GameOtherVars.Level == 10)
+        {
+            GameOtherVars.Restart_type = 11;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (GameStoryVars.S_phone == 1)
         {
             sprite.currentStep = phonenow;
             if (Phonetimer <= 0 && phonenow < 25)
@@ -149,12 +155,12 @@ public class Player extends GameObject {
             }
             if (phonenow >= 25)
             {
-                Game.S_phone = 0;
-                Game.S_moment = 3;
-                Game.S_door = 1;
+                GameStoryVars.S_phone = 0;
+                GameStoryVars.S_moment = 3;
+                GameStoryVars.S_door = 1;
             }
         }
-        if (Game.S_task == 1)
+        if (GameStoryVars.S_task == 1)
         {
             sprite.currentStep = Tasknow;
             if (Tasktimer <= 0 && Tasknow < 17)
@@ -168,11 +174,11 @@ public class Player extends GameObject {
             }
             if (!(Tasknow < 16))
             {
-                Game.S_task = 0;
-                Game.S_moment = 1;
+                GameStoryVars.S_task = 0;
+                GameStoryVars.S_moment = 1;
             }
         }
-        if (Game.S_table == 1 && Tabledel == 0)
+        if (GameStoryVars.S_table == 1 && Tabledel == 0)
         {
             sprite.currentStep = 18;
             Tabledel = 1;
@@ -219,7 +225,7 @@ public class Player extends GameObject {
         super.onKeyPress(keycode);
 
 
-        if (keycode == KeyEvent.VK_A && Game.S_task == 0) {
+        if (keycode == KeyEvent.VK_A && GameStoryVars.S_task == 0) {
 
             if (PlayerColSt != 4) {
                 //if (PlayerSpeedBonus == 0) {
@@ -231,14 +237,14 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerWalkst = 4;
                 PlayerColSt = 0;
-                if (Game.Player_bottle == 1)
+                if (GameOtherVars.Player_bottle == 1)
                 {
                     sprite.currentStep = 5;
                 }
-                if (Game.Shlakoblock_magic == 1) {
+                if (GameOtherVars.Shlakoblock_magic == 1) {
                     sprite.currentStep = 0;
                 }
-                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
+                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
                     sprite.currentStep = 0;
                 }
 
@@ -249,7 +255,7 @@ public class Player extends GameObject {
 
         }
         if (keycode == KeyEvent.VK_D) {
-            if (PlayerColSt != 2 && Game.S_task == 0) {
+            if (PlayerColSt != 2 && GameStoryVars.S_task == 0) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
                 //} else {
@@ -259,14 +265,14 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 2;
-                if (Game.Player_bottle == 1)
+                if (GameOtherVars.Player_bottle == 1)
                 {
                     sprite.currentStep = 7;
                 }
-                if (Game.Shlakoblock_magic == 1) {
+                if (GameOtherVars.Shlakoblock_magic == 1) {
                     sprite.currentStep = 1;
                 }
-                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
+                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
                     sprite.currentStep = 1;
                 }
 
@@ -277,7 +283,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_W && Game.S_task == 0) {
+        if (keycode == KeyEvent.VK_W && GameStoryVars.S_task == 0) {
             if (PlayerColSt != 1) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
@@ -289,14 +295,14 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 1;
-                if (Game.Player_bottle == 1)
+                if (GameOtherVars.Player_bottle == 1)
                 {
                     sprite.currentStep = 2;
                 }
-                if (Game.Shlakoblock_magic == 1) {
+                if (GameOtherVars.Shlakoblock_magic == 1) {
                     sprite.currentStep = 2;
                 }
-                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0) {
+                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
                     sprite.currentStep = 2;
                 }
 
@@ -306,7 +312,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_S && Game.S_task == 0) {
+        if (keycode == KeyEvent.VK_S && GameStoryVars.S_task == 0) {
 
 
             if (PlayerColSt != 3) {
@@ -321,22 +327,22 @@ public class Player extends GameObject {
                 Checkr = 0;
                 PlayerColSt = 0;
                 PlayerWalkst = 3;
-                if (Game.UnderEffecr == 1)
+                if (GameOtherVars.UnderEffecr == 1)
                 {
                     sprite.currentStep = 9;
                 }
-                if (Game.Player_weed == 1)
+                if (GameOtherVars.Player_weed == 1)
                 {
                     sprite.currentStep = 10;
                 }
-                if (Game.Player_bottle == 1)
+                if (GameOtherVars.Player_bottle == 1)
                 {
                     sprite.currentStep = 6;
                 }
-                if (Game.Shlakoblock_magic == 1) {
+                if (GameOtherVars.Shlakoblock_magic == 1) {
                     sprite.currentStep = 4;
                 }
-                if (Game.Shlakoblock_magic == 0 && Game.Player_bottle == 0 && Game.UnderEffecr == 0 && Game.Player_weed == 0) {
+                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0 && GameOtherVars.UnderEffecr == 0 && GameOtherVars.Player_weed == 0) {
                     sprite.currentStep = 3;
                 }
 
@@ -348,16 +354,16 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_E) {
 
-            if (Game.Player_bottle == 1) {
+            if (GameOtherVars.Player_bottle == 1) {
                 sprite.currentStep = 8;
                 reseter = 0;
                 if (ByhTimer <= 0) {
 
-                    Game.Player_bottle = 0;
-                    Game.UnderEffecr = 1;
+                    GameOtherVars.Player_bottle = 0;
+                    GameOtherVars.UnderEffecr = 1;
                     sprite.currentStep = 9;
                     ByhTimer = 180;
-                    Game.Health ++;
+                    GameOtherVars.Health ++;
                 } else {
 
                     ByhTimer--;
@@ -365,16 +371,16 @@ public class Player extends GameObject {
                 }
 
             }
-            if (Game.Player_weed == 1) {
+            if (GameOtherVars.Player_weed == 1) {
                 sprite.currentStep = 11;
                 reseter = 0;
                 if (weedTimer <= 0) {
 
-                    Game.Player_weed = 0;
-                    Game.UnderEffecr = 1;
+                    GameOtherVars.Player_weed = 0;
+                    GameOtherVars.UnderEffecr = 1;
                     sprite.currentStep = 9;
                     weedTimer = 180;
-                    Game.Health += 2;
+                    GameOtherVars.Health += 2;
                 } else {
 
                     weedTimer--;
@@ -418,11 +424,11 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_O && Key_P == 1)
         {
-            Game.Shlakoblock_create = 0;
-            Game.Shlakoblock_create = 0;
-            Game.Shlakoblock_create = 0;
-            Game.Shlakoblock_create = 0;
-            Game.Shlakoblock_create = 0;
+            GameOtherVars.Shlakoblock_create = 0;
+            GameOtherVars.Shlakoblock_create = 0;
+            GameOtherVars.Shlakoblock_create = 0;
+            GameOtherVars.Shlakoblock_create = 0;
+            GameOtherVars.Shlakoblock_create = 0;
         }
         if (keycode == KeyEvent.VK_L && Key_P == 1)
         {
@@ -430,30 +436,30 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_O && Key_K == 1)
         {
-            Game.DedMoroz_create = 0;
-            Game.DedMoroz_create = 0;
-            Game.DedMoroz_create = 0;
-            Game.DedMoroz_create = 0;
-            Game.DedMoroz_create = 0;
-            Game.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
+            GameOtherVars.DedMoroz_create = 0;
         }
         if (keycode == KeyEvent.VK_U && Key_K == 1)
         {
-            Game.MainKey = 1;
+            GameOtherVars.MainKey = 1;
         }
         if (keycode == KeyEvent.VK_Y && Key_K == 1)
         {
-            Game.CardCreate = 0;
+            GameOtherVars.CardCreate = 0;
         }
         if (keycode == KeyEvent.VK_T && Key_K == 1)
         {
-            Game.Fullimmortality = 1;
+            GameOtherVars.Fullimmortality = 1;
         }
 
         if (keycode == KeyEvent.VK_R && Key_K == 1)
         {
-            Game.Restart_type = 3;
-            Game.AllDelete = 1;
+            GameOtherVars.Restart_type = 3;
+            GameOtherVars.AllDelete = 1;
         }
         //if (PlayerSpeedBonus == 0) {
        //     if (inertion > 3) {

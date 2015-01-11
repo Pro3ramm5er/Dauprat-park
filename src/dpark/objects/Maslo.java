@@ -2,6 +2,8 @@ package dpark.objects;
 
 import dpark.Game;
 import dpark.GameObject;
+import dpark.GameOtherVars;
+
 /**
  * @author Nickita
  */
@@ -95,7 +97,7 @@ public class Maslo extends GameObject {
                 if (open == 0)
                 {
                     open = 1;
-                    Game.Maslo_Create = 0;
+                    GameOtherVars.Maslo_Create = 0;
                     sprite.currentStep = 1;
                 }
                 //System.out.println("nowfaleKOL");
