@@ -23,7 +23,11 @@ public class Player extends GameObject {
     public static int weedTimer = 40;
     public int reseter = 0;
     public int Tasktimer = 25;
+    public int Tasktimer2 = 25;
+    public int Tasktimer3 = 25;
     public int Tasknow = 12;
+    public int Tasknow2 = 0;
+    public int Tasknow3 = 0;
     public int Tabledel = 0;
     public int Phonetimer = 70;
     public int phonenow = 19;
@@ -35,6 +39,9 @@ public class Player extends GameObject {
         z = y;
         PlayerZ = z;
         PlayerSpeedBonus = 3;
+        UseRoomInt = GameOtherVars.RoomNow;
+        UseRoom = Game.currentRoom;
+        //UseRoom = Game.currentRoom;
         sprite.addStep(Game.instance.getSprite("hero.png"));
 
 
@@ -74,6 +81,15 @@ public class Player extends GameObject {
         sprite.addStep(Game.instance.getSprite("hero_right_ph4.png"));
         sprite.addStep(Game.instance.getSprite("hero_right_ph5.png"));
         sprite.addStep(Game.instance.getSprite("hero_right_ph6.png"));//24
+
+
+        //Backpack
+        sprite.addStep(Game.instance.getSprite("s_p_1.png"));//25
+        sprite.addStep(Game.instance.getSprite("s_p_2.png"));//26
+        sprite.addStep(Game.instance.getSprite("s_p_3.png"));//27
+        sprite.addStep(Game.instance.getSprite("s_p_4.png"));//28
+        sprite.addStep(Game.instance.getSprite("s_p_5.png"));//29
+
         //PlayerSpeedBonus = 0;
 
 
@@ -92,10 +108,36 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
+       // UseRoom = Game.currentRoom;
         z = ply+15;
         PlayerZ = ply+15;
+        UseRoomInt = GameOtherVars.RoomNow;
+        UseRoom = Game.currentRoom;
+        //System.out.println(Game.currentRoom + "I AM ALIVE");
+        System.out.println(UseRoom + ":Player");
+        System.out.println(UseRoomInt + ":Player");
+        System.out.println(GameOtherVars.RoomNow + ":Now");
+        System.out.println(Game.currentRoom+ ":Now");
+        if (GameOtherVars.BeforeMain == 1)
+        {
+            visible = true;
+        }
+        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14) {
 
+            if (GameOtherVars.GEtdel == 0) {
 
+                GameObject.plx = 373;
+                GameObject.ply = 526;
+                GameOtherVars.GEtdel = 1;
+            }
+        } else {
+            if (GameOtherVars.GEtdel == 0) {
+                GameObject.plx = 250;
+                GameObject.ply = 250;
+                GameOtherVars.GEtdel = 1;
+            }
+
+        }
         
 
         x = plx;
@@ -141,6 +183,26 @@ public class Player extends GameObject {
             GameOtherVars.Restart_type = 11;
             GameOtherVars.AllDelete = 1;
         }
+        if (y < 0 && GameOtherVars.Level == 11)
+        {
+            GameOtherVars.Restart_type = 12;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 12)
+        {
+            GameOtherVars.Restart_type = 13;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 13)
+        {
+            GameOtherVars.Restart_type = 14;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 14)
+        {
+            GameOtherVars.Restart_type = 15;
+            GameOtherVars.AllDelete = 1;
+        }
         if (GameStoryVars.S_phone == 1)
         {
             sprite.currentStep = phonenow;
@@ -158,6 +220,78 @@ public class Player extends GameObject {
                 GameStoryVars.S_phone = 0;
                 GameStoryVars.S_moment = 3;
                 GameStoryVars.S_door = 1;
+            }
+        }
+        if (GameStoryVars.S_task3 == 1)
+        {
+            if (Tasknow3 == 0)
+            {
+                sprite.currentStep = 25;
+            }
+            if (Tasknow3 == 1)
+            {
+                sprite.currentStep = 26;
+            }
+            if (Tasknow3 == 2)
+            {
+                sprite.currentStep = 27;
+            }
+            if (Tasknow3 == 3)
+            {
+                sprite.currentStep = 28;
+            }
+            if (Tasknow3 == 4)
+            {
+                sprite.currentStep = 29;
+            }
+
+            if (Tasktimer3 <= 0)
+            {
+                if (Tasknow3 < 4) {
+                    Tasknow3++;
+                    Tasktimer3 = 45;
+                } else {
+
+                    GameStoryVars.S_task3 = 0;
+                }
+            } else {
+                Tasktimer3 --;
+            }
+        }
+        if (GameStoryVars.S_task2 == 1)
+        {
+            if (Tasknow2 == 0)
+            {
+                sprite.currentStep = 12;
+            }
+            if (Tasknow2 == 1)
+            {
+                sprite.currentStep = 0;
+            }
+            if (Tasknow2 == 2)
+            {
+                sprite.currentStep = 1;
+            }
+            if (Tasknow2 == 3)
+            {
+                sprite.currentStep = 2;
+            }
+            if (Tasknow2 == 4)
+            {
+                sprite.currentStep = 3;
+            }
+
+            if (Tasktimer2 <= 0)
+            {
+                if (Tasknow2 < 4) {
+                    Tasknow2++;
+                    Tasktimer2 = 45;
+                } else {
+                    GameStoryVars.S_funnymeet = 1;
+                    GameStoryVars.S_task2 = 0;
+                }
+            } else {
+                Tasktimer2 --;
             }
         }
         if (GameStoryVars.S_task == 1)
@@ -225,7 +359,7 @@ public class Player extends GameObject {
         super.onKeyPress(keycode);
 
 
-        if (keycode == KeyEvent.VK_A && GameStoryVars.S_task == 0) {
+        if (keycode == KeyEvent.VK_A && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
 
             if (PlayerColSt != 4) {
                 //if (PlayerSpeedBonus == 0) {
@@ -255,7 +389,7 @@ public class Player extends GameObject {
 
         }
         if (keycode == KeyEvent.VK_D) {
-            if (PlayerColSt != 2 && GameStoryVars.S_task == 0) {
+            if (PlayerColSt != 2 && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
                 //} else {
@@ -283,7 +417,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_W && GameStoryVars.S_task == 0) {
+        if (keycode == KeyEvent.VK_W && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
             if (PlayerColSt != 1) {
                 //if (PlayerSpeedBonus == 0) {
                 inertion += 1;
@@ -312,7 +446,7 @@ public class Player extends GameObject {
             }
 
         }
-        if (keycode == KeyEvent.VK_S && GameStoryVars.S_task == 0) {
+        if (keycode == KeyEvent.VK_S && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
 
 
             if (PlayerColSt != 3) {
@@ -432,7 +566,7 @@ public class Player extends GameObject {
         }
         if (keycode == KeyEvent.VK_L && Key_P == 1)
         {
-              Game.Get_win_1();
+            Game.Get_win_1();
         }
         if (keycode == KeyEvent.VK_O && Key_K == 1)
         {

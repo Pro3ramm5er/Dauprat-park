@@ -7,72 +7,328 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_rock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Plate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/rooms/Storyroom6.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/rooms/Storyroom7.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Alpinos.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Alpinos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Ant.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Ant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/AppleD.java" afterPath="$PROJECT_DIR$/src/dpark/objects/AppleD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" afterPath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bananar.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bananar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bananas.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bananas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bandit.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bandit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Blueman.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Blueman.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bottle.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bottle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" afterPath="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Card.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Card.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" afterPath="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Cloud.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Cloud.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Alpinos.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Alpinos_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Alpinos_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Alpinos_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Alpinos_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ant_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ant_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ant_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ant_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Atr_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/BadCard.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bananar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bananas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bandit_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bandit_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bandit_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bandit_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blow_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blueman_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blueman_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blueman_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Blueman_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Bottle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/BrainWater.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Cactus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Cactus_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Cactus_al.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/China.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/China_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/China_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/China_rl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Rip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Tree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Tree2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Tree3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_cartina.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_cartina2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_dec.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_door.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_rock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_trash.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_trash_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DedMoroz_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DedMoroz_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DedMoroz_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DedMoroz_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Door.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Fan_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Final_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/GoblinMaster_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/GoblinMaster_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/GoblinMaster_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/GoblinMaster_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_ad_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_ad_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_ad_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_ad_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Goblin_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Hacker_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Hacker_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Hacker_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Hacker_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Health_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Health_100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Health_150.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Health_200.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Health_50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/HoMonster_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/HoMonster_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/HoMonster_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/HoMonster_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/IRT_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/IRT_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/IRT_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/IRT_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Innop_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Innop_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Innop_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Innop_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Lavaman_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Lavaman_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Lavaman_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Lavaman_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Maindoor_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Mandarinka.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Maslo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Maslo_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Megabear.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Megabear_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Megabear_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Megabear_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Megabear_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Momo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Newyaermap1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Olen_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Olen_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Olen_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Olen_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Pesokman_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Pesokman_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Pesokman_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Pesokman_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Present.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Present_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rabbit_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rabbit_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rabbit_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rabbit_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rad_zombie.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rad_zombie_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rad_zombie_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rad_zombie_rigth.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rad_zombie_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Rock_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback2_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_item.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_task.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SantaD_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SantaD_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SantaD_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SantaD_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Shlakoblock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Slime.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Sneshok.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Snow_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Snow_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Snow_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Snowbug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Snowbug_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Soul.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Soul_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Soul_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Soul_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Soul_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SpaceShip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SpaceShip_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Spacehuyna.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Spacehuyna_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Speed_card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/SupSpeed_card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/TNT.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/TNT_none.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Table.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Table1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tablichka.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tarakan_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tarakan_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tarakan_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tree_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tres_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tres_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tres_rigth.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Tres_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Victory_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Wall_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Wall_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Walldoor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Weeeeeeed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Window_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Window_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_1_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_1_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_1_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_1_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_2_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_2_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_2_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Worm_2_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/bed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/blindness.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/blindness_card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/blindness_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/board.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/carpet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/computer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/crate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/dirt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/door_unvisible.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/door_visible.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_bottle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_bottle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_byhaet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_sp_card_used.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_unef.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_weed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_down_weed_use.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_front_sh_magic.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_opa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_bottle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_ph6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_task.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_task2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_task3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_task4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_right_task5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_sh_magic.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_task6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/immortality_card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/immortality_card_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/logo1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/logo2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/magilla.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/map2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/map3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/map4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/map5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/map6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/oblako.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/radiation_dec.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/s_p_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/s_p_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/s_p_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/s_p_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/s_p_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/shkav.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/sock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/sock_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/stupor_card.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/task.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/trava.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/trava1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/trava2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/unvisdoor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/unviswall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/unviswall_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_cartina.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_cartina2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_crate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_door_prop2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_trash_prop.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_write.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Door_forr3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/GameOther.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Monument.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_14.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_friend.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/s_item.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/s_task2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Controller.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/DB.java" afterPath="$PROJECT_DIR$/src/dpark/DB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/DEC_rock.java" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_rock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/DieLogo.java" afterPath="$PROJECT_DIR$/src/dpark/objects/DieLogo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Door.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Door.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Door_forr2.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Door_forr2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" afterPath="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/Game.java" afterPath="$PROJECT_DIR$/src/dpark/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Goblin.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Goblin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Gun.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Gun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Hacker.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Hacker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Healthbar.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Healthbar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" afterPath="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/IRT.java" afterPath="$PROJECT_DIR$/src/dpark/objects/IRT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/InfectGoblin.java" afterPath="$PROJECT_DIR$/src/dpark/objects/InfectGoblin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Inoplanetanin.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Inoplanetanin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Mandarinka.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Mandarinka.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Maslo.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Maslo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/MegaBear.java" afterPath="$PROJECT_DIR$/src/dpark/objects/MegaBear.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/MoMo.java" afterPath="$PROJECT_DIR$/src/dpark/objects/MoMo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/MonsterCactus.java" afterPath="$PROJECT_DIR$/src/dpark/objects/MonsterCactus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java" afterPath="$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java" afterPath="$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Pesokman.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Pesokman.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameObject.java" afterPath="$PROJECT_DIR$/src/dpark/GameObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameOtherVars.java" afterPath="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameStoryVars.java" afterPath="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Player.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Portal.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Portal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Present.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Present.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Radiation_zombie.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Radiation_zombie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Rat.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Rat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Rock.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Rock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/SantaDemon.java" afterPath="$PROJECT_DIR$/src/dpark/objects/SantaDemon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Slim.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Slim.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Soul.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Soul.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Spruce.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Spruce.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/TNT.java" afterPath="$PROJECT_DIR$/src/dpark/objects/TNT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Table.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Tarakan.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Tarakan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Tres.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Tres.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Weed.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Weed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/WinLogo.java" afterPath="$PROJECT_DIR$/src/dpark/objects/WinLogo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/blindness.java" afterPath="$PROJECT_DIR$/src/dpark/objects/blindness.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/main_door.java" afterPath="$PROJECT_DIR$/src/dpark/objects/main_door.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/s_task.java" afterPath="$PROJECT_DIR$/src/dpark/objects/s_task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/SoundEngine.java" afterPath="$PROJECT_DIR$/src/dpark/SoundEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" afterPath="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Dauprat park.iws" />
@@ -104,36 +360,33 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6540" max-vertical-offset="67592">
-              <caret line="389" column="37" selection-start-line="389" selection-start-column="37" selection-end-line="389" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="78200">
+              <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#733#751#0" expanded="true" />
-                <element signature="e#805#823#0" expanded="true" />
-                <element signature="e#7042#7054#0" expanded="true" />
-                <element signature="e#109836#109853#0" expanded="true" />
+                <element signature="docComment;class#Game#0" expanded="false" />
+                <element signature="e#12985#12997#0" expanded="true" />
+                <element signature="e#137043#137060#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DEC_Tree.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java">
+      <file leaf-file-name="Roomback_14.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_14.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33221477" vertical-offset="37" max-vertical-offset="3400">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.37484884" vertical-offset="489" max-vertical-offset="3332">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dpark/objects/Plate.java">
+      <file leaf-file-name="GameOtherVars.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dpark/GameOtherVars.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3111">
-              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="65008">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,65 +413,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dpark/objects/MoMo.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/MegaBear.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Inoplanetanin.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/InfectGoblin.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/blindness.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Blueman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Bottle.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Bananar.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Bananas.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Bandit.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DieLogo.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Hacker.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Table.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Tarakan.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Mandarinka.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Cloud.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/s_task.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Door.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/WinLogo.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/EvilWorm.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Goblin.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Hacker.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/InfectGoblin.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Inoplanetanin.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/IRT.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Mandarinka.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Tres.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/TNT.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Spruce.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Tarakan.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Soul.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Slim.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Rat.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/SantaDemon.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Radiation_zombie.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Pesokman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Maslo.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/main_door.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Lavaman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/IRT.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/HoMonster.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Healthbar.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Gun.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Goblin.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/MonsterCactus.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Card.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_rock.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/MegaBear.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/MoMo.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Gun.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Monument.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
-        <option value="$PROJECT_DIR$/src/dpark/rooms/Storyroom7.java" />
-        <option value="$PROJECT_DIR$/src/dpark/DB.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/s_task2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_friend.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_cartina2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/SoundEngine.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_door_prop2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_crate.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_write.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/s_item.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_trash_prop.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/AppleD.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Rock.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Plate.java" />
+        <option value="$PROJECT_DIR$/src/dpark/DB.java" />
         <option value="$PROJECT_DIR$/src/dpark/Game.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="y" value="501" />
-    <option name="width" value="1280" />
-    <option name="height" value="488" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -262,6 +515,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -342,10 +597,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dauprat park" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dauprat park" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dauprat park" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dauprat park" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -837,66 +1118,45 @@
       <option name="project" value="LOCAL" />
       <updated>1420884049974</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Clean the code. This is start.">
+      <created>1420980891707</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1420980891707</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="501" width="1280" height="488" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.042626727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11358025" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12664908" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04828974" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04775281" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21885246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22977346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39772728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04828974" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39772728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.042626727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11494253" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04310345" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21885246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -913,7 +1173,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Dauprat park in 3d! Part 6&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 7&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 8&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 9&#10;.&#10;" />
@@ -938,11 +1197,12 @@
     <MESSAGE value="Story in game. Part 3" />
     <MESSAGE value="Story in game. Part 4" />
     <MESSAGE value="Story in game. Part 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Story in game. Part 5" />
+    <MESSAGE value="Clean the code. This is start." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean the code. This is start." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -963,426 +1223,443 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/InfectGoblin.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Lavaman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2362" max-vertical-offset="5423">
-          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/EvilWorm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="8262">
-          <caret line="179" column="33" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/blindness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Bottle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="3230">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/BrainWater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.2032967" vertical-offset="0" max-vertical-offset="6868">
-          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/ChinaMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2802198" vertical-offset="1275" max-vertical-offset="5117">
-          <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5542" max-vertical-offset="7174">
-          <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DieLogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0371352" vertical-offset="0" max-vertical-offset="612">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="3706">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1543" max-vertical-offset="4981">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Mandarinka.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05345912" vertical-offset="5593" max-vertical-offset="7191">
-          <caret line="332" column="33" selection-start-line="332" selection-start-column="33" selection-end-line="332" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Cloud.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7075472" vertical-offset="1288" max-vertical-offset="6749">
-          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/s_task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.3427672" vertical-offset="523" max-vertical-offset="3689">
-          <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6540881" vertical-offset="1696" max-vertical-offset="3689">
-          <caret line="115" column="33" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Tarakan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3689" max-vertical-offset="5423">
-          <caret line="229" column="17" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Hacker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547" vertical-offset="5661" max-vertical-offset="7327">
-          <caret line="341" column="33" selection-start-line="341" selection-start-column="33" selection-end-line="341" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/WinLogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58912385" vertical-offset="366" max-vertical-offset="1275">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.46132973" vertical-offset="1530" max-vertical-offset="7191">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Tres.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.581761" vertical-offset="727" max-vertical-offset="5406">
-          <caret line="224" column="33" selection-start-line="224" selection-start-column="33" selection-end-line="224" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.27679783" vertical-offset="1581" max-vertical-offset="5406">
+          <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/TNT.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Tarakan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2672956" vertical-offset="1530" max-vertical-offset="3366">
-          <caret line="98" column="37" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Spruce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4811321" vertical-offset="612" max-vertical-offset="3315">
-          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Soul.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2672956" vertical-offset="5474" max-vertical-offset="7140">
-          <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Slim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.012578616" vertical-offset="3532" max-vertical-offset="5151">
-          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Shlacoblock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.091194965" vertical-offset="1025" max-vertical-offset="2312">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Rat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4937107" vertical-offset="1237" max-vertical-offset="4590">
-          <caret line="84" column="25" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.20759837" vertical-offset="1683" max-vertical-offset="5423">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Radiation_zombie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42767295" vertical-offset="3672" max-vertical-offset="5389">
-          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Pesokman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="3685" max-vertical-offset="5423">
-          <caret line="225" column="16" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Maslo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37421384" vertical-offset="1530" max-vertical-offset="3264">
-          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/main_door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6540881" vertical-offset="829" max-vertical-offset="6001">
-          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Lavaman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1792452" vertical-offset="2512" max-vertical-offset="4981">
-          <caret line="109" column="33" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/IRT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7610063" vertical-offset="1288" max-vertical-offset="6851">
-          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/HoMonster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44025156" vertical-offset="1390" max-vertical-offset="6800">
-          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Healthbar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323263" vertical-offset="519" max-vertical-offset="850">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Gun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8962264" vertical-offset="2620" max-vertical-offset="5474">
-          <caret line="229" column="33" selection-start-line="229" selection-start-column="33" selection-end-line="229" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Goblin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5423">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.39213026" vertical-offset="1530" max-vertical-offset="5389">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3379" max-vertical-offset="5083">
-          <caret line="209" column="33" selection-start-line="209" selection-start-column="33" selection-end-line="209" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.53595656" vertical-offset="1135" max-vertical-offset="5083">
+          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/MonsterCactus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2264151" vertical-offset="3736" max-vertical-offset="5423">
-          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.6770692" vertical-offset="1320" max-vertical-offset="5423">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/MegaBear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="5117">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/MoMo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="6868">
+          <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Gun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1600" max-vertical-offset="5474">
+          <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Pesokman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1645" max-vertical-offset="5423">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/SantaDemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6409">
+          <caret line="167" column="35" selection-start-line="167" selection-start-column="35" selection-end-line="167" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Slim.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="5151">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Soul.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2225237" vertical-offset="918" max-vertical-offset="7140">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Monument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="3434">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3332">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8469016" vertical-offset="0" max-vertical-offset="3451">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/s_task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3348" max-vertical-offset="3689">
+          <caret line="202" column="13" selection-start-line="202" selection-start-column="13" selection-end-line="202" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Computer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="3366">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6951" max-vertical-offset="7191">
+          <caret line="417" column="5" selection-start-line="417" selection-start-column="5" selection-end-line="417" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_friend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="7922">
+          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/UnVisWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3417">
+          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/DaupratApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19638243" vertical-offset="1182" max-vertical-offset="2023">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2975" max-vertical-offset="3349">
+          <caret line="189" column="1" selection-start-line="189" selection-start-column="1" selection-end-line="189" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_cartina2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3332">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/SoundEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="510">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Crate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3035" max-vertical-offset="3264">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_door_prop2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3366">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_crate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3136" max-vertical-offset="3349">
+          <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_write.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="3434">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/s_task2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3774">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/s_item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3757">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/GameStoryVars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_trash_prop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52434456" vertical-offset="608" max-vertical-offset="3417">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1324" max-vertical-offset="4573">
+          <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6540881" vertical-offset="3328" max-vertical-offset="4811">
-          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.33175355" vertical-offset="1511" max-vertical-offset="4811">
+          <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/AppleD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17295597" vertical-offset="3226" max-vertical-offset="4573">
-          <caret line="195" column="33" selection-start-line="195" selection-start-column="33" selection-end-line="195" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.26396647" vertical-offset="3891" max-vertical-offset="4913">
+          <caret line="242" column="31" selection-start-line="242" selection-start-column="31" selection-end-line="242" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Card.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4811321" vertical-offset="0" max-vertical-offset="4811">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="11443" max-vertical-offset="33388">
+          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/util/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33286318" vertical-offset="1770" max-vertical-offset="9843">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33286318" vertical-offset="5119" max-vertical-offset="19771">
+          <caret line="341" column="6" selection-start-line="341" selection-start-column="6" selection-end-line="341" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19596542" vertical-offset="255" max-vertical-offset="3451">
-          <caret line="43" column="149" selection-start-line="43" selection-start-column="149" selection-end-line="43" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3451">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Blueman.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2247839" vertical-offset="0" max-vertical-offset="4658">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_14.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.832853" vertical-offset="408" max-vertical-offset="3332">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.6294278" vertical-offset="517" max-vertical-offset="884">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097222224" vertical-offset="730" max-vertical-offset="1887">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-          <folding>
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_rock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3417">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/rooms/Storyroom6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27331188" vertical-offset="0" max-vertical-offset="311">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1870">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/DB.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67202574" vertical-offset="12" max-vertical-offset="6324">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/rooms/Storyroom7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43729904" vertical-offset="0" max-vertical-offset="311">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="8075">
-          <caret line="140" column="43" selection-start-line="140" selection-start-column="43" selection-end-line="140" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="10353">
+          <caret line="119" column="53" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Rock.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/GameOtherVars.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3077">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Plate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3111">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="65008">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3607" max-vertical-offset="5695">
+          <caret line="219" column="39" selection-start-line="219" selection-start-column="39" selection-end-line="219" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#661#680#0" expanded="true" />
+            <element signature="e#740#760#0" expanded="true" />
+            <element signature="e#824#844#0" expanded="true" />
+            <element signature="e#896#910#0" expanded="true" />
+            <element signature="e#1816#2024#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#3482#3631#0" expanded="true" />
+            <element signature="e#3630#3631#0" expanded="true" />
+            <element signature="e#4643#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6540" max-vertical-offset="67592">
-          <caret line="389" column="37" selection-start-line="389" selection-start-column="37" selection-end-line="389" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="78200">
+          <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#733#751#0" expanded="true" />
-            <element signature="e#805#823#0" expanded="true" />
-            <element signature="e#7042#7054#0" expanded="true" />
-            <element signature="e#109836#109853#0" expanded="true" />
+            <element signature="docComment;class#Game#0" expanded="false" />
+            <element signature="e#12985#12997#0" expanded="true" />
+            <element signature="e#137043#137060#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_14.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33221477" vertical-offset="37" max-vertical-offset="3400">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.37484884" vertical-offset="489" max-vertical-offset="3332">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -18,7 +18,8 @@ public class GameObject {
     public static int ply4;
     public static int PlayerZ;
     public static int PlayerSpeedBonus = 3;
-
+    public Room UseRoom;
+    public int UseRoomInt;
 
 
     public static int PlayerColSt = 0; // 1 - up; 2 - right; 3 - down; 4 - left

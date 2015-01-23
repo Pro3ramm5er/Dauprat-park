@@ -39,7 +39,7 @@ public class DEC_rock extends GameObject {
     @Override
     public void update()
     {
-        z = yt+57;
+        z = yt+9;
         /*
         if (Timer <= 0 && UseTimer == 1)
         {

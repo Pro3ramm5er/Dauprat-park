@@ -15,12 +15,12 @@ public class SoundEngine {
     }
     public Map<String, Media> sounds = new HashMap<>();
     public void load(final String path) {
-        Media m = new Media(/*"sound/" + */path);
+        Media m = new Media(path);
         sounds.put(path, m);
     }
     public void play(final String path) {
         if (sounds.containsKey(path)) {
-            final MediaPlayer mediaPlayer = new MediaPlayer(sounds.get(/*"sound/" + */path));
+            final MediaPlayer mediaPlayer = new MediaPlayer(sounds.get(path));
             mediaPlayer.play();
         } else {
             System.err.println("SoundEngine: Attempt to play not loaded sound");

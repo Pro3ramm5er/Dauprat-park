@@ -4,6 +4,8 @@ import dpark.Game;
 import dpark.GameObject;
 import dpark.GameOtherVars;
 
+import static dpark.DB.db;
+
 /**
  * Created by Nickita on 25.11.2014.
  */
@@ -31,6 +33,8 @@ public class Deamon extends GameObject {
     public int PlusOnce = 0;
     public int MinusTimer = 15;
     public int Minus = 0;
+    public int i = 0;
+    public int i2 = 0;
 
     public Deamon(String name) {
         super(name);
@@ -47,20 +51,18 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+15;
-        if (MinusTimer <= 0 && Minus == 1)
-        {
-            if (GameOtherVars.Health == 1)
-            {
+        z = yt + 15;
+        if (MinusTimer <= 0 && Minus == 1) {
+            if (GameOtherVars.Health == 1) {
                 Atack = 1;
             } else {
-                GameOtherVars.Health --;
+                GameOtherVars.Health--;
                 MinusTimer = 30;
                 Minus = 0;
             }
 
         } else {
-            MinusTimer --;
+            MinusTimer--;
         }
         if (xt >= 500 || x >= 500) {
             MST = 4;
@@ -283,6 +285,7 @@ public class Deamon extends GameObject {
 
         }
         */
+
         if (Timer_2 <= 0) {
 
             Timer_2 = 0;
@@ -326,9 +329,9 @@ public class Deamon extends GameObject {
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
 
-                    //System.out.println("KOL");
+                //System.out.println("KOL");
                 if (GameOtherVars.Fullimmortality == 0) {
-                   Minus = 1;
+                    Minus = 1;
                 }
                 if (PlusOnce == 0) {
                     PlayerZ++;

@@ -33,61 +33,9 @@ public class DB {
         db = new DB();
     }
 
+
     public void onGameLoaded(final Game game) {
-        if (GameOtherVars.GameUpdateType == 0) {
-            {
-                final Background b = new Background("main_menu_bg", game.getSprite("logo.png"));
-                backgrounds.put(b.name, b);
-            }
 
-            {
-                final Background b = new Background("main_menu_bg2", game.getSprite("logo2.png"));
-                backgrounds.put(b.name, b);
-            }
-        }
-        if (GameOtherVars.GameUpdateType == 1) {
-            {
-                final Background b = new Background("main_menu_bg", game.getSprite("Newyaer_logo.png"));
-                backgrounds.put(b.name, b);
-            }
-
-            {
-                final Background b = new Background("main_menu_bg2", game.getSprite("Newyaer_logo_1.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg3", game.getSprite("Newyaer_logo_2.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg4", game.getSprite("Newyaer_logo_3.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg5", game.getSprite("Newyaer_logo_4.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg6", game.getSprite("Newyaer_logo_5.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg7", game.getSprite("Newyaer_logo_6.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg8", game.getSprite("Newyaer_logo_7.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg9", game.getSprite("Newyaer_logo_8.png"));
-                backgrounds.put(b.name, b);
-            }
-            {
-                final Background b = new Background("main_menu_bg10", game.getSprite("Newyaer_logo_9.png"));
-                backgrounds.put(b.name, b);
-            }
-        }
         {
             final Animation a = new Animation("new_game_splash_screen_anm");
             a.isPlaying = false;
@@ -107,7 +55,7 @@ public class DB {
             a.runAfterEnd = new Runnable() {
                 @Override
                 public void run() {
-                    game.Get_Start();
+                    Game.instance.Get_Start();
                     GameOtherVars.BeforeMain = 1;
 
                 }
@@ -224,17 +172,20 @@ public class DB {
         }
 
         {
+
             final Player p = new Player("player");
+            p.UseRoom = Game.currentRoom;
             GameObject.PlayerCanMovie = 0;
 
-                //p.x = 250;
-                //p.y = 250;
-
+                p.x = 250;
+                p.y = 250;
 
 
             //p.z = 5;
+            p.UseRoomInt = GameOtherVars.RoomNow;
             p.visible = false;
             objects.put(p.name, p);
+
         }
         {
             final main_door d = new main_door("main_door");
@@ -275,7 +226,7 @@ public class DB {
             final Map2 r = new Map2("map2_room");
             r.background = "map1_bg";
             r.objectsIDs.add("controller");
-            r.objectsIDs.add("player"); r.objectsIDs.add("camera");
+            r.objectsIDs.add("player");
             rooms.put(r.name, r);
 
         }

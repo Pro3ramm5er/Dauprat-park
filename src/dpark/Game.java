@@ -1,6 +1,7 @@
 package dpark;
 
 import dpark.objects.*;
+import dpark.objects.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,6 @@ import java.util.List;
 import static dpark.DB.db;
 
 import dpark.objects.Window;
-import dpark.SoundEngine;
 
 
 /**
@@ -50,7 +50,7 @@ public class Game extends Canvas implements Runnable {
         new Thread(this).start();
     }
 
-    public static final int FPS = 30;
+    public static final int FPS = 35;
     private static final int FrameDuration = 1000 / FPS;
     private static final int MaxFrameSkip = 10;
     private long nextFrameTime = System.currentTimeMillis();
@@ -66,6 +66,8 @@ public class Game extends Canvas implements Runnable {
                     && loops < MaxFrameSkip) {
 
                 update();
+                //db.objects.get("player").update();
+
 
                 if (GameOtherVars.BeforeMain == 1) {
                     if (GameOtherVars.Level == 1) {
@@ -112,25 +114,55 @@ public class Game extends Canvas implements Runnable {
                         GetStartS7();
 
                     }
+                    if (GameOtherVars.Level == 12) {
+                        GetStartS8();
+
+                    }
+                    if (GameOtherVars.Level == 13) {
+                        GetStartS9();
+
+                    }
+                    if (GameOtherVars.Level == 14) {
+                        GetStartS10();
+
+                    }
+                    if (GameOtherVars.Level == 15) {
+                        GetStartS11();
+
+                    }
                 }
                 currentRoom.update();
+
 
                 if (GameOtherVars.AllDelete == 0 && GameOtherVars.StopUpdate == 0) {
 
                     for (GameObject o : db.objects.values()) {
-                        if (GameOtherVars.AllDelete == 0 && GameOtherVars.StopUpdate == 0) {
-                            o.update();
-                        }
+
+                            if (GameOtherVars.AllDelete == 0 && GameOtherVars.StopUpdate == 0) {
+                                if (o.UseRoom == currentRoom) {
+                                    if (o.UseRoomInt == GameOtherVars.RoomNow) {
+                                        o.update();
+                                    }
+                                }
+                            }
+
                     }
+                    db.objects.get("player").UseRoomInt = GameOtherVars.RoomNow;
+                    //db.objects.get("player").update();
+                    db.objects.get("player").UseRoom = Game.currentRoom;
+
+
                 }
 
                 if (GameOtherVars.AllDelete == 1) {
 
 
                     currentRoom.objectsIDs.clear();
+                    currentRoom.objectsIDs.add("player");
+                    GameOtherVars.RoomNow ++;
 
-                    db.objects.clear();
-
+                    //db.objects.clear();
+                    //db.onGameLoaded(this);
                     GameOtherVars.WinVisible = 0;
                     GameOtherVars.VisibleDieLogo = 0;
                     GameOtherVars.AllDelete = 0; // If 1 - SelfRemove for all objects.
@@ -150,7 +182,9 @@ public class Game extends Canvas implements Runnable {
                     GameOtherVars.Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
                     GameOtherVars.Player_bottle = 0;
                     GameOtherVars.UnderEffecr = 0;
-
+                    GameOtherVars.Fullimmortality = 0;
+                    GameOtherVars.GEtdel = 0;
+                    Back_init();
                     if (GameOtherVars.Restart_type == 1) {
                         init();
                     }
@@ -187,6 +221,22 @@ public class Game extends Canvas implements Runnable {
                         GetStartS7();
 
                     }
+                    if (GameOtherVars.Restart_type == 12) {
+                        GetStartS8();
+
+                    }
+                    if (GameOtherVars.Restart_type == 13) {
+                        GetStartS9();
+
+                    }
+                    if (GameOtherVars.Restart_type == 14) {
+                        GetStartS10();
+
+                    }
+                    if (GameOtherVars.Restart_type == 15) {
+                        GetStartS11();
+
+                    }
                     GameOtherVars.IsCreated = 0;
                     GameOtherVars.AllDelete = 0;
 
@@ -212,12 +262,13 @@ public class Game extends Canvas implements Runnable {
             addKeyListener(new Keyboard());
             addMouseListener(mouseListener);
 
+            //GameOtherVars.instance.Back_init();
 
-
-
+            db.onGameLoaded(this);
+            Back_init();
             GameOtherVars.InitOn = 1;
         }
-        db.onGameLoaded(this);
+
         //Sound.playSound("sounds/Deep_Purple-Burn.wav").join();
 
 
@@ -225,7 +276,102 @@ public class Game extends Canvas implements Runnable {
         currentRoom = db.rooms.get("main_menu_room");
     }
 
+    public void Back_init()
+    {
+        {
 
+            final Player p = new Player("player");
+            p.UseRoom = Game.currentRoom;
+            GameObject.PlayerCanMovie = 0;
+
+            p.x = 250;
+            p.y = 250;
+
+
+            //p.z = 5;
+            p.UseRoomInt = GameOtherVars.RoomNow;
+            p.visible = false;
+            db.objects.put(p.name, p);
+        }
+        //if (GameOtherVars.GameUpdateType == 0) {
+            if (GameOtherVars.Biome_type == 1) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("map1.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            if (GameOtherVars.Biome_type == 2) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("Newyaermap1.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            if (GameOtherVars.Biome_type == 3) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("map2.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            if (GameOtherVars.Biome_type == 4) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("map3.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            if (GameOtherVars.Biome_type == 5) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("map4.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            if (GameOtherVars.Biome_type == 6) {
+                final Background b = new Background("map1_bg", Game.instance.getSprite("map5.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg", Game.instance.getSprite("logo.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+
+            {
+                final Background b = new Background("main_menu_bg2", Game.instance.getSprite("logo2.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+        //}
+        if (GameOtherVars.GameUpdateType == 1) {
+            {
+                final Background b = new Background("main_menu_bg", Game.instance.getSprite("Newyaer_logo.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+
+            {
+                final Background b = new Background("main_menu_bg2", Game.instance.getSprite("Newyaer_logo_1.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg3", Game.instance.getSprite("Newyaer_logo_2.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg4", Game.instance.getSprite("Newyaer_logo_3.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg5", Game.instance.getSprite("Newyaer_logo_4.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg6", Game.instance.getSprite("Newyaer_logo_5.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg7", Game.instance.getSprite("Newyaer_logo_6.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg8", Game.instance.getSprite("Newyaer_logo_7.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg9", Game.instance.getSprite("Newyaer_logo_8.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+            {
+                final Background b = new Background("main_menu_bg10", Game.instance.getSprite("Newyaer_logo_9.png"));
+                DB.db.backgrounds.put(b.name, b);
+            }
+        }
+    }
     public void render(Room room) {
         bss = getBufferStrategy();
         if (bss == null) {
@@ -242,15 +388,22 @@ public class Game extends Canvas implements Runnable {
 
 
 
-        db.backgrounds.get(room.background).sprite.getStep().sprite.draw(gl, 0,
+        db.backgrounds.get(currentRoom.background).sprite.getStep().sprite.draw(gl, 0,
                 0);
         List<GameObject> objs = new ArrayList<GameObject>(db.objects.values());
         Collections.sort(objs, GameObject.compareByDepth);
-        for (GameObject o : objs) {
-            if (room.objectsIDs.contains(o.name)) {
-                o.render(gl);
+        for (GameObject o : objs /*db.objects.values()*/) {
+            if (room.objectsIDs.contains(o.name)/*currentRoom.objectsIDs.contains(o.name)*/) {
+                if (o.UseRoom == currentRoom ) {
+                    if (o.UseRoomInt == GameOtherVars.RoomNow) {
+                        o.render(gl);
+
+                    }
+                }
             }
+
         }
+
         bss.show();
         gl.dispose();
     }
@@ -300,14 +453,277 @@ public class Game extends Canvas implements Runnable {
 
 
     }
-    public void GetStartS7() {
+    public void GetStartS11() {
 
 
-        GameOtherVars.Level = 11;
+        GameOtherVars.Level = 15;
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+
+
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            DEC_tree_create(80, 101, 1);
+
+            DEC_roomback14_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void GetStartS10() {
+
+
+        GameOtherVars.Level = 14;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+
+
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+            DEC_roomback14_create(47, 0);
+            S_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void S_task3_create(int w, int e) {
+
+        final s_item chest = new s_item(getFreeName("s_item.png"));
+
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS9() {
+
+
+        GameOtherVars.Level = 13;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            xcr = 50;
+            icr = 97;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 10; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 0);
+
+                xcr += 32;
+            }
+            DEC_unviswall_create(399, 66, 1);
+            xcr = 399;
+            icr = 66;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 11; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            Roomback_15_create(50, 0);
+            DEC_roomback14_create(47, 0);
+            DEC_tree_create(495, 282, 1);
+            DEC_tree_create(518, 3, 0);
+            DEC_tree_create(87, 134, 2);
+            DEC_door_prop2_create(142, 64);
+            DEC_trash_create(613, 55, 0);
+            DEC_trash_create(600, 23, 1);
+            DEC_write_create(327, 13, 0);
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void DEC_write_create(int w, int e, int ty) {
+
+        final DEC_write chest = new DEC_write(getFreeName("DEC_write.png"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.type = ty;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_trash_create(int w, int e, int ty) {
+
+        final DEC_trash_prop chest = new DEC_trash_prop(getFreeName("DEC_trash_prop"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.type = ty;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_door_prop2_create(int w, int e) {
+
+        final DEC_door_prop2 chest = new DEC_door_prop2(getFreeName("DEC_door_prop2"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void Roomback_15_create(int w, int e) {
+
+        final Roomback_15 chest = new Roomback_15(getFreeName("Roomback_15"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS8() {
+
+
+        GameOtherVars.Level = 12;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+
             currentRoom = db.rooms.get("Storyroom7");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -339,10 +755,116 @@ public class Game extends Canvas implements Runnable {
             }
             DEC_unviswall_create(773, -9, 1);
             DEC_unviswall_create(47, -9, 1);
+            S_task2_create(433, 239);
             DEC_roomback14_create(47, 0);
-
+            S_screamer_create(250, 150);
             GameOtherVars.IsCreated = 1;
         }
+
+
+    }
+    public void S_screamer_create(int w, int e) {
+
+        final S_friend chest = new S_friend(getFreeName("s_task2"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void S_task2_create(int w, int e) {
+
+        final s_task2 chest = new s_task2(getFreeName("s_task2"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS7() {
+
+
+        GameOtherVars.Level = 11;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 25; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            DEC_monumet_create(101, 187);
+            DEC_monumet_create(131, 187);
+            DEC_monumet_create(161, 187);
+            DEC_monumet_create(191, 187);
+            DEC_monumet_create(221, 187);
+            DEC_monumet_create(281, 187);
+            DEC_monumet_create(311, 187);
+            DEC_roomback14_create(47, 0);
+            DEC_tree_create(372, 159, 1);
+            DEC_tree_create(572, 543, 1);
+            DEC_tree_create(432, 275, 1);
+            DEC_tree_create(356, 341, 1);
+            DEC_tree_create(234, 532, 1);
+            GameOtherVars.IsCreated = 1;
+        }
+
+
+    }
+    public void DEC_monumet_create(int w, int e) {
+
+        final Monument chest = new Monument(getFreeName("Monument"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }
@@ -353,7 +875,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storyroom6");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -385,7 +907,24 @@ public class Game extends Canvas implements Runnable {
             DEC_unviswall_create(773, -9, 1);
             DEC_unviswall_create(47, -9, 1);
             DEC_roomback14_create(47, 0);
-            DEC_tree_create(544, 178);
+            DEC_tree_create(544, 178, 0);
+            DEC_tree_create(658, 398, 1);
+            DEC_tree_create(131, 460, 2);
+            DEC_tree_create(589, 242, 1);
+            DEC_tree_create(645, 310, 2);
+            DEC_tree_create(695, 365, 0);
+            DEC_tree_create(723, 215, 1);
+            DEC_tree_create(695, 250, 2);
+            DEC_tree_create(575, 195, 1);
+            DEC_tree_create(652, 178, 0);
+            DEC_tree_create(581, 122, 2);
+            DEC_tree_create(730, 126, 0);
+            DEC_tree_create(655,  54, 1);
+            DEC_tree_create(545, 59, 2);
+            DEC_tree_create(723, 40, 1);
+            DEC_tree_create(619, 54, 0);
+            DEC_tree_create(172, 729, 2);
+            DEC_tree_create(83, 276, 2);
             DEC_rock_create(98, 349);
             DEC_plate_create(405, 466);
             GameOtherVars.IsCreated = 1;
@@ -396,13 +935,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_plate_create(int w, int e) {
 
         final Plate chest = new Plate(getFreeName("Plate"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -412,29 +951,30 @@ public class Game extends Canvas implements Runnable {
     public void DEC_rock_create(int w, int e) {
 
         final DEC_rock chest = new DEC_rock(getFreeName("DEC_rock"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
 
 
     }
-    public void DEC_tree_create(int w, int e) {
+    public void DEC_tree_create(int w, int e, int g) {
 
         final DEC_Tree chest = new DEC_Tree(getFreeName("DEC_Tree"));
-
+        chest.TypeTex = g;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
+        chest.UseRoom = currentRoom;
         //chest.z = 5;
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -444,13 +984,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_cartina_create(int w, int e) {
 
         final DEC_cartina chest = new DEC_cartina(getFreeName("DEC_cartina"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -460,13 +1000,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback14_create(int w, int e) {
 
         final Roomback_14 chest = new Roomback_14(getFreeName("Roomback_14"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -480,7 +1020,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storyroom5");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -525,7 +1065,7 @@ public class Game extends Canvas implements Runnable {
             //DEC_unviswall_create(678, 182, 0);
             DEC_roomback12_create(50, 81);
             DEC_roomback13_create(50, 0);
-            DEC_door_forr3_create(367, 120);
+            DEC_door_forr3_create(367, 121);
 
             GameOtherVars.IsCreated = 1;
         }
@@ -535,13 +1075,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_door_forr3_create(int w, int e) {
 
         final Door_forr3 chest = new Door_forr3(getFreeName("Door_forr3"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -551,13 +1091,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback13_create(int w, int e) {
 
         final Roomback_13 chest = new Roomback_13(getFreeName("Roomback_13"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -567,13 +1107,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback12_create(int w, int e) {
 
         final Roomback_12 chest = new Roomback_12(getFreeName("Roomback_12"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -583,13 +1123,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback11_create(int w, int e) {
 
         final Roomback_11 chest = new Roomback_11(getFreeName("Roomback_11"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -603,7 +1143,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storyroom4");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -646,13 +1186,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback10_create(int w, int e) {
 
         final Roomback_10 chest = new Roomback_10(getFreeName("Roomback_10"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -662,13 +1202,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback9_create(int w, int e) {
 
         final Roomback_9 chest = new Roomback_9(getFreeName("Roomback_9"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -678,13 +1218,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback8_create(int w, int e) {
 
         final Roomback_8 chest = new Roomback_8(getFreeName("Roomback_8"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -694,13 +1234,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback7_create(int w, int e) {
 
         final Roomback_7 chest = new Roomback_7(getFreeName("Roomback_7"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -710,13 +1250,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_scriptdoor_create(int w, int e) {
 
         final Door_forr2 chest = new Door_forr2(getFreeName("Door_forr2"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -729,7 +1269,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
 
             currentRoom = db.rooms.get("Storymap3");
             db.objects.get("player").visible = true;
@@ -791,10 +1331,26 @@ public class Game extends Canvas implements Runnable {
             DEC_roomback6_create(272, 49);
             DEC_scriptdoor_create(292, 14);
             DEC_roomback7_create(272, 0);
-
+            DEC_crate_create(272, 80);
+            DEC_crate_create(475, 35);
 
             GameOtherVars.IsCreated = 1;
         }
+
+
+    }
+    public void DEC_crate_create(int w, int e) {
+
+        final DEC_crate chest = new DEC_crate(getFreeName("DEC_crate"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }
@@ -804,7 +1360,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storymap2");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -848,6 +1404,9 @@ public class Game extends Canvas implements Runnable {
             DEC_roomback6_create(271, 0);
             DEC_door_prop_create(382, 563);
             DEC_cartina_create(291, 287);
+            DEC_crate_create(432, 509);
+            DEC_crate_create(412, 413);
+            DEC_crate_create(425, 351);
             GameOtherVars.IsCreated = 1;
         }
 
@@ -856,13 +1415,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_door_prop_create(int w, int e) {
 
         final Door_prop chest = new Door_prop(getFreeName("Door_prop"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -872,13 +1431,13 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback6_create(int w, int e) {
 
         final Roomback_6 chest = new Roomback_6(getFreeName("Roomback_6"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -891,7 +1450,7 @@ public class Game extends Canvas implements Runnable {
         GameStoryVars.Story = 1;
 
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             currentRoom = db.rooms.get("Storymap1");
             db.objects.get("player").visible = true;
             GameOtherVars.AllDelete = 0;
@@ -1008,7 +1567,7 @@ public class Game extends Canvas implements Runnable {
             DEC_table_create(35, 131);
             DEC_s_task_create(75, 238);
             DEC_door_create(479, 387);
-
+            DEC_cartina2_create(215, 75);
             xpp = 32;
             for (int u = 0; u<=15; u++)
             {
@@ -1021,16 +1580,32 @@ public class Game extends Canvas implements Runnable {
 
 
     }
-    public void DEC_door_create(int w, int e) {
+    public void DEC_cartina2_create(int w, int e) {
 
-        final Door chest = new Door(getFreeName("Door"));
-
+        final DEC_cartina2 chest = new DEC_cartina2(getFreeName("DEC_cartina2"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
         //chest.z = 5;
+        chest.UseRoom = currentRoom;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
 
+
+
+    }
+    public void DEC_door_create(int w, int e) {
+
+        final Door chest = new Door(getFreeName("Door"));
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        //chest.z = 5;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1045,8 +1620,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1061,8 +1636,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1077,8 +1652,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1093,8 +1668,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1109,8 +1684,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1125,8 +1700,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1141,8 +1716,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1152,12 +1727,12 @@ public class Game extends Canvas implements Runnable {
     public void DEC_roomback_3_create(int w, int e) {
 
         final Roomback_3 chest = new Roomback_3(getFreeName("Roomback_3"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1172,8 +1747,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1188,8 +1763,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1204,7 +1779,7 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1219,8 +1794,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1230,12 +1805,12 @@ public class Game extends Canvas implements Runnable {
     public void DEC_cupboard_create(int w, int e) {
 
         final Cupboard chest = new Cupboard(getFreeName("Cupboard"));
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = w ;
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1248,12 +1823,12 @@ public class Game extends Canvas implements Runnable {
         chest.Type = t;
         int wardenx = w;
         int wardeny = e;
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         chest.x = wardenx;
         chest.y = wardeny;
         chest.xt = wardenx;
         chest.yt = wardeny;
-
+        chest.UseRoom = currentRoom;
 
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
@@ -1269,8 +1844,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = e;
         chest.xt = w;
         chest.yt = e;
-
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1301,7 +1876,7 @@ public class Game extends Canvas implements Runnable {
         }
         if (GameOtherVars.IsCreated == 0) {
             GameOtherVars.AllDelete = 0;
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
 
             currentRoom = db.rooms.get("map4_room");
@@ -1570,7 +2145,7 @@ public class Game extends Canvas implements Runnable {
     public void Get_start_location_3() {
         GameOtherVars.Level = 3;
         if (GameOtherVars.IsCreated == 0) {
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             GameOtherVars.AllDelete = 0;
             GameOtherVars.BeforeMain = 1;
 
@@ -1890,8 +2465,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             NPC_SantaDemon_create();
@@ -1905,8 +2480,8 @@ public class Game extends Canvas implements Runnable {
         chest.x = 32;
         chest.y = 32;
 
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1920,8 +2495,8 @@ public class Game extends Canvas implements Runnable {
         chest.xt = GameOtherVars.Snow_x;
         chest.yt = GameOtherVars.Snow_y;
         chest.MST = GameOtherVars.Snow_MST;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -1938,8 +2513,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             NPC_Tres_create();
@@ -1956,8 +2531,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             NPC_Alpinos_create();
@@ -1974,7 +2549,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             NPC_Slim_create();
@@ -1996,7 +2572,7 @@ public class Game extends Canvas implements Runnable {
 
             GameOtherVars.AllDelete = 0;
             GameOtherVars.BeforeMain = 1;
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
             currentRoom = db.rooms.get("map2_room");
             db.objects.get("player").visible = true;
@@ -2264,8 +2840,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             NPC_InfectGoblin_create();
@@ -2283,8 +2859,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = wardeny;
         chest.xt = wardenx;
         chest.yt = wardeny;
-
-
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -2299,8 +2875,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -2316,8 +2892,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoomInt = GameOtherVars.RoomNow;
+                chest.UseRoom = currentRoom;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -2334,8 +2910,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoomInt = GameOtherVars.RoomNow;
+                chest.UseRoom = currentRoom;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -2352,8 +2928,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoomInt = GameOtherVars.RoomNow;
+                chest.UseRoom = currentRoom;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -2369,8 +2945,9 @@ public class Game extends Canvas implements Runnable {
         int wardeny = 0;
         chest.x = wardenx;
         chest.y = wardeny;
-
+        chest.UseRoom = currentRoom;
         chest.z = 400;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
         //}
@@ -2386,7 +2963,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -2404,7 +2982,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -2422,7 +3001,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -2436,7 +3016,7 @@ public class Game extends Canvas implements Runnable {
         if (GameOtherVars.IsCreated == 0) {
 
             GameOtherVars.AllDelete = 0;
-            db.onGameLoaded(this);
+            //db.onGameLoaded(this);
             GameObject.PlayerCanMovie = 0;
             currentRoom = db.rooms.get("map1_room");
             db.objects.get("player").visible = true;
@@ -2741,7 +3321,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+18;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Weed_create();
@@ -2758,8 +3339,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Mandarinka_create();
@@ -2776,8 +3357,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Hacker_create();
@@ -2795,7 +3376,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+1;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Bottle_create();
@@ -2813,7 +3395,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+17;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Soul_create();
@@ -2831,7 +3414,7 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+5;
-
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Snowbug_create();
@@ -2849,8 +3432,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Zombie_create();
@@ -2868,8 +3451,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Tarakan_create();
@@ -2887,7 +3470,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+15;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             rad_dec_create();
@@ -2905,8 +3489,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             MonsterCactus_create();
@@ -2925,7 +3509,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             //chest.z = chest.yt+60;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Pesokman_create();
@@ -2943,8 +3528,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Inoplanetanin_create();
@@ -2962,7 +3547,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+26;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Ship_create();
@@ -2978,8 +3564,8 @@ public class Game extends Canvas implements Runnable {
         chest.y = wardeny;
         chest.xt = wardenx;
         chest.yt = wardeny;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -2996,8 +3582,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3017,7 +3603,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+110;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Sphuyna_create();
@@ -3035,7 +3622,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+15;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Mag_create();
@@ -3053,7 +3641,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+4;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Rock_create();
@@ -3071,7 +3660,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Cactus_create();
@@ -3089,7 +3679,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = chest.yt+105;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
             Tree_create();
@@ -3103,9 +3694,10 @@ public class Game extends Canvas implements Runnable {
         int wardeny =0;
         chest.x = 0;
         chest.y = 0;
-
+        chest.UseRoom = currentRoom;
         chest.z = 15000000;
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -3122,8 +3714,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3140,8 +3732,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3157,8 +3749,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3176,7 +3768,8 @@ public class Game extends Canvas implements Runnable {
                 chest.xt = wardenx;
                 chest.yt = wardeny;
                 //chest.z = 5;
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3194,8 +3787,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3211,8 +3804,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3229,8 +3822,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3248,8 +3841,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3265,8 +3858,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3283,8 +3876,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3301,8 +3894,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3319,8 +3912,8 @@ public class Game extends Canvas implements Runnable {
                 chest.y = wardeny;
                 chest.xt = wardenx;
                 chest.yt = wardeny;
-
-
+                chest.UseRoom = currentRoom;
+                chest.UseRoomInt = GameOtherVars.RoomNow;
                 db.objects.put(chest.name, chest);
                 currentRoom.objectsIDs.add(chest.name);
 
@@ -3338,8 +3931,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3356,8 +3949,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3375,7 +3968,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3390,7 +3984,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3405,7 +4000,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3420,7 +4016,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3435,7 +4032,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3453,7 +4051,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3471,7 +4070,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3489,7 +4089,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3507,6 +4108,8 @@ public class Game extends Canvas implements Runnable {
             dlg.z = g1+105;
             dlg.xt = g;
             dlg.yt = g1;
+            dlg.UseRoom = currentRoom;
+            dlg.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(dlg.name, dlg);
             currentRoom.objectsIDs.add(dlg.name);
             DEC_spruce_create();
@@ -3519,7 +4122,8 @@ public class Game extends Canvas implements Runnable {
         final Sock dlg = new Sock(getFreeName("Sock"));
         dlg.x =  70 + (int) (Math.random() * ((600 - 150) + 1));
         dlg.y = 70 + (int) (Math.random() * ((600 - 150) + 1));
-
+        dlg.UseRoom = currentRoom;
+        dlg.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(dlg.name, dlg);
         currentRoom.objectsIDs.add(dlg.name);
     }
@@ -3528,7 +4132,8 @@ public class Game extends Canvas implements Runnable {
         final WinLogo dlg = new WinLogo(getFreeName("WinLogo"));
         dlg.x = 0;
         dlg.y = 0;
-
+        dlg.UseRoom = currentRoom;
+        dlg.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(dlg.name, dlg);
         currentRoom.objectsIDs.add(dlg.name);
     }
@@ -3543,7 +4148,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 30;
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3561,7 +4167,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3586,8 +4193,8 @@ public class Game extends Canvas implements Runnable {
             } else {
                 chest.z = chest.y-200;
             }
-
-
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3603,12 +4210,12 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
+            chest.UseRoom = currentRoom;
 
             chest.z = chest.y;
 
             chest.z = chest.y-200;
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3626,8 +4233,9 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
+            chest.UseRoom = currentRoom;
             chest.z = -5;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3640,8 +4248,8 @@ public class Game extends Canvas implements Runnable {
         int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
         chest.x = wardenx;
         chest.y = wardeny;
-
-
+        chest.UseRoom = currentRoom;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(chest.name, chest);
         currentRoom.objectsIDs.add(chest.name);
 
@@ -3658,7 +4266,8 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             chest.z = 5;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
@@ -3676,6 +4285,8 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3691,8 +4302,9 @@ public class Game extends Canvas implements Runnable {
             chest.y = wardeny;
             chest.xt = wardenx;
             chest.yt = wardeny;
-
+            chest.UseRoom = currentRoom;
             chest.z = 5;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3706,8 +4318,9 @@ public class Game extends Canvas implements Runnable {
             int wardeny = 50 + (int) (Math.random() * ((600 - 50) + 1));
             chest.x = wardenx;
             chest.y = wardeny;
-
+            chest.UseRoom = currentRoom;
             chest.z = wardeny+4;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
         }
@@ -3724,9 +4337,11 @@ public class Game extends Canvas implements Runnable {
             chest.xt = wardenx;
             chest.yt = wardeny;
             chest.z = 5;
+            chest.UseRoom = currentRoom;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
-
+            chest.UseRoomInt = GameOtherVars.RoomNow;
         }
     }
 
@@ -3742,6 +4357,8 @@ public class Game extends Canvas implements Runnable {
             chest.yt = wardeny;
             chest.z = 5;
             chest.NPC_Type = type;
+            chest.UseRoomInt = GameOtherVars.RoomNow;
+            chest.UseRoom = currentRoom;
             db.objects.put(chest.name, chest);
             currentRoom.objectsIDs.add(chest.name);
 
@@ -3758,7 +4375,10 @@ public class Game extends Canvas implements Runnable {
         chest.xt = wardenx;
         chest.yt = wardeny;
         chest.z = 0;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        chest.UseRoom = currentRoom;
         db.objects.put(chest.name, chest);
+        chest.UseRoomInt = GameOtherVars.RoomNow;
         currentRoom.objectsIDs.add(chest.name);
     }
 
@@ -3767,7 +4387,8 @@ public class Game extends Canvas implements Runnable {
         final DieLogo dlg = new DieLogo(getFreeName("Dielogo"));
         dlg.x = 0;
         dlg.y = 0;
-
+        dlg.UseRoom = currentRoom;
+        dlg.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(dlg.name, dlg);
         currentRoom.objectsIDs.add(dlg.name);
     }
@@ -3783,11 +4404,12 @@ public class Game extends Canvas implements Runnable {
 
     public void AppleGet(int xp, int yp, int rep, int rey) {
         final AppleS aplk = new AppleS(getFreeName("appleDEC"));
-
+        aplk.UseRoomInt = GameOtherVars.RoomNow;
         aplk.xplus = xp;
         aplk.yplus = yp;
         aplk.retplx = rep;
         aplk.retply = rey;
+        aplk.UseRoom = currentRoom;
         db.objects.put(aplk.name, aplk);
         currentRoom.objectsIDs.add(aplk.name);
     }
@@ -3807,7 +4429,8 @@ public class Game extends Canvas implements Runnable {
         md.xt = xau;
         md.yt = yau;
         md.Door_type = type;
-
+        md.UseRoomInt = GameOtherVars.RoomNow;
+        md.UseRoom = currentRoom;
         db.objects.put(md.name, md);
         currentRoom.objectsIDs.add(md.name);
     }
@@ -3819,6 +4442,8 @@ public class Game extends Canvas implements Runnable {
         kms1.x = 32;
         kms1.y = 32;
         kms1.z = 50;
+        kms1.UseRoom = currentRoom;
+        kms1.UseRoomInt = GameOtherVars.RoomNow;
         db.objects.put(kms1.name, kms1);
         currentRoom.objectsIDs.add(kms1.name);
     }
@@ -3833,7 +4458,8 @@ public class Game extends Canvas implements Runnable {
             c.xt = xa;
             c.yt = ya;
             c.z = ga;
-
+            c.UseRoomInt = GameOtherVars.RoomNow;
+            c.UseRoom = currentRoom;
             db.objects.put(c.name, c);
 
             currentRoom.objectsIDs.add(c.name);
@@ -3854,8 +4480,8 @@ public class Game extends Canvas implements Runnable {
             fr.xt = wardenx;
             fr.yt = wardeny;
             fr.z = -5;
-
-
+            fr.UseRoomInt = GameOtherVars.RoomNow;
+            fr.UseRoom = currentRoom;
             db.objects.put(fr.name, fr);
             currentRoom.objectsIDs.add(fr.name);
         }

@@ -1,11 +1,9 @@
 package dpark.objects;
 
-import dpark.Background;
-import dpark.Game;
-import dpark.GameObject;
+import dpark.*;
+
 import static dpark.DB.db;
 import  dpark.DB.*;
-import dpark.GameOtherVars;
 import dpark.objects.Controller;
 import dpark.objects.KeyMessage;
 import dpark.objects.Player;
@@ -29,7 +27,7 @@ import static dpark.DB.db;
 public class Controller extends GameObject {
     public int Timer_to_change = 5;
     public int Texture_number = 0;
-    public int GEtdel = 0;
+
 
     public Controller(String name) {
         super(name);
@@ -41,19 +39,19 @@ public class Controller extends GameObject {
 
     @Override
     public void update() {
-        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10)
-        {
-            if (GEtdel == 0) {
+        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14) {
+
+            if (GameOtherVars.GEtdel == 0) {
 
                 GameObject.plx = 373;
                 GameObject.ply = 526;
-                GEtdel = 1;
+                GameOtherVars.GEtdel = 1;
             }
         } else {
-            if (GEtdel == 0) {
+            if (GameOtherVars.GEtdel == 0) {
                 GameObject.plx = 250;
                 GameObject.ply = 250;
-                GEtdel = 1;
+                GameOtherVars.GEtdel = 1;
             }
 
         }
@@ -214,7 +212,7 @@ public class Controller extends GameObject {
             }
         }
         if (keycode == KeyEvent.VK_9) {
-            GameOtherVars.Restart_type = 9;
+            GameOtherVars.Restart_type = 13;
             GameOtherVars.AllDelete = 1;
         }
     }

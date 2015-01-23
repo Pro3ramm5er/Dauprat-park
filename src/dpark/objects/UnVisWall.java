@@ -10,8 +10,8 @@ public class UnVisWall extends GameObject  {
     public int xt;
     public int yt;
 
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7/*, 8, 9, 10, 11, 12, 13*/};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7/*, 8, 9, 10, 11, 12, 13*/};
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 11, 12, 13, 14, 15/*, 8, 9, 10, 11, 12, 13*/};
+    public int[] myy = {-5, -4, -3, -2, -1, 0, 1/*, 8, 9, 10, 11, 12, 13*/};
 
     public int Timer = 0;
     public int otchet = 0;
@@ -35,6 +35,7 @@ public class UnVisWall extends GameObject  {
 
         sprite.addStep(Game.instance.getSprite("unviswall.png"));
         sprite.addStep(Game.instance.getSprite("unviswall_1.png"));
+
         sprite.currentStep = Type;
     }
 

@@ -26,11 +26,14 @@ public class DEC_Tree extends GameObject {
     public int otchet8 = 0;  // y
     public int Col_del = 0;
     public int PlusOnce = 0;
+    public int TypeTex;
 
     public DEC_Tree(String name)
     {
         super(name);
         sprite.addStep(Game.instance.getSprite("DEC_Tree.png"));
+        sprite.addStep(Game.instance.getSprite("DEC_Tree2.png"));
+        sprite.addStep(Game.instance.getSprite("DEC_Tree3.png"));
 
 
 
@@ -39,7 +42,8 @@ public class DEC_Tree extends GameObject {
     @Override
     public void update()
     {
-        z = yt+15;
+        sprite.currentStep = TypeTex;
+        z = yt+52;
         /*
         if (Timer <= 0 && UseTimer == 1)
         {
