@@ -6,6 +6,15 @@ import javafx.scene.media.MediaPlayer;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.*;
+
+import java.awt.*;
+
+import java.awt.event.*;
+
+import java.io.*;
+
+import javax.sound.sampled.*;
 
 /**
  * @author STALKER_2010

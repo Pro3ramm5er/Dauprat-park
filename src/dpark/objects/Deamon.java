@@ -51,7 +51,7 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt + 15;
+        z = yt + 20;
         if (MinusTimer <= 0 && Minus == 1) {
             if (GameOtherVars.Health == 1) {
                 Atack = 1;

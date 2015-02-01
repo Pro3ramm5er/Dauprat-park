@@ -325,5 +325,9 @@ public class DB {
             rooms.put(r.name, r);
 
         }
+        if (GameOtherVars.Debag_2 == 0) {
+            System.out.print("SIMPSONS");
+            GameOtherVars.Debag_2 = 1;
+        }
     }
 }

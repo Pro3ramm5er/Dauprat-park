@@ -39,7 +39,8 @@ public class Controller extends GameObject {
 
     @Override
     public void update() {
-        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14) {
+
+        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14 || GameOtherVars.Level == 15 || GameOtherVars.Level == 16) {
 
             if (GameOtherVars.GEtdel == 0) {
 
@@ -148,32 +149,13 @@ public class Controller extends GameObject {
                     //System.out.println("Ready2");
                     db.rooms.get("main_menu_room").background = "main_menu_bg7";
                     //Timer_to_change = 5;
-                    Texture_number = 7;
-                    Timer_to_change = 3;
-
-                } else {
-                    Timer_to_change--;
-                }
-                if (Texture_number == 7 && Timer_to_change <= 0) {
-                    //System.out.println("Ready2");
-                    db.rooms.get("main_menu_room").background = "main_menu_bg8";
-                    //Timer_to_change = 5;
-                    Texture_number = 8;
-                    Timer_to_change = 3;
-
-                } else {
-                    Timer_to_change--;
-                }
-                if (Texture_number == 8 && Timer_to_change <= 0) {
-                    //System.out.println("Ready2");
-                    db.rooms.get("main_menu_room").background = "main_menu_bg9";
-                    //Timer_to_change = 5;
                     Texture_number = 0;
                     Timer_to_change = 40;
 
                 } else {
                     Timer_to_change--;
                 }
+
             }
 
 
@@ -212,7 +194,7 @@ public class Controller extends GameObject {
             }
         }
         if (keycode == KeyEvent.VK_9) {
-            GameOtherVars.Restart_type = 13;
+            GameOtherVars.Restart_type = 27;
             GameOtherVars.AllDelete = 1;
         }
     }

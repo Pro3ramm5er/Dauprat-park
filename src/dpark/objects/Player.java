@@ -90,6 +90,9 @@ public class Player extends GameObject {
         sprite.addStep(Game.instance.getSprite("s_p_4.png"));//28
         sprite.addStep(Game.instance.getSprite("s_p_5.png"));//29
 
+        //Action 1
+        sprite.addStep(Game.instance.getSprite("hero_up_action.png"));//30
+
         //PlayerSpeedBonus = 0;
 
 
@@ -113,16 +116,18 @@ public class Player extends GameObject {
         PlayerZ = ply+15;
         UseRoomInt = GameOtherVars.RoomNow;
         UseRoom = Game.currentRoom;
-        //System.out.println(Game.currentRoom + "I AM ALIVE");
-        System.out.println(UseRoom + ":Player");
-        System.out.println(UseRoomInt + ":Player");
-        System.out.println(GameOtherVars.RoomNow + ":Now");
-        System.out.println(Game.currentRoom+ ":Now");
+
+
+        if (GameOtherVars.Player_ac_t1 == 1)
+        {
+            sprite.currentStep = 30;
+            GameOtherVars.Player_ac_t1 = 0;
+        }
         if (GameOtherVars.BeforeMain == 1)
         {
             visible = true;
         }
-        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14) {
+        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14 || GameOtherVars.Level == 15 || GameOtherVars.Level == 16 || GameOtherVars.Level == 17  || GameOtherVars.Level == 18  || GameOtherVars.Level == 19  || GameOtherVars.Level == 20    || GameOtherVars.Level == 21  || GameOtherVars.Level == 22  || GameOtherVars.Level == 23  || GameOtherVars.Level == 24  || GameOtherVars.Level == 25  || GameOtherVars.Level == 26 || GameOtherVars.Level == 27 || GameOtherVars.Level == 28 || GameOtherVars.Level == 29 || GameOtherVars.Level == 30 || GameOtherVars.Level == 31 || GameOtherVars.Level == 32 || GameOtherVars.Level == 33 || GameOtherVars.Level == 34 || GameOtherVars.Level == 35) {
 
             if (GameOtherVars.GEtdel == 0) {
 
@@ -203,6 +208,102 @@ public class Player extends GameObject {
             GameOtherVars.Restart_type = 15;
             GameOtherVars.AllDelete = 1;
         }
+        if (y < 0 && GameOtherVars.Level == 15)
+        {
+            GameOtherVars.Restart_type = 16;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 16)
+        {
+            GameOtherVars.Restart_type = 17;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 17)
+        {
+            GameOtherVars.Restart_type = 18;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 18)
+        {
+            GameOtherVars.Restart_type = 19;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 19)
+        {
+            GameOtherVars.Restart_type = 20;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 20)
+        {
+            GameOtherVars.Restart_type = 21;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 21)
+        {
+            GameOtherVars.Restart_type = 22;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 22)
+        {
+            GameOtherVars.Restart_type = 23;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 23)
+        {
+            GameOtherVars.Restart_type = 24;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 24)
+        {
+            GameOtherVars.Restart_type = 25;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 25)
+        {
+            GameOtherVars.Restart_type = 26;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 26)
+        {
+            GameOtherVars.Restart_type = 27;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 27)
+        {
+            GameOtherVars.Restart_type = 28;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 29)
+        {
+            GameOtherVars.Restart_type = 30;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 30)
+        {
+            GameOtherVars.Restart_type = 31;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 31)
+        {
+            GameOtherVars.Restart_type = 32;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 32)
+        {
+            GameOtherVars.Restart_type = 33;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 33)
+        {
+            GameOtherVars.Restart_type = 34;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 34)
+        {
+            GameOtherVars.Restart_type = 35;
+            GameOtherVars.AllDelete = 1;
+        }
+
         if (GameStoryVars.S_phone == 1)
         {
             sprite.currentStep = phonenow;

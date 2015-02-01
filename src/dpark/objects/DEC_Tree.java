@@ -34,15 +34,18 @@ public class DEC_Tree extends GameObject {
         sprite.addStep(Game.instance.getSprite("DEC_Tree.png"));
         sprite.addStep(Game.instance.getSprite("DEC_Tree2.png"));
         sprite.addStep(Game.instance.getSprite("DEC_Tree3.png"));
+        sprite.addStep(Game.instance.getSprite("DEC_Tree4.png"));
+        sprite.addStep(Game.instance.getSprite("DEC_Tree5.png"));
 
-
+        sprite.currentStep = Game.instance.GetRandom(0, 4);
 
         //z = y;
     }
     @Override
     public void update()
     {
-        sprite.currentStep = TypeTex;
+
+        //sprite.currentStep = TypeTex;
         z = yt+52;
         /*
         if (Timer <= 0 && UseTimer == 1)

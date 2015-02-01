@@ -43,6 +43,9 @@ public class GameOtherVars {
     public static int Snow_x;
     public static int Snow_y;
     public static int Snow_create = 1;
+    public static int Deamon_create = 0;
+    public static int Bossx = 1;
+    public static int Bossy = 1;
     public static int Health = 2;
     public static int Biome_type = 1 + (int) (Math.random() * ((6 - 1) + 1));
     public static int Player_bottle = 0;
@@ -50,6 +53,26 @@ public class GameOtherVars {
     public static int UnderEffecr = 0;
     public static int GEtdel = 0;
     public static int RoomNow = 1;
+    public static int Timer_to_change = 5;
+    public static int Texture_number = 0;
+    public static int Player_ac_t1 = 0;
+    public static int Magic_1 = 0;
+    public static int Debag_1 = 0;
+    public static int Debag_2 = 0;
+    public static int Debag_3 = 0;
+    public static int Debag_4 = 0;
+    public static int Debag_5 = 0;
+    public static int Debag_6 = 0;
+    public static int Debag_7 = 0;
+    public static int Debag_8 = 0;
+    public static int Debag_9 = 0;
+    public static int Debag_10 = 0;
+    public static int Debag_11 = 0;
+    public static int Debag_12 = 0;
+    public static int Debag_13 = 0;
+    public static int Debag_14 = 0;
+    public static int Debag_15 = 0;
+
     public static GameOtherVars instance;
     public void Back_init()
     {
@@ -108,7 +131,92 @@ public class GameOtherVars {
             }
         }
     }
+    public static void StartAnimation() {
+        if (Texture_number == 0 && Timer_to_change <= 0) {
+            //System.out.println("Ready1");
+            db.rooms.get("main_menu_room").background = "main_menu_bg";
+            //Timer_to_change = 5;
+            int userandom = 0;
+            userandom = 1 + (int) (Math.random() * ((4 - 1) + 1));
+            if (userandom == 1) {
+                Texture_number = 1;
+            }
+            Timer_to_change = 90;
 
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 1 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg2";
+            //Timer_to_change = 5;
+            Texture_number = 2;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 2 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg3";
+            //Timer_to_change = 5;
+            Texture_number = 3;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 3 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg4";
+            //Timer_to_change = 5;
+            Texture_number = 4;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 4 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg5";
+            //Timer_to_change = 5;
+            Texture_number = 5;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 5 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg6";
+            //Timer_to_change = 5;
+            Texture_number = 6;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 6 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg7";
+            //Timer_to_change = 5;
+            Texture_number = 7;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+        if (Texture_number == 7 && Timer_to_change <= 0) {
+            //System.out.println("Ready2");
+            db.rooms.get("main_menu_room").background = "main_menu_bg8";
+            //Timer_to_change = 5;
+            Texture_number = 0;
+            Timer_to_change = 15;
+
+        } else {
+            Timer_to_change--;
+        }
+    }
     public GameOtherVars() {
         instance = this;
     }
