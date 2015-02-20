@@ -113,7 +113,7 @@ public class S_TheBoss extends GameObject {
             MST = 3;
         }
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 280; i++) {
             if (plx == xt && ply == yt - i) {
                 MST = 1;
             } else {
@@ -131,17 +131,17 @@ public class S_TheBoss extends GameObject {
             }
 
         }
-        for (int i = 0; i < 200; i++) {
-            if (plx == xt && ply == yt - i) {
+        for (int i1 = 0; i1 < 280; i1++) {
+            if (plx == xt && ply == yt - i1) {
                 MST = 1;
             } else {
-                if (plx == xt && ply == yt + i) {
+                if (plx == xt && ply == yt + i1) {
                     MST = 3;
                 } else {
-                    if (ply == yt && plx == xt - i) {
+                    if (ply == yt && plx == xt - i1) {
                         MST = 4;
                     } else {
-                        if (ply == yt && plx == xt + i) {
+                        if (ply == yt && plx == xt + i1) {
                             MST = 2;
                         }
                     }
@@ -149,17 +149,17 @@ public class S_TheBoss extends GameObject {
             }
 
         }
-        for (int i = 0; i < 200; i++) {
-            if (plx == xt && ply == yt - i) {
+        for (int i2 = 0; i2 < 280; i2++) {
+            if (plx == xt && ply == yt - i2) {
                 MST = 1;
             } else {
-                if (plx == xt && ply == yt + i) {
+                if (plx == xt && ply == yt + i2) {
                     MST = 3;
                 } else {
-                    if (ply == yt && plx == xt - i) {
+                    if (ply == yt && plx == xt - i2) {
                         MST = 4;
                     } else {
-                        if (ply == yt && plx == xt + i) {
+                        if (ply == yt && plx == xt + i2) {
                             MST = 2;
                         }
                     }

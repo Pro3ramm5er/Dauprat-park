@@ -31,7 +31,7 @@ public class Roomback_3 extends GameObject {
     {
         super(name);
         sprite.addStep(Game.instance.getSprite("Roomback2_2.png"));
-
+        ObjectType = 1;
 
         //z = y;
     }
@@ -56,7 +56,7 @@ public class Roomback_3 extends GameObject {
             Timer--;
         }
         */
-
+        ObjectType = 1;
 
 
         if (otchet == myx.length) {

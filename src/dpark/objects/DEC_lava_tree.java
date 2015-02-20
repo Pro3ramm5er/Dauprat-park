@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class Roomback_14 extends GameObject {
+public class DEC_lava_tree extends GameObject {
     public int xt;
     public int yt;
 
@@ -26,19 +26,25 @@ public class Roomback_14 extends GameObject {
     public int otchet8 = 0;  // y
     public int Col_del = 0;
     public int PlusOnce = 0;
+    public int TypeTex;
 
-    public Roomback_14(String name)
+    public DEC_lava_tree(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Roomback13.png"));
+        sprite.addStep(Game.instance.getSprite("Lavatree.png"));
+        sprite.addStep(Game.instance.getSprite("Lavatree2.png"));
 
-        ObjectType = 1;
+
+        sprite.currentStep = Game.instance.GetRandom(0, 1);
+
         //z = y;
     }
     @Override
     public void update()
     {
-        z = -10;
+
+        //sprite.currentStep = TypeTex;
+        z = yt+68;
         /*
         if (Timer <= 0 && UseTimer == 1)
         {
@@ -56,7 +62,7 @@ public class Roomback_14 extends GameObject {
             Timer--;
         }
         */
-        ObjectType = 1;
+
 
 
         if (otchet == myx.length) {
@@ -96,7 +102,7 @@ public class Roomback_14 extends GameObject {
         if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
             if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
                 if (Col_del == 0 && Timer <= 0) {
-                    //System.out.println("KOL");
+
                     if (PlayerZ == z || z < PlayerZ) {
 
 
@@ -187,5 +193,8 @@ public class Roomback_14 extends GameObject {
 
         }
     }
+
+
+
 }
 

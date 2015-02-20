@@ -32,7 +32,7 @@ public class Roomback_8 extends GameObject {
         super(name);
         sprite.addStep(Game.instance.getSprite("Roomback8.png"));
 
-
+        ObjectType = 1;
         //z = y;
     }
     @Override
@@ -57,7 +57,7 @@ public class Roomback_8 extends GameObject {
         }
         */
 
-
+        ObjectType = 1;
 
         if (otchet == myx.length) {
             otchet = 0;

@@ -6,106 +6,61 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="Story++">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ban1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ban2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ban3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ban4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Ban5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Boss_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Boss_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Boss_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Boss_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Tree4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_Tree5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_rad_tree.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_rad_tree3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/DEC_rad_tree_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Egg_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Egg_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Egg_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Egg_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Frost_d9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Portal_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Portal_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Portal_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Portal_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Roomback15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_d3_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon2_d_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon2_d_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon_d.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon_l.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon_r.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_deamon_uu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/S_dec_sing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/hero_up_action.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/AN_blow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree_rad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_trash_house.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Egg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/MusicPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_16.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_deamon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_deamon2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_deamon3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_deamon4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_dec_sing.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_portal.java" />
+    <list default="true" id="d7aefcb8-32c4-4ffe-8bd5-eac42f5b691a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/rooms/AN_Fight.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/AN_Fight2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/AN_Fight_3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_lava_tree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/OBJ_bullet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_17.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_18.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_CHAIR.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_DFH.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_DFH_2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_dec_camen.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_decwall.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_item2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_item3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_portaltohell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dpark/objects/S_security.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/DEC_Tree.png" afterPath="$PROJECT_DIR$/assets/DEC_Tree.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/DEC_Tree2.png" afterPath="$PROJECT_DIR$/assets/DEC_Tree2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/DEC_Tree3.png" afterPath="$PROJECT_DIR$/assets/DEC_Tree3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/DEC_Tree4.png" afterPath="$PROJECT_DIR$/assets/DEC_Tree4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/DEC_Tree5.png" afterPath="$PROJECT_DIR$/assets/DEC_Tree5.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Newyaer_logo.png" afterPath="$PROJECT_DIR$/assets/Newyaer_logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Newyaer_logo_1.png" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Newyaer_logo_2.png" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Newyaer_logo_3.png" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Newyaer_logo_4.png" afterPath="$PROJECT_DIR$/assets/Newyaer_logo_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Roomback10.png" afterPath="$PROJECT_DIR$/assets/Roomback10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Roomback8.png" afterPath="$PROJECT_DIR$/assets/Roomback8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Walldoor.png" afterPath="$PROJECT_DIR$/assets/Walldoor.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Alpinos.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Alpinos.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Ant.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Ant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" afterPath="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bananar.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bananar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Bandit.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Bandit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" afterPath="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" afterPath="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Controller.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/DB.java" afterPath="$PROJECT_DIR$/src/dpark/DB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" afterPath="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/Game.java" afterPath="$PROJECT_DIR$/src/dpark/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameObject.java" afterPath="$PROJECT_DIR$/src/dpark/GameObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameOtherVars.java" afterPath="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/GameStoryVars.java" afterPath="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Player.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/SoundEngine.java" afterPath="$PROJECT_DIR$/src/dpark/SoundEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_1.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_10.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_10.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_11.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_11.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_12.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_12.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_13.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_13.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_14.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_14.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_16.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_16.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_2.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_3.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_4.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_5.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_6.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_6.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_7.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_7.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_8.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_8.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/Roomback_9.java" afterPath="$PROJECT_DIR$/src/dpark/objects/Roomback_9.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java" afterPath="$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" afterPath="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -138,8 +93,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6469038" vertical-offset="10661" max-vertical-offset="108222">
-              <caret line="660" column="31" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.27466667" vertical-offset="14210" max-vertical-offset="130305">
+              <caret line="852" column="45" selection-start-line="852" selection-start-column="45" selection-end-line="852" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Game#0" expanded="false" />
@@ -148,12 +103,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="S_item2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_item2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13991">
+              <caret line="818" column="34" selection-start-line="818" selection-start-column="34" selection-end-line="818" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="S_item3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_item3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="24412">
+              <caret line="1429" column="34" selection-start-line="1429" selection-start-column="34" selection-end-line="1429" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4522" max-vertical-offset="12070">
-              <caret line="302" column="43" selection-start-line="302" selection-start-column="43" selection-end-line="302" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="12646" max-vertical-offset="13396">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="S_security.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_security.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="7616">
+              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1580#1803#0" expanded="true" />
+                <element signature="e#1802#1803#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,56 +168,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dpark/objects/Mandarinka.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Tres.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Tarakan.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Soul.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Slim.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/SantaDemon.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Radiation_zombie.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Pesokman.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/MonsterCactus.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Master_Goblin.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/MegaBear.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/MoMo.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Gun.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Monument.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/s_task2.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_friend.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_cartina2.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_door_prop2.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_crate.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_write.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/s_item.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_trash_prop.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_Deer.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/NWY_DedMoroz.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/AppleD.java" />
-        <option value="$PROJECT_DIR$/src/dpark/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_trash_house.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_dec_sing.java" />
-        <option value="$PROJECT_DIR$/src/dpark/SoundEngine_2.java" />
-        <option value="$PROJECT_DIR$/src/dpark/SoundEngine.java" />
-        <option value="$PROJECT_DIR$/src/dpark/MusicPlayer.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_deamon4.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_deamon3.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_deamon2.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_deamon.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Egg.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
-        <option value="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
-        <option value="$PROJECT_DIR$/src/dpark/DB.java" />
-        <option value="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Tree_rad.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/S_portal.java" />
-        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_16.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/AN_blow.java" />
+        <option value="$PROJECT_DIR$/src/dpark/rooms/AN_Fight.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Slim.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java" />
+        <option value="$PROJECT_DIR$/src/dpark/AN_Fight2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Ant.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/AppleW.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Bananar.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Bandit.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/BrainWater.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/ChinaMan.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Alpinos.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_CHAIR.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/AN_Fight_3.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_DFH.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_portaltohell.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Deamon.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/DEC_lava_tree.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_17.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_16.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_15.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_14.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_13.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_12.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_11.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_10.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_9.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_8.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_7.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_6.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_5.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_4.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_3.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_1.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/OBJ_bullet.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_DFH_2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/UnVisWall.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Controller.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_decwall.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameStoryVars.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/Roomback_18.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameOtherVars.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_security.java" />
         <option value="$PROJECT_DIR$/src/dpark/objects/Player.java" />
+        <option value="$PROJECT_DIR$/src/dpark/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_item2.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_dec_camen.java" />
+        <option value="$PROJECT_DIR$/src/dpark/objects/S_item3.java" />
         <option value="$PROJECT_DIR$/src/dpark/Game.java" />
       </list>
     </option>
@@ -279,8 +270,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -349,12 +338,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="sounds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,12 +358,12 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="options.lastSelected" value="preferences.lookFeel" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="C:/Diary/Diary.iml" />
+    <property name="last_opened_file_path" value="C:/Diary" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -571,6 +562,9 @@
     <option name="analysisUIOptions">
       <AnalysisUIOptions />
     </option>
+  </component>
+  <component name="StructuralSearchPlugin">
+    <searchConfiguration name="user defined" text="this" recursive="true" caseInsensitive="true" type="JAVA" history="1" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -858,7 +852,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422010125561</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Story++">
+      <created>1422804749836</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1422804749836</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -883,22 +883,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.042626727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12664908" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12588236" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04828974" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.088709675" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09331797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.088709675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23867314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33737865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -909,7 +909,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3076037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.03797468" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -954,7 +954,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Dauprat park in 3d! Part 8&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 9&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 10&#10;.&#10;" />
     <MESSAGE value="Dauprat park in 3d! Part 11&#10;.&#10;" />
@@ -979,11 +978,12 @@
     <MESSAGE value="Story in game. Part 5" />
     <MESSAGE value="Clean the code. This is start." />
     <MESSAGE value="Clean the code. Part 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean the code. Part 2." />
+    <MESSAGE value="Story++" />
+    <option name="LAST_COMMIT_MESSAGE" value="Story++" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1004,419 +1004,374 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_14.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Bandit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.7327691" vertical-offset="2199" max-vertical-offset="3026">
+          <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/Animation.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Cactus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1329" max-vertical-offset="2023">
-          <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.123337366" vertical-offset="0" max-vertical-offset="3366">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Bananar.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/jre/lib/rt.jar!/sun/audio/AudioStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38490567" vertical-offset="1581" max-vertical-offset="6919">
-          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.87123746" vertical-offset="397" max-vertical-offset="1020">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Computer.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/ChinaMan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="3366">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="2.9600968" vertical-offset="0" max-vertical-offset="2669">
+          <caret line="146" column="23" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_rock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3047" max-vertical-offset="3400">
-          <caret line="189" column="5" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_trash_house.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1437198" vertical-offset="561" max-vertical-offset="3400">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7191">
-          <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Deamon_2.png">
+    <entry file="file://$PROJECT_DIR$/assets/AN_fight3.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_6.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/AN_Fight2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="282" max-vertical-offset="1122">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Roomback8.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_8.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_CHAIR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="635" max-vertical-offset="8126">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Roomback9.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_9.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/AN_Fight_3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Roomback10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3366">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Door_forr3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3553">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_13.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3315">
-          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Walldoor.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_12.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Roomback12.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/UnVisWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25660378" vertical-offset="0" max-vertical-offset="3417">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Chest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.1484275" vertical-offset="0" max-vertical-offset="3536">
-          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_dec_sing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3451">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Portal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1105">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/MusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="748">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#296#297#0" expanded="false" />
-            <element signature="e#336#337#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-            <element signature="e#401#402#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/SoundEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/AppleS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Bottle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2894" max-vertical-offset="3230">
-          <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_deamon3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="8959">
-          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_deamon2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="8143">
-          <caret line="93" column="9" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_deamon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7854">
-          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_deamon4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7847" max-vertical-offset="8653">
-          <caret line="501" column="0" selection-start-line="9" selection-start-column="22" selection-end-line="501" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="7792" max-vertical-offset="8619">
+          <caret line="465" column="13" selection-start-line="465" selection-start-column="13" selection-end-line="465" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/EvilWorm.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_portaltohell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8262">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="6103">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Egg.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_DFH.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3757">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6936">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3145">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3502">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/GameStoryVars.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_lava_tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3502">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/GameObject.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_16.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.066416" vertical-offset="0" max-vertical-offset="1904">
-          <caret line="101" column="58" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="58" />
-          <folding>
-            <element signature="e#1701#1702#0" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.6666667" vertical-offset="561" max-vertical-offset="3332">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/DB.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_14.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4396" max-vertical-offset="5236">
-          <caret line="328" column="28" selection-start-line="328" selection-start-column="28" selection-end-line="328" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.7630719" vertical-offset="502" max-vertical-offset="3332">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_TheBoss.java">
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_13.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3364116" vertical-offset="0" max-vertical-offset="8534">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.76960784" vertical-offset="498" max-vertical-offset="3315">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7908497" vertical-offset="502" max-vertical-offset="3349">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76960784" vertical-offset="498" max-vertical-offset="3349">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6862745" vertical-offset="549" max-vertical-offset="3366">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8251634" vertical-offset="498" max-vertical-offset="3349">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="3332">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7630719" vertical-offset="502" max-vertical-offset="3315">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4722222" vertical-offset="680" max-vertical-offset="3332">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85294116" vertical-offset="447" max-vertical-offset="3332">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41666666" vertical-offset="731" max-vertical-offset="3315">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="3315">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6388889" vertical-offset="561" max-vertical-offset="3281">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41666666" vertical-offset="731" max-vertical-offset="3315">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/OBJ_bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6171">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_cartina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16666667" vertical-offset="0" max-vertical-offset="3332">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_DFH_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4182">
+          <caret line="218" column="17" selection-start-line="218" selection-start-column="17" selection-end-line="218" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Alpinos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5151">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2601">
+          <caret line="148" column="1" selection-start-line="9" selection-start-column="20" selection-end-line="148" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2585" max-vertical-offset="2890">
+          <caret line="181" column="43" selection-start-line="181" selection-start-column="43" selection-end-line="181" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3332">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/UnVisWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="936" max-vertical-offset="1479">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/s_item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3723">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_decwall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.728" vertical-offset="202" max-vertical-offset="952">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/GameStoryVars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37876803" vertical-offset="0" max-vertical-offset="763">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="5610">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2023">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_17.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_18.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3383">
+          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Deamon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6543" max-vertical-offset="7293">
+          <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/GameOtherVars.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32850242" vertical-offset="0" max-vertical-offset="66793">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="66929">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2713" max-vertical-offset="3502">
-          <caret line="181" column="26" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/DEC_Tree_rad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3519">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_portal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6463878" vertical-offset="4046" max-vertical-offset="6290">
-          <caret line="268" column="47" selection-start-line="268" selection-start-column="47" selection-end-line="268" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/BrainWater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6079" max-vertical-offset="6868">
-          <caret line="400" column="0" selection-start-line="9" selection-start-column="23" selection-end-line="400" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_15.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2586" max-vertical-offset="3332">
-          <caret line="191" column="0" selection-start-line="8" selection-start-column="24" selection-end-line="191" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/Roomback_16.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3349">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dpark/objects/AN_blow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="918">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/objects/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4522" max-vertical-offset="12070">
-          <caret line="302" column="43" selection-start-line="302" selection-start-column="43" selection-end-line="302" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="12646" max-vertical-offset="13396">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_dec_camen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36266667" vertical-offset="391" max-vertical-offset="3315">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Diary/Diary.iml">
+    <entry file="file://$PROJECT_DIR$/src/dpark/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="759">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.43066666" vertical-offset="935" max-vertical-offset="3213">
+          <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_item2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13991">
+          <caret line="818" column="34" selection-start-line="818" selection-start-column="34" selection-end-line="818" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_item3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="24412">
+          <caret line="1429" column="34" selection-start-line="1429" selection-start-column="34" selection-end-line="1429" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dpark/objects/S_security.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="7616">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1580#1803#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dpark/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6469038" vertical-offset="10661" max-vertical-offset="108222">
-          <caret line="660" column="31" selection-start-line="660" selection-start-column="31" selection-end-line="660" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.27466667" vertical-offset="14210" max-vertical-offset="130305">
+          <caret line="852" column="45" selection-start-line="852" selection-start-column="45" selection-end-line="852" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Game#0" expanded="false" />

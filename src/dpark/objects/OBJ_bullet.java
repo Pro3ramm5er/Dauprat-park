@@ -4,14 +4,12 @@ import dpark.Game;
 import dpark.GameObject;
 import dpark.GameOtherVars;
 
-import static dpark.DB.db;
-
 /**
- * Created by Nickita on 25.11.2014.
+ * @author Nickita
  */
-public class Deamon extends GameObject {
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+public class OBJ_bullet extends GameObject {
+    public int[] myx = {1, 2, 3 ,4 ,5 ,6 ,7, 8, 9, 10, 11 ,12 ,13, 14 ,15 ,16 ,17, 18,19, 20};
+    public int[] myy = {1, 2, 3 ,4 ,5 ,6 ,7, 8, 9, 10, 11 ,12 ,13, 14 ,15 ,16 ,17, 18,19, 20};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -36,12 +34,10 @@ public class Deamon extends GameObject {
     public int i = 0;
     public int i2 = 0;
 
-    public Deamon(String name) {
+    public OBJ_bullet(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Deamon_1.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_2.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_3.png"));
-        sprite.addStep(Game.instance.getSprite("Deamon_4.png"));
+        sprite.addStep(Game.instance.getSprite("Bullet.png"));
+        MST = 3;
 
     }
 
@@ -51,50 +47,31 @@ public class Deamon extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt + 20;
-        if (MinusTimer <= 0 && Minus == 1) {
-            if (GameOtherVars.Health == 1) {
-                Atack = 1;
-            } else {
-                GameOtherVars.Health--;
-                MinusTimer = 30;
-                Minus = 0;
-            }
+        z = yt + 40;
+        ObjCollisionDie();
 
-        } else {
-            MinusTimer--;
-        }
-        if (xt >= 500 || x >= 500) {
-            MST = 4;
-        }
-        if (xt <= 90 || x <= 90) {
-            MST = 2;
-        }
-        if (yt >= 500 || y >= 500) {
-            MST = 1;
-        }
-        if (yt <= 90 || y <= 90) {
-            MST = 3;
-        }
 
-        for (int i = 0; i < 120; i++) {
-            if (plx == xt && ply == yt - i) {
-                MST = 1;
-            } else {
-                if (plx == xt && ply == yt + i) {
-                    MST = 3;
-                } else {
-                    if (ply == yt && plx == xt - i) {
-                        MST = 4;
-                    } else {
-                        if (ply == yt && plx == xt + i) {
-                            MST = 2;
-                        }
-                    }
-                }
-            }
 
-        }
+
+
+
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
+        ObjCollision();
         ObjCollision();
 
         /*
@@ -123,63 +100,16 @@ public class Deamon extends GameObject {
 
         // STEPS END
 
-        if (Timer <= 0) {
-            MST = 0 + (int) (Math.random() * ((4 - 0) + 1));
-            Timer_set_del = 0;
-        } else {
-            Timer--;
-        }
-        if (MST == 0) {
-            if (Timer_set_del == 0) {
-                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
-                Timer_set_del = 1;
-            }
-            //y-=3;
-            //yt-=3;
-            //sprite.currentStep = 0;
-        }
-        if (MST == 1) {
-            if (Timer_set_del == 0) {
-                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
-                Timer_set_del = 1;
-            }
 
-            //yt-=3;
-            y -= 3;
-            z += 3;
-            sprite.currentStep = 1;
-        }
-        if (MST == 2) {
-            if (Timer_set_del == 0) {
-                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
-                Timer_set_del = 1;
-            }
 
-            //xt+=3;
-            x += 3;
-            sprite.currentStep = 2;
-        }
-        if (MST == 3) {
-            if (Timer_set_del == 0) {
-                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
-                Timer_set_del = 1;
-            }
+
 
             // yt+=3;
-            y += 3;
-            z -= 3;
-            sprite.currentStep = 3;
-        }
-        if (MST == 4) {
-            if (Timer_set_del == 0) {
-                Timer = 20 + (int) (Math.random() * ((80 - 20) + 1));
-                Timer_set_del = 1;
-            }
+            y += 6;
+            z -= 6;
 
-            //xt-=3;
-            x -= 3;
-            sprite.currentStep = 0;
-        }
+
+
 
 
         // Collision :

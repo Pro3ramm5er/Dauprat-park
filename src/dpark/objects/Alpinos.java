@@ -45,7 +45,7 @@ public class Alpinos extends GameObject {
         // STEPS
         xt = x;
         yt = y;
-        z = yt+47;
+        z = yt + 47;
         if (xt >= 500 || x >= 500) {
             MST = 4;
         }
@@ -76,28 +76,6 @@ public class Alpinos extends GameObject {
                 }
             }
 
-        }
-
-        if (Atack == 1) {
-
-            Timer_sec = 1;
-            GameOtherVars.VisibleDieLogo = 1;
-
-
-            if (Timer_sec == 1) {
-
-                if (Timer_3 <= 0) {
-                    Atack = 0;
-                    Timer_sec = 0;
-                    Timer_3 = 5;
-                    GameOtherVars.VisibleDieLogo = 0;
-                    Game.Get_Die();
-
-
-                } else {
-                    Timer_3--;
-                }
-            }
         }
 
 
@@ -146,7 +124,7 @@ public class Alpinos extends GameObject {
             }
 
             // yt+=3;
-            y +=1;
+            y += 1;
             z -= 1;
             sprite.currentStep = 3;
         }
@@ -164,135 +142,7 @@ public class Alpinos extends GameObject {
 
         // Collision :
 
-        if (Timer_2 <= 0) {
-
-            Timer_2 = 0;
-        } else {
-            Timer_2--;
-        }
-        if (otchet == myx.length) {
-            otchet = 0;
-
-        }
-        if (otchet3 == myx.length) {
-            otchet3 = 0;
-
-        }
-        if (otchet5 == myx.length) {
-            otchet5 = 0;
-
-        }
-        if (otchet2 == myy.length) {
-            otchet2 = 0;
-
-        }
-        if (otchet4 == myy.length) {
-            otchet4 = 0;
-
-        }
-        if (otchet6 == myy.length) {
-            otchet6 = 0;
-
-        }
-        if (otchet7 == myx.length) {
-            otchet7 = 0;
-
-        }
-        if (otchet8 == myy.length) {
-            otchet8 = 0;
-
-        }
-
-
-        if (xt - myx[otchet] == plx1 || xt + myx[otchet] == plx1 || xt - myx[otchet5] == plx1 || xt + myx[otchet5] == plx1 || xt - myx[otchet3] == plx1 || xt + myx[otchet7] == plx1 || xt - myx[otchet7] == plx1 || xt + myx[otchet3] == plx1 || xt - myx[otchet] == plx2 || xt + myx[otchet] == plx2 || xt - myx[otchet7] == plx2 || xt + myx[otchet7] == plx2 || xt - myx[otchet5] == plx2 || xt + myx[otchet5] == plx2 || xt - myx[otchet3] == plx2 || xt + myx[otchet3] == plx2 || xt - myx[otchet] == plx3 || xt + myx[otchet] == plx3 || xt - myx[otchet7] == plx3 || xt + myx[otchet7] == plx3 || xt - myx[otchet5] == plx3 || xt + myx[otchet5] == plx3 || xt - myx[otchet3] == plx3 || xt + myx[otchet3] == plx3 || xt - myx[otchet] == plx4 || xt + myx[otchet] == plx4 || xt - myx[otchet7] == plx4 || xt + myx[otchet7] == plx4 || xt - myx[otchet5] == plx4 || xt + myx[otchet5] == plx4 || xt - myx[otchet3] == plx4 || xt + myx[otchet3] == plx4) {
-            if (yt - myy[otchet2] == ply1 || yt + myy[otchet2] == ply1 || yt - myy[otchet7] == ply1 || yt + myy[otchet7] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet4] == ply1 || yt + myy[otchet4] == ply1 || yt - myy[otchet6] == ply1 || yt + myy[otchet6] == ply1 || yt - myy[otchet7] == ply2 || yt + myy[otchet7] == ply1 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet6] == ply2 || yt + myy[otchet6] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply2 || yt + myy[otchet2] == ply2 || yt - myy[otchet4] == ply2 || yt + myy[otchet4] == ply2 || yt - myy[otchet2] == ply3 || yt + myy[otchet2] == ply3 || yt - myy[otchet7] == ply3 || yt + myy[otchet7] == ply3 || yt - myy[otchet6] == ply3 || yt + myy[otchet6] == ply3 || yt - myy[otchet4] == ply3 || yt + myy[otchet4] == ply3 || yt - myy[otchet2] == ply4 || yt + myy[otchet2] == ply4 || yt - myy[otchet4] == ply4 || yt + myy[otchet4] == ply4 || yt - myy[otchet6] == ply4 || yt + myy[otchet6] == ply4 || yt - myy[otchet7] == ply4 || yt + myy[otchet7] == ply4) {
-
-                //System.out.println("KOL");
-                if (GameOtherVars.Fullimmortality == 0) {
-                    Atack = 1;
-                }
-
-                if (PlusOnce == 0) {
-                    PlayerZ++;
-                    PlusOnce = 1;
-                }
-
-                //System.out.println("nowfaleKOL");
-
-            } else {
-                //System.out.println("Yea.....");
-
-                if (otchet == myx.length) {
-                    otchet = 0;
-                } else {
-                    otchet++;
-
-                }
-                if (otchet3 == myx.length) {
-                    otchet3 = 0;
-                } else {
-                    otchet3++;
-
-                }
-                if (otchet2 == myy.length) {
-                    otchet2 = 0;
-                } else {
-                    otchet2++;
-                }
-                if (otchet4 == myy.length) {
-                    otchet4 = 0;
-                } else {
-                    otchet4++;
-                }
-                if (otchet6 == myy.length) {
-                    otchet6 = 0;
-                } else {
-                    otchet6++;
-                }
-                if (otchet5 == myx.length) {
-                    otchet5 = 0;
-                } else {
-                    otchet5++;
-                }
-                if (otchet7 == myx.length) {
-                    otchet7 = 0;
-
-                }
-                if (otchet8 == myy.length) {
-                    otchet8 = 0;
-
-                }
-            }
-
-        } else {
-
-
-            if (otchet == myx.length) {
-                otchet = 0;
-            } else {
-                otchet++;
-
-            }
-            if (otchet3 == myx.length) {
-                otchet3 = 0;
-            } else {
-                otchet3++;
-
-            }
-            if (otchet5 == myx.length) {
-                otchet5 = 0;
-            } else {
-                otchet5++;
-            }
-            if (otchet7 == myx.length) {
-                otchet7 = 0;
-
-            }
-
-
-        }
-
-
+        ObjCollision();
     }
 
 

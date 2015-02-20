@@ -24,6 +24,7 @@ import java.lang.Object;
 import static dpark.DB.db;
 
 import dpark.objects.Window;
+import dpark.rooms.AN_Fight;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
@@ -43,8 +44,7 @@ public class Game extends Canvas implements Runnable {
     public static int Applecalipses = 0;
     public static Room currentRoom;
     public MusicPlayer MainTheme;
-
-
+    public MusicPlayer ms = new MusicPlayer("sounds/Queen - Bicycle Race.wma");
 
     public SoundEngine soundengine;
 
@@ -268,6 +268,59 @@ public class Game extends Canvas implements Runnable {
                         GetStartS31();
 
                     }
+                    if (GameOtherVars.Level == 36) {
+                        GetStartS32();
+
+                    }
+                    if (GameOtherVars.Level == 37) {
+                        GetStartS33();
+
+                    }
+                    if (GameOtherVars.Level == 38) {
+                        GetStartS34();
+
+                    }
+                    if (GameOtherVars.Level == 39) {
+                        GetStartS35();
+
+                    }
+
+                    if (GameOtherVars.Level == 40) {
+                        GetStartS36();
+
+                    }
+                    if (GameOtherVars.Level == 41) {
+                        GetStartS37();
+
+                    }
+                    if (GameOtherVars.Level == 42) {
+                        GetStartS38();
+
+                    }
+                    if (GameOtherVars.Level == 43) {
+                        GetStartS39();
+
+                    }
+                    if (GameOtherVars.Level == 44) {
+                        GetStartS40();
+
+                    }
+                    if (GameOtherVars.Level == 45) {
+                        GetStartS41();
+
+                    }
+                    if (GameOtherVars.Level == 46) {
+                        GetStartS42();
+
+                    }
+                    if (GameOtherVars.Level == 47) {
+                        GetStartS43();
+
+                    }
+                    if (GameOtherVars.Level == 48) {
+                        GetStartS44();
+
+                    }
                 }
                 currentRoom.update();
 
@@ -323,6 +376,7 @@ public class Game extends Canvas implements Runnable {
                     GameOtherVars.Fullimmortality = 0;
                     GameOtherVars.GEtdel = 0;
                     GameOtherVars.Magic_1 = 0;
+                    GameOtherVars.PlAlarmOn = 0;
                     Back_init();
                     if (GameOtherVars.Restart_type == 1) {
                         init();
@@ -465,7 +519,71 @@ public class Game extends Canvas implements Runnable {
                         GetStartS31();
 
                     }
-                    //GameOtherVars.IsCreated = 0;
+                    if (GameOtherVars.Restart_type == 36) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS32();
+
+                    }
+                    if (GameOtherVars.Restart_type == 37) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS33();
+
+                    }
+                    if (GameOtherVars.Restart_type == 38) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS34();
+
+                    }
+                    if (GameOtherVars.Restart_type == 39) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS35();
+
+                    }
+                    if (GameOtherVars.Restart_type == 40) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS36();
+
+                    }
+                    if (GameOtherVars.Restart_type == 41) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS37();
+
+                    }
+                    if (GameOtherVars.Restart_type == 42) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS38();
+
+                    }
+                    if (GameOtherVars.Restart_type == 43) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS39();
+
+                    }
+                    if (GameOtherVars.Restart_type == 44) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS40();
+
+                    }
+                    if (GameOtherVars.Restart_type == 45) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS41();
+
+                    }
+                    if (GameOtherVars.Restart_type == 46) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS42();
+
+                    }
+                    if (GameOtherVars.Restart_type == 47) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS43();
+
+                    }
+                    if (GameOtherVars.Restart_type == 48) {
+                        //GameOtherVars.Level = 27;
+                        GetStartS44();
+
+                    }
                     GameOtherVars.AllDelete = 0;
 
                 }
@@ -496,7 +614,7 @@ public class Game extends Canvas implements Runnable {
             db.onGameLoaded(this);
             Back_init();
             GameOtherVars.InitOn = 1;
-
+            //ms.play();
 
 
         }
@@ -683,6 +801,1186 @@ public class Game extends Canvas implements Runnable {
 
         GameOtherVars.AllDelete = 1;
         GameOtherVars.VisibleDieLogo = 0;
+
+
+    }
+    public void GetStartS44() {
+
+
+        GameOtherVars.Level = 48;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 48;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            Security_deamon_create(45, 0);
+            Security_deamon_create(75, 0);
+
+
+            for (int e = 0; e < 15; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+            DEC_camen_create(GetRandom(55, 700), GetRandom(55, 700));
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void Security_deamon_create(int w, int e) {
+
+        final S_security chest = new S_security(getFreeName("S_security"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS43() {
+
+
+        GameOtherVars.Level = 47;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 47;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+
+
+            //S_trashhouse_create(515, 310);
+            DEC_camen_create(GetRandom(55, 700), GetRandom(55, 700));
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void GetStartS42() {
+
+
+        GameOtherVars.Level = 46;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 46;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+
+
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+
+
+            //S_trashhouse_create(515, 310);
+
+            Roomback18_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void Roomback18_create(int w, int e) {
+
+        final Roomback_18 chest = new Roomback_18(getFreeName("Roomback_18"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS41() {
+
+
+        GameOtherVars.Level = 45;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 45;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            xcr = 47;
+            icr = 108;
+            i = 0;
+            zex = 0;
+            for (i = 0; i <= 21; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 0);
+
+                xcr += 32;
+            }
+            DEC_unviswall_create(739, 108, 0);
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            DEC_decwall(47, -39);
+            DEC_s_keytodoor(340, 340);
+            DEC_s_walldoor(309, 45);
+            for (int e = 0; e < 15; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void DEC_s_keytodoor(int w, int e) {
+
+        final S_item3 chest = new S_item3(getFreeName("S_item3"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_s_walldoor(int w, int e) {
+
+        final S_item2 chest = new S_item2(getFreeName("S_item2"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void DEC_decwall(int w, int e) {
+
+        final S_decwall chest = new S_decwall(getFreeName("S_decwall"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS40() {
+
+
+        GameOtherVars.Level = 44;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 44;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+            for (int e = 0; e < 15; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+            DEC_camen_create(GetRandom(55, 700), GetRandom(55, 700));
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void DEC_camen_create(int w, int e) {
+
+        final S_dec_camen chest = new S_dec_camen(getFreeName("S_dec_camen"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS39() {
+
+
+        GameOtherVars.Level = 43;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 43;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+            for (int e = 0; e < 15; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+            DFH_2_create( 35, 150);
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx+45, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        if (GameOtherVars.Bullet_create == 1)
+        {
+            Bullet_create(GameOtherVars.Bullet_createedx+45, GameOtherVars.Bullet_createedy+50);
+            //System.out.println("go");
+            GameOtherVars.Bullet_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void DFH_2_create(int w, int e) {
+
+        final S_DFH_2 chest = new S_DFH_2(getFreeName("S_DFH_2"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void Bullet_create(int w, int e) {
+
+        final OBJ_bullet chest = new OBJ_bullet(getFreeName("OBJ_bullet"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS38() {
+
+
+        GameOtherVars.Level = 42;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 42;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+            for (int e = 0; e < 65; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void GetStartS37() {
+
+
+        GameOtherVars.Level = 41;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 41;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+
+            for (int e = 0; e < 65; e++)
+            {
+                DEC_tree3_create(GetRandom(55, 700), GetRandom(55, 700), GetRandom(0, 1));
+            }
+            //S_trashhouse_create(515, 310);
+
+            Roomback17_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void DEC_tree3_create(int w, int e, int g) {
+
+        final DEC_lava_tree chest = new DEC_lava_tree(getFreeName("DEC_lava_tree"));
+        chest.TypeTex = g;
+        chest.x = w ;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void Roomback17_create(int w, int e) {
+
+        final Roomback_17 chest = new Roomback_17(getFreeName("Roomback_17"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS36() {
+
+
+        GameOtherVars.Level = 40;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 40;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            S_PortalTH(300, 92);
+
+            for (int e = 0; e < 65; e++)
+            {
+                S_tree_biome2_create(GetRandom(55, 700), GetRandom(55, 700));
+            }
+            //S_trashhouse_create(515, 310);
+
+            DEC_roomback15_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void S_PortalTH(int w, int e) {
+
+        final S_portaltohell chest = new S_portaltohell(getFreeName("S_portaltohell"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS35() {
+
+
+        GameOtherVars.Level = 39;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 39;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+            S_DFH_Create(300, 0);
+            S_animationDFH(0, 0);
+            for (int e = 0; e < 65; e++)
+            {
+                S_tree_biome2_create(GetRandom(55, 700), GetRandom(55, 700));
+            }
+            //S_trashhouse_create(515, 310);
+
+            DEC_roomback15_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void S_animationDFH(int w, int e) {
+
+        final AN_Fight_3 chest = new AN_Fight_3(getFreeName("AN_Fight_3"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void S_DFH_Create(int w, int e) {
+
+        final S_DFH chest = new S_DFH(getFreeName("S_DFH"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS34() {
+
+
+        GameOtherVars.Level = 38;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 38;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            //S_CHBOSS_create(400, 0);
+            //AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+            for (int e = 0; e < 65; e++)
+            {
+                S_tree_biome2_create(GetRandom(55, 700), GetRandom(55, 700));
+            }
+            //S_trashhouse_create(515, 310);
+
+            DEC_roomback15_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void GetStartS33() {
+
+
+        GameOtherVars.Level = 37;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 37;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            S_CHBOSS_create(400, 0);
+            AN_fight2_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+            for (int e = 0; e < 65; e++)
+            {
+                S_tree_biome2_create(GetRandom(55, 700), GetRandom(55, 700));
+            }
+            //S_trashhouse_create(515, 310);
+
+            DEC_roomback15_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void AN_fight2_create(int w, int e) {
+
+        final AN_Fight2 chest = new AN_Fight2(getFreeName("AN_Fight2"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void GetStartS32() {
+
+
+        GameOtherVars.Level = 36;
+        GameStoryVars.Story = 1;
+
+        if (GameOtherVars.IsCreated == 0) {
+            GameOtherVars.Level = 36;
+            GameOtherVars.BeforeMain =1;
+            GameOtherVars.FightAnimation = 1;
+            currentRoom = db.rooms.get("Storyroom7");
+            db.objects.get("player").visible = true;
+            GameOtherVars.AllDelete = 0;
+
+            GameObject.PlayerCanMovie = 0;
+            int xcr = 47;
+            int icr = 600;
+            int i = 0;
+            int zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+                icr -= 32;
+            }
+
+            xcr = 773;
+            icr = 600;
+            i = 0;
+            zex = 0;
+
+            for (i = 0; i <= 26; i++) {
+
+
+                DEC_unviswall_create(xcr, icr, 1);
+
+                icr -= 32;
+            }
+            // S_portal_create(GetRandom(15, 600), GetRandom(15, 600));
+
+            //S_boss_create(344, 8);
+            S_CHBOSS_create(400, 0);
+            AN_fight_create(0, 0);
+            DEC_unviswall_create(773, -9, 1);
+            DEC_unviswall_create(47, -9, 1);
+
+            for (int e = 0; e < 65; e++)
+            {
+                S_tree_biome2_create(GetRandom(55, 700), GetRandom(55, 700));
+            }
+            //S_trashhouse_create(515, 310);
+
+            DEC_roomback15_create(47, 0);
+            //sS_task3_create(633, 444);
+            GameOtherVars.IsCreated = 1;
+        }
+        if (GameOtherVars.Deamon_create == 1)
+        {
+            S_demon_create(GameOtherVars.Bossx, GameOtherVars.Bossy-50);
+            //System.out.println("go");
+            GameOtherVars.Deamon_create = 0;
+        }
+        //System.out.println("go1");
+    }
+    public void S_CHBOSS_create(int w, int e) {
+
+        final S_CHAIR chest = new S_CHAIR(getFreeName("S_CHAIR"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
+
+
+    }
+    public void AN_fight_create(int w, int e) {
+
+        final AN_Fight chest = new AN_Fight(getFreeName("AN_Fight"));
+
+        chest.x = w;
+        chest.y = e;
+        chest.xt = w;
+        chest.yt = e;
+        chest.UseRoom = currentRoom;
+        //chest.z = 5;
+        chest.UseRoomInt = GameOtherVars.RoomNow;
+        db.objects.put(chest.name, chest);
+        currentRoom.objectsIDs.add(chest.name);
+
 
 
     }
@@ -6327,6 +7625,7 @@ public class Game extends Canvas implements Runnable {
 
     public Sprite getSprite(String path) {
         Image image = toolkit.getImage("assets/" + path);
+
         {
             int id = 0;
             if (imgMap.containsKey(path)) {

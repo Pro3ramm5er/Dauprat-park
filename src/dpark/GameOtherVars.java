@@ -12,6 +12,9 @@ public class GameOtherVars {
     public static int VisibleDieLogo = 0;
     public static int NWY_Present_create = 1;
     public static int Shlakoblock_create = 1;
+    public static int Bullet_create = 0;
+    public static int Bullet_createedx = 1;
+    public static int Bullet_createedy = 1;
     public static int AllDelete = 0; // If 1 - SelfRemove for all objects.
     public static int StopUpdate = 0;
     public static int IsCreated = 0;
@@ -72,6 +75,11 @@ public class GameOtherVars {
     public static int Debag_13 = 0;
     public static int Debag_14 = 0;
     public static int Debag_15 = 0;
+    public static int FightAnimation = 0;
+    public static int PlayerIsUnvisible = 0;
+    public static int PlAlarmOn = 0;
+    public static int PlayerIsFighting = 0;
+    public static int S_43_open = 0;
 
     public static GameOtherVars instance;
     public void Back_init()

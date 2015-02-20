@@ -6,7 +6,7 @@ import dpark.GameObject;
 /**
  * @author Nickita
  */
-public class Roomback_14 extends GameObject {
+public class Roomback_18 extends GameObject {
     public int xt;
     public int yt;
 
@@ -27,18 +27,18 @@ public class Roomback_14 extends GameObject {
     public int Col_del = 0;
     public int PlusOnce = 0;
 
-    public Roomback_14(String name)
+    public Roomback_18(String name)
     {
         super(name);
-        sprite.addStep(Game.instance.getSprite("Roomback13.png"));
-
+        sprite.addStep(Game.instance.getSprite("Roomback17.png"));
         ObjectType = 1;
+
         //z = y;
     }
     @Override
     public void update()
     {
-        z = -10;
+        z = -9;
         /*
         if (Timer <= 0 && UseTimer == 1)
         {
@@ -55,8 +55,8 @@ public class Roomback_14 extends GameObject {
         } else {
             Timer--;
         }
-        */
-        ObjectType = 1;
+        */ObjectType = 1;
+
 
 
         if (otchet == myx.length) {
@@ -188,4 +188,6 @@ public class Roomback_14 extends GameObject {
         }
     }
 }
+
+
 

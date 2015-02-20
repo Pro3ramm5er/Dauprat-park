@@ -14,4 +14,6 @@ public class GameStoryVars {
     public static int S_door = 0;
     public static int S_funnymeet = 0;
     public static int S_funnymeet_del = 0;
+    public static int S_43_open = 0;
+    public static int S_43_key = 0;
 }

@@ -31,6 +31,8 @@ public class Player extends GameObject {
     public int Tabledel = 0;
     public int Phonetimer = 70;
     public int phonenow = 19;
+    public int CTRLtimer = 15;
+
 
 
     public Player(String name) {
@@ -92,9 +94,20 @@ public class Player extends GameObject {
 
         //Action 1
         sprite.addStep(Game.instance.getSprite("hero_up_action.png"));//30
+        sprite.addStep(Game.instance.getSprite("hero_vniz_atack.png"));//31
+
+
+
+        //Action 2
+        sprite.addStep(Game.instance.getSprite("hero_alt.png"));//32
+
+
+
+
+
 
         //PlayerSpeedBonus = 0;
-
+        ObjectType = 1;
 
         plx = x;
         ply = y;
@@ -116,7 +129,15 @@ public class Player extends GameObject {
         PlayerZ = ply+15;
         UseRoomInt = GameOtherVars.RoomNow;
         UseRoom = Game.currentRoom;
-
+        if (CTRLtimer <= 0) {
+            sprite.currentStep = 0;
+            GameOtherVars.PlayerIsFighting = 0;
+            CTRLtimer = 35;
+        } else {
+            if (GameOtherVars.PlayerIsFighting == 1) {
+                CTRLtimer--;
+            }
+        }
 
         if (GameOtherVars.Player_ac_t1 == 1)
         {
@@ -127,7 +148,7 @@ public class Player extends GameObject {
         {
             visible = true;
         }
-        if (GameOtherVars.Level == 6 || GameOtherVars.Level == 7 || GameOtherVars.Level == 8 || GameOtherVars.Level == 9 || GameOtherVars.Level == 10 || GameOtherVars.Level == 11 || GameOtherVars.Level == 12 || GameOtherVars.Level == 13 || GameOtherVars.Level == 14 || GameOtherVars.Level == 15 || GameOtherVars.Level == 16 || GameOtherVars.Level == 17  || GameOtherVars.Level == 18  || GameOtherVars.Level == 19  || GameOtherVars.Level == 20    || GameOtherVars.Level == 21  || GameOtherVars.Level == 22  || GameOtherVars.Level == 23  || GameOtherVars.Level == 24  || GameOtherVars.Level == 25  || GameOtherVars.Level == 26 || GameOtherVars.Level == 27 || GameOtherVars.Level == 28 || GameOtherVars.Level == 29 || GameOtherVars.Level == 30 || GameOtherVars.Level == 31 || GameOtherVars.Level == 32 || GameOtherVars.Level == 33 || GameOtherVars.Level == 34 || GameOtherVars.Level == 35) {
+        if (GameOtherVars.Level > 6 && GameOtherVars.Level < 100) {
 
             if (GameOtherVars.GEtdel == 0) {
 
@@ -303,7 +324,62 @@ public class Player extends GameObject {
             GameOtherVars.Restart_type = 35;
             GameOtherVars.AllDelete = 1;
         }
-
+        if (y < 0 && GameOtherVars.Level == 35)
+        {
+            GameOtherVars.Restart_type = 36;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 36)
+        {
+            GameOtherVars.Restart_type = 37;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 37)
+        {
+            GameOtherVars.Restart_type = 38;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 38)
+        {
+            GameOtherVars.Restart_type = 39;
+            GameOtherVars.AllDelete = 1;
+        }
+        // ВЫХОД НА 40 УРОВЕНЬ - ПОБЕДА НАД DFH
+        if (y < 0 && GameOtherVars.Level == 40)
+        {
+            GameOtherVars.Restart_type = 41;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 41)
+        {
+            GameOtherVars.Restart_type = 42;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 42)
+        {
+            GameOtherVars.Restart_type = 43;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 44)
+        {
+            GameOtherVars.Restart_type = 45;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 236 && GameOtherVars.Level == 46)
+        {
+            GameOtherVars.Restart_type = 47;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 44)
+        {
+            GameOtherVars.Restart_type = 45;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 47)
+        {
+            GameOtherVars.Restart_type = 48;
+            GameOtherVars.AllDelete = 1;
+        }
         if (GameStoryVars.S_phone == 1)
         {
             sprite.currentStep = phonenow;
@@ -450,7 +526,7 @@ public class Player extends GameObject {
         ply4 = y + 2;
         plx4 = x + 2;
 
-
+        ObjectType = 1;
     }
 
 
@@ -460,252 +536,247 @@ public class Player extends GameObject {
         super.onKeyPress(keycode);
 
 
-        if (keycode == KeyEvent.VK_A && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
+            if (keycode == KeyEvent.VK_A && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
 
-            if (PlayerColSt != 4) {
-                //if (PlayerSpeedBonus == 0) {
-                inertion += 1;
-                //} else {
-                //    inertion += PlayerSpeedBonus;
-                //}
-                direction = 270;
-                Checkr = 0;
-                PlayerWalkst = 4;
-                PlayerColSt = 0;
-                if (GameOtherVars.Player_bottle == 1)
-                {
-                    sprite.currentStep = 5;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 0;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
-                    sprite.currentStep = 0;
-                }
+                if (PlayerColSt != 4) {
+                    //if (PlayerSpeedBonus == 0) {
+                    inertion += 1;
+                    //} else {
+                    //    inertion += PlayerSpeedBonus;
+                    //}
+                    direction = 270;
+                    Checkr = 0;
+                    PlayerWalkst = 4;
+                    PlayerColSt = 0;
+                    if (GameOtherVars.Player_bottle == 1) {
+                        sprite.currentStep = 5;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 1) {
+                        sprite.currentStep = 0;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
+                        sprite.currentStep = 0;
+                    }
 
-
-
-
-            }
-
-        }
-        if (keycode == KeyEvent.VK_D) {
-            if (PlayerColSt != 2 && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
-                //if (PlayerSpeedBonus == 0) {
-                inertion += 1;
-                //} else {
-                //    inertion += PlayerSpeedBonus+1;
-                //}
-                direction = 90;
-                Checkr = 0;
-                PlayerColSt = 0;
-                PlayerWalkst = 2;
-                if (GameOtherVars.Player_bottle == 1)
-                {
-                    sprite.currentStep = 7;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 1;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
-                    sprite.currentStep = 1;
-                }
-
-
-
-
-
-            }
-
-        }
-        if (keycode == KeyEvent.VK_W && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
-            if (PlayerColSt != 1) {
-                //if (PlayerSpeedBonus == 0) {
-                inertion += 1;
-                //} else {
-                 //   inertion += PlayerSpeedBonus+1;
-                //}
-                direction = 0;
-                //z--;
-                Checkr = 0;
-                PlayerColSt = 0;
-                PlayerWalkst = 1;
-                if (GameOtherVars.Player_bottle == 1)
-                {
-                    sprite.currentStep = 2;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 2;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
-                    sprite.currentStep = 2;
-                }
-
-
-
-
-            }
-
-        }
-        if (keycode == KeyEvent.VK_S && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
-
-
-            if (PlayerColSt != 3) {
-
-                //if (PlayerSpeedBonus == 0) {
-                inertion += 1;
-                //} else {
-                 //   inertion += PlayerSpeedBonus+1;
-                //}
-                direction = 180;
-                //z++;
-                Checkr = 0;
-                PlayerColSt = 0;
-                PlayerWalkst = 3;
-                if (GameOtherVars.UnderEffecr == 1)
-                {
-                    sprite.currentStep = 9;
-                }
-                if (GameOtherVars.Player_weed == 1)
-                {
-                    sprite.currentStep = 10;
-                }
-                if (GameOtherVars.Player_bottle == 1)
-                {
-                    sprite.currentStep = 6;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 1) {
-                    sprite.currentStep = 4;
-                }
-                if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0 && GameOtherVars.UnderEffecr == 0 && GameOtherVars.Player_weed == 0) {
-                    sprite.currentStep = 3;
-                }
-
-
-
-
-            }
-
-        }
-        if (keycode == KeyEvent.VK_E) {
-
-            if (GameOtherVars.Player_bottle == 1) {
-                sprite.currentStep = 8;
-                reseter = 0;
-                if (ByhTimer <= 0) {
-
-                    GameOtherVars.Player_bottle = 0;
-                    GameOtherVars.UnderEffecr = 1;
-                    sprite.currentStep = 9;
-                    ByhTimer = 180;
-                    GameOtherVars.Health ++;
-                } else {
-
-                    ByhTimer--;
 
                 }
 
             }
-            if (GameOtherVars.Player_weed == 1) {
-                sprite.currentStep = 11;
-                reseter = 0;
-                if (weedTimer <= 0) {
+            if (keycode == KeyEvent.VK_D) {
+                if (PlayerColSt != 2 && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
+                    //if (PlayerSpeedBonus == 0) {
+                    inertion += 1;
+                    //} else {
+                    //    inertion += PlayerSpeedBonus+1;
+                    //}
+                    direction = 90;
+                    Checkr = 0;
+                    PlayerColSt = 0;
+                    PlayerWalkst = 2;
+                    if (GameOtherVars.Player_bottle == 1) {
+                        sprite.currentStep = 7;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 1) {
+                        sprite.currentStep = 1;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
+                        sprite.currentStep = 1;
+                    }
 
-                    GameOtherVars.Player_weed = 0;
-                    GameOtherVars.UnderEffecr = 1;
-                    sprite.currentStep = 9;
-                    weedTimer = 180;
-                    GameOtherVars.Health += 2;
-                } else {
-
-                    weedTimer--;
 
                 }
 
             }
+            if (keycode == KeyEvent.VK_W && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
+                if (PlayerColSt != 1) {
+                    //if (PlayerSpeedBonus == 0) {
+                    inertion += 1;
+                    //} else {
+                    //   inertion += PlayerSpeedBonus+1;
+                    //}
+                    direction = 0;
+                    //z--;
+                    Checkr = 0;
+                    PlayerColSt = 0;
+                    PlayerWalkst = 1;
+                    if (GameOtherVars.Player_bottle == 1) {
+                        sprite.currentStep = 2;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 1) {
+                        sprite.currentStep = 2;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0) {
+                        sprite.currentStep = 2;
+                    }
 
-        }
-        if (keycode == KeyEvent.VK_K) {
 
+                }
 
-            Key_K = 1;
-
-        } else {
-            if  (! (keycode == KeyEvent.VK_O ||  keycode == KeyEvent.VK_R || keycode == KeyEvent.VK_U || keycode == KeyEvent.VK_Y || keycode == KeyEvent.VK_T)  ) {
-                Key_K = 0;
             }
-        }
-        if (keycode == KeyEvent.VK_P) {
+            if (keycode == KeyEvent.VK_S && GameStoryVars.S_task == 0 && GameStoryVars.S_task2 == 0) {
 
 
-            Key_P = 1;
+                if (PlayerColSt != 3) {
+
+                    //if (PlayerSpeedBonus == 0) {
+                    inertion += 1;
+                    //} else {
+                    //   inertion += PlayerSpeedBonus+1;
+                    //}
+                    direction = 180;
+                    //z++;
+                    Checkr = 0;
+                    PlayerColSt = 0;
+                    PlayerWalkst = 3;
+                    if (GameOtherVars.UnderEffecr == 1) {
+                        sprite.currentStep = 9;
+                    }
+                    if (GameOtherVars.Player_weed == 1) {
+                        sprite.currentStep = 10;
+                    }
+                    if (GameOtherVars.Player_bottle == 1) {
+                        sprite.currentStep = 6;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 1) {
+                        sprite.currentStep = 4;
+                    }
+                    if (GameOtherVars.Shlakoblock_magic == 0 && GameOtherVars.Player_bottle == 0 && GameOtherVars.UnderEffecr == 0 && GameOtherVars.Player_weed == 0) {
+                        sprite.currentStep = 3;
+                    }
 
 
-        } else {
-            if  (! (keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_L)) {
-                Key_P = 0;
+                }
+
             }
-        }
-        if (keycode == KeyEvent.VK_P) {
+            if (keycode == KeyEvent.VK_ALT) {
+
+                GameOtherVars.PlayerIsUnvisible = 1;
+                sprite.currentStep = 32;
 
 
-            Key_P = 1;
-
-
-        } else {
-            if  (! (keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_L)) {
-                Key_P = 0;
+            } else {
+                GameOtherVars.PlayerIsUnvisible = 0;
             }
-        }
-        if (keycode == KeyEvent.VK_O && Key_P == 1)
-        {
-            GameOtherVars.Shlakoblock_create = 0;
-            GameOtherVars.Shlakoblock_create = 0;
-            GameOtherVars.Shlakoblock_create = 0;
-            GameOtherVars.Shlakoblock_create = 0;
-            GameOtherVars.Shlakoblock_create = 0;
-        }
-        if (keycode == KeyEvent.VK_L && Key_P == 1)
-        {
-            Game.Get_win_1();
-        }
-        if (keycode == KeyEvent.VK_O && Key_K == 1)
-        {
-            GameOtherVars.DedMoroz_create = 0;
-            GameOtherVars.DedMoroz_create = 0;
-            GameOtherVars.DedMoroz_create = 0;
-            GameOtherVars.DedMoroz_create = 0;
-            GameOtherVars.DedMoroz_create = 0;
-            GameOtherVars.DedMoroz_create = 0;
-        }
-        if (keycode == KeyEvent.VK_U && Key_K == 1)
-        {
-            GameOtherVars.MainKey = 1;
-        }
-        if (keycode == KeyEvent.VK_Y && Key_K == 1)
-        {
-            GameOtherVars.CardCreate = 0;
-        }
-        if (keycode == KeyEvent.VK_T && Key_K == 1)
-        {
-            GameOtherVars.Fullimmortality = 1;
-        }
+            if (keycode == KeyEvent.VK_CONTROL) {
 
-        if (keycode == KeyEvent.VK_R && Key_K == 1)
-        {
-            GameOtherVars.Restart_type = 3;
-            GameOtherVars.AllDelete = 1;
-        }
-        //if (PlayerSpeedBonus == 0) {
-       //     if (inertion > 3) {
-        //        inertion = 3;
-        //    }
-       // } else {
-            if (inertion > PlayerSpeedBonus)
-            {
+                GameOtherVars.PlayerIsFighting = 1;
+                sprite.currentStep = 31;
+
+
+            } else {
+                GameOtherVars.PlayerIsFighting = 0;
+            }
+            if (keycode == KeyEvent.VK_E) {
+
+                if (GameOtherVars.Player_bottle == 1) {
+                    sprite.currentStep = 8;
+                    reseter = 0;
+                    if (ByhTimer <= 0) {
+
+                        GameOtherVars.Player_bottle = 0;
+                        GameOtherVars.UnderEffecr = 1;
+                        sprite.currentStep = 9;
+                        ByhTimer = 180;
+                        GameOtherVars.Health++;
+                    } else {
+
+                        ByhTimer--;
+
+                    }
+
+                }
+                if (GameOtherVars.Player_weed == 1) {
+                    sprite.currentStep = 11;
+                    reseter = 0;
+                    if (weedTimer <= 0) {
+
+                        GameOtherVars.Player_weed = 0;
+                        GameOtherVars.UnderEffecr = 1;
+                        sprite.currentStep = 9;
+                        weedTimer = 180;
+                        GameOtherVars.Health += 2;
+                    } else {
+
+                        weedTimer--;
+
+                    }
+
+                }
+
+            }
+            if (keycode == KeyEvent.VK_K) {
+
+
+                Key_K = 1;
+
+            } else {
+                if (!(keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_R || keycode == KeyEvent.VK_U || keycode == KeyEvent.VK_Y || keycode == KeyEvent.VK_T)) {
+                    Key_K = 0;
+                }
+            }
+            if (keycode == KeyEvent.VK_P) {
+
+
+                Key_P = 1;
+
+
+            } else {
+                if (!(keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_L)) {
+                    Key_P = 0;
+                }
+            }
+            if (keycode == KeyEvent.VK_P) {
+
+
+                Key_P = 1;
+
+
+            } else {
+                if (!(keycode == KeyEvent.VK_O || keycode == KeyEvent.VK_L)) {
+                    Key_P = 0;
+                }
+            }
+            if (keycode == KeyEvent.VK_O && Key_P == 1) {
+                GameOtherVars.Shlakoblock_create = 0;
+                GameOtherVars.Shlakoblock_create = 0;
+                GameOtherVars.Shlakoblock_create = 0;
+                GameOtherVars.Shlakoblock_create = 0;
+                GameOtherVars.Shlakoblock_create = 0;
+            }
+            if (keycode == KeyEvent.VK_L && Key_P == 1) {
+                Game.Get_win_1();
+            }
+            if (keycode == KeyEvent.VK_O && Key_K == 1) {
+                GameOtherVars.DedMoroz_create = 0;
+                GameOtherVars.DedMoroz_create = 0;
+                GameOtherVars.DedMoroz_create = 0;
+                GameOtherVars.DedMoroz_create = 0;
+                GameOtherVars.DedMoroz_create = 0;
+                GameOtherVars.DedMoroz_create = 0;
+            }
+            if (keycode == KeyEvent.VK_U && Key_K == 1) {
+                GameOtherVars.MainKey = 1;
+            }
+            if (keycode == KeyEvent.VK_Y && Key_K == 1) {
+                GameOtherVars.CardCreate = 0;
+            }
+            if (keycode == KeyEvent.VK_T && Key_K == 1) {
+                GameOtherVars.Fullimmortality = 1;
+            }
+
+            if (keycode == KeyEvent.VK_R && Key_K == 1) {
+                GameOtherVars.Restart_type = 3;
+                GameOtherVars.AllDelete = 1;
+            }
+            //if (PlayerSpeedBonus == 0) {
+            //     if (inertion > 3) {
+            //        inertion = 3;
+            //    }
+            // } else {
+            if (inertion > PlayerSpeedBonus) {
                 inertion = PlayerSpeedBonus;
             }
-        //}
+            //}
 
     }
 }
