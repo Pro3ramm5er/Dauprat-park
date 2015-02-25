@@ -179,7 +179,7 @@ public class Controller extends GameObject {
             }
         }
         if (keycode == KeyEvent.VK_9) {
-            GameOtherVars.Restart_type = 45;
+            GameOtherVars.Restart_type = 62;
             GameOtherVars.AllDelete = 1;
         }
     }

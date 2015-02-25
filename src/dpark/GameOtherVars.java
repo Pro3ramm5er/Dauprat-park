@@ -79,7 +79,8 @@ public class GameOtherVars {
     public static int PlayerIsUnvisible = 0;
     public static int PlAlarmOn = 0;
     public static int PlayerIsFighting = 0;
-    public static int S_43_open = 0;
+
+
 
     public static GameOtherVars instance;
     public void Back_init()

@@ -3,14 +3,13 @@ package dpark.objects;
 import dpark.Game;
 import dpark.GameObject;
 import dpark.GameOtherVars;
-import dpark.GameStoryVars;
 
 /**
  * @author Nickita
  */
-public class S_security extends GameObject {
-    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+public class S_rabbit_security extends GameObject {
+    public int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,47, 48, 49, 50, 51, 52, 53, 54, 55 ,56,57, 58,59, 60, 61,62,63,64,65, 66};
+    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,47, 48, 49, 50, 51, 52, 53, 54, 55 ,56,57, 58,59, 60, 61,62,63,64,65, 66};
     public int xt;
     public int yt;
     public int MST = 1; // 1 - up, 2 - right, 3 - down, 4 - left
@@ -36,12 +35,10 @@ public class S_security extends GameObject {
     public int i2 = 0;
     public int StayTimer = 0;
 
-    public S_security(String name) {
+    public S_rabbit_security(String name) {
         super(name);
-        sprite.addStep(Game.instance.getSprite("S_sec_l.png"));
-        sprite.addStep(Game.instance.getSprite("S_sec_u.png"));
-        sprite.addStep(Game.instance.getSprite("S_sec_r.png"));
-        sprite.addStep(Game.instance.getSprite("S_sec_d.png"));
+        sprite.addStep(Game.instance.getSprite("Crolic_ne_spalil.png"));
+        sprite.addStep(Game.instance.getSprite("Crolic_spalil.png"));
 
 
 
@@ -49,7 +46,8 @@ public class S_security extends GameObject {
 
 
 
-        sprite.addStep(Game.instance.getSprite("S_sec_stopped.png"));
+
+
 
 
 
@@ -78,7 +76,13 @@ public class S_security extends GameObject {
         };
         xt = x;
         yt = y;
-        z = yt + 20;
+        z = yt + 55;
+        if (GameOtherVars.PlAlarmOn == 1)
+        {
+            sprite.currentStep = 1;
+        } else {
+            sprite.currentStep = 0;
+        }
         if (StayTimer <= 0) {
             if (MinusTimer <= 0 && Minus == 1) {
                 if (GameOtherVars.Health == 1) {
@@ -195,7 +199,583 @@ public class S_security extends GameObject {
                 }
 
             }
+            for (int i6 = 0; i6 < 500; i6++) {
+                if (plx == xt && ply == yt - i6) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i6) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i6) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i6) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 500; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
+            for (int i7 = 0; i7 < 1000; i7++) {
+                if (plx == xt && ply == yt - i7) {
+                    MST = 1;
+                } else {
+                    if (plx == xt && ply == yt + i7) {
+                        MST = 3;
+                    } else {
+                        if (ply == yt && plx == xt - i7) {
+                            MST = 4;
+                        } else {
+                            if (ply == yt && plx == xt + i7) {
+                                MST = 2;
+                            }
+                        }
+                    }
+                }
+
+            }
             if (GameOtherVars.PlAlarmOn == 1) {
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
+                ObjCollision();
                 ObjCollision();
                 ObjCollision();
                 ObjCollision();
@@ -1495,6 +2075,1086 @@ public class S_security extends GameObject {
                 PlayerCollisionRunnable(myx, myy);
                 PlayerCollisionRunnable(myx, myy);
                 PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
+                PlayerCollisionRunnable(myx, myy);
             }
 
         /*
@@ -1545,9 +3205,9 @@ public class S_security extends GameObject {
                 }
 
                 //yt-=3;
-                y -= 3;
-                z += 3;
-                sprite.currentStep = 1;
+                y -= 5;
+                z += 5;
+
             }
             if (MST == 2) {
                 if (Timer_set_del == 0) {
@@ -1556,8 +3216,8 @@ public class S_security extends GameObject {
                 }
 
                 //xt+=3;
-                x += 3;
-                sprite.currentStep = 2;
+                x += 5;
+
             }
             if (MST == 3) {
                 if (Timer_set_del == 0) {
@@ -1566,9 +3226,9 @@ public class S_security extends GameObject {
                 }
 
                 // yt+=3;
-                y += 3;
-                z -= 3;
-                sprite.currentStep = 3;
+                y += 5;
+                z -= 5;
+
             }
             if (MST == 4) {
                 if (Timer_set_del == 0) {
@@ -1577,8 +3237,8 @@ public class S_security extends GameObject {
                 }
 
                 //xt-=3;
-                x -= 3;
-                sprite.currentStep = 0;
+                x -= 5;
+
             }
 
 
@@ -1829,4 +3489,3 @@ public class S_security extends GameObject {
 
 
 }
-

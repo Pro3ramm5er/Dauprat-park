@@ -10,8 +10,8 @@ import dpark.objects.Player;
 import static dpark.DB.db;
 
 public class GameObject {
-    public  int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-    public int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+    private  int[] myx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
+    private int[] myy = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38};
     public static int plx;
     public static int ply;
     public static int plx1;
@@ -67,8 +67,8 @@ public class GameObject {
             }
         }
     }
-    public void PlayerCollisionRunnable() {
-        if (x-Game.instance.GetRandom(myx[0], myx[myx.length-1]) == plx && y-Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply || x+Game.instance.GetRandom(myx[0], myx[myx.length-1]) == plx && y+Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply || Game.instance.GetRandom(myx[0], myx[myx.length-1]) == plx2 && Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply2 || Game.instance.GetRandom(myx[0], myx[myx.length-1]) == plx3 && Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply3 || Game.instance.GetRandom(myx[0], myx[myx.length-1]) == plx3 && Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply3 || Game.instance.GetRandom(myx[0],myx[myx.length-1]) == plx4 && Game.instance.GetRandom(myy[0], myy[myy.length-1]) == ply4)
+    public void PlayerCollisionRunnable(int[] u, int[] u1) {
+        if (x-Game.instance.GetRandom(u[0], u[u.length-1]) == plx && y-Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply || x+Game.instance.GetRandom(u[0], u[u.length-1]) == plx && y+Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply || Game.instance.GetRandom(u[0], u[u.length-1]) == plx2 && Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply2 || Game.instance.GetRandom(u[0], u[u.length-1]) == plx3 && Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply3 || Game.instance.GetRandom(u[0], u[u.length-1]) == plx3 && Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply3 || Game.instance.GetRandom(u[0],u[u.length-1]) == plx4 && Game.instance.GetRandom(u1[0], u1[u1.length-1]) == ply4)
         {
 
             collRunnable.run();

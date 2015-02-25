@@ -380,6 +380,71 @@ public class Player extends GameObject {
             GameOtherVars.Restart_type = 48;
             GameOtherVars.AllDelete = 1;
         }
+        if (y < 0 && GameOtherVars.Level == 48)
+        {
+            GameOtherVars.Restart_type = 49;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 50)
+        {
+            GameOtherVars.Restart_type = 51;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 51)
+        {
+            GameOtherVars.Restart_type = 52;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 52)
+        {
+            GameOtherVars.Restart_type = 53;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 53)
+        {
+            GameOtherVars.Restart_type = 54;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 55)
+        {
+            GameOtherVars.Restart_type = 56;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 56)
+        {
+            GameOtherVars.Restart_type = 57;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 57)
+        {
+            GameOtherVars.Restart_type = 58;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 58)
+        {
+            GameOtherVars.Restart_type = 59;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 59)
+        {
+            GameOtherVars.Restart_type = 60;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 60)
+        {
+            GameOtherVars.Restart_type = 61;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 61)
+        {
+            GameOtherVars.Restart_type = 62;
+            GameOtherVars.AllDelete = 1;
+        }
+        if (y < 0 && GameOtherVars.Level == 62)
+        {
+            GameOtherVars.Restart_type = 63;
+            GameOtherVars.AllDelete = 1;
+        }
         if (GameStoryVars.S_phone == 1)
         {
             sprite.currentStep = phonenow;
